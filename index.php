@@ -1,13 +1,6 @@
 <?php
-header('Location: https://toremetal.com/home/');
 //header('Location: https://www.toremetal.com');
-if (isset($_COOKIE['tdli'])) {
-    $login="Submit";
-} else {
-    $login="log-in";
-}
-$hst = $_SERVER['HTTP_HOST'];
-$req = $_SERVER['REQUEST_URI'];
+//if (strcmp(substr($_SERVER['REQUEST_URI'], 0, 12), "/?fbclid=") == 0) {}
 //if ($req == "/?yt") {
 //    $myfile = fopen("/log/yt.t", "r") or die("ERROR!");
 //    $txt = fgets($myfile);
@@ -16,36 +9,36 @@ $req = $_SERVER['REQUEST_URI'];
 //    fwrite($myfile, 1+(int)$txt);
 //    fclose($myfile);
 //}
-//if ($req == "/?fb") {
-//    $myfile = fopen("/log/fb.t", "r") or die("ERROR!");
-//    $txt = fgets($myfile);
-//    fclose($myfile);
-//    $myfile = fopen("/log/fb.t", "w") or die("ERROR!");
-//    fwrite($myfile, 1+(int)$txt);
-//    fclose($myfile);
-//}
-$filename = '../e.t';
+if (isset($_GET['fbclid'])) {
+$filename = "log/fb.t";
+    if (file_exists($filename)) {
+        $myfile = fopen($filename, "r") or die("ERROR!");
+        $txt = fgets($myfile);
+        fclose($myfile);
+        $myfile = fopen($filename, "w") or die("ERROR!");
+        fwrite($myfile, 1+(int)$txt);
+        fclose($myfile);
+    } else {
+        $myfile = fopen($filename, "a") or die("ERROR!");
+        fwrite($myfile, "1");
+        fclose($myfile);
+    }
+}
+$filename = '../log/e.t';
 if (!file_exists($filename)) {
-    $filename = 'e.t';
+    $filename = 'log/e.t';
 } 
 if (file_exists($filename)) {
     $myfile = fopen($filename, "a");
-    $txt = "Date: " . date("Y/m/d") . "\n";
-    fwrite($myfile, $txt);
-    $txt = "Time: " . date("h:i:sa") . "\n";
-    fwrite($myfile, $txt);
-    $txt = "Ref: {$_SERVER['REQUEST_URI']}" . "\n";
-    fwrite($myfile, $txt);
-    $txt = "URL: {$_SERVER['HTTP_HOST']}" . "\n";
-    fwrite($myfile, $txt);
-    $txt = "______________ \n";
+    date_default_timezone_set("America/Los_Angeles");
+    $txt = "Date: " . date("Y/m/d") . ", Time: " . date("h:i:sa") . "\nURL: {$_SERVER['HTTP_HOST']}" . "\nRef: {$_SERVER['REQUEST_URI']}" . "\n______________ \n";
     fwrite($myfile, $txt);
     fclose($myfile);
 }
 
-$filename = '../vc.txt';
+$filename = '../log/vc.txt';
 if (!file_exists($filename)) {
-    $filename = 'vc.txt';
+    $filename = 'log/vc.txt';
 } 
 if (file_exists($filename)) {
     $myfile = fopen($filename, "r");
@@ -57,9 +50,21 @@ if (file_exists($filename)) {
     $myfile = fopen($filename, "r");
     $session = fgets($myfile);
     fclose($myfile);
+} else {
+    $myfile = fopen($filename, "a") or die("ERROR!");
+    fwrite($myfile, "1");
+    fclose($myfile);
 }
+header('Location: https://toremetal.com/home/');
 
-//header('Location: https://www.toremetal.com/');
+
+if (isset($_COOKIE['tdli'])) {
+    $login="Submit";
+} else {
+    $login="log-in";
+}
+$hst = $_SERVER['HTTP_HOST'];
+$req = $_SERVER['REQUEST_URI'];
 
 $filename = '../log/posa.txt';
 if (!file_exists($filename)) {
@@ -619,7 +624,7 @@ body {
             function gtag(){dataLayer.push(arguments);};
             gtag('js', new Date());
             gtag('config', 'UA-149650262-1', {
-                cookie_flags: 'domain=<?=$hst?>;secure;samesite=none'
+                cookie_flags: 'domain=<?=$_SERVER['HTTP_HOST']?>;secure;samesite=none'
             });
             gtag('config', 'UA-149650262-1', {'cookie_prefix': 'analytics'});
             gtag('consent', 'default', {'analytics_storage': 'denied', 'region': ['US-CA']});
