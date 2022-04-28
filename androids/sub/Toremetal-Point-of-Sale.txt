@@ -1,8 +1,0 @@
-™T©ReMeTaL
-Point of Sale
-com.toremetal.pos
-https://www.youtube.com/embed/nHrCai8OfZs
-5.0
-Self-employed, Garage Sales, Events,<br>Travelling Sellers, Fundraising?
-Keep accurate records with ease! No setup involved, no accounts required to use. This simple app is designed for easy creation of needed sales records for self-employed and similar situations. Add your products or services to the inventory to auto-load info by ID at time of sale. All Sales totals automatically tracked and viewable anytime. App automatically calculates profits based on selling price, cost of each item, and quantity of items *All-items-totals viewable with exported CSV file using Google sheets, formulas automatically added*. Auto-create file receipts for records, emailing at a later time, or printing using installed printing options. Automatically send sale info to email application for emailing transaction records to the customer at the time of sale.
-https://toremetal.com/img/logo2.webp

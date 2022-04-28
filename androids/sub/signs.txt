@@ -1,8 +1,0 @@
-™T©ReMeTaL
-(ASL) Signs
-com.toremetal.signsfree
-
-5.0
-A simple app for ASL beginners!
-This simple application is designed for beginners learning American Sign Language. Quickly view a reference picture of any letter of the alphabet or for the numbers 0-10.<br>Clicking or tapping the button below the picture prompts your device's internet browser, to open a search query for further demonstration of the selection. There is no setup involved or any accounts required to use the application.
-../img/signs_logo.webp
