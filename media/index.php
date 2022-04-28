@@ -1,1 +1,0 @@
-<?php header('Location: https://toremetal.000webhostapp.com/'); ?>
