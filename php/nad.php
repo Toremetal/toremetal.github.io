@@ -1,1 +1,0 @@
-<?php $marketing='No-Marketing'?>
