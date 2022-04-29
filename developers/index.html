@@ -1813,12 +1813,56 @@ function onformsubmit(id) {document.getElementById(id + "-form").reset();}
 <br>
 <!-- Subscribe -->
 <div class="subscribe" align="center" style="text-align: center; background-color: transparent; border-radius: 0px 0px 4px 4px;max-width:512px;">
-  <form align="center" title="Enter your email to get the latest News" method="post">
+  <div align="center" title="Enter your email to get the latest News">
   <div align="center" style="text-align: center; background-color: transparent; width:100%;">
 <input title="Enter your email to get the latest News" type="email" name="subscribe" id="subscribe" placeholder="Email" required>
-<input title="Enter your email to get the latest News" type="submit" name="submit" id="submit" value="Subscribe">
-  </div>
-  </form>
+<input title="Enter your email to get the latest News" onclick="subscribe()" type="submit" name="submit" id="submit" value="Subscribe"></div></div>
+<script>
+   function subscribe() {
+if (mtest()) {
+      document.getElementById("clog2").src='https://ads.toremetal.com/subscribe&email=' + document.getElementById("subscribe").value;
+      document.getElementById("subscribe").value="";
+      window.confirm("Email Registered!\nThanks for Subscribing!");
+}
+   }
+   function unsubscribe() {
+      document.getElementById("clog2").src='https://ads.toremetal.com/unsubscribe&email=' + document.getElementById("subscribe").value;
+      document.getElementById("subscribe").value="";
+      window.alert("Email Un-Subscribed!\nSorry to see you go!");
+if (window.confirm("Email Un-Subscribed!\nSorry to see you go!") == true) {
+} else {
+}
+   }
+function mtest() {
+let test = "f";
+let test2 = "f";
+var str = document.getElementById("subscribe").value;
+
+for (var i = 0, j = str.length; i < j; i++) {
+if (str.substring(i, i + 1)=='@') {
+test = "t"
+}
+if (str.substring(i, i + 1)=='.') {
+test2 = "t"
+}
+}
+if (test == "t") {
+if (test2 == "t") {
+return true;
+} else {
+window.alert("email doesn't appear valid");
+return false;
+}
+} else {
+window.alert("email doesn't appear valid");
+return false;
+}
+}
+</script>
+<iframe hidden style="border: none; overflow: hidden; display: none; padding: 0 0 0 0; margin: 0 0 0 0; width: 0; height: 0;" referrerpolicy="SameSite:None; Secure" 
+sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *;"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; cross-origin-isolated" allowfullscreen
+ scrolling="no" frameborder="0" id="clog2"></iframe>
 </div>
 <!-- End Subscribe -->
 <br>
