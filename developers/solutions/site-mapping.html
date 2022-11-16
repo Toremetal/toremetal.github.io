@@ -804,7 +804,7 @@ get_myFilesDir();
                             <br />$siteMap = $siteMap.'<sub>
                                 <sup>
                                     < ?xml version="1.0" encoding="UTF-8" ?>
-                                    <br />< urlset>
+                                    <br />< urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
                                     <br />< url>
                                     <br />< loc><b>'.$url.'</b>/< /loc>
                                     <br />< changefreq>Daily< /changefreq>
@@ -887,7 +887,7 @@ return $siteMap;
   * @function get_myFilesDir(".",$url,$lastMod)-Directory Iterator.
   ************************************************************** */
 $siteMap = $siteMap.'< ?xml version="1.0" encoding="UTF-8" ? >
-< urlset>
+< urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 < url>
 < loc>'.$url.'/< /loc>
 < changefreq>Daily< /changefreq>
