@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>&#8482;T&#169;ReMeTaL - Coding Solutions</title>
+    <link rel="canonical" href="/developers/solutions/">
+    <meta itemprop="url" content="/developers/solutions/">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0, user-scalable=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta property="og:url" content="/developers/solutions/">
+    <meta property="og:title" content="&#8482;T&#169;ReMeTaL - PHP-Solutions">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="/img/banner1200x630.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Auto-Generate a sitemap with php." />
+    <meta property="og:site_name" content="&#8482;T&#169;ReMeTaL" />
+    <meta itemprop="thumbnailUrl" content="/img/favicon.png" />
+    <meta itemprop="image" content="/img/favicon.png" />
+    <meta itemprop="imageUrl" content="/img/favicon.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/img/logo.png" type="image/png" />
+    <link rel="icon" href="/img/logo.webp" type="image/webp" />
+    <meta name="description" content="Auto-Generate a sitemap with php." />
+    <meta name="keywords" content="Sitemap, sitemap, site-map, sitemapping, sitemap generator, automatic sitemap, php, PHP, server-side, server" />
+    <meta itemprop="name" content="&#8482;T&#169;ReMeTaL" />
+    <meta itemprop="description" content="Auto-Generate a sitemap with php." />
+    <meta name="copyright" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="author" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="twitter:title" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="twitter:description" content="Auto-Generate a sitemap with php." />
+    <meta name="twitter:image" content="/img/banner600x315.png" />
+    <meta name="twitter:site" content="@TheToReMetal" />
+    <meta name="twitter:creator" content="@TheToReMetal" />
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "MobileApplication",
+            "name": "&#8482;T&#169;ReMeTaL",
+            "operatingSystem": "ANDROID",
+            "identifier": "https://toremetal.com/developers/solutions",
+            "image": "/img/banner600x315.png",
+            "thumbnailUrl": "/img/logo.png",
+            "applicationCategory": "Productivity",
+            "description": "Auto-Generate a sitemap with php.",
+            "publisher": {
+               "@type": "Thing",
+               "name": "&#8482;T&#169;ReMeTaL"
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* Tool-tip Pop up. */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            padding: 5px;
+            border: 1px dotted green;
+            margin: auto;
+        }
+
+            .tooltip .tooltiptext {
+                margin: auto;
+                visibility: hidden;
+                width: 120px;
+                background-color: dimgray;
+                color: lemonchiffon;
+                text-align: center;
+                border-radius: 6px;
+                border-top-left-radius: 55%;
+                border-top-right-radius: 55%;
+                border-bottom-right-radius: 55%;
+                border-bottom-left-radius: 5px 2px;
+                padding: 25px 15px;
+                position: absolute;
+                z-index: 1;
+                border: 1px groove whitesmoke;
+                /*bottom: 150%;
+                left: 50%;
+                background-color: black;
+                margin-left: -60px;*/
+            }
+
+                .tooltip .tooltiptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: black transparent transparent transparent;
+                }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+
+            .tooltip:hover {
+            }
+
+        /* End Tool-tip */
+        .mask1 {
+            -webkit-mask-image: url(/favicon.png);
+            mask-image: url(favicon.png);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+
+        /* Page Styles */
+        .solutions {
+            background-color: black;
+            font-family: 'Source Code Pro', monospace;
+            color: forestgreen;
+            padding: 0 20px 20px 20px;
+        }
+
+            .solutions .notes {
+                color: forestgreen;
+                cursor: default;
+            }
+
+            .solutions sup {
+                color: mediumspringgreen;
+                line-height: 1;
+            }
+
+            .solutions sub {
+                color: deepskyblue;
+                line-height: 10px;
+            }
+
+                .solutions sub i {
+                    font-size: small;
+                    color: mediumspringgreen;
+                }
+
+                .solutions sub sup {
+                    font-size: small;
+                    color: forestgreen;
+                }
+
+            .solutions h1 {
+                font-weight: bold;
+                text-align: center;
+                color: #146cd8;
+                text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+            }
+
+            .solutions h2 {
+                text-align: center;
+                color: #146cd8;
+                text-shadow: 0.5px 0.5px 0.5px rgba(125,0,0,0.91);
+            }
+
+            .solutions h3 {
+                color: #146cd8;
+                text-shadow: 0.5px 0.5px 0.5px red;
+            }
+
+            .solutions i {
+                cursor: pointer;
+                color: chocolate;
+            }
+
+            .solutions b {
+                cursor: pointer;
+                color: red;
+            }
+
+            .solutions label {
+                font-size: larger;
+                color: #ff2f00;
+                text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+            }
+
+            .solutions input[type=button] {
+            }
+
+            .solutions .ddownload_button {
+                font-family: 'Source Code Pro', monospace;
+                /* box-shadow: 2px 2px 2px rgba(0,0,0,.31); */
+                color: darkred;
+                text-shadow: 0.5px 0.5px 0.5px mediumblue;
+                box-shadow: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em blue;
+                margin-left: -14px;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+        /* Change background color of buttons on hover */
+        .ddownload_button:hover {
+            background-color: #ddd;
+            opacity: 0.8;
+            box-shadow: 1px 1px 1px rgba(0,0,0,.09);
+            text-shadow: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+
+        .solutions button {
+            font-family: 'Source Code Pro', monospace;
+            box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+            color: mediumblue;
+            text-shadow: 0.5px 0.5px 0.5px darkred;
+        }
+
+        .solutions .fullsrceen {
+            height: 89%; /* height: 77%; */
+            margin: unset;
+            z-index: 1;
+            position: fixed;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 1em;
+            overflow-x: hidden;
+            padding: unset;
+            background-color: cadetblue;
+        }
+
+
+        .solutions .bottom {
+            font-family: 'Source Code Pro', monospace;
+            height: 7%; /* height: 18%; */
+            width: 97.2%;
+            font-size: 14px;
+            position: fixed;
+            z-index: 1;
+            bottom: 0;
+            overflow-x: scroll;
+            padding: 0 14px 10px;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            line-height: 22px;
+            text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+            border-radius: 4px;
+        }
+
+            /* raises bottom automatically for a toolbox window. */
+            .solutions .bottom:hover {
+                background-color: black;
+                height: 80%;
+                z-index: 5;
+            }
+
+        .solutions .centered img {
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        .solutions .code {
+            margin: 0;
+            padding: 4px;
+            text-align: left;
+            text-decoration: unset;
+            font-family: 'Source Code Pro', monospace;
+            box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+            /* background-color: #ffffff99; */
+            background-color: black;
+            /* color: mediumblue; */
+            color: chocolate;
+            text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+            border-radius: 4px;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.41);
+            border: 1px solid rgb(177, 176, 176);
+        }
+
+        .solutions .codeheader-code {
+            font-family: 'Source Code Pro', monospace;
+            font-size: small;
+            padding-left: 6px;
+            padding-right: 6px;
+            box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+            /* background-color: #ffffff99; */
+            background-color: rgba(0,0,0,0.61);
+            /* color: mediumblue; */
+            border-radius: 4px;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.51);
+            border: 1px solid rgb(177, 176, 176);
+            color: chocolate;
+            text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+        }
+
+        .solutions .codeheader {
+            font-family: 'Source Code Pro', monospace;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+            /* background-color: #ffffff99; */
+            background-color: rgba(0,0,0,0.61);
+            /* color: mediumblue; */
+            border-radius: 4px;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.51);
+            border: 1px solid rgb(177, 176, 176);
+        }
+
+        .solutions .codeheader_label {
+            margin-left: -1em;
+        }
+
+        .solutions .pheader {
+            position: absolute;
+            font-family: 'Source Code Pro', monospace;
+            font-size: medium;
+            padding: 0 6px;
+            box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+            background-color: rgba(0,0,0,0.11);
+            /* color: mediumblue; */
+            border-radius: 4px;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.51);
+            border: 1px solid rgb(177, 176, 176);
+            top: 10px;
+            left: 10px;
+        }
+
+        .solutions .renderCode {
+            min-height: 256px;
+            height: 88%;
+            width: 100%;
+            padding: unset;
+            text-align: unset;
+            text-decoration: unset;
+            border: none;
+        }
+
+        .solutions .f_centered {
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: dotted 2px red;
+        }
+
+        #mydiv {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 9;
+        }
+
+        #mydivheader {
+            cursor: move;
+            z-index: 10;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.31) inset;
+            /* background-color: #ffffff99; */
+            background-color: rgba(0,0,0,0.61);
+            /* color: mediumblue; */
+            border-radius: 4px;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.51);
+            border: 1px solid rgb(177, 176, 176);
+        }
+
+
+
+
+        .solutions .split {
+            height: 89%; /* height: 77%; */
+            width: 49.2%;
+            margin-left: 0.5%;
+            margin-right: 0.5%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .solutions .left {
+            left: 0;
+            background-color: #808080;
+        }
+
+        .solutions .right {
+            right: 0;
+            background-color: cadetblue;
+        }
+
+        .solutions .r_centered {
+            position: absolute;
+            width: 98%;
+            height: 98%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-51%, -51%);
+            text-align: center;
+        }
+
+        .solutions .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+
+
+
+
+        .solutions #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 10;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+            .solutions #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        .solutions .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .solutions .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 160px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 4px 6px;
+            border-radius: 5px;
+            border: 2px groove grey;
+            font-size: 14px;
+            font-stretch: ultra-condensed;
+            font-weight: bold;
+            z-index: 99;
+        }
+
+        .solutions .dropdown-content0 {
+            display: none;
+            position: absolute;
+            left: 4px;
+            bottom: 160px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 4px 6px;
+            border-radius: 5px;
+            border: 2px groove grey;
+            font-size: 14px;
+            font-stretch: ultra-condensed;
+            font-weight: bold;
+            z-index: 99;
+        }
+
+        .solutions .dropdown-content1 {
+            display: none;
+            position: absolute;
+            font-size: 12px;
+            font-stretch: ultra-condensed;
+            font-weight: bold;
+            margin-left: -200px;
+            top: 0.01em;
+            background-color: #f9f9f9;
+            min-width: 512px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 4px 6px;
+            border-radius: 5px;
+            border: 2px groove grey;
+            z-index: 99;
+        }
+
+        .solutions .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .solutions .dropdown:hover .dropdown-content0 {
+            display: block;
+        }
+
+        .solutions .dropdown:hover .dropdown-content1 {
+            display: block;
+        }
+
+        .solutions .showhelp {
+            position: absolute;
+            top: -22px;
+            left: -26px;
+            border-radius: 10px;
+            padding: 3px;
+        }
+
+        /* Style the tab */
+        .solutions .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 4px 0 0 4px;
+            position: fixed;
+            left: 8px;
+            right: 26px;
+            z-index: 2;
+        }
+
+            /* Style the buttons inside the tab */
+            .solutions .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                margin-left: 4px;
+                padding: 14px 16px;
+                transition: 0.3s;
+                font-size: 17px;
+                /* top left */
+                border-start-start-radius: 5px;
+                /* top right */
+                border-start-end-radius: 15px;
+                /* bootom right */
+                border-end-end-radius: 10px;
+                /* bottom left */
+                border-end-start-radius: 20px;
+            }
+
+                /* Change background color of buttons on hover */
+                .solutions .tab button:hover {
+                    background-color: #ddd;
+                }
+
+                /* Create an active/current tablink class */
+                .solutions .tab button.active {
+                    background-color: #ccc;
+                }
+
+        /* Style the tab content */
+        .solutions .tabcontent {
+            display: none;
+            margin-top: 1px;
+            padding: 3em 12px 6px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+<body class="solutions">
+
+    <div>
+        <div id="cod" style="width: stretch;">
+            <sub class="notes" title="Note: space added after the first < in tags ex.(< tagname>) to prevent the code from rendering. (Auto-corrected when clicked or downloaded)"> * Note: space added after the first < in tags ex.(< tagname>) to prevent the code from rendering. (Auto-corrected when clicked or downloaded)</sub>
+            <br />
+            <div class="tooltip" style="width: 100%">
+                <span style="left: 440px; top: 300px;" class="tooltiptext">Click text<br />to copy<br /> or <input title="save to file." class="ddownload_button" type="button" id="download-btn" value="Save to file" /></span>
+                <i style="color:red;" title="Click-Me to copy" onclick="copyText('list_Directories')">
+                    < ?php
+                    <br /><sup>
+                        /*&nbsp;********************************|
+                        <br /> * List all directories on a website.
+                        <br /> * ** [<b>Server-Side PHP code</b>] ** *
+                        <br /> *&nbsp;&nbsp;Note:&nbsp;&nbsp;This example uses:&nbsp;&nbsp;[ echo 'directory' ]
+                        <br /> *&nbsp;&nbsp;[echo] can be replaced with a file write method
+                        <br /> *&nbsp;&nbsp; specific to your need. ex: automatic site mapping.
+                        <br /> *
+                        <br /> *&nbsp;&nbsp; [Use: <b>get_myFilesDir()</b> https:// mywebsite.com/thisfile.php]
+                        <br /> *&nbsp;&nbsp; [Use: <b>get_myFilesDir("../")</b> https:// mywebsite.com/sub-directory/thisfile.php]
+                        <br /> *&nbsp;&nbsp;&nbsp;This code will display all directories of the website containing it.
+                        <br /> *&nbsp;&nbsp;*&nbsp;&nbsp;* (No matter how many directories). This is achieved by use of a function,
+                        <br /> *&nbsp;&nbsp; Allowing it to create a new instance of itself for every directory.
+                        <br /> * */
+                    </sup>
+                    <br /><sub>
+                        /* ****************************************|
+                        <br />&nbsp;&nbsp; * * * * The sequence function. * * * *
+                        <br />&nbsp;&nbsp;**************************************** */
+                    </sub>
+                    <br />function get_myFilesDir($dir = ".") {
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;if (is_dir($dir)){
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach (scandir($dir) as $dir1) {
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (is_dir($dir."/".$dir1)) {
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sub><i>/* ( Ignore Directory Flag: noindex.txt ) Folders containing a noindex.txt (empty file) will be excluded from output. */</i></sub>
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!file_exists($dir."/".$dir1."/noindex.txt") && $dir1 != "." && $dir1 != ".." && $dir1 != "...") {
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo str_replace("//","/",str_replace("./","/",str_replace("../","/",$dir."/".$dir1)))."/< br />";
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get_myFilesDir($dir."/".$dir1);
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br />}
+                    <br /> <sup> /* **************************************************|
+    <br />&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;The calling method(s).
+    <br />&nbsp;&nbsp;*&nbsp; -Main:&nbsp;&nbsp;&nbsp;&nbsp;get_myFilesDir();
+    <br />&nbsp;&nbsp;*&nbsp; -Sub:&nbsp;&nbsp;&nbsp;&nbsp;get_myFilesDir("../");
+    <br />&nbsp;&nbsp;*************************************************** */
+</sup>
+                    <br />get_myFilesDir();<sub>
+                        /* ( working code example. ) */
+                    </sub>
+                    <br /><sup>
+                        /* ************************************************** */
+                    </sup>
+                    <br />? >
+                </i>
+                <i id="list_Directories" hidden>< ?php
+/* ********************************|
+* List all directories on a website.
+* ** [Server-Side PHP code] ** *
+*  Note:  This example uses:  [ echo 'directory' ]
+*  [echo] can be replaced with a file write method
+*   specific to your need. ex: automatic site mapping.
+*
+*   [Use: get_myFilesDir() https:// mywebsite.com/thisfile.php]
+*   [Use: get_myFilesDir("../") https:// mywebsite.com/sub-directory/thisfile.php]
+*   This code will display all directories of the website containing it.
+*  *  * (No matter how many directories). This is achieved by use of a function,
+*   Allowing it to create a new instance of itself for every directory.
+* */
+/* ****************************************|
+* * * * The sequence function. * * * *
+**************************************** */
+function get_myFilesDir($dir = ".") {
+     if (is_dir($dir)){
+         foreach (scandir($dir) as $dir1) {
+             if (is_dir($dir."/".$dir1)) {
+                  /* ( Ignore Directory Flag: noindex.txt ) Folders containing a noindex.txt (empty file) will be excluded from output. */
+                 if (!file_exists($dir."/".$dir1."/noindex.txt") && $dir1 != "." && $dir1 != ".." && $dir1 != "...") {
+                     echo str_replace("//","/",str_replace("./","/",str_replace("../","/",$dir."/".$dir1)))."/< br />";
+                     get_myFilesDir($dir."/".$dir1);
+                 }
+             }
+         }
+     }
+}
+/* **************************************************|
+*    The calling method(s).
+*   --    get_myFilesDir();
+*   --    get_myFilesDir( *Optional* Directory );
+*  takes a directory arg. (Start in sub-folders.)
+*  argument* not required (current by default.)
+*************************************************** */
+get_myFilesDir();
+/* ************************************************** */
+? ></i>
+            </div>
+        </div>
+
+        <div>
+            <div id="snackbar" style="text-align:left;">Copied to Clipboard.</div>
+
+        </div><br /><br />
+        <div class="bottom">
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'sitemap')">Site Mapper</button>
+                <!--<button class="tablinks" onclick="openCity(event, 'copyright')">Copyright</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Examples</button>
+                <button class="tablinks" onclick="openCity(event, 'NavMenus')">NavMenus</button>
+                <button class="tablinks" onclick="openCity(event, 'CSS')">CSS Style</button>-->
+            </div>
+
+            <div id="sitemap" class="tabcontent" style="display:block;">
+                <div id="cod">
+                    <sub class="notes" title="Note: space added after the first < in tags ex.(< tagname>) to prevent the code from rendering. (Auto-corrected when clicked or downloaded)"> * Note: space added after the first < in tags ex.(< tagname>) to prevent the code from rendering. (Auto-corrected when clicked or downloaded)</sub>
+                    <br />
+                    <div class="tooltip">
+                        <span style="left: 440px; top: 30px;" class="tooltiptext">Click text<br />to copy<br /> or <input title="save to file." class="ddownload_button" type="button" id="sitemap-btn" value="Save to file" /></span>
+                        <i style="color:red;" title="Click-Me to copy" onclick="copyText('list_sitemap')">
+                            < ?php
+                            <br /><sup>
+                                /*&nbsp;********************************|
+                                <br /> * Auto generate a website sitemap.
+                                <br /> * ** [<b>Server-Side PHP code</b>] ** *
+                                <br /> *&nbsp;&nbsp;Note:&nbsp;&nbsp;This example uses:&nbsp;&nbsp;[ echo 'sitemap' ]
+                                <br /> *&nbsp;&nbsp;[echo] can be replaced with a file write method
+                                <br /> *&nbsp;&nbsp; specific to your need.
+                                <br /> *
+                                <br /> *&nbsp;&nbsp; [Use: <b>get_myFilesDir("<sub><sup>.</sup></sub>", $url, $lastMod)</b> https:// mywebsite.com/thisfile.php]
+                                <br /> *&nbsp;&nbsp; [Use: <b>get_myFilesDir("<sub><sup>../</sup></sub>", $url, $lastMod)</b> https:// mywebsite.com/sub-directory/thisfile.php]
+                                <br /> *&nbsp;&nbsp;&nbsp;This code will display all directories for the website containing it.
+                                <br /> *&nbsp;&nbsp;*&nbsp;&nbsp;* (No matter how many directories). This is achieved by use of a function,
+                                <br /> *&nbsp;&nbsp; Allowing it to create a new instance of itself for every directory.
+                                <br /> * */
+                            </sup>
+                            <sub>
+                                <br />/* * Instance Variables * */
+                            </sub>
+                            <br />$siteMap = "";
+                            <br />$url = $_SERVER['HTTP_HOST'];
+                            <br />$mydate = getdate(date("U"));
+                            <br />$lastMod = $mydate[year]."<sub><sup>-</sup></sub>".chk_addZero($mydate[mon])."<sub><sup>-</sup></sub>".chk_addZero($mydate[mday])
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;."<sub><sup>T</sup></sub>".chk_addZero($mydate[hours])."<sub><sup>:</sup></sub>".chk_addZero($mydate[minutes])."<sub><sup>:</sup></sub>".chk_addZero($mydate[seconds])."<sub><sup>+00:00</sup></sub>";
+                            <br />
+                            <br /><sub>
+                                /* ****************************************|
+                                <br />&nbsp;&nbsp;Add leading Zero to numbers less than 10.
+                                <br />&nbsp;&nbsp;**************************************** */
+                            </sub>
+                            <br />function chk_addZero($val) {
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;if ($val < <i style="color:blue;">10</i>) {
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "<sub><sup>0</sup></sub>".$val;
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;} else {
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return $val;
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;}
+                            <br />}
+
+                            <br />
+                            <sub>
+                                /* ****************************************|
+                                <br />&nbsp;&nbsp; * * * * The sequence function. * * * *
+                                <br />&nbsp;&nbsp;**************************************** */
+                            </sub>
+                            <br />function get_myFilesDir($dir = "<sub><sup>.</sup></sub>", $url, $lastMod) {
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;if (is_dir($dir)){
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach (scandir($dir) as $dir1) {
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (is_dir($dir."/".$dir1)) {
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sub><i>/* ( Ignore Directory Flag: noindex.txt ) Folders containing a noindex.txt (empty file) will be excluded from output. */</i></sub>
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!file_exists($dir."/".$dir1."/noindex.txt") && $dir1 != "." && $dir1 != ".." && $dir1 != "...") {
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$siteMap=$siteMap.'<sub>
+                                <sup>
+                                    <br />< url>
+                                    <br />< loc><b>'.$url.str_replace("//","/",str_replace("./","/",str_replace("../","/",$dir."/".$dir1))).'</b>/< /loc>
+                                    <br />< changefreq>Daily< /changefreq>
+                                    <br />< priority>0.90< /priority>
+                                    <br />< lastmod><b>'.$lastMod.'</b>< /lastmod>
+                                    <br />< /url>
+                                    <br />
+                                </sup>
+                            </sub>';
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get_myFilesDir($dir."/".$dir1, $url, $lastMod);
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;}
+                            <br />}
+                            <br />
+                            <br /> <sup style="line-height:1;">
+                                /* ****************************************************************|
+                                <br />&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;The calling sequence.
+                                <br />&nbsp;&nbsp;*&nbsp; @param: <b>$sitemap</b>  -Output string.
+                                <br />&nbsp;&nbsp;*&nbsp; @param: <b>$url</b> -Website URL.
+                                <br />&nbsp;&nbsp;*&nbsp; @param: <b>$lastMod</b> -Last Updated.(This example uses current date).
+                                <br />&nbsp;&nbsp;*&nbsp; @function <b>get_myFilesDir("<sub><sup>.</sup></sub>",$url,$lastMod)</b> -Directory Iterator.
+                                <br />&nbsp;&nbsp;*************************************************** */
+                            </sup>
+                            <br />$siteMap = $siteMap.'<sub>
+                                <sup>
+                                    < ?xml version="1.0" encoding="UTF-8" ?>
+                                    <br />< urlset>
+                                    <br />< url>
+                                    <br />< loc><b>'.$url.'</b>/< /loc>
+                                    <br />< changefreq>Daily< /changefreq>
+                                    <br />< priority>1.00< /priority>
+                                    <br />< lastmod><b>'.$lastMod.'</b>< /lastmod>
+                                    <br />< /url>
+                                    <br />
+                                </sup>
+                            </sub>';
+                            <br />
+                            <br />$siteMap = $siteMap.get_myFilesDir(".", $url, $lastMod);
+                            <br />
+                            <br />$siteMap=$siteMap.'<sub><sup>< /urlset></sup></sub>';
+                            <br />header("Content-type: text/xml");
+                            <br />echo $siteMap;
+                            <sup>
+                                <br />
+                                /* ************************************************** */
+                            </sup>
+                            <br />? >
+                        </i>
+                        <i id="list_sitemap" hidden>< ?php
+/* ********************************|
+* Auto generate a website sitemap.
+* ** [Server-Side PHP code] ** *
+*  Note:  This example uses:  [ echo 'sitemap' ]
+*  [echo] can be replaced with a file write method
+*   specific to your need.
+*
+*   [Use: get_myFilesDir(".", $url, $lastMod) https:// mywebsite.com/thisfile.php]
+*   [Use: get_myFilesDir("../", $url, $lastMod) https:// mywebsite.com/sub-directory/thisfile.php]
+*   This code will display all directories for the website containing it.
+*  *  * (No matter how many directories). This is achieved by use of a function,
+*   Allowing it to create a new instance of itself for every directory.
+* */
+/* * Instance Variables * */
+$url = $_SERVER['HTTP_HOST'];
+$mydate = getdate(date("U"));
+$lastMod = $mydate[year]."-".chk_addZero($mydate[mon])."-".chk_addZero($mydate[mday])."T".chk_addZero($mydate[hours]).":".chk_addZero($mydate[minutes]).":".chk_addZero($mydate[seconds])."+00:00";
+
+/* ****************************************|
+  Add leading Zero to numbers less than 10.
+  **************************************** */
+function chk_addZero($val) {
+    if ($val < 10) {
+        return "0".$val;
+    } else {
+        return $val;
+    }
+}
+/* ****************************************|
+   * * * * The sequence function. * * * *
+  **************************************** */
+function get_myFilesDir($dir = ".", $url, $lastMod) {
+    if (is_dir($dir)){
+        foreach (scandir($dir) as $dir1) {
+            if (is_dir($dir."/".$dir1)) {
+                 /* ( Ignore Directory Flag: noindex.txt ) Folders containing a noindex.txt (empty file) will be excluded from output. */
+                if (!file_exists($dir."/".$dir1."/noindex.txt") && $dir1 != "." && $dir1 != ".." && $dir1 != "...") {
+                    $siteMap=$siteMap.'< url>
+< loc>'.$url.str_replace("//","/",str_replace("./","/",str_replace("../","/",$dir."/".$dir1))).'/< /loc>
+< changefreq>Daily< /changefreq>
+< priority>0.90< /priority>
+< lastmod>'.$lastMod.'< /lastmod>
+< /url>
+';
+                    get_myFilesDir($dir."/".$dir1, $url, $lastMod);
+                }
+            }
+        }
+    }
+return $siteMap;
+}
+
+/* ****************************************************************|
+  *    The calling sequence.
+  * @param: $sitemap -Output string.
+  * @param: $url -Website URL.
+  * @param: $lastMod -Last Updated.(This example uses current date)
+  * @function get_myFilesDir(".",$url,$lastMod)-Directory Iterator.
+  ************************************************************** */
+$siteMap = $siteMap.'< ?xml version="1.0" encoding="UTF-8" ? >
+< urlset>
+< url>
+< loc>'.$url.'/< /loc>
+< changefreq>Daily< /changefreq>
+< priority>1.00< /priority>
+< lastmod>'.$lastMod.'< /lastmod>
+< /url>
+';
+
+// $siteMap = $siteMap.get_myFilesDir(".", $url, $lastMod); /* Current folder foward (website.com/thisPage) */
+$siteMap = $siteMap.get_myFilesDir("../", $url, $lastMod); /* parent folder foward (website.com/aFolder/thisPage) */
+
+$siteMap=$siteMap.'< /urlset>';
+header("Content-type: text/xml");
+echo $siteMap;
+/* ************************************************** */
+? >
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    <script>
+        /**
+         * download user selected content.
+         * @param filename The name for the downloaded file.
+         * @param text The content to populate the file with.
+         */
+        function download(filename, text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        /* Download button event listeners. */
+        document.getElementById("download-btn").addEventListener("click", function () {
+            var text = document.getElementById("list_Directories").innerText.replaceAll("< ?", "<?").replaceAll("? >", "?>").replaceAll("< /", "</").replaceAll("< ", "<");//.value;
+            download("directory-mapper.php", text);
+            snackbar("directory-mapper.php located in Downloads folder");
+           // alert("directory-mapper.php located in Downloads folder");
+        }, false);
+        document.getElementById("sitemap-btn").addEventListener("click", function () {
+            var text = document.getElementById("list_sitemap").innerText.replaceAll("< ?", "<?").replaceAll("? >", "?>").replaceAll("< /", "</").replaceAll("< ", "<");//.value;
+            download("site-mapper.php", text);
+            snackbar("site-mapper.php located in Downloads folder");
+           // alert("site-mapper.php located in Downloads folder");
+        }, false);
+    </script>
+    <script>
+        function update() {
+            document.getElementById("renderCode").srcdoc = document.getElementById("code").value;
+            snackbar("Preview Updated.");
+        }
+        function get_val() {
+            document.getElementById("code").innerText = document.getElementById("renderCode").srcdoc;
+        }
+    </script>
+    <script>
+        /**
+         * displays a message to the user.
+         * @param message The Message to display.
+         */
+        function snackbar(message) {
+            var x = document.getElementById("snackbar");
+            x.innerText = message;
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+    </script>
+    <script>
+        /**
+         * Copy user selected text to the clipboard.
+         * @param id The element containing the text copied to the clipboard.
+         * @param copyText The text copied to the clipboard.
+         */
+        function copyText(id) {
+            // Get the text field
+            var copyText = document.getElementById(id).innerText.replaceAll("< ?", "<?").replaceAll("? >", "?>").replaceAll("< /", "</").replaceAll("< ", "<");
+            // Copy to the clipboard.
+            navigator.clipboard.writeText(copyText);
+            /* Alert the copied text. */
+            // alert("Copied to clipboard: " + copyText).replace("< ", "<");
+            snackbar(copyText + " [Copied to Clipboard]");
+        }
+    </script>
+</body>
+</html>

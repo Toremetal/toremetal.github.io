@@ -1,0 +1,3054 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>&#8482;T&#169;ReMeTaL - html Designer</title>
+    <link rel="canonical" href="html-designer">
+    <meta property="og:url" content="html-designer">
+    <meta property="og:title" content="&#8482;T&#169;ReMeTaL - html-designer">
+    <meta itemprop="url" content="html-designer">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0, user-scalable=1" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="/img/banner1200x630.png" />
+    <meta property="og:type" content="website" />
+    <meta itemprop="thumbnailUrl" content="/img/favicon.png" />
+    <meta itemprop="image" content="/img/favicon.png" />
+    <meta itemprop="imageUrl" content="/img/favicon.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/img/logo.png" type="image/png" />
+    <link rel="icon" href="/img/logo.webp" type="image/webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* Tool-tip Pop up. */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 150%;
+                left: 50%;
+                margin-left: -60px;
+            }
+
+                .tooltip .tooltiptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: black transparent transparent transparent;
+                }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+        /* End Tool-tip */
+        .mask1 {
+            -webkit-mask-image: url(/favicon.png);
+            mask-image: url(favicon.png);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+        }
+
+        /* Page Styles */
+        .designer {
+            background-color: black;
+            font-family: 'Source Code Pro', monospace;
+            color: black;
+        }
+
+            .designer h1 {
+                font-weight: bold;
+                text-align: center;
+                color: #146cd8;
+                text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+            }
+
+            .designer h2 {
+                text-align: center;
+                color: #146cd8;
+                text-shadow: 0.5px 0.5px 0.5px rgba(125,0,0,0.91);
+            }
+
+            .designer h3 {
+                color: #146cd8;
+                text-shadow: 0.5px 0.5px 0.5px red;
+            }
+
+            .designer i {
+                cursor: pointer;
+                color: chocolate;
+            }
+
+            .designer label {
+                font-size: larger;
+                color: #ff2f00;
+                text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+            }
+
+            .designer input[type=button] {
+                font-family: 'Source Code Pro', monospace;
+                box-shadow: 2px 2px 2px rgba(0,0,0,.31);
+                color: darkred;
+                text-shadow: 0.5px 0.5px 0.5px mediumblue;
+                margin-left: 10px;
+            }
+
+            .designer .download_button {
+            }
+
+            .designer button {
+                font-family: 'Source Code Pro', monospace;
+                box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+                color: mediumblue;
+                text-shadow: 0.5px 0.5px 0.5px darkred;
+            }
+
+            .designer .fullsrceen {
+                height: 89%; /* height: 77%; */
+                margin: unset;
+                z-index: 1;
+                position: fixed;
+                top: 2px;
+                left: 2px;
+                right: 2px;
+                bottom: 1em;
+                overflow-x: hidden;
+                padding: unset;
+                background-color: cadetblue;
+            }
+
+
+            .designer .bottom {
+                font-family: 'Source Code Pro', monospace;
+                height: 7%; /* height: 18%; */
+                width: 97.2%;
+                font-size: 14px;
+                position: fixed;
+                z-index: 1;
+                bottom: 0;
+                overflow-x: scroll;
+                padding: 0 14px 10px;
+                scroll-behavior: smooth;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                line-height: 22px;
+                text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+                border-radius: 4px;
+            }
+
+                .designer .bottom:hover {
+                    background-color: black;
+                    height: 60%;
+                    z-index: 100;
+                }
+
+            .designer .centered img {
+                width: 150px;
+                border-radius: 50%;
+            }
+
+            .designer .code {
+                margin: 0;
+                padding: 4px;
+                text-align: left;
+                text-decoration: unset;
+                font-family: 'Source Code Pro', monospace;
+                box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+                /* background-color: #ffffff99; */
+                background-color: black;
+                /* color: mediumblue; */
+                color: chocolate;
+                text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+                border-radius: 4px;
+                box-sizing: border-box;
+                box-shadow: 1px 2px 5px rgba(0,0,0,0.41);
+                border: 1px solid rgb(177, 176, 176);
+            }
+
+            .designer .codeheader-code {
+                font-family: 'Source Code Pro', monospace;
+                font-size: small;
+                padding-left: 6px;
+                padding-right: 6px;
+                box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+                /* background-color: #ffffff99; */
+                background-color: rgba(0,0,0,0.61);
+                /* color: mediumblue; */
+                border-radius: 4px;
+                box-sizing: border-box;
+                box-shadow: 1px 2px 5px rgba(0,0,0,0.51);
+                border: 1px solid rgb(177, 176, 176);
+                color: chocolate;
+                text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+            }
+            .designer .codeheader {
+                font-family: 'Source Code Pro', monospace;
+                font-size: medium;
+                padding-left: 6px;
+                padding-right: 6px;
+                box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+                /* background-color: #ffffff99; */
+                background-color: rgba(0,0,0,0.61);
+                /* color: mediumblue; */
+                border-radius: 4px;
+                box-sizing: border-box;
+                box-shadow: 1px 2px 5px rgba(0,0,0,0.51);
+                border: 1px solid rgb(177, 176, 176);
+            }
+
+            .designer .codeheader_label {
+                margin-left: -1em;
+            }
+
+            .designer .pheader {
+                position: absolute;
+                font-family: 'Source Code Pro', monospace;
+                font-size: medium;
+                padding: 0 6px;
+                box-shadow: 2px 2px 2px rgba(0,0,0,.31) inset;
+                background-color: rgba(0,0,0,0.11);
+                /* color: mediumblue; */
+                border-radius: 4px;
+                box-sizing: border-box;
+                box-shadow: 1px 2px 5px rgba(0,0,0,0.51);
+                border: 1px solid rgb(177, 176, 176);
+                top: 10px;
+                left: 10px;
+            }
+
+            .designer .renderCode {
+                min-height: 256px;
+                height: 88%;
+                width: 100%;
+                padding: unset;
+                text-align: unset;
+                text-decoration: unset;
+                border: none;
+            }
+
+            .designer .f_centered {
+                text-align: center;
+                margin: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: dotted 2px red;
+            }
+
+        #mydiv {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 9;
+        }
+
+        #mydivheader {
+            cursor: move;
+            z-index: 10;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.31) inset;
+            /* background-color: #ffffff99; */
+            background-color: rgba(0,0,0,0.61);
+            /* color: mediumblue; */
+            border-radius: 4px;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.51);
+            border: 1px solid rgb(177, 176, 176);
+        }
+
+
+
+
+        .designer .split {
+            height: 89%; /* height: 77%; */
+            width: 49.2%;
+            margin-left: 0.5%;
+            margin-right: 0.5%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .designer .left {
+            left: 0;
+            background-color: #808080;
+        }
+
+        .designer .right {
+            right: 0;
+            background-color: cadetblue;
+        }
+
+        .designer .r_centered {
+            position: absolute;
+            width: 98%;
+            height: 98%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-51%, -51%);
+            text-align: center;
+        }
+
+        .designer .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+
+
+
+
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+            #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 160px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 4px 6px;
+            border-radius: 5px;
+            border: 2px groove grey;
+            font-size: 14px;
+            font-stretch: ultra-condensed;
+            font-weight: bold;
+            z-index: 99999;
+        }
+
+        .dropdown-content0 {
+            display: none;
+            position: absolute;
+            left: 4px;
+            bottom: 160px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 4px 6px;
+            border-radius: 5px;
+            border: 2px groove grey;
+            font-size: 14px;
+            font-stretch: ultra-condensed;
+            font-weight: bold;
+            z-index: 99999;
+        }
+
+        .dropdown-content1 {
+            display: none;
+            position: absolute;
+            font-size: 12px;
+            font-stretch: ultra-condensed;
+            font-weight: bold;
+            margin-left: -200px;
+            top: 0.01em;
+            background-color: #f9f9f9;
+            min-width: 512px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 4px 6px;
+            border-radius: 5px;
+            border: 2px groove grey;
+            z-index: 9999;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content0 {
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content1 {
+            display: block;
+        }
+
+        .showhelp {
+            position: absolute;
+            top: -22px;
+            left: -26px;
+            border-radius: 10px;
+            padding: 3px;
+        }
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 4px 0 0 4px;
+            position: fixed;
+            left: 8px;
+            right: 26px;
+        }
+
+            /* Style the buttons inside the tab */
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                margin-left: 4px;
+                padding: 14px 16px;
+                transition: 0.3s;
+                font-size: 17px;
+                /* top left */
+                border-start-start-radius: 5px;
+                /* top right */
+                border-start-end-radius: 15px;
+                /* bootom right */
+                border-end-end-radius: 10px;
+                /* bottom left */
+                border-end-start-radius: 20px;
+            }
+
+                /* Change background color of buttons on hover */
+                .tab button:hover {
+                    background-color: #ddd;
+                }
+
+                /* Create an active/current tablink class */
+                .tab button.active {
+                    background-color: #ccc;
+                }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            margin-top: 1px;
+            padding: 3em 12px 6px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+<body class="designer" onload="get_val()">
+
+    <!--<div id="left-side" class="split left">
+        <h1>Html-Page Designer</h1>
+        <div class="centered">
+
+
+
+            <h1>Draggable Element</h1>
+            <p>Click and hold the mouse button down while moving</p>
+            <div id="mydiv">
+                <div class="dropdown">
+                    <div class="dropdown-content1">
+                        <p>
+                            <h3>&copy;&trade;&Tau;&copy;&real;&egrave;&Mu;&egrave;&Tau;&aacute;&lfloor;</h3>
+                            <ol style="text-align:left;">
+                                <li>Design your page using the < Source Code /> box.</li>
+                                &nbsp;(click to) copy code snippets & paste where needed.
+                                <li>Use the Update Preview btn to view your changes.</li>
+                                &nbsp;[* Optional]
+                                <li>* Enter a filename to be used for the downloaded source code.</li>
+                                <li>Download your file.</li>
+                            </ol>
+                        </p>
+                    </div>
+                    <span><button class="showhelp" onclick='snackbar("Click an Option to copy it to the clipboard.")'>Show Help</button></span>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <p>Optional filename!</p>
+                    </div>
+                    <label for="fileName">(Optional) File Name</label>
+                    <br />
+                    <span><input type="text" id="fileName" name="fileName" placeholder="file-name.type (ex. file.html)" /></span>
+
+                </div>
+                <br />
+                <div class="tooltip">
+                    <input type="button" id="download-btn" value="Download code file" />
+                    <span class="tooltiptext">Download source code to file!</span>
+                </div>
+                <br />
+                <br />
+                <form>
+
+                    <div class="tooltip">
+                        <div id="mydivheader" title="Click & hold to move Me"><label for="code" style="margin-left:-12em;"><code class="codeheader">< Source Code /></code></label></div>
+                        <span class="tooltiptext">Click & hold to move Me.</span>
+                    </div>
+                    <br /><code><textarea id="code" class="code" rows="15" cols="50"></textarea></code>
+
+                    <div class="tooltip">
+                        <input type="button" id="barCode" name="barCode" value="Run Code" onclick="update()" />
+                        <span class="tooltiptext">Preview (run) Code.</span>
+                    </div>
+                </form>
+            </div>
+            <script>
+                function download(filename, text) {
+                    var element = document.createElement('a');
+                    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                    element.setAttribute('download', filename);
+
+                    element.style.display = 'none';
+                    document.body.appendChild(element);
+
+                    element.click();
+
+                    document.body.removeChild(element);
+                }
+
+                // Start file download.
+                document.getElementById("download-btn").addEventListener("click", function () {
+                    var filename = document.getElementById("fileName").value;
+                    var text = document.getElementById("code").value;
+                    if (filename != "") {
+                        download(filename, text);
+                        snackbar(filename + " located in Downloads folder");
+                        alert(filename + " located in Downloads folder");
+                    } else {
+                        download("Designer_Page.html", text);
+                        snackbar("Designer_Page.html located in Downloads folder");
+                        alert("Designer_Page.html located in Downloads folder");
+                    }
+                }, false);
+            </script>
+
+        </div>
+    </div>-->
+
+    <div id="right-side" class="fullsrceen">
+        <div class="f_centered">
+            <!--<img src="img_avatar.png" alt="Avatar man">-->
+            <div class="pheader"><h2>Html-Editor</h2></div>
+            <iframe id="renderCode" class="renderCode" srcdoc='<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><div style="margin:auto;max-width:256px;padding:6px;text-align:center;background-color: white; border-radius: 5px;border: solid 1px #ccc;box-shadow: 1px 2px 5px rgba(0,0,0,.31);text-shadow: 1px 1px rgba(0, 123, 255, 0.04);">            <h1>Example</h1>    <label for="search">Search with icon submit button.</label><br />            <input size="12" type="search" id="search" name="search" placeholder="Search for book" /><button onclick="changeTxtVal()" type="submit"><i class="fa fa-search"></i></button>  <form>            <label for="title">Data List</label>    <br /><input list="titles" name="title" id="title" placeholder="Select a book" />    <datalist id="titles">      <option value="book 1">      <option value="book 2">      <option value="book 3">      <option value="book 4">      <option value="book 5">      <option value="book 6">    </datalist><br />  <label for="options">Opt Groups:</label>            <select name="options" id="options">            <optgroup label="Category 1">            <option value="book 1">book 1</option>            <option value="book 2">book 2</option>            </optgroup>            <optgroup label="Category 2">            <option value="book 3">book 3</option>            <option value="book 4">book 4</option>            </optgroup>            </select>    <br />    <br /><label for="radio_sample">Label for radio </label><input type="radio" id="radio_sample" name="radio_sample" checked />    <br />            </form>            <label for="submit">Input Submit button </label><input type="submit" id="submit" name="submit" value="Submit" onclick="checkRadioBtn()" />    <br />            <script>            function checkRadioBtn() {            if (document.getElementById("radio_sample").checked) { document.getElementById("radio_sample").checked = false; } else { document.getElementById("radio_sample").checked = true; }            }            function changeTxtVal() {            let searchVal = document.getElementById("search").value;            if (searchVal == "book 1" || searchVal == "book 2" || searchVal == "book 3" || searchVal == "book 4" || searchVal == "book 5" || searchVal == "book 6") {            document.getElementById("title").value = searchVal;            } else { document.getElementById("title").value = "Not Found"; }            }            </script></div>'>
+            </iframe>
+            <div id="mydiv">
+                <form>
+                    <div id="mydivheader" title="Click & hold to move Me">
+                        <div class="dropdown">
+                            <div class="dropdown-content1">
+                                <p>
+                                    <h3>&copy;&trade;&Tau;&copy;&real;&egrave;&Mu;&egrave;&Tau;&aacute;&lfloor;</h3>
+                                    <ol style="text-align:left;">
+&nbsp;[<i style="color:red;cursor:default;">*</i><sup><sub>Optional</sub></sup>]
+                                        <li><label for="inputfile"><i style="color:red;cursor:default;">*</i>Import a CodeFile</label> <input type="file" id="inputfile" name="inputfile" /></li>
+                                        <li>
+                                            Design your page using the 
+<label for="code" title="Click to Select"><code class="codeheader-code">
+<strong><sup><sub>&#8249;</sub></sup></strong><sub><sup>Source Code</sup></sub><strong><sub><sup>&#47;</sup></sub><sup><sub>&#8250;</sub></sup></strong>
+</code></label> box.<br />
+                                            &nbsp;&nbsp;Auto insert tag snippets when clicked with markers.
+                                            <ul>
+                                                <li>
+                                                    <sup title="Click-Me to copy" id="seMarker" onclick="copyText('seMarker')" style="cursor:pointer;color:chocolate">[m][e]</sup> Use <sup id="startMarker" title="Click-Me to copy" onclick="copyText('startMarker')" style="cursor:pointer;color:chocolate">[m]</sup> for start tags & <sup id="endMarker" title="Click-Me to copy" onclick="copyText('endMarker')" style="cursor:pointer;color:chocolate">[e]</sup> for end tags
+                                                </li>
+                                                <li>
+                                                    Add markers to the source code to mark where snippets go.
+                                                </li>
+                                                <li>
+                                                    Click the snippet you want the markers replaced with.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        &nbsp;&nbsp;or (click to) copy code snippets & paste where needed.
+                                        <li>Use the <label for="barCode" style="cursor:pointer;" title="Click to Run Code"><sup><sub style="color:blue;padding:1px 2px;background-color: whitesmoke; border-radius: 5px;
+ border: solid 1px #ccc; box-shadow: 1px 2px 5px rgba(0,0,0,0.31);
+ text-shadow: 1px 1px 1px darkred;">Run Code</sub></sup></label> button to view your changes.</li>
+                                        <li title="Default file name (Designer_Page.html)"><i style="color:red;cursor:default;">*</i> Enter a filename to be used for the downloaded source code.</li>
+                                        <li>Save/Download your file.</li>
+                                    </ol>
+                                </p>
+
+                    
+    <script type="text/javascript">
+        document.getElementById('inputfile')
+            .addEventListener('change', function() {
+              
+            var fr=new FileReader();
+            fr.onload=function(){
+                document.getElementById('code')
+                        .textContent=fr.result;
+            }
+              
+            fr.readAsText(this.files[0]);
+        })
+    </script>
+                            </div>
+                            <span><button class="showhelp" type="button" onclick='snackbar("Click an Option to copy it to the clipboard.")'><bold>&#10068;</bold></button></span>
+                        </div>
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <p>Optional filename!</p>
+                            </div>
+                            <label for="fileName"><sup><sub>(Optional) File Name-></sub></sup></label>
+                            <span><input type="text" id="fileName" name="fileName" placeholder="file-name.type (ex. file.html)" /></span>
+                        </div>
+                        <br />
+                        <div class="tooltip">
+                            <label for="code" class="codeheader_label"><code class="codeheader"><strong>&#8249;</strong><sub><sup>Source Code</sup></sub><strong><sub><sup>&#47;</sup></sub>&#8250;</strong></code></label>
+                            <span class="tooltiptext">Click & hold to move Me.</span>
+                        </div>
+                        <div class="tooltip">
+                            <input type="button" id="barCode" name="barCode" value="Run Code" onclick="update()" />
+                            <span class="tooltiptext">Preview (run) Code.</span>
+                        </div>
+                        <div class="tooltip">
+                            <input class="download_button" type="button" id="download-btn" value="Save to file" />
+                            <span class="tooltiptext">Download source code to file!</span>
+                        </div>
+                    </div>
+                    <code><textarea id="code" class="code" rows="15" cols="50"></textarea></code>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom">
+        <div id="snackbar">Copied to Clipboard.</div>
+        <script>
+            function download(filename, text) {
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                element.setAttribute('download', filename);
+
+                element.style.display = 'none';
+                document.body.appendChild(element);
+
+                element.click();
+
+                document.body.removeChild(element);
+            }
+
+            // Start file download.
+            document.getElementById("download-btn").addEventListener("click", function () {
+                var filename = document.getElementById("fileName").value;
+                var text = document.getElementById("code").value;
+                if (filename != "") {
+                    download(filename, text);
+                    snackbar(filename + " located in Downloads folder");
+                    alert(filename + " located in Downloads folder");
+                } else {
+                    download("Designer_Page.html", text);
+                    snackbar("Designer_Page.html located in Downloads folder");
+                    alert("Designer_Page.html located in Downloads folder");
+                }
+            }, false);
+        </script>
+        <script>
+            function update() {
+                document.getElementById("renderCode").srcdoc = document.getElementById("code").value;
+                snackbar("Preview Updated.");
+            }
+            function get_val() {
+                document.getElementById("code").innerText = document.getElementById("renderCode").srcdoc;
+            }
+        </script>
+        <script>
+            /**
+             * displays a message to the user.
+             * @param message The Message to display.
+             */
+            function snackbar(message) {
+                var x = document.getElementById("snackbar");
+                x.innerText = message;
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+            }
+        </script>
+        <script>
+            function copyText(id) {
+                // Get the text field
+                var copyText = document.getElementById(id).innerText;
+                // Select the text field
+                //copyText.select();
+                //copyText.setSelectionRange(0, 99999); // For mobile devices
+                // Copy the text inside the text field
+                if (copyText == "[m]" || copyText == "[e]" || copyText == "[m][e]") {
+                } else {
+                    endcopyText = copyText.replaceAll("< ", "</")
+                    copyText = copyText.replaceAll("< ", "<")
+                    netxt = document.getElementById("code").value;
+                    netxt = netxt.replaceAll("[m]", copyText);
+                    netxt = netxt.replaceAll("[e]", endcopyText);
+                    //alert(copyText)
+                    document.getElementById("code").value = netxt;//document.getElementById("code").value.replaceAll("[m]", copyText.replaceAll("< ", "<"));
+                }
+                navigator.clipboard.writeText(copyText);//.replaceAll("< ", "<"));
+
+                /* Alert the copied text. */
+                // alert("Copied to clipboard: " + copyText);.replace("< ", "<")
+                snackbar(copyText + " [Copied to Clipboard]");
+            }
+        </script>
+        <script>
+            dragElement(document.getElementById("mydiv"));
+            function dragElement(elmnt) {
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                if (document.getElementById(elmnt.id + "header")) {
+                    document.getElementById(elmnt.id + "header").onmousedown =
+                        dragMouseDown;
+                } else {
+                    elmnt.onmousedown = dragMouseDown;
+                }
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    document.onmousemove = elementDrag;
+                }
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+                function closeDragElement() {
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+        </script>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')">Tags</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Form input options</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Examples</button>
+            <button class="tablinks" onclick="openCity(event, 'NavMenus')">NavMenus</button>
+            <button class="tablinks" onclick="openCity(event, 'CSS')">CSS Style</button>
+        </div>
+        <div id="London" class="tabcontent" style="display:block;">
+            <h2 style="width: 100%; text-align: left; color: #146cd8; text-shadow: 0.5px 0.5px 0.5px grey;">Html Options</h2>
+            <p style="width: 100%;text-align:left;">
+                [<i title="Click-Me to copy" id="c05" onclick="copyText('c05')">id=""</i>]
+                [<i title="Click-Me to copy" id="c03" onclick="copyText('c03')">name=""</i>]
+                [<i title="Click-Me to copy" id="c00" onclick="copyText('c00')">placeholder=""</i>]
+                [<i title="Click-Me to copy" id="c01" onclick="copyText('c01')">value=""</i>]
+                [<i title="Click-Me to copy" id="c02" onclick="copyText('c02')">title=""</i>]
+                [<i title="Click-Me to copy" id="c04" onclick="copyText('c04')">style=""</i>]
+                [<i title="Click-Me to copy" id="c06" onclick="copyText('c06')">class=""</i>]
+                [<i title="Click-Me to copy" id="c10" onclick="copyText('c10')">< div>< /div></i>]
+                [<i title="Click-Me to copy" id="c11" onclick="copyText('c11')">< a href="">< /a></i>]
+                <br />
+                [<i title="Click-Me to copy" id="c12" onclick="copyText('c12')">< iframe src="" srcdoc="">< /iframe></i>]
+                [<i title="Click-Me to copy" id="c07" onclick="copyText('c07')">innerHTML=""</i>]
+                [<i title="Click-Me to copy" id="c08" onclick="copyText('c08')">innerText=""</i>]
+                [<i title="Click-Me to copy" id="c09" onclick="copyText('c09')">document.getElementById(id)</i>]
+                [<i title="Click-Me to copy" id="s00" onclick="copyText('s00')">< script> function myFunction() {}< /script></i>]
+
+            </p>
+            <p style="width:100%;text-align:left;">
+                <h3>Html <sup>txt</sup> <mark>enhancers</mark></h3>
+                <i title="Click-Me to copy" id="s326" onclick='copyText("s326")'>< b></i> - Bold text.
+                <br /><i title="Click-Me to copy" id="s327" onclick='copyText("s327")'>< strong></i> - Important text.
+                <br /><i title="Click-Me to copy" id="s328" onclick='copyText("s328")'>< i></i> - Italic text.
+                <br /><i title="Click-Me to copy" id="s329" onclick='copyText("s329")'>< em></i> - Emphasized text.
+                <br /><i title="Click-Me to copy" id="s330" onclick='copyText("s330")'>< mark></i> - Marked text.
+                <br /><i title="Click-Me to copy" id="s331" onclick='copyText("s331")'>< small></i> - Smaller text.
+                <br /><i title="Click-Me to copy" id="s332" onclick='copyText("s332")'>< del></i> - Deleted text.
+                <br /><i title="Click-Me to copy" id="s333" onclick='copyText("s333")'>< ins></i> - Inserted text.
+                <br /><i title="Click-Me to copy" id="s334" onclick='copyText("s334")'>< sub></i> - Subscript text.
+                <br /><i title="Click-Me to copy" id="s335" onclick='copyText("s335")'>< sup></i> - Superscript text.
+                <h3>Html <sub>pg</sub> <sup>tags</sup> (byType)</h3>
+                <i title="Click-Me to copy" id="s337" onclick='copyText("s337")'>< !DOCTYPE></i> 	Defines the document type.
+                <br /><i title="Click-Me to copy" id="s338" onclick='copyText("s338")'>< html></i>	Defines an HTML document.
+                <br /><i title="Click-Me to copy" id="s339" onclick='copyText("s339")'>< head></i>	Contains metadata/information for the document.
+                <br /><i title="Click-Me to copy" id="s340" onclick='copyText("s340")'>< title></i>	Defines a title for the document.
+                <br /><i title="Click-Me to copy" id="s341" onclick='copyText("s341")'>< body></i>	Defines the document's body.
+                <br /><i title="Click-Me to copy" id="s342a" onclick='copyText("s342a")'>< h1></i>	HTML headings.
+                <br /><i title="Click-Me to copy" id="s342b" onclick='copyText("s342b")'>< h2></i>	..
+                <br /><i title="Click-Me to copy" id="s342c" onclick='copyText("s342c")'>< h3></i>	..
+                <br /><i title="Click-Me to copy" id="s342d" onclick='copyText("s342d")'>< h4></i>	..
+                <br /><i title="Click-Me to copy" id="s342e" onclick='copyText("s342e")'>< h5></i>	..
+                <br /><i title="Click-Me to copy" id="s342f" onclick='copyText("s342f")'>< h6></i>	..
+                <br /><i title="Click-Me to copy" id="s343" onclick='copyText("s343")'>< p></i>	Defines a paragraph.
+                <br /><i title="Click-Me to copy" id="s344" onclick='copyText("s344")'>< br></i>	Inserts a single line break.
+                <br /><i title="Click-Me to copy" id="s345" onclick='copyText("s345")'>< hr></i>	Defines a thematic change in the content.
+                <br /><i title="Click-Me to copy" id="s346" onclick='copyText("s346")'>< !--...--></i>	Defines a comment.
+                <br />[Formatting]
+                <br /><i title="Click-Me to copy" id="s348" onclick='copyText("s348")'>< acronym></i>	Not supported in HTML5. Use < abbr> instead. Defines an acronym.
+                <br /><i title="Click-Me to copy" id="s349" onclick='copyText("s349")'>< abbr></i>	Defines an abbreviation or an acronym.
+                <br /><i title="Click-Me to copy" id="s350" onclick='copyText("s350")'>< address></i>	Defines contact information for the author/owner of a document/article.
+                <br /><i title="Click-Me to copy" id="s351" onclick='copyText("s351")'>< b></i>	Defines bold text.
+                <br /><i title="Click-Me to copy" id="s352" onclick='copyText("s352")'>< bdi></i>	Isolates a part of text that might be formatted in a different direction from other text outside it.
+                <br /><i title="Click-Me to copy" id="s353" onclick='copyText("s353")'>< bdo></i>	Overrides the current text direction.
+                <br /><i title="Click-Me to copy" id="s354" onclick='copyText("s354")'>< big></i>	Not supported in HTML5. Use CSS instead. Defines big text.
+                <br /><i title="Click-Me to copy" id="s355" onclick='copyText("s355")'>< blockquote></i>	Defines a section that is quoted from another source.
+                <br /><i title="Click-Me to copy" id="s356" onclick='copyText("s356")'>< center></i>	Not supported in HTML5. Use CSS instead. Defines centered text.
+                <br /><i title="Click-Me to copy" id="s357" onclick='copyText("s357")'>< cite></i>	Defines the title of a work.
+                <br /><i title="Click-Me to copy" id="s358" onclick='copyText("s358")'>< code></i>	Defines a piece of computer code.
+                <br /><i title="Click-Me to copy" id="s359" onclick='copyText("s359")'>< del></i>	Defines text that has been deleted from a document.
+                <br /><i title="Click-Me to copy" id="s360" onclick='copyText("s360")'>< dfn></i>	Specifies a term that is going to be defined within the content.
+                <br /><i title="Click-Me to copy" id="s361" onclick='copyText("s361")'>< em></i>	Defines emphasized text .
+                <br /><i title="Click-Me to copy" id="s362" onclick='copyText("s362")'>< font></i>	Not supported in HTML5. Use CSS instead. Defines font, color, and size for text.
+                <br /><i title="Click-Me to copy" id="s363" onclick='copyText("s363")'>< i></i>	Defines a part of text in an alternate voice or mood.
+                <br /><i title="Click-Me to copy" id="s364" onclick='copyText("s364")'>< ins></i>	Defines a text that has been inserted into a document.
+                <br /><i title="Click-Me to copy" id="s365" onclick='copyText("s365")'>< kbd></i>	Defines keyboard input.
+                <br /><i title="Click-Me to copy" id="s366" onclick='copyText("s366")'>< mark></i>	Defines marked/highlighted text.
+                <br /><i title="Click-Me to copy" id="s367" onclick='copyText("s367")'>< meter></i>	Defines a scalar measurement within a known range (a gauge).
+                <br /><i title="Click-Me to copy" id="s368" onclick='copyText("s368")'>< pre></i>	Defines preformatted text.
+                <br /><i title="Click-Me to copy" id="s369" onclick='copyText("s369")'>< progress></i>	Represents the progress of a task.
+                <br /><i title="Click-Me to copy" id="s370" onclick='copyText("s370")'>< q></i>	Defines a short quotation.
+                <br /><i title="Click-Me to copy" id="s371" onclick='copyText("s371")'>< rp></i>	Defines what to show in browsers that do not support ruby annotations.
+                <br /><i title="Click-Me to copy" id="s372" onclick='copyText("s372")'>< rt></i>	Defines an explanation/pronunciation of characters (for East Asian typography).
+                <br /><i title="Click-Me to copy" id="s373" onclick='copyText("s373")'>< ruby></i>	Defines a ruby annotation (for East Asian typography).
+                <br /><i title="Click-Me to copy" id="s374" onclick='copyText("s374")'>< s></i>	Defines text that is no longer correct.
+                <br /><i title="Click-Me to copy" id="s375" onclick='copyText("s375")'>< samp></i>	Defines sample output from a computer program.
+                <br /><i title="Click-Me to copy" id="s376" onclick='copyText("s376")'>< small></i>	Defines smaller text.
+                <br /><i title="Click-Me to copy" id="s377" onclick='copyText("s377")'>< strike></i>	Not supported in HTML5. Use < del> or < s> instead. Defines strikethrough text.
+                <br /><i title="Click-Me to copy" id="s378" onclick='copyText("s378")'>< strong></i>	Defines important text.
+                <br /><i title="Click-Me to copy" id="s379" onclick='copyText("s379")'>< sub></i>	Defines subscripted text.
+                <br /><i title="Click-Me to copy" id="s380" onclick='copyText("s380")'>< sup></i>	Defines superscripted text.
+                <br /><i title="Click-Me to copy" id="s381" onclick='copyText("s381")'>< template></i>	Defines a container for content that should be hidden when the page loads.
+                <br /><i title="Click-Me to copy" id="s382" onclick='copyText("s382")'>< time></i>	Defines a specific time (or datetime).
+                <br /><i title="Click-Me to copy" id="s383" onclick='copyText("s383")'>< tt></i>	Not supported in HTML5. Use CSS instead. Defines teletype text.
+                <br /><i title="Click-Me to copy" id="s384" onclick='copyText("s384")'>< u></i>	Defines some text that is unarticulated and styled differently from normal text.
+                <br /><i title="Click-Me to copy" id="s385" onclick='copyText("s385")'>< var></i>	Defines a variable.
+                <br /><i title="Click-Me to copy" id="s386" onclick='copyText("s386")'>< wbr></i>	Defines a possible line-break.
+                <br />[Forms and Input]
+                <br /><i title="Click-Me to copy" id="s388" onclick='copyText("s388")'>< form></i>	Defines an HTML form for user input.
+                <br /><i title="Click-Me to copy" id="s389" onclick='copyText("s389")'>< input></i>	Defines an input control.
+                <br /><i title="Click-Me to copy" id="s390" onclick='copyText("s390")'>< textarea></i>	Defines a multiline input control (text area).
+                <br /><i title="Click-Me to copy" id="s391" onclick='copyText("s391")'>< button></i>	Defines a clickable button.
+                <br /><i title="Click-Me to copy" id="s392" onclick='copyText("s392")'>< select></i>	Defines a drop-down list.
+                <br /><i title="Click-Me to copy" id="s393" onclick='copyText("s393")'>< optgroup></i>	Defines a group of related options in a drop-down list.
+                <br /><i title="Click-Me to copy" id="s394" onclick='copyText("s394")'>< option></i>	Defines an option in a drop-down list.
+                <br /><i title="Click-Me to copy" id="s395" onclick='copyText("s395")'>< label></i>	Defines a label for an < input> element.
+                <br /><i title="Click-Me to copy" id="s396" onclick='copyText("s396")'>< fieldset></i>	Groups related elements in a form.
+                <br /><i title="Click-Me to copy" id="s397" onclick='copyText("s397")'>< legend></i>	Defines a caption for a < fieldset> element.
+                <br /><i title="Click-Me to copy" id="s398" onclick='copyText("s398")'>< datalist></i>	Specifies a list of pre-defined options for input controls.
+                <br /><i title="Click-Me to copy" id="s399" onclick='copyText("s399")'>< output></i>	Defines the result of a calculation.
+                <br />[Frames]
+                <br /><i title="Click-Me to copy" id="s401" onclick='copyText("s401")'>< frame></i>	        Not supported in HTML5. Defines a window (a frame) in a frameset.
+                <br /><i title="Click-Me to copy" id="s402" onclick='copyText("s402")'>< frameset></i>	Not supported in HTML5. Defines a set of frames.
+                <br /><i title="Click-Me to copy" id="s403" onclick='copyText("s403")'>< noframes></i>	Not supported in HTML5. Defines an alternate content for users that do not support frames.
+                <br /><i title="Click-Me to copy" id="s404" onclick='copyText("s404")'>< iframe></i>	Defines an inline frame.
+                <br />[Images]
+                <br /><i title="Click-Me to copy" id="s406" onclick='copyText("s406")'>< img></i>	        Defines an image.
+                <br /><i title="Click-Me to copy" id="s407" onclick='copyText("s407")'>< map></i>	        Defines a client-side image map.
+                <br /><i title="Click-Me to copy" id="s408" onclick='copyText("s408")'>< area></i>	        Defines an area inside an image map.
+                <br /><i title="Click-Me to copy" id="s409" onclick='copyText("s409")'>< canvas></i>	Used to draw graphics, on the fly, via scripting (usually JavaScript).
+                <br /><i title="Click-Me to copy" id="s410" onclick='copyText("s410")'>< figcaption></i>	Defines a caption for a < figure> element.
+                <br /><i title="Click-Me to copy" id="s411" onclick='copyText("s411")'>< figure></i>	Specifies self-contained content.
+                <br /><i title="Click-Me to copy" id="s412" onclick='copyText("s412")'>< picture></i>	Defines a container for multiple image resources.
+                <br /><i title="Click-Me to copy" id="s413" onclick='copyText("s413")'>< svg></i>	        Defines a container for SVG graphics.
+                <br />[Audio / Video]
+                <br /><i title="Click-Me to copy" id="s415" onclick='copyText("s415")'>< audio></i>	        Defines sound content.
+                <br /><i title="Click-Me to copy" id="s416" onclick='copyText("s416")'>< source></i>	Defines multiple media resources for media elements (< video>, < audio> and < picture>).
+                <br /><i title="Click-Me to copy" id="s417" onclick='copyText("s417")'>< track></i>	        Defines text tracks for media elements (< video> and < audio>).
+                <br /><i title="Click-Me to copy" id="s418" onclick='copyText("s418")'>< video></i>	        Defines a video or movie.
+                <br />[Links]
+                <br /><i title="Click-Me to copy" id="s420" onclick='copyText("s420")'>< a></i>	        Defines a hyperlink.
+                <br /><i title="Click-Me to copy" id="s421" onclick='copyText("s421")'>< link></i>	Defines the relationship between a document and an external resource (most used to link to style sheets).
+                <br /><i title="Click-Me to copy" id="s422" onclick='copyText("s422")'>< nav></i>	Defines navigation links.
+                <br />[Lists]
+                <br /><i title="Click-Me to copy" id="s424" onclick='copyText("s424")'>< ul></i>	Defines an unordered list.
+                <br /><i title="Click-Me to copy" id="s425" onclick='copyText("s425")'>< ol></i>	Defines an ordered list.
+                <br /><i title="Click-Me to copy" id="s426" onclick='copyText("s426")'>< li></i>	Defines a list item.
+                <br /><i title="Click-Me to copy" id="s427" onclick='copyText("s427")'>< dir></i>	Not supported in HTML5. Use < ul> instead. Defines a directory list.
+                <br /><i title="Click-Me to copy" id="s428" onclick='copyText("s428")'>< dl></i>	Defines a description list.
+                <br /><i title="Click-Me to copy" id="s429" onclick='copyText("s429")'>< dt></i>	Defines a term/name in a description list.
+                <br /><i title="Click-Me to copy" id="s430" onclick='copyText("s430")'>< dd></i>	Defines a description of a term/name in a description list.
+                <br />[Tables]
+                <br /><i title="Click-Me to copy" id="s432" onclick='copyText("s432")'>< table></i>	Defines a table.
+                <br /><i title="Click-Me to copy" id="s433" onclick='copyText("s433")'>< caption></i>	Defines a table caption.
+                <br /><i title="Click-Me to copy" id="s434" onclick='copyText("s434")'>< th></i>	Defines a header cell in a table.
+                <br /><i title="Click-Me to copy" id="s435" onclick='copyText("s435")'>< tr></i>	Defines a row in a table.
+                <br /><i title="Click-Me to copy" id="s436" onclick='copyText("s436")'>< td></i>	Defines a cell in a table.
+                <br /><i title="Click-Me to copy" id="s437" onclick='copyText("s437")'>< thead></i>	Groups the header content in a table.
+                <br /><i title="Click-Me to copy" id="s438" onclick='copyText("s438")'>< tbody></i>	Groups the body content in a table.
+                <br /><i title="Click-Me to copy" id="s439" onclick='copyText("s439")'>< tfoot></i>	Groups the footer content in a table.
+                <br /><i title="Click-Me to copy" id="s440" onclick='copyText("s440")'>< col></i>	Specifies column properties for each column within a < colgroup> element.
+                <br /><i title="Click-Me to copy" id="s441" onclick='copyText("s441")'>< colgroup></i>	Specifies a group of one or more columns in a table for formatting.
+                <br />[Styles and Semantics]
+                <br /><i title="Click-Me to copy" id="s443" onclick='copyText("s443")'>< style></i>	Defines style information for a document.
+                <br /><i title="Click-Me to copy" id="s444" onclick='copyText("s444")'>< div></i>	Defines a section in a document.
+                <br /><i title="Click-Me to copy" id="s445" onclick='copyText("s445")'>< span></i>	Defines a section in a document.
+                <br /><i title="Click-Me to copy" id="s446" onclick='copyText("s446")'>< header></i>	Defines a header for a document or section.
+                <br /><i title="Click-Me to copy" id="s447" onclick='copyText("s447")'>< footer></i>	Defines a footer for a document or section.
+                <br /><i title="Click-Me to copy" id="s448" onclick='copyText("s448")'>< main></i>	Specifies the main content of a document.
+                <br /><i title="Click-Me to copy" id="s449" onclick='copyText("s449")'>< section></i>	Defines a section in a document.
+                <br /><i title="Click-Me to copy" id="s450" onclick='copyText("s450")'>< article></i>	Defines an article.
+                <br /><i title="Click-Me to copy" id="s451" onclick='copyText("s451")'>< aside></i>	Defines content aside from the page content.
+                <br /><i title="Click-Me to copy" id="s452" onclick='copyText("s452")'>< details></i>	Defines additional details that the user can view or hide.
+                <br /><i title="Click-Me to copy" id="s453" onclick='copyText("s453")'>< dialog></i>	Defines a dialog box or window.
+                <br /><i title="Click-Me to copy" id="s454" onclick='copyText("s454")'>< summary></i>	Defines a visible heading for a < details> element.
+                <br /><i title="Click-Me to copy" id="s455" onclick='copyText("s455")'>< data></i>	Adds a machine-readable translation of a given content.
+                <br />[Meta Info]
+                <br /><i title="Click-Me to copy" id="s457" onclick='copyText("s457")'>< head></i>	Defines information about the document.
+                <br /><i title="Click-Me to copy" id="s458" onclick='copyText("s458")'>< meta></i>	Defines metadata about an HTML document.
+                <br /><i title="Click-Me to copy" id="s459" onclick='copyText("s459")'>< base></i>	Specifies the base URL/target for all relative URLs in a document.
+                <br /><i title="Click-Me to copy" id="s460" onclick='copyText("s460")'>< basefont></i>	Not supported in HTML5. Use CSS instead. Specifies a default color, size, and font for all text in a document.
+                <br />[Programming]
+                <br /><i title="Click-Me to copy" id="s462" onclick='copyText("s462")'>< script></i>	Defines a client-side script.
+                <br /><i title="Click-Me to copy" id="s463" onclick='copyText("s463")'>< noscript></i>	Defines an alternate content for users that do not support client-side scripts.
+                <br /><i title="Click-Me to copy" id="s464" onclick='copyText("s464")'>< applet></i>	Not supported in HTML5. Use < embed> or < object> instead.. Defines an embedded applet.
+                <br /><i title="Click-Me to copy" id="s466" onclick='copyText("s466")'>< embed></i>	Defines a container for an external (non-HTML) application.
+                <br /><i title="Click-Me to copy" id="s467" onclick='copyText("s467")'>< object></i>	Defines an embedded object.
+                <br /><i title="Click-Me to copy" id="s468" onclick='copyText("s468")'>< param></i>	Defines a parameter for an object.
+
+                <h3>Html <sub>pg</sub> <sup>tags</sup> (alphabetical)</h3>
+                <i title="Click-Me to copy" id="s200" onclick='copyText("s200")'>< !--...--></i>	Defines a comment
+                <br /><i title="Click-Me to copy" id="s201" onclick='copyText("s201")'>< !DOCTYPE></i> 	Defines the document type
+                <br /><i title="Click-Me to copy" id="s202" onclick='copyText("s202")'>< a></i>	Defines a hyperlink
+                <br /><i title="Click-Me to copy" id="s203" onclick='copyText("s203")'>< abbr></i>	Defines an abbreviation or an acronym
+                <br /><i title="Click-Me to copy" id="s204" onclick='copyText("s204")'>< acronym></i>	Not supported in HTML5. Use < abbr> instead. Defines an acronym
+                <br /><i title="Click-Me to copy" id="s206" onclick='copyText("s206")'>< address></i>	Defines contact information for the author/owner of a document
+                <br /><i title="Click-Me to copy" id="s207" onclick='copyText("s207")'>< applet></i>	Not supported in HTML5. Use < embed> or < object> instead. Defines an embedded applet
+                <br /><i title="Click-Me to copy" id="s208" onclick='copyText("s208")'>< area></i>	Defines an area inside an image map
+                <br /><i title="Click-Me to copy" id="s209" onclick='copyText("s209")'>< article></i>	Defines an article
+                <br /><i title="Click-Me to copy" id="s210" onclick='copyText("s210")'>< aside></i>	Defines content aside from the page content
+                <br /><i title="Click-Me to copy" id="s211" onclick='copyText("s211")'>< audio></i>	Defines embedded sound content
+                <br /><i title="Click-Me to copy" id="s212" onclick='copyText("s212")'>< b></i>	Defines bold text
+                <br /><i title="Click-Me to copy" id="s213" onclick='copyText("s213")'>< base></i>	Specifies the base URL/target for all relative URLs in a document
+                <br /><i title="Click-Me to copy" id="s214" onclick='copyText("s214")'>< basefont></i>	Not supported in HTML5. Use CSS instead. Specifies a default color, size, and font for all text in a document
+                <br /><i title="Click-Me to copy" id="s216" onclick='copyText("s216")'>< bdi></i>	Isolates a part of text that might be formatted in a different direction from other text outside it
+                <br /><i title="Click-Me to copy" id="s217" onclick='copyText("s217")'>< bdo></i>	Overrides the current text direction
+                <br /><i title="Click-Me to copy" id="s218" onclick='copyText("s218")'>< big></i>	Not supported in HTML5. Use CSS instead. Defines big text
+                <br /><i title="Click-Me to copy" id="s219" onclick='copyText("s219")'>< blockquote></i>	Defines a section that is quoted from another source
+                <br /><i title="Click-Me to copy" id="s220" onclick='copyText("s220")'>< body></i>	Defines the document's body
+                <br /><i title="Click-Me to copy" id="s221" onclick='copyText("s221")'>< br></i>	Defines a single line break
+                <br /><i title="Click-Me to copy" id="s222" onclick='copyText("s222")'>< button></i>	Defines a clickable button
+                <br /><i title="Click-Me to copy" id="s223" onclick='copyText("s223")'>< canvas></i>	Used to draw graphics, on the fly, via scripting (usually JavaScript)
+                <br /><i title="Click-Me to copy" id="s224" onclick='copyText("s224")'>< caption></i>	Defines a table caption
+                <br /><i title="Click-Me to copy" id="s225" onclick='copyText("s225")'>< center></i>	Not supported in HTML5. Use CSS instead. Defines centered text
+                <br /><i title="Click-Me to copy" id="s226" onclick='copyText("s226")'>< cite></i>	Defines the title of a work
+                <br /><i title="Click-Me to copy" id="s227" onclick='copyText("s227")'>< code></i>	Defines a piece of computer code
+                <br /><i title="Click-Me to copy" id="s228" onclick='copyText("s228")'>< col></i>	Specifies column properties for each column within a < colgroup> element
+                <br /><i title="Click-Me to copy" id="s229" onclick='copyText("s229")'>< colgroup></i>	Specifies a group of one or more columns in a table for formatting
+                <br /><i title="Click-Me to copy" id="s230" onclick='copyText("s230")'>< data></i>	Adds a machine-readable translation of a given content
+                <br /><i title="Click-Me to copy" id="s231" onclick='copyText("s231")'>< datalist></i>	Specifies a list of pre-defined options for input controls
+                <br /><i title="Click-Me to copy" id="s232" onclick='copyText("s232")'>< dd></i>	Defines a description/value of a term in a description list
+                <br /><i title="Click-Me to copy" id="s233" onclick='copyText("s233")'>< del></i>	Defines text that has been deleted from a document
+                <br /><i title="Click-Me to copy" id="s234" onclick='copyText("s234")'>< details></i>	Defines additional details that the user can view or hide
+                <br /><i title="Click-Me to copy" id="s235" onclick='copyText("s235")'>< dfn></i>	Specifies a term that is going to be defined within the content
+                <br /><i title="Click-Me to copy" id="s236" onclick='copyText("s236")'>< dialog></i>	Defines a dialog box or window
+                <br /><i title="Click-Me to copy" id="s237" onclick='copyText("s237")'>< dir></i>	Not supported in HTML5. Use < ul> instead. Defines a directory list
+                <br /><i title="Click-Me to copy" id="s238" onclick='copyText("s238")'>< div></i>	Defines a section in a document
+                <br /><i title="Click-Me to copy" id="s239" onclick='copyText("s239")'>< dl></i>	Defines a description list
+                <br /><i title="Click-Me to copy" id="s240" onclick='copyText("s240")'>< dt></i>	Defines a term/name in a description list
+                <br /><i title="Click-Me to copy" id="s241" onclick='copyText("s241")'>< em></i>	Defines emphasized text
+                <br /><i title="Click-Me to copy" id="s242" onclick='copyText("s242")'>< embed></i>	Defines a container for an external application
+                <br /><i title="Click-Me to copy" id="s243" onclick='copyText("s243")'>< fieldset></i>	Groups related elements in a form
+                <br /><i title="Click-Me to copy" id="s244" onclick='copyText("s244")'>< figcaption></i>	Defines a caption for a < figure> element
+                <br /><i title="Click-Me to copy" id="s245" onclick='copyText("s245")'>< figure></i>	Specifies self-contained content
+                <br /><i title="Click-Me to copy" id="s246" onclick='copyText("s246")'>< font></i>	Not supported in HTML5. Use CSS instead. Defines font, color, and size for text
+                <br /><i title="Click-Me to copy" id="s247" onclick='copyText("s247")'>< footer></i>	Defines a footer for a document or section
+                <br /><i title="Click-Me to copy" id="s248" onclick='copyText("s248")'>< form></i>	Defines an HTML form for user input
+                <br /><i title="Click-Me to copy" id="s249" onclick='copyText("s249")'>< frame></i>	Not supported in HTML5. Defines a window (a frame) in a frameset
+                <br /><i title="Click-Me to copy" id="s250" onclick='copyText("s250")'>< frameset></i>	Not supported in HTML5. Defines a set of frames
+                <br /><i title="Click-Me to copy" id="s251" onclick='copyText("s251")'>< h1></i> Defines HTML headings
+                <br /><i title="Click-Me to copy" id="s252" onclick='copyText("s252")'>< h2></i>
+                <br /><i title="Click-Me to copy" id="s253" onclick='copyText("s253")'>< h3></i>
+                <br /><i title="Click-Me to copy" id="s254" onclick='copyText("s254")'>< h4></i>
+                <br /><i title="Click-Me to copy" id="s255" onclick='copyText("s255")'>< h5></i>
+                <br /><i title="Click-Me to copy" id="s256" onclick='copyText("s256")'>< h6></i>
+                <br /><i title="Click-Me to copy" id="s257" onclick='copyText("s257")'>< head></i>	Contains metadata/information for the document
+                <br /><i title="Click-Me to copy" id="s258" onclick='copyText("s258")'>< header></i>	Defines a header for a document or section
+                <br /><i title="Click-Me to copy" id="s259" onclick='copyText("s259")'>< hr></i>	Defines a thematic change in the content
+                <br /><i title="Click-Me to copy" id="s260" onclick='copyText("s260")'>< html></i>	Defines the root of an HTML document
+                <br /><i title="Click-Me to copy" id="s261" onclick='copyText("s261")'>< i></i>	Defines a part of text in an alternate voice or mood
+                <br /><i title="Click-Me to copy" id="s262" onclick='copyText("s262")'>< iframe></i>	Defines an inline frame
+                <br /><i title="Click-Me to copy" id="s263" onclick='copyText("s263")'>< img></i>	Defines an image
+                <br /><i title="Click-Me to copy" id="s264" onclick='copyText("s264")'>< input></i>	Defines an input control
+                <br /><i title="Click-Me to copy" id="s265" onclick='copyText("s265")'>< ins></i>	Defines a text that has been inserted into a document
+                <br /><i title="Click-Me to copy" id="s266" onclick='copyText("s266")'>< kbd></i>	Defines keyboard input
+                <br /><i title="Click-Me to copy" id="s267" onclick='copyText("s267")'>< label></i>	Defines a label for an < input> element
+                <br /><i title="Click-Me to copy" id="s268" onclick='copyText("s268")'>< legend></i>	Defines a caption for a < fieldset> element
+                <br /><i title="Click-Me to copy" id="s269" onclick='copyText("s269")'>< li></i>	Defines a list item
+                <br /><i title="Click-Me to copy" id="s270" onclick='copyText("s270")'>< link></i>	Defines the relationship between a document and an external resource (most used to link to style sheets)
+                <br /><i title="Click-Me to copy" id="s271" onclick='copyText("s271")'>< main></i>	Specifies the main content of a document
+                <br /><i title="Click-Me to copy" id="s272" onclick='copyText("s272")'>< map></i>	Defines an image map
+                <br /><i title="Click-Me to copy" id="s273" onclick='copyText("s273")'>< mark></i>	Defines marked/highlighted text
+                <br /><i title="Click-Me to copy" id="s274" onclick='copyText("s274")'>< meta></i>	Defines metadata about an HTML document
+                <br /><i title="Click-Me to copy" id="s275" onclick='copyText("s275")'>< meter></i>	Defines a scalar measurement within a known range (a gauge)
+                <br /><i title="Click-Me to copy" id="s276" onclick='copyText("s276")'>< nav></i>	Defines navigation links
+                <br /><i title="Click-Me to copy" id="s277" onclick='copyText("s277")'>< noframes></i>	Not supported in HTML5. Defines an alternate content for users that do not support frames
+                <br /><i title="Click-Me to copy" id="s278" onclick='copyText("s278")'>< noscript></i>	Defines an alternate content for users that do not support client-side scripts
+                <br /><i title="Click-Me to copy" id="s279" onclick='copyText("s279")'>< object></i>	Defines a container for an external application
+                <br /><i title="Click-Me to copy" id="s280" onclick='copyText("s280")'>< ol></i>	Defines an ordered list
+                <br /><i title="Click-Me to copy" id="s281" onclick='copyText("s281")'>< optgroup></i>	Defines a group of related options in a drop-down list
+                <br /><i title="Click-Me to copy" id="s282" onclick='copyText("s282")'>< option></i>	Defines an option in a drop-down list
+                <br /><i title="Click-Me to copy" id="s283" onclick='copyText("s283")'>< output></i>	Defines the result of a calculation
+                <br /><i title="Click-Me to copy" id="s284" onclick='copyText("s284")'>< p></i>	Defines a paragraph
+                <br /><i title="Click-Me to copy" id="s285" onclick='copyText("s285")'>< param></i>	Defines a parameter for an object
+                <br /><i title="Click-Me to copy" id="s286" onclick='copyText("s286")'>< picture></i>	Defines a container for multiple image resources
+                <br /><i title="Click-Me to copy" id="s287" onclick='copyText("s287")'>< pre></i>	Defines preformatted text
+                <br /><i title="Click-Me to copy" id="s288" onclick='copyText("s288")'>< progress></i>	Represents the progress of a task
+                <br /><i title="Click-Me to copy" id="s289" onclick='copyText("s289")'>< q></i>	Defines a short quotation
+                <br /><i title="Click-Me to copy" id="s290" onclick='copyText("s290")'>< rp></i>	Defines what to show in browsers that do not support ruby annotations
+                <br /><i title="Click-Me to copy" id="s291" onclick='copyText("s291")'>< rt></i>	Defines an explanation/pronunciation of characters (for East Asian typography)
+                <br /><i title="Click-Me to copy" id="s292" onclick='copyText("s292")'>< ruby></i>	Defines a ruby annotation (for East Asian typography)
+                <br /><i title="Click-Me to copy" id="s293" onclick='copyText("s293")'>< s></i>	Defines text that is no longer correct
+                <br /><i title="Click-Me to copy" id="s294" onclick='copyText("s294")'>< samp></i>	Defines sample output from a computer program
+                <br /><i title="Click-Me to copy" id="s295" onclick='copyText("s295")'>< script></i>	Defines a client-side script
+                <br /><i title="Click-Me to copy" id="s296" onclick='copyText("s296")'>< section></i>	Defines a section in a document
+                <br /><i title="Click-Me to copy" id="s297" onclick='copyText("s297")'>< select></i>	Defines a drop-down list
+                <br /><i title="Click-Me to copy" id="s298" onclick='copyText("s298")'>< small></i>	Defines smaller text
+                <br /><i title="Click-Me to copy" id="s299" onclick='copyText("s299")'>< source></i>	Defines multiple media resources for media elements (< video> and < audio>)
+                <br /><i title="Click-Me to copy" id="s300" onclick='copyText("s300")'>< span></i>	Defines a section in a document
+                <br /><i title="Click-Me to copy" id="s301" onclick='copyText("s301")'>< strike></i>	Not supported in HTML5. Use < del> or < s> instead. Defines strikethrough text
+                <br /><i title="Click-Me to copy" id="s302" onclick='copyText("s302")'>< strong></i>	Defines important text
+                <br /><i title="Click-Me to copy" id="s303" onclick='copyText("s303")'>< style></i>	Defines style information for a document
+                <br /><i title="Click-Me to copy" id="s304" onclick='copyText("s304")'>< sub></i>	Defines subscripted text
+                <br /><i title="Click-Me to copy" id="s305" onclick='copyText("s305")'>< summary></i>	Defines a visible heading for a < details> element
+                <br /><i title="Click-Me to copy" id="s306" onclick='copyText("s306")'>< sup></i>	Defines superscripted text
+                <br /><i title="Click-Me to copy" id="s307" onclick='copyText("s307")'>< svg></i>	Defines a container for SVG graphics
+                <br /><i title="Click-Me to copy" id="s308" onclick='copyText("s308")'>< table></i>	Defines a table
+                <br /><i title="Click-Me to copy" id="s309" onclick='copyText("s309")'>< tbody></i>	Groups the body content in a table
+                <br /><i title="Click-Me to copy" id="s310" onclick='copyText("s310")'>< td></i>	Defines a cell in a table
+                <br /><i title="Click-Me to copy" id="s311" onclick='copyText("s311")'>< template></i>	Defines a container for content that should be hidden when the page loads
+                <br /><i title="Click-Me to copy" id="s312" onclick='copyText("s312")'>< textarea></i>	Defines a multiline input control (text area)
+                <br /><i title="Click-Me to copy" id="s313" onclick='copyText("s313")'>< tfoot></i>	Groups the footer content in a table
+                <br /><i title="Click-Me to copy" id="s314" onclick='copyText("s314")'>< th></i>	Defines a header cell in a table
+                <br /><i title="Click-Me to copy" id="s315" onclick='copyText("s315")'>< thead></i>	Groups the header content in a table
+                <br /><i title="Click-Me to copy" id="s316" onclick='copyText("s316")'>< time></i>	Defines a specific time (or datetime)
+                <br /><i title="Click-Me to copy" id="s317" onclick='copyText("s317")'>< title></i>	Defines a title for the document
+                <br /><i title="Click-Me to copy" id="s318" onclick='copyText("s318")'>< tr></i>	Defines a row in a table
+                <br /><i title="Click-Me to copy" id="s319" onclick='copyText("s319")'>< track></i>	Defines text tracks for media elements (< video> and < audio>)
+                <br /><i title="Click-Me to copy" id="s320" onclick='copyText("s320")'>< tt></i>	Not supported in HTML5. Use CSS instead. Defines teletype text
+                <br /><i title="Click-Me to copy" id="s321" onclick='copyText("s321")'>< u></i>	Defines some text that is unarticulated and styled differently from normal text
+                <br /><i title="Click-Me to copy" id="s322" onclick='copyText("s322")'>< ul></i>	Defines an unordered list
+                <br /><i title="Click-Me to copy" id="s323" onclick='copyText("s323")'>< var></i>	Defines a variable
+                <br /><i title="Click-Me to copy" id="s324" onclick='copyText("s324")'>< video></i>	Defines embedded video content
+                <br /><i title="Click-Me to copy" id="s325" onclick='copyText("s325")'>< wbr></i>	Defines a possible line-break
+                <br />
+            </p>
+        </div>
+        <div id="Paris" class="tabcontent">
+            <p style="width: 100%;text-align:left;">
+                <h3>Form input</h3>
+                <i title="Click-Me to copy" id="btnexample" onclick="copyText('btnexample')">< button type="button" onclick="alert('Hello World!')">Click Me!< /button></i>
+                <br /><i title="Click-Me to copy" id="formlabel" onclick="copyText('formlabel')">< label for="name">< /label></i>
+                <br /><i title="Click-Me to copy" id="ca" onclick="copyText('ca')">< input type="button" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cp" onclick="copyText('cp')">< input type="submit" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cn" onclick="copyText('cn')">< input type="reset" id=""/></i>
+                <br /><i title="Click-Me to copy" id="co" onclick="copyText('co')">< input type="search" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cg" onclick="copyText('cg')">< input type="hidden" id=""/></i>
+                <br /><i title="Click-Me to copy" id="ca" onclick="copyText('ca')">< input type="checkbox" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cl" onclick="copyText('cl')">< input type="radio" id=""/></i>
+                <br /><i title="Click-Me to copy" id="ch" onclick="copyText('ch')">< input type="image" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cr" onclick="copyText('cr')">< input type="text" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cj" onclick="copyText('cj')">< input type="number" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cf" onclick="copyText('cf')">< input type="file" id=""/></i>
+                <br /><i title="Click-Me to copy" id="ce" onclick="copyText('ce')">< input type="email" id=""/></i>
+                <br /><i title="Click-Me to copy" id="ck" onclick="copyText('ck')">< input type="password" id=""/></i>
+                <br /><i title="Click-Me to copy" id="ct" onclick="copyText('ct')">< input type="url" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cq" onclick="copyText('cq')">< input type="tel" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cb" onclick="copyText('cb')">< input type="color" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cm" onclick="copyText('cm')">< input type="range" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cs" onclick="copyText('cs')">< input type="time" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cc" onclick="copyText('cc')">< input type="date" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cd" onclick="copyText('cd')">< input type="datetime-local" id=""/></i>
+                <br /><i title="Click-Me to copy" id="ci" onclick="copyText('ci')">< input type="month" id=""/></i>
+                <br /><i title="Click-Me to copy" id="cu" onclick="copyText('cu')">< input type="week" id=""/></i>
+                <br /><i title="Click-Me to copy" id="textareasin" onclick="copyText('textareasin')">< textarea>< /textarea></i>
+                <h3>Form <sup>input</sup> options</h3>
+                <i title="Click-Me to copy" id="c05" onclick="copyText('c05')">id=""</i>      Specifies the id value for an element.<br />
+                <i title="Click-Me to copy" id="c03" onclick="copyText('c03')">name=""</i>    Specifies the name value for an element.<br />
+                <i title="Click-Me to copy" id="c00" onclick="copyText('c00')">placeholder=""</i> Specifies the Placeholder text for an input field.<br />
+                <i title="Click-Me to copy" id="c02" onclick="copyText('c02')">title=""</i>      Specifies the (pop-up on hover) title value for an element.<br />
+                <i title="Click-Me to copy" id="value" onclick="copyText('value')">value=""</i>	Specifies the default value for an input field.<br />
+                <i title="Click-Me to copy" id="required" onclick="copyText('required')">required</i>	Specifies that an input field is required (must be filled out).<br />
+                <i title="Click-Me to copy" id="checked" onclick="copyText('checked')">checked</i>	Specifies that an input field should be pre-selected when the page loads (for type="checkbox" or type="radio").<br />
+                <i title="Click-Me to copy" id="readonly" onclick="copyText('readonly')">readonly</i>	Specifies that an input field is read only (cannot be changed).<br />
+                <i title="Click-Me to copy" id="disabled" onclick="copyText('disabled')">disabled</i>	Specifies that an input field should be disabled.<br />
+                <i title="Click-Me to copy" id="max" onclick="copyText('max')">max</i>	Specifies the maximum value for an input field.<br />
+                <i title="Click-Me to copy" id="maxlength" onclick="copyText('maxlength')">maxlength</i>	Specifies the maximum number of character for an input field.<br />
+                <i title="Click-Me to copy" id="min" onclick="copyText('min')">min</i>	Specifies the minimum value for an input field.<br />
+                <i title="Click-Me to copy" id="pattern" onclick="copyText('pattern')">pattern</i>	Specifies a regular expression to check the input value against.<br />
+                <i title="Click-Me to copy" id="size" onclick="copyText('size')">size</i>	Specifies the width (in characters) of an input field.<br />
+                <i title="Click-Me to copy" id="step" onclick="copyText('step')">step</i>	Specifies the legal number intervals for an input field.
+                <h3>textarea <sup>size</sup> can be set with<br /><i title="Click-Me to copy" id="tacolrows" onclick="copyText('tacolrows')"> rows="10" cols="30"</i> or <i title="Click-Me to copy" id="tastyle" onclick="copyText('tastyle')">style="width:200px; height:400px;"</i></h3>
+                <i title="Click-Me to copy" id="textareaex" onclick="copyText('textareaex')">
+                    < textarea id="message" name="message" rows="10" cols="30">< /textarea>
+                </i> ...
+                <br />
+                <i title="Click-Me to copy" id="textareaex2" onclick="copyText('textareaex2')">< textarea id="message" name="message" style="width:200px; height:400px;">< /textarea></i> ...
+            </p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <p style="width: 100%;text-align:left;">
+                <h3><sup>The <i title="Click-Me to copy" id="select" onclick="copyText('select')">< select></i> element defines a drop-down list:</sup></h3>
+                <i title="Click-Me to copy" id="selection" onclick="copyText('selection')">
+                    < label for="colors">Choose a color:< /label><br />
+                    < select id="colors" name="colors" size="4" multiple><br />
+                    &nbsp;< option value="red" selected>red< /option><br />
+                    &nbsp;< option value="green">green< /option><br />
+                    &nbsp;< option value="blue">blue< /option><br />
+                    &nbsp;< option value="black">black< /option><br />
+                    &nbsp;< option value="grey">grey< /option><br />
+                    < /select>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>The <i title="Click-Me to copy" id="legendele" onclick="copyText('legendele')">< legend></i> element defines a caption for the <i title="Click-Me to copy" id="fieldsetele" onclick="copyText('fieldsetele')">< fieldset></i> element</sup></h3>
+                <i title="Click-Me to copy" id="fieldsetex" onclick="copyText('fieldsetex')">
+                    < fieldset>
+                    <br />&nbsp;< legend>Mood:< /legend>
+                    <br />&nbsp;< label for="rocky">Rocky< /label>< br>
+                    <br />&nbsp;< input type="text" id="rocky" name="rocky" value="rocky">< br>
+                    <br />&nbsp;< label for="softy">Softy< /label>< br>
+                    <br />&nbsp;< input type="text" id="softy" name="softy" value="softy">< br>< br>
+                    <br />&nbsp;< input type="submit" value="Submit">
+                    <br />< /fieldset>
+                </i>
+                <br />------------------------------------------------
+                <h3>The <sup><i title="Click-Me to copy" id="opt_group" onclick="copyText('opt_group')">< optgroup></i></sup> provides headers for options.</h3>
+                <i title="Click-Me to copy" id="optgroup" onclick="copyText('optgroup')">
+                    < label for="cars">Choose a car:< /label>
+                    <br />< select name="cars" id="cars">
+                    <br />&nbsp;< optgroup label="Swedish Cars">
+                    <br />&nbsp;&nbsp;< option value="volvo">Volvo< /option>
+                    <br />&nbsp;&nbsp;< option value="saab">Saab< /option>
+                    <br />&nbsp;< /optgroup>
+                    <br />&nbsp;< optgroup label="German Cars">
+                    <br />&nbsp;&nbsp;< option value="mercedes">Mercedes< /option>
+                    <br />&nbsp;&nbsp;< option value="audi">Audi< /option>
+                    <br />&nbsp;< /optgroup>
+                    <br />< /select>
+                </i>
+                <br />------------------------------------------------
+                <h3>The <sup><i title="Click-Me to copy" id="data_list_tag" onclick="copyText('data_list_tag')">< datalist></i></sup> provides options to choose for text input.</h3>
+                <i title="Click-Me to copy" id="data_list_example" onclick="copyText('data_list_example')">
+                    < label for="category">Category:< /label>
+                    <br />< input list="categories" name="category" id="category">
+                    <br />< datalist id="categories">
+                    <br />&nbsp;< option value="Products (New)">
+                    <br />&nbsp;< option value="Products (Used)">
+                    <br />&nbsp;< option value="Media">
+                    <br />&nbsp;< option value="Software">
+                    <br />&nbsp;< option value="Services">
+                    <br />&nbsp;< option value="Deals">
+                    <br />< /datalist>
+                </i>
+                <br />------------------------------------------------
+
+                <h3><sup>Get user response</sup> <i title="Click-Me to copy" id="confirmexe" onclick="copyText('confirmexe')"><sup>< script>confirm("Press OK or CANCEL")< /script></sup></i></h3>
+                <i title="Click-Me to copy" id="userresponse" onclick="copyText('userresponse')">
+                    < button onclick='get_user_response("Press OK or Cancel.")'>Try it< /button>
+                    <br />< p id="demo">< /p>
+                    <br />< script>
+                    <br />function get_user_response(text) {
+                    <br />&nbsp;if (confirm(text) == true) {
+                    <br />&nbsp;&nbsp;text = "You pressed OK!";
+                    <br />&nbsp;} else {
+                    <br />&nbsp;&nbsp;text = "You canceled!";
+                    <br />&nbsp;}
+                    <br />&nbsp;document.getElementById("demo").innerHTML = text;
+                    <br />}
+                    <br />< /script>
+</i>
+                <br />------------------------------------------------
+                <h3><sup>Alert User</sup> <i title="Click-Me to copy" id="alert_user" onclick="copyText('alert_user')"><sup>< script>alert("Hello.")< /script></sup></i></h3>
+                <i title="Click-Me to copy" id="alert_user_hello" onclick="copyText('alert_user_hello')">
+                    < button onclick='alert_user("Hello.")'>alert user< /button>
+                    <br />< script>
+                    <br />function alert_user(text) {
+                    <br />&nbsp;alert(text)
+                    <br />}
+                    <br />< /script>
+
+</i>
+                <br />------------------------------------------------
+            </p>
+            <p style="width: 100%;text-align:left;">
+                <h3><sup>Make an element Dragable</sup></h3>
+                <i title="Click-Me to copy" id="dragable" onclick="copyText('dragable')">
+                    < style>
+                    <br />&nbsp;#mydiv {
+                    <br />&nbsp;&nbsp;position: absolute;
+                    <br />&nbsp;&nbsp;z-index: 9;
+                    <br />&nbsp;&nbsp;background-color: #f1f1f1;
+                    <br />&nbsp;&nbsp;text-align: center;
+                    <br />&nbsp;&nbsp;border: 1px solid #d3d3d3;
+                    <br />&nbsp;}
+                    <br />&nbsp;#mydivheader {
+                    <br />&nbsp;&nbsp;padding: 10px;
+                    <br />&nbsp;&nbsp;cursor: move;
+                    <br />&nbsp;&nbsp;z-index: 10;
+                    <br />&nbsp;&nbsp;background-color: #2196F3;
+                    <br />&nbsp;&nbsp;color: #fff;
+                    <br />&nbsp;}
+                    <br />< /style>
+                    <br />< h1>Draggable Element< /h1>
+                    <br />< p>Click and hold the mouse button down while moving< /p>
+                    <br />< div id="mydiv" >
+                    <br />< div id="mydivheader">Click here to move Me< /div>
+                    <br />< p>Dragable content< /p>
+                    <br />< /div>
+                    <br />< script>
+                    <br />dragElement(document.getElementById("mydiv"));
+                    <br />function dragElement(elmnt) {
+                    <br />&nbsp;var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                    <br />&nbsp;if (document.getElementById(elmnt.id + "header")) {
+                    <br />&nbsp;&nbsp;document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                    <br />&nbsp;} else {
+                    <br />&nbsp;&nbsp;elmnt.onmousedown = dragMouseDown;
+                    <br />&nbsp;}
+                    <br />&nbsp;function dragMouseDown(e) {
+                    <br />&nbsp;&nbsp;e = e || window.event;
+                    <br />&nbsp;&nbsp;e.preventDefault();
+                    <br />&nbsp;&nbsp;pos3 = e.clientX;
+                    <br />&nbsp;&nbsp;pos4 = e.clientY;
+                    <br />&nbsp;&nbsp;document.onmouseup = closeDragElement;
+                    <br />&nbsp;&nbsp;document.onmousemove = elementDrag;
+                    <br />&nbsp;}
+                    <br />&nbsp;function elementDrag(e) {
+                    <br />&nbsp;&nbsp;e = e || window.event;
+                    <br />&nbsp;&nbsp;e.preventDefault();
+                    <br />&nbsp;&nbsp;pos1 = pos3 - e.clientX;
+                    <br />&nbsp;&nbsp;pos2 = pos4 - e.clientY;
+                    <br />&nbsp;&nbsp;pos3 = e.clientX;
+                    <br />&nbsp;&nbsp;pos4 = e.clientY;
+                    <br />&nbsp;&nbsp;elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    <br />&nbsp;&nbsp;elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                    <br />&nbsp;}
+                    <br />&nbsp;function closeDragElement() {
+                    <br />&nbsp;&nbsp;document.onmouseup = null;
+                    <br />&nbsp;&nbsp;document.onmousemove = null;
+                    <br />&nbsp;}
+                    <br />}
+                    <br />< /script>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Photo Grid</sup></h3>
+                <i title="Click-Me to copy" id="photo_grid" onclick="copyText('photo_grid')">
+< !DOCTYPE html>
+< html>
+< style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+}
+.header {
+  text-align: center;
+  padding: 32px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+< /style>
+< body>
+< !-- Header -->
+< div class="header">
+  < h1>Responsive Image Grid< /h1>
+  < p>Resize the browser window to see the responsive effect.< /p>
+< /div>
+< !-- Photo Grid -->
+< div class="row"> 
+  < div class="column">
+    < img src="/w3images/wedding.jpg" style="width:100%">
+    < img src="/w3images/rocks.jpg" style="width:100%">
+    < img src="/w3images/falls2.jpg" style="width:100%">
+    < img src="/w3images/paris.jpg" style="width:100%">
+    < img src="/w3images/nature.jpg" style="width:100%">
+    < img src="/w3images/mist.jpg" style="width:100%">
+    < img src="/w3images/paris.jpg" style="width:100%">
+  < /div>
+  < div class="column">
+    < img src="/w3images/underwater.jpg" style="width:100%">
+    < img src="/w3images/ocean.jpg" style="width:100%">
+    < img src="/w3images/wedding.jpg" style="width:100%">
+    < img src="/w3images/mountainskies.jpg" style="width:100%">
+    < img src="/w3images/rocks.jpg" style="width:100%">
+    < img src="/w3images/underwater.jpg" style="width:100%">
+  < /div> 
+  < div class="column">
+    < img src="/w3images/wedding.jpg" style="width:100%">
+    < img src="/w3images/rocks.jpg" style="width:100%">
+    < img src="/w3images/falls2.jpg" style="width:100%">
+    < img src="/w3images/paris.jpg" style="width:100%">
+    < img src="/w3images/nature.jpg" style="width:100%">
+    < img src="/w3images/mist.jpg" style="width:100%">
+    < img src="/w3images/paris.jpg" style="width:100%">
+  < /div>
+  < div class="column">
+    < img src="/w3images/underwater.jpg" style="width:100%">
+    < img src="/w3images/ocean.jpg" style="width:100%">
+    < img src="/w3images/wedding.jpg" style="width:100%">
+    < img src="/w3images/mountainskies.jpg" style="width:100%">
+    < img src="/w3images/rocks.jpg" style="width:100%">
+    < img src="/w3images/underwater.jpg" style="width:100%">
+  < /div>
+< /div>
+< /body>
+< /html>
+</i>
+                <br />------------------------------------------------
+                <h3><sup>Flex Cards</sup></h3>
+                <i title="Click-Me to copy" id="flex_cards" onclick="copyText('flex_cards')">
+< !DOCTYPE html>
+< html>
+< head>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< style>
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+  max-width: 350px;
+}
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+@media (max-width: 600px) {
+  .container {
+      text-align: center;
+max-width: 300px;
+  }
+  .container img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+< /style>
+< /head>
+< body>
+< h2>Responsive Testimonials< /h2>
+< p>Resize the browser window to see the effect.< /p>
+< div class="container">
+  < img src="https://toremetal.com/favicon.png" alt="Avatar" style="width:90px">
+  < p>< span>™T©ReMeTaL< /span>< /p>
+  < p>Easy to Use, Designed for Everyone!< /p>
+< /div>
+< div class="container">
+  < img src="avatar_m1.png" alt="Avatar" style="width:90px">
+  < p>< span>John Doe.< /span> rating: &#9733; &#9733; &#9733; &#9733; &#9733;< /p>
+  < p>™T©ReMeTaL made my solution fast and, it was so easy to use.< /p>
+< /div>
+< /body>
+< /html>
+</i>
+                <br />------------------------------------------------
+                <h3><sup>Create and Download a File</sup></h3>
+                <i title="Click-Me to copy" id="create_download_file" onclick="copyText('create_download_file')">
+< div align="center">
+< style>
+.creater {
+    display:flex-block;
+    border:1px solid black;
+    padding:4px 2px 10px;
+    width:fit-content;
+    margin:4px 0;
+    border-radius:5px;
+    background-color:lightgrey;
+}
+.creater * {
+    text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.41);
+    border: 1px solid rgb(177, 176, 176);
+}
+.creater .textarea-container {
+    border:1px solid black;padding:4px 0 0; width:fit-content;margin:4px 0;
+}
+.creater textarea {
+    color:darkgreen;
+}
+.creater label {
+    color:blue;
+}
+.creater input[type=button] {
+    cursor:pointer;
+}
+.creater input[type=button]:hover {
+    opacity: 0.85;cursor:pointer;
+    box-shadow: 0.5px 1px 2px rgba(0,0,0,0.21);
+}
+< /style>
+< div class="creater" align="center">
+< label for="filename">Download File-Name< /label>< br />
+< input type="text" title="Download File-Name" id="filename" value="New Text Document.txt" placeholder="Download File-Name"/>< br/>
+< div class="textarea-container">
+   < label for="text-val">Download File-Content< /label>< br />
+   < textarea id="text-val" rows="4">File Content< /textarea>
+< /div>
+< input type="button" title="Download file" id="download-btn" value="Download file"/>
+< /div>
+< script>
+/** function download(String filename, String text).
+ *  @param filename (String) The name of the file to be created.
+ *  @param text (String) The content to be added to the file.
+ */
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
+/* Initiates the file download. */
+document.getElementById("download-btn").addEventListener("click", function(){
+    /* Assign "filename" with "text-val" content.*/
+    var filename = document.getElementById("filename").value;
+    var text = document.getElementById("text-val").value;
+    /* Initiate download function.*/
+    download(filename, text);
+}, false);
+< /script>
+< /div>
+</i>
+                <br />------------------------------------------------
+<h3><sup>Flex Box Page</sup></h3>
+                <i title="Click-Me to copy" id="flex_page_1" onclick="copyText('flex_page_1')">
+< !DOCTYPE html>
+< html lang="en">
+< head>
+< title>CSS Template< /title>
+< meta charset="utf-8">
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+/* Create three unequal columns that sits next to each other */
+.column {
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+/* Left and right column */
+.column.side {
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+}
+/* Middle column */
+.column.middle {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+< /style>
+< /head>
+< body>
+< div class="header">
+  < h2>Header< /h2>
+< /div>
+< div class="row">
+  < div class="column side" style="background-color:#aaa;">Column< /div>
+  < div class="column middle" style="background-color:#bbb;">Column< /div>
+  < div class="column side" style="background-color:#ccc;">Column< /div>
+< /div>
+< div class="footer">
+  < p>Footer< /p>
+< /div>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Using float Page</sup></h3>
+                <i title="Click-Me to copy" id="float_page_1" onclick="copyText('float_page_1')">
+< !DOCTYPE html>
+< html lang="en">
+< head>
+< title>CSS Template< /title>
+< meta charset="utf-8">
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+< /style>
+< /head>
+< body>
+< div class="header">
+  < h2>Header< /h2>
+< /div>
+< div class="row">
+  < div class="column side" style="background-color:#aaa;">Column< /div>
+  < div class="column middle" style="background-color:#bbb;">Column< /div>
+  < div class="column side" style="background-color:#ccc;">Column< /div>
+< /div>
+< div class="footer">
+  < p>Footer< /p>
+< /div>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Grid Page</sup></h3>
+                <i title="Click-Me to copy" id="grid_page_1" onclick="copyText('grid_page_1')">
+< !DOCTYPE html>
+< html>
+< head>
+< style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'left middle middle middle middle right' 
+    'footer footer footer footer footer footer';
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+} 
+.left,
+.middle,
+.right {
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+/* Style the left column */
+.left {
+  grid-area: left;
+}
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+}
+/* Style the right column */
+.right {
+  grid-area: right;
+}
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+  }
+}
+< /style>
+< /head>
+< body>
+< div class="grid-container">
+  < div class="header">
+    < h2>Header< /h2>
+  < /div>
+  < div class="left" style="background-color:#aaa;">Column< /div>
+  < div class="middle" style="background-color:#bbb;">Column< /div>  
+  < div class="right" style="background-color:#ccc;">Column< /div>
+  < div class="footer">
+    < p>Footer< /p>
+  < /div>
+< /div>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Page with Equal Columns</sup></h3>
+                <i title="Click-Me to copy" id="float_page_2" onclick="copyText('float_page_2')">
+< !DOCTYPE html>
+< html lang="en">
+< head>
+< title>CSS Template< /title>
+< meta charset="utf-8">
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+< /style>
+< /head>
+< body>
+< div class="header">
+  < h2>Header< /h2>
+< /div>
+< div class="row">
+  < div class="column" style="background-color:#aaa;">Column< /div>
+  < div class="column" style="background-color:#bbb;">Column< /div>
+  < div class="column" style="background-color:#ccc;">Column< /div>
+< /div>
+< div class="footer">
+  < p>Footer< /p>
+< /div>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+            </p>
+        </div>
+        <div id="NavMenus" class="tabcontent">
+            <p style="width: 100%;text-align:left;">
+                <h3><sup>BootStrap Nav</sup></h3>
+                <i title="Click-Me to copy" id="bootstrapnav" onclick="copyText('bootstrapnav')">
+                    < !DOCTYPE html>
+                    < html lang="en">
+                    < head>
+                    &nbsp;&nbsp;< title>Bootstrap Example< /title>
+                    &nbsp;&nbsp;< meta charset="utf-8">
+                    &nbsp;&nbsp;< meta name="viewport" content="width=device-width, initial-scale=1">
+                    &nbsp;&nbsp;< link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                    &nbsp;&nbsp;< script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">< /script>
+                    &nbsp;&nbsp;< script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">< /script>
+                    < /head>
+                    < body>
+                    < nav class="navbar navbar-inverse">
+                    &nbsp;&nbsp;< div class="container-fluid">
+                    &nbsp;&nbsp;&nbsp;&nbsp;< div class="navbar-header">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< a class="navbar-brand" href="#">WebSiteName< /a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;< /div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;< ul class="nav navbar-nav">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< li class="active">< a href="#">Home< /a>< /li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< li>< a href="#">Page 1< /a>< /li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< li>< a href="#">Page 2< /a>< /li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< li>< a href="#">Page 3< /a>< /li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;< /ul>
+                    &nbsp;&nbsp;< /div>
+                    < /nav>
+                    < div class="container">
+                    &nbsp;&nbsp;< h3>Inverted Navbar< /h3>
+                    &nbsp;&nbsp;< p>An inverted navbar is black instead of gray.< /p>
+                    < /div>
+                    < /body>
+                    < /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Pill Nav</sup></h3>
+                <i title="Click-Me to copy" id="pill_nav" onclick="copyText('pill_nav')">
+< !DOCTYPE html>
+< html>
+< head>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.pill-nav a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px;
+}
+.pill-nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.pill-nav a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+< /style>
+< /head>
+< body>
+< h2>How To Create a Pill Navigation Menu< /h2>
+< div class="pill-nav">
+  < a class="active" href="#home">Home< /a>
+  < a href="#news">News< /a>
+  < a href="#contact">Contact< /a>
+  < a href="#about">About< /a>
+< /div>
+< /body>
+< /html>
+</i>
+                <br />------------------------------------------------
+                <h3><sup>Sub Nav dropdown</sup></h3>
+                <i title="Click-Me to copy" id="sub_nav_dropdown" onclick="copyText('sub_nav_dropdown')">
+< !DOCTYPE html>
+< html>
+< head>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+< style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+.subnav:hover .subnav-content {
+  display: block;
+}
+< /style>
+< /head>
+< body>
+< div class="navbar">
+  < a href="#home">Home< /a>
+  < div class="subnav">
+    < button class="subnavbtn">About < i class="fa fa-caret-down">< /i>< /button>
+    < div class="subnav-content">
+      < a href="#company">Company< /a>
+      < a href="#team">Team< /a>
+      < a href="#careers">Careers< /a>
+    < /div>
+  < /div> 
+  < div class="subnav">
+    < button class="subnavbtn">Services < i class="fa fa-caret-down">< /i>< /button>
+    < div class="subnav-content">
+      < a href="#bring">Bring< /a>
+      < a href="#deliver">Deliver< /a>
+      < a href="#package">Package< /a>
+      < a href="#express">Express< /a>
+    < /div>
+  < /div> 
+  < div class="subnav">
+    < button class="subnavbtn">Partners < i class="fa fa-caret-down">< /i>< /button>
+    < div class="subnav-content">
+      < a href="#link1">Link 1< /a>
+      < a href="#link2">Link 2< /a>
+      < a href="#link3">Link 3< /a>
+      < a href="#link4">Link 4< /a>
+    < /div>
+  < /div>
+  < a href="#contact">Contact< /a>
+< /div>
+< div style="padding:0 16px">
+  < h3>Subnav/dropdown menu inside a Navigation Bar< /h3>
+  < p>Hover over the "about", "services" or "partners" link to see the sub navigation menu.< /p>
+< /div>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Top Nav Flex</sup></h3>
+                <i title="Click-Me to copy" id="top_nav_flex" onclick="copyText('top_nav_flex')">
+< !DOCTYPE html>
+< html>
+< head>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+< style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+< /style>
+< /head>
+< body>
+< div class="topnav" id="myTopnav">
+  < a href="#home" class="active">Home< /a>
+  < a href="#news">News< /a>
+  < a href="#contact">Contact< /a>
+  < a href="#about">About< /a>
+  < a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    < i class="fa fa-bars">< /i>
+  < /a>
+< /div>
+< div style="padding-left:16px">
+  < h2>Responsive Topnav Example< /h2>
+  < p>Resize the browser window to see how it works.< /p>
+< /div>
+< script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+< /script>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Split Nav</sup></h3>
+                <i title="Click-Me to copy" id="split_nav" onclick="copyText('split_nav')">
+< !DOCTYPE html>
+< html>
+< head>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split {
+  float: right;
+  background-color: #04AA6D;
+  color: white;
+}
+< /style>
+< /head>
+< body>
+< div class="topnav">
+  < a class="active" href="#home">Home< /a>
+  < a href="#news">News< /a>
+  < a href="#contact">Contact< /a>
+  < a href="#about" class="split">Help< /a>
+< /div>
+< div style="padding-left:16px">
+  < h2>Split Navigation Example< /h2>
+  < p>The "Help" link in the navigation bar is separated from the rest of the navigation links, resulting in a "split navigation" layout.< /p>
+< /div>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Icon Nav</sup></h3>
+                <i title="Click-Me to copy" id="icon_nav" onclick="copyText('icon_nav')">
+< !DOCTYPE html>
+< html>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+< style>
+body {font-family: Arial, Helvetica, sans-serif;}
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: #000;
+}
+.active {
+  background-color: #04AA6D;
+}
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+< /style>
+< body>
+< h2>Responsive Navigation Bar with Icons< /h2>
+< p>Try to resize the browser window to see the responsive effect.< /p>
+< div class="navbar">
+  < a class="active" href="#">< i class="fa fa-fw fa-home">< /i> Home< /a> 
+  < a href="#">< i class="fa fa-fw fa-search">< /i> Search< /a> 
+  < a href="#">< i class="fa fa-fw fa-envelope">< /i> Contact< /a> 
+  < a href="#">< i class="fa fa-fw fa-user">< /i> Login< /a>
+< /div>
+< /body>
+< /html> 
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Mobile Nav</sup></h3>
+                <i title="Click-Me to copy" id="mobile_nav" onclick="copyText('mobile_nav')">
+< !DOCTYPE html>
+< html>
+< head>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+< style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: transparent;
+  position: relative;
+}
+.topnav #myLinks {
+  display: none;
+  width:fit-content;
+  border:1px dotted red;
+  text-align:right;
+  background-color: #333;
+  position:fixed;
+}
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+< /style>
+< /head>
+< body>
+< !-- Simulate a smartphone / tablet -->
+< div class="mobile-container">
+< !-- Top Navigation Menu -->
+< div class="topnav">
+  < a href="#home" class="active">Logo< /a>
+  < div id="myLinks">
+    < a href="#news">News< /a>
+    < a href="#contact">Contact< /a>
+    < a href="#about">About< /a>
+  < /div>
+  < a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    < i class="fa fa-bars">< /i>
+  < /a>
+< /div>
+< div style="padding-left:16px;">
+  < h3>Vertical Mobile Navbar< /h3>
+  < p>This example demonstrates how a navigation menu on a mobile/smart phone could look like.< /p>
+  < p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.< /p>
+< /div>
+< !-- End smartphone / tablet look -->
+< /div>
+< script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+< /script>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Desktop to Mobile Nav</sup></h3>
+                <i title="Click-Me to copy" id="desktop_mobile_nav" onclick="copyText('desktop_mobile_nav')">
+< !DOCTYPE html>
+< html>
+< head>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+< style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+.topnav {
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  position: relative;
+  
+  display:inline-block;
+}
+.topnav #myLinks {
+  display: none;
+  width:fit-content;
+  border:1px dotted red;
+  text-align:right;
+  background-color: #333;
+  position:fixed;
+}
+.topnav a {
+  color: white;
+  padding: 14px 12px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+.topnav a.icon {
+width:fit-content;
+  background: black;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.navbar {
+  background-color: #555;
+  display:inline-block;
+  overflow: hidden;
+}
+.navbar a {
+  display:inline-block;
+}
+  .navitem {
+    display: none;
+  }
+@media screen and (max-width: 380px) {
+  .navbaritem1 {
+    display: none;
+  }
+  .navitem1 {
+    display: block;
+  }
+  .topnav a.icon {
+    display: block;
+  }
+}
+@media screen and (max-width: 300px) {
+  .navbaritem2 {
+    display: none;
+  }
+  .navitem2 {
+    display: block;
+  }
+}
+@media screen and (max-width: 220px) {
+  .navbaritem3 {
+    display: none;
+  }
+  .navitem3 {
+    display: block;
+  }
+}
+@media screen and (max-width: 450px) {
+  .navbaritemsicon {
+    display: none;
+  }
+}
+< /style>
+< /head>
+< body>
+< !-- Simulate a smartphone / tablet -->
+< div class="mobile-container">
+< !-- Top Navigation Menu -->
+< div class="topnav">
+< div class="navbar">
+  < a class="active" href="#home">< i class="fa fa-fw fa-home">< /i> Home< /a> 
+  < sub class="navbaritem1">
+  < a href="#contact">< i class="fa fa-fw fa-envelope navbaritemsicon">< /i> Contact< /a>
+  < /sub>
+  < sub class="navbaritem2">
+  < a href="#login">< i class="fa fa-fw fa-user navbaritemsicon">< /i> Login< /a>
+  < /sub> 
+  < sub class="navbaritem3">< a href="#">Search < i class="fa fa-fw fa-search navbaritemsicon">< /i>< /a>< /sub> 
+  < /div>
+  < div id="myLinks">
+    < sub class="navitem1 navitem">< a href="#contact">< i class="fa fa-fw fa-envelope">< /i> Contact< /a>< /sub>
+    < sub class="navitem2 navitem">< a href="#login">< i class="fa fa-fw fa-user">< /i> Login< /a>< /sub>
+    < sub class="navitem3 navitem">< a href="#search">Search < i class="fa fa-fw fa-search">< /i>< /a>< /sub>
+  < /div>
+  < a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    < i class="fa fa-bars mob_nav">< /i>
+  < /a>
+< /div>
+< div style="padding-left:16px;">
+  < h3>Desktop/Mobile Navbar< /h3>
+  < p>Dynamically switch between< br />desktop and mobile navigation menus.< /p>
+  < p>Resize window to see nav items alternate between menus. When the window is small enough
+  click on the [three bars], in the top right corner, to toggle the mobile menu.< /p>
+< /div>
+< !-- End smartphone / tablet look -->
+< /div>
+< script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+< /script>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+                <h3><sup>Side Nav</sup></h3>
+                <i title="Click-Me to copy" id="side_nav_header_footer" onclick="copyText('side_nav_header_footer')">
+< !DOCTYPE html>
+< html lang="en">
+< head>
+< title>CSS Template< /title>
+< meta charset="utf-8">
+< meta name="viewport" content="width=device-width, initial-scale=1">
+< style>
+* {
+  border-radius:5px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border:solid 1px silver;
+}
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position:fixed;
+  top:1px;
+  left:1px;
+  right:1px;
+  z-index: 2;
+}
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Style the side navigation */
+.sidenav {
+  margin:46px 0 0;
+  padding:0 0 10%;
+  width: 100px;
+  position: fixed;
+  z-index: 1;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  background-color: #111;
+  overflow-x: hidden;
+}
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Style the content */
+.content {
+  margin-top:6%;
+  margin-left: 100px;
+  padding: 10px 10px 10px 20px;
+}
+/* Style the content */
+.content2 {
+  min-height:369px;
+  margin-left:100px;
+  background-color: #ddd;
+  padding: 10px 10px 10px 20px;
+   /* Should be removed. Only for demonstration */
+}
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  position:relative;
+  left:0.4px;
+  margin-right:0.4px;
+  bottom:1px;
+  z-index: 2;
+  border:none;
+  border-radius:0;
+}
+< /style>
+< /head>
+< body>
+< div class="topnav">
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+< /div>
+< div class="sidenav">
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+  < a href="#">Link< /a>
+< /div>
+< div class="content">
+  < h2>Page Template< /h2>
+  < p>fixed sidenav and content.< /p>
+< /div>
+< div class="content2">
+Some Stuff, bla, bla, bla.
+< /div>
+< div class="footer">
+  < p>Footer< /p>
+< /div>
+< /body>
+< /html>
+                </i>
+                <br />------------------------------------------------
+            </p>
+        </div>
+        <div id="CSS" class="tabcontent">
+            <p style="width: 100%;text-align:left;">
+                
+                <h3><span style="float: left;
+  width: 0.7em;
+  font-size: 200%;
+  font-family: algerian, courier;
+  line-height: 80%;">D</span><sup>rop Letter</sup></h3>
+                <i title="Click-Me to copy" id="drop_letter" onclick="copyText('drop_letter')">
+< span style="float: left;
+  width: 0.7em;
+  font-size: 400%;
+  font-family: algerian, courier;
+  line-height: 80%;">H< /span>ere, the first letter of this text is embedded in a span element.
+                </i>
+                <br />------------------------------------------------
+<style>
+.loader {
+  border: 4px solid transparent;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  border-left: 4px solid #3498db;
+  width: 12px;
+  height: 12px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  float:left;
+}
+.loader2 {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  float:left;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+                <h3><div class="loader"></div> <sup style="margin-left:10px;"> Animated Loader</sup></h3>
+                <i title="Click-Me to copy" id="anim_loader" onclick="copyText('anim_loader')">
+< style>
+.loader {
+  border: 4px solid transparent;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  border-left: 4px solid #3498db;
+  width: 12px;
+  height: 12px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  float:left;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+< /style>
+< div class="loader">< /div>
+                </i>
+<br />
+<i title="Click-Me to copy" id="anim_loader2" onclick="copyText('anim_loader2')">
+<h3><div class="loader2"></div> <sup style="margin-left:20px;"> Large Animated Loader</sup></h3>
+< style>
+.large_loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+< /style>
+< div class="large_loader">< /div>
+                </i>
+                <br />------------------------------------------------
+<h3><sup">CSS tags</sup></h3>
+/* Font & Text */
+<br /><i title="Click-Me to copy" id="s469" onclick='copyText("s469")'>font-family: "IM Fell English SC", monospace;</i>
+<br /><i title="Click-Me to copy" id="s471" onclick='copyText("s471")'>font-family: "IM Fell English SC", serif;</i>
+<br /><i title="Click-Me to copy" id="s472" onclick='copyText("s472")'>font-size: 12px;</i>
+<br /><i title="Click-Me to copy" id="s473" onclick='copyText("s473")'>font-style: normal;</i>
+<br /><i title="Click-Me to copy" id="s474" onclick='copyText("s474")'>font-variant: normal;</i>
+<br /><i title="Click-Me to copy" id="s475" onclick='copyText("s475")'>font-weight: 400;</i>
+<br /><i title="Click-Me to copy" id="s476" onclick='copyText("s476")'>letter-spacing: normal;</i>
+<br /><i title="Click-Me to copy" id="s477" onclick='copyText("s477")'>line-height: 21.7028px;</i>
+<br /><i title="Click-Me to copy" id="s478" onclick='copyText("s478")'>text-decoration: none solid rgb(102, 102, 102);</i>
+<br /><i title="Click-Me to copy" id="s479" onclick='copyText("s479")'>text-align: left;</i>
+<br /><i title="Click-Me to copy" id="s480" onclick='copyText("s480")'>text-indent: 0px;</i>
+<br /><i title="Click-Me to copy" id="s481" onclick='copyText("s481")'>text-transform: none;</i>
+<br /><i title="Click-Me to copy" id="s482" onclick='copyText("s482")'>vertical-align: baseline;</i>
+<br /><i title="Click-Me to copy" id="s483" onclick='copyText("s483")'>white-space: normal;</i>
+<br /><i title="Click-Me to copy" id="s484" onclick='copyText("s484")'>word-spacing: 0px;</i>
+<br />/* Color & Background */
+<br /><i title="Click-Me to copy" id="s486" onclick='copyText("s486")'>background: #ffffff url("img_tree.png") no-repeat right top;</i>
+<br /><i title="Click-Me to copy" id="s487" onclick='copyText("s487")'>background-attachment: scroll;</i>
+<br /><i title="Click-Me to copy" id="s488" onclick='copyText("s488")'>background-color: rgba(0, 0, 0, 0);</i>
+<br /><i title="Click-Me to copy" id="s489" onclick='copyText("s489")'>background-image: none;</i>
+<br /><i title="Click-Me to copy" id="s490" onclick='copyText("s490")'>background-position: 0% 0%;</i>
+<br /><i title="Click-Me to copy" id="s491" onclick='copyText("s491")'>background-repeat: repeat;</i>
+<br /><i title="Click-Me to copy" id="s492" onclick='copyText("s492")'>color: rgb(102, 102, 102);</i>
+<br /><i title="Click-Me to copy" id="s493" onclick='copyText("s493")'>color: #333;</i>
+<br />/* Box */
+<br /><i title="Click-Me to copy" id="s495" onclick='copyText("s495")'>height: 7283.84px;</i>
+<br /><i title="Click-Me to copy" id="s496" onclick='copyText("s496")'>width: 1505px;</i>
+<br /><i title="Click-Me to copy" id="s497" onclick='copyText("s497")'>width: 100%;</i>
+<br /><i title="Click-Me to copy" id="s498" onclick='copyText("s498")'>height: 100%;</i>
+<br /><i title="Click-Me to copy" id="s499" onclick='copyText("s499")'>border: 1px solid #ebebeb;</i>
+<br /><i title="Click-Me to copy" id="s500" onclick='copyText("s500")'>border: 3px solid #73AD21;</i>
+<br /><i title="Click-Me to copy" id="s501" onclick='copyText("s501")'>border: 0px none rgba(0, 0, 0, 0);</i>
+<br /><i title="Click-Me to copy" id="s502" onclick='copyText("s502")'>border-top: 0px none rgba(0, 0, 0, 0);</i>
+<br /><i title="Click-Me to copy" id="s503" onclick='copyText("s503")'>border-right: 0px none rgba(0, 0, 0, 0);</i>
+<br /><i title="Click-Me to copy" id="s504" onclick='copyText("s504")'>border-bottom: 0px none rgba(0, 0, 0, 0);</i>
+<br /><i title="Click-Me to copy" id="s505" onclick='copyText("s505")'>border-left: 0px none rgba(0, 0, 0, 0);</i>
+<br /><i title="Click-Me to copy" id="s506" onclick='copyText("s506")'>margin: 5px;</i>
+<br /><i title="Click-Me to copy" id="s507" onclick='copyText("s507")'>margin: 10px 10px 10px 10px;</i>
+<br /><i title="Click-Me to copy" id="s508" onclick='copyText("s508")'>margin-right: 20px;</i>
+<br /><i title="Click-Me to copy" id="s509" onclick='copyText("s509")'>margin-left: 20px;</i>
+<br /><i title="Click-Me to copy" id="s510" onclick='copyText("s510")'>margin-top: 20px;</i>
+<br /><i title="Click-Me to copy" id="s511" onclick='copyText("s511")'>margin-bottom: 20px;</i>
+<br /><i title="Click-Me to copy" id="s512" onclick='copyText("s512")'>padding: 5px;</i>
+<br /><i title="Click-Me to copy" id="s513" onclick='copyText("s513")'>padding: 10px 10px 10px 10px;</i>
+<br /><i title="Click-Me to copy" id="s514" onclick='copyText("s514")'>padding-right: 20px;</i>
+<br /><i title="Click-Me to copy" id="s515" onclick='copyText("s515")'>padding-left: 20px;</i>
+<br /><i title="Click-Me to copy" id="s516" onclick='copyText("s516")'>padding-top: 20px;</i>
+<br /><i title="Click-Me to copy" id="s517" onclick='copyText("s517")'>padding-bottom: 20px;</i>
+<br /><i title="Click-Me to copy" id="s518" onclick='copyText("s518")'>max-height: none;</i>
+<br /><i title="Click-Me to copy" id="s519" onclick='copyText("s519")'>min-height: 0px;</i>
+<br /><i title="Click-Me to copy" id="s520" onclick='copyText("s520")'>max-width: none;</i>
+<br /><i title="Click-Me to copy" id="s521" onclick='copyText("s521")'>min-width: 0px;</i>
+<br />/* Positioning */
+<br /><i title="Click-Me to copy" id="s523" onclick='copyText("s523")'>position: static;</i>
+<br /><i title="Click-Me to copy" id="s524" onclick='copyText("s524")'>top: auto;</i>
+<br /><i title="Click-Me to copy" id="s525" onclick='copyText("s525")'>bottom: auto;</i>
+<br /><i title="Click-Me to copy" id="s526" onclick='copyText("s526")'>right: auto;</i>
+<br /><i title="Click-Me to copy" id="s527" onclick='copyText("s527")'>left: auto;</i>
+<br /><i title="Click-Me to copy" id="s528" onclick='copyText("s528")'>float: none;</i>
+<br /><i title="Click-Me to copy" id="s529" onclick='copyText("s529")'>float: left;</i>
+<br /><i title="Click-Me to copy" id="s530" onclick='copyText("s530")'>float: right;</i>
+<br /><i title="Click-Me to copy" id="s531" onclick='copyText("s531")'>display: block;</i>
+<br /><i title="Click-Me to copy" id="s532" onclick='copyText("s532")'>clear: none;</i>
+<br /><i title="Click-Me to copy" id="s533" onclick='copyText("s533")'>clear: left;</i>
+<br /><i title="Click-Me to copy" id="s534" onclick='copyText("s534")'>clear: right;</i>
+<br /><i title="Click-Me to copy" id="s535" onclick='copyText("s535")'>clear: both;</i>
+<br /><i title="Click-Me to copy" id="s536" onclick='copyText("s536")'>z-index: auto;</i>
+<br />/* List */
+<br /><i title="Click-Me to copy" id="s538" onclick='copyText("s538")'>list-style-image: none;</i>
+<br /><i title="Click-Me to copy" id="s539" onclick='copyText("s539")'>list-style-type: disc;</i>
+<br /><i title="Click-Me to copy" id="s540" onclick='copyText("s540")'>list-style-position: outside;</i>
+<br />/* Table */
+<br /><i title="Click-Me to copy" id="s542" onclick='copyText("s542")'>border-collapse: separate;</i>
+<br /><i title="Click-Me to copy" id="s543" onclick='copyText("s543")'>border-spacing: 0px 0px;</i>
+<br /><i title="Click-Me to copy" id="s544" onclick='copyText("s544")'>caption-side: top;</i>
+<br /><i title="Click-Me to copy" id="s545" onclick='copyText("s545")'>empty-cells: show;</i>
+<br /><i title="Click-Me to copy" id="s546" onclick='copyText("s546")'>table-layout: auto;</i>
+<br />/* Miscellaneous */
+<br /><i title="Click-Me to copy" id="s548" onclick='copyText("s548")'>overflow: visible;</i>
+<br /><i title="Click-Me to copy" id="s549" onclick='copyText("s549")'>cursor: auto;</i>
+<br /><i title="Click-Me to copy" id="s550" onclick='copyText("s550")'>cursor:pointer;</i>
+<br /><i title="Click-Me to copy" id="s551" onclick='copyText("s551")'>cursor: no-drop;</i>
+<br /><i title="Click-Me to copy" id="s552" onclick='copyText("s552")'>visibility: visible;</i>
+<br />/* Effects */
+<br /><i title="Click-Me to copy" id="s554" onclick='copyText("s554")'>text-shadow: 1px 1px rgba(0, 123, 255, 0.04);</i>
+<br /><i title="Click-Me to copy" id="s555" onclick='copyText("s555")'>box-shadow: 1px 1px rgba(0, 123, 255, 0.04);</i>
+<br /><i title="Click-Me to copy" id="s556" onclick='copyText("s556")'>box-sizing: border-box !important;</i>
+<br /><i title="Click-Me to copy" id="s557" onclick='copyText("s557")'>transform: none;</i>
+<br /><i title="Click-Me to copy" id="s558" onclick='copyText("s558")'>transition: all 0.3s ease-in;</i>
+<br /><i title="Click-Me to copy" id="s559" onclick='copyText("s559")'>transition: all 0s ease 0s;</i>
+<br /><i title="Click-Me to copy" id="s560" onclick='copyText("s560")'>outline: rgb(255, 0, 0) dashed 1px;</i>
+<br /><i title="Click-Me to copy" id="s561" onclick='copyText("s561")'>outline-offset: 0px;</i>
+<br /><i title="Click-Me to copy" id="s562" onclick='copyText("s562")'>box-sizing: border-box;</i>
+<br /><i title="Click-Me to copy" id="s563" onclick='copyText("s563")'>resize: none;</i>
+<br /><i title="Click-Me to copy" id="s564" onclick='copyText("s564")'>text-shadow: none;</i>
+<br /><i title="Click-Me to copy" id="s565" onclick='copyText("s565")'>text-overflow: clip;</i>
+<br /><i title="Click-Me to copy" id="s566" onclick='copyText("s566")'>word-wrap: normal;</i>
+<br /><i title="Click-Me to copy" id="s567" onclick='copyText("s567")'>box-shadow: none;</i>
+<br /><i title="Click-Me to copy" id="s568" onclick='copyText("s568")'>box-shadow: 1px 2px 5px rgba(0,0,0,.31);</i>
+<br /><i title="Click-Me to copy" id="s569" onclick='copyText("s569")'>border-top-left-radius: 0px;</i>
+<br /><i title="Click-Me to copy" id="s570" onclick='copyText("s570")'>border-top-right-radius: 0px;</i>
+<br /><i title="Click-Me to copy" id="s571" onclick='copyText("s571")'>border-bottom-left-radius: 0px;</i>
+<br /><i title="Click-Me to copy" id="s572" onclick='copyText("s572")'>border-bottom-right-radius: 0px;</i>
+<br /><i title="Click-Me to copy" id="s573" onclick='copyText("s573")'>opacity: 0.3;</i>
+<br />------------------------------------------------
+<h3><sup">Input sample</sup></h3>
+<i title="Click-Me to copy" id="s584" onclick='copyText("s584")'>
+.myform input[type=email], input[type=text], input[type=url] {
+    width: calc(100% - 158px);
+    margin: 5px 5px 5px 10px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+    border: solid 1px #cbc9c9;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+    background: #fff;
+}
+</i><br />------------------------------------------------
+<h3><sup">Input Submit sample</sup></h3>
+<i title="Click-Me to copy" id="s585" onclick='copyText("s585")'>
+.myform input[type=submit] {
+    margin: 2px 10px 2px 5px;
+    padding: 1px 4px 1px 4px;
+    cursor: pointer;
+    background-color: darkred;
+    color:orange;
+    font-weight: 600;
+    opacity: 0.9;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+}
+</i><br />------------------------------------------------
+<h3><sup">Circle button sample</sup></h3>
+<i title="Click-Me to copy" id="s574" onclick='copyText("s574")'>
+.circle-button {
+    margin:2px 4px 2px 4px;
+    padding:1px;
+    font-size:12px;
+    background:#446b54A0;
+    width:44px;
+    height:44px;
+    border-radius: 26px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+    border: 1px solid #ccc;
+    color:white;
+}
+.circle-button:hover {
+    margin:2px 4px 2px 4px;
+    padding:1px;
+    font-size:12px;
+    background:#000000A0;
+    width:44px;
+    height:44px;
+    border-radius: 26px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+    border: 1px solid #ccc;
+    transform: rotate(180deg);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+</i><br />------------------------------------------------
+<h3><sup">Body Global sample</sup></h3>
+<i title="Click-Me to copy" id="s575" onclick='copyText("s575")'>
+body * {
+        -webkit-box-sizing: border-box !important;
+        -moz-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: rgba(26, 234, 221, 0.82);
+    }
+body *, *::after, *::before {
+            -webkit-box-sizing: border-box !important;
+            -moz-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+body *, ::after, ::before {
+        -webkit-box-sizing: border-box !important;
+        -moz-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+    }
+</i><br />------------------------------------------------
+<h3><sup">img zoom sample</sup></h3>
+<i title="Click-Me to copy" id="s576" onclick='copyText("s576")'>
+    img .zoom {
+        width: 100%;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+    }
+</i><br />------------------------------------------------
+<h3><sup">a zoom sample</sup></h3>
+<i title="Click-Me to copy" id="s577" onclick='copyText("s577")'>
+    a .zoom {
+        width: 100%;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+    }
+</i><br />------------------------------------------------
+<h3><sup">transition sample</sup></h3>
+<i title="Click-Me to copy" id="s578" onclick='copyText("s578")'>
+    .transition {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+</i><br />------------------------------------------------
+<h3><sup">button effects sample</sup></h3>
+<i title="Click-Me to copy" id="s579" onclick='copyText("s579")'>
+.hover-btn {
+     display: inline-block;
+     vertical-align: middle;
+     -webkit-transform: perspective(1px) translateZ(0);
+     -moz-transform: perspective(1px) translateZ(0);
+     -ms-transform: perspective(1px) translateZ(0);
+     -o-transform: perspective(1px) translateZ(0);
+     transform: perspective(1px) translateZ(0);
+     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+     position: relative;
+     background: #111111;
+     -webkit-transition-property: color;
+     -moz-transition-property: color;
+     -o-transition-property: color;
+     transition-property: color;
+     -webkit-transition-duration: 0.3s;
+     -moz-transition-duration: 0.3s;
+     -o-transition-duration: 0.3s;
+     transition-duration: 0.3s;
+}
+ .hover-btn::before {
+     content: "";
+     position: absolute;
+     z-index: -1;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background: #38c8a8;
+     -webkit-transform: scaleX(0);
+     -moz-transform: scaleX(0);
+     -ms-transform: scaleX(0);
+     -o-transform: scaleX(0);
+     transform: scaleX(0);
+     -webkit-transform-origin: 50%;
+     -moz-transform-origin: 50%;
+     -ms-transform-origin: 50%;
+     -o-transform-origin: 50%;
+     transform-origin: 50%;
+     -webkit-transition-property: transform;
+     -moz-transition-property: transform;
+     -o-transition-property: transform;
+     transition-property: transform;
+     -webkit-transition-duration: 0.3s;
+     -moz-transition-duration: 0.3s;
+     -o-transition-duration: 0.3s;
+     transition-duration: 0.3s;
+     -webkit-transition-timing-function: ease-out;
+     -moz-transition-timing-function: ease-out;
+     -o-transition-timing-function: ease-out;
+     transition-timing-function: ease-out;
+     display: block !important;
+}
+ .hover-btn:hover::before, .hover-btn:focus::before, .hover-btn:active::before {
+     -webkit-transform: scaleX(1);
+     -moz-transform: scaleX(1);
+     -ms-transform: scaleX(1);
+     -o-transform: scaleX(1);
+     transform: scaleX(1);
+}
+ .hover-btn:hover, .hover-btn:focus, .hover-btn:active {
+     color: white;
+     box-shadow: none;
+}
+</i><br />------------------------------------------------
+<h3><sup">img effects sample</sup></h3>
+<i title="Click-Me to copy" id="s580" onclick='copyText("s580")'>
+.topnav img {
+    background-color: transparent;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+	border-radius:5px;
+}
+.topnav img:hover {
+    background-color: transparent;
+    height:calc(var(--height) + 6px);
+    width:calc(var(--width) + 6px);
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    max-height:48px;
+}
+</i><br />------------------------------------------------
+<h3><sup">div container sample</sup></h3>
+<i title="Click-Me to copy" id="s581" onclick='copyText("s581")'>
+.my-container {
+  min-width: 128px;
+  margin: auto;
+  background-color: #222;
+  height: 50%;
+  color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  border: 1px solid rgb(177, 176, 176);
+}
+</i><br />------------------------------------------------
+<h3><sup">Rotation sample</sup></h3>
+<i title="Click-Me to copy" id="s582" onclick='copyText("s582")'>
+.rotate:hover {
+    transform: rotate(180deg);
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    outline: rgb(92, 0, 0) none 0px;
+    outline-offset: 0px;
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
+    text-shadow:  1px 1px #0000ff;
+    box-shadow: rgba(0, 123, 255, 0.04) 0px 0px 0px 0.524867px;
+}
+</i><br />------------------------------------------------
+<h3><sup">Reverse rotation sample</sup></h3>
+<i title="Click-Me to copy" id="s583" onclick='copyText("s583")'>
+.rotateBackwards:hover {
+    transform: rotate(-90deg);
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    outline: rgb(92, 0, 0) none 0px;
+    outline-offset: 0px;
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
+    text-shadow:  1px 1px #0000ff;
+    box-shadow: rgba(0, 123, 255, 0.04) 0px 0px 0px 0.524867px;
+}
+</i>
+            </p>
+
+        </div>
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </div>
+</body>
+</html>
