@@ -10,7 +10,7 @@
     </xsd:documentation>
   </xsd:annotation>
 
-<xsd:element name="copy">
+<xsd:element name="urlset">
   <xsd:complexType>
     <xsd:sequence>
       <xsd:element name="cs" type="xs:string" fixed="David W. Rick"/>
