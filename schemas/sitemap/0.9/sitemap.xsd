@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             targetNamespace="http://toremetal.github.io/schemas/sitemap/0.9"
-            xmlns="http://toremetal.github.io/schemas/sitemap/0.9"
-            elementFormDefault="qualified">
+            xmlns="http://toremetal.github.io/schemas/sitemap/0.9">
   <xsd:annotation>
     <xsd:documentation>
       XML Schema for Sitemap files.
