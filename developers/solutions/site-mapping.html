@@ -711,6 +711,7 @@ get_myFilesDir();
         <div class="bottom">
             <div class="tab">
                 <button class="tablinks" onclick="openCity(event, 'sitemap')">Site Mapper</button>
+                <button class="tablinks"><a href="https://github.toremetal.com/developers/solutions/seo/sitemap/index.php" download>(Download SiteMapper Code)</a></button>
                 <!--<button class="tablinks" onclick="openCity(event, 'copyright')">Copyright</button>
                 <button class="tablinks" onclick="openCity(event, 'Tokyo')">Examples</button>
                 <button class="tablinks" onclick="openCity(event, 'NavMenus')">NavMenus</button>
@@ -779,17 +780,18 @@ get_myFilesDir();
                                     <br />< url>
                                     <br />< loc><b>'.$url.str_replace("//","/",str_replace("./","/",str_replace("../","/",$dir."/".$dir1))).'</b>/< /loc>
                                     <br />< changefreq>Daily< /changefreq>
-                                    <br />< priority>0.90< /priority>
+                                    <br />< priority>0.50< /priority>
                                     <br />< lastmod><b>'.$lastMod.'</b>< /lastmod>
                                     <br />< /url>
                                     <br />
                                 </sup>
                             </sub>';
-                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get_myFilesDir($dir."/".$dir1, $url, $lastMod);
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$siteMap = $siteMap.get_myFilesDir($dir."/".$dir1, $url, $lastMod);
                             <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
                             <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
                             <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
                             <br />&nbsp;&nbsp;&nbsp;&nbsp;}
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;return $siteMap;
                             <br />}
                             <br />
                             <br /> <sup style="line-height:1;">
@@ -871,12 +873,12 @@ function get_myFilesDir($dir = ".", $url, $lastMod) {
 < lastmod>'.$lastMod.'< /lastmod>
 < /url>
 ';
-                    get_myFilesDir($dir."/".$dir1, $url, $lastMod);
+                    $siteMap = $siteMap.get_myFilesDir($dir."/".$dir1, $url, $lastMod);
                 }
             }
         }
     }
-return $siteMap;
+    return $siteMap;
 }
 
 /* ****************************************************************|
