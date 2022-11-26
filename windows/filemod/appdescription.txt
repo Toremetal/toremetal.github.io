@@ -1,0 +1,1 @@
+Modify every line of a file instantly.

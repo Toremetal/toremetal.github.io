@@ -1,0 +1,1 @@
+Remove duplicate lines, fixes upper & lower letter casing,<br />and fixes commas. Intended for ads.txt/app-ads.txt.
