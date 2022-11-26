@@ -44,27 +44,27 @@
  *     The License Agreement consists of a description of the rights and duties of the User of the Computer Software.
  *     
  *     THE RIGHTS AND DUTIES OF THE USER
- *     The Producer permits the User to("User's Software"):
- *     User grants User's Software end users
- *     a limited, personal, non-exclusive, and non-transferable license:
- *     To use the Computer Software only to the extent required for the
- *     permitted operation of User's Software and not to distribute them further.
- *     You give the Producer, without charge,
- *     the right to use your company name and logo on the Producer's customers list.
- *     
+       The Producer permits the User to("User's Software"):
+       User grants User's Software end users
+       a limited, personal, non-exclusive, and non-transferable license:
+       To use the Computer Software only to the extent required for the
+       permitted operation of User's Software and not to distribute them further.
+       You give the Producer, without charge,
+       the right to use your company name and logo on the Producer's customers list.
+       
  *     The User IS NOT ALLOWED:
- *     - to transfer their rights arising from this License Agreement to third parties.
- *     - to decompile the Computer Software or to modify it,
- *     - to copy the printed materials provided together with the Computer Software,
- *     - to create any software similar to the Computer Software,
- *     - to remove or change any trademarks or information about the Producer included
- *     in the Computer Software and the materials provided together with it.
- *     
+       - to transfer their rights arising from this License Agreement to third parties.
+       - to decompile the Computer Software or to modify it,
+       - to copy the printed materials provided together with the Computer Software,
+       - to create any software similar to the Computer Software,
+       - to remove or change any trademarks or information about the Producer included
+       in the Computer Software and the materials provided together with it.
+       
  *     The Producer does not warrant that the Computer Software will meet the expectations of the User or
- *     that it will properly cooperate with other Computer Software. The Producer does not warrant either
- *     that the Computer Software will function without errors. If the User intends to use the Computer Software
- *     for any particular purpose, they accept the full risk of the results they may obtain.
- *     
+       that it will properly cooperate with other Computer Software. The Producer does not warrant either
+       that the Computer Software will function without errors. If the User intends to use the Computer Software
+       for any particular purpose, they accept the full risk of the results they may obtain.
+       
  *     The Producer may collect and use technical information, gathered as part of a support or other
  *     services provided to you related to the Computer Software, to improve our products or services
  *     or provide customized services or technologies to you. We may disclose this information to others,
