@@ -110,36 +110,6 @@
 </div>
 -->
 <!-- **************************** End Applications Triple ******************************** -->
-
-<script>
-    function includeHTML1() {
-        var z, i, elmnt, file, xhttp;
-        /*loop through a collection of all HTML elements:*/
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /*search for elements with a certain attribute:*/
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-                /*make an HTTP request using the attribute value as the file name:*/
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4) {
-                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                        if (this.status == 404) { elmnt.innerHTML = ""; }
-                        /*remove the attribute, and call this function once more:*/
-                        elmnt.removeAttribute("w3-include-html");
-                        includeHTML1();
-                    }
-                }
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                /*exit the function:*/
-                return;
-            }
-        }
-    };
-</script>
 <div id="screenshot2" align="center" class="Lastestnews" style="padding: 0 0; margin: 0 0; background-color: #80808000;">
     <div id="screenshot" class="Albums" style="background-color: #80808000; padding: 0 0; margin: 0 0;" align="center">
         <div class="container" align="center">
@@ -157,7 +127,7 @@
                     <div align="center" class="container1" Style="max-width: 320px; background-color: #FFFFFF80; border-radius: 10px;">
                         <div align="center" class="news-box" Style="background-color:#FFFFFF80;border-radius:10px;">
                             <figure rel="ligthbox" class="section app-content contactus">
-                                <div onclick="window.location='/windows/adstxt';" w3-include-html="https://github.toremetal.com/windows/adstxt/content.html" style="cursor:pointer;max-width:256px;width:100%;border:none;overflow:hidden;height:256px;" title="Apps for Windows™"></div>
+                                <div onclick="window.location='/windows/adstxt';" w3-include-html="https://toremetal.github.io/windows/adstxt/content.html" style="cursor:pointer;max-width:256px;width:100%;border:none;overflow:hidden;height:256px;" title="Apps for Windows™"></div>
 
                             </figure>
                         </div>
@@ -168,7 +138,7 @@
                         <div align="center" class="news-box" Style="background-color:#FFFFFF80;border-radius:10px;">
                             <figure class='contactus' rel="ligthbox">
 
-                                <div onclick="window.location='/windows/smartsort';" w3-include-html="https://github.toremetal.com/windows/smartsort/content.html" style="cursor: pointer; max-width: 256px; width: 100%; border: none; overflow: hidden; height: 256px;" title="Apps for Windows™"></div>
+                                <div onclick="window.location='/windows/smartsort';" w3-include-html="https://toremetal.github.io/windows/smartsort/content.html" style="cursor: pointer; max-width: 256px; width: 100%; border: none; overflow: hidden; height: 256px;" title="Apps for Windows™"></div>
                             </figure>
                         </div>
                     </div>
@@ -178,7 +148,7 @@
                         <div align="center" class="news-box" Style="background-color:#FFFFFF80;border-radius:10px;">
                             <figure class='contactus' rel="ligthbox">
 
-                                <div onclick="window.location='/windows/filemod';" w3-include-html="https://github.toremetal.com/windows/filemod/content.html" style="cursor: pointer; max-width: 256px; width: 100%; border: none; overflow: hidden; height: 256px;" title="Apps for Windows™"></div>
+                                <div onclick="window.location='/windows/filemod';" w3-include-html="https://toremetal.github.io/windows/filemod/content.html" style="cursor: pointer; max-width: 256px; width: 100%; border: none; overflow: hidden; height: 256px;" title="Apps for Windows™"></div>
                             </figure>
                         </div>
                     </div>
@@ -187,7 +157,3 @@
         </div>
     </div>
 </div>
-<script>
-    includeHTML1();
-</script>
-
