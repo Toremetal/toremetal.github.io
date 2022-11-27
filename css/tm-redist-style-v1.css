@@ -1,0 +1,35 @@
+.toremetal.cc {
+  width: 64px;
+  height: 40px;
+  object-fit: scale-down;
+  box-shadow: ThreeDShadow 0.5px 0.5px;
+  border:0.4px groove ThreeDShadow;
+}
+.toremetal .stretch {
+  object-fit: fill;
+}
+.toremetal .resize {
+  object-fit: scale-down;
+}
+.toremetal .clip {
+  object-fit: cover;
+}
+.toremetal.cc .visa {
+  background-image: url("https://toremetal.github.io/img/visacard.png");
+}
+.toremetal.cc .master {
+  background-image: url("https://toremetal.github.io/img/mastercard.png");
+}
+.toremetal.cc .discover {
+  background-image: url("https://toremetal.github.io/img/discovercard.png");
+}
+.toremetal.cc .amer {
+  background-image: url("https://toremetal.github.io/img/amercard.png");
+}
+.toremetal.cc .paypal {
+  background-image: url("https://toremetal.github.io/img/paypal.png");
+}
+.toremetal.cc:hover {
+  border:0.4px ridge ThreeDShadow;
+  opacity:0.9;
+}
