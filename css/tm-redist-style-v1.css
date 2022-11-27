@@ -1,50 +1,144 @@
-.toremetal.cc {
-  width: 64px;
-  height: 40px;
-  object-fit: scale-down;
-  box-shadow: ThreeDShadow 0.5px 0.5px;
-  border:0.4px groove ThreeDShadow;
-}
-.toremetal.stretch {
-  object-fit: fill;
-}
-.toremetal.resize {
-  object-fit: scale-down;
-}
-.toremetal.clip {
-  object-fit: cover;
-}
-.toremetal.visa {
-  background: url("https://toremetal.github.io/img/visacard.png") no-repeat center;
-}
-.toremetal.master {
-  background: url("https://toremetal.github.io/img/mastercard.png") no-repeat center;
-}
-.toremetal.discover {
-  background: url("https://toremetal.github.io/img/discovercard.png") no-repeat center;
-}
-.toremetal.amer {
-  background: url("https://toremetal.github.io/img/amercard.png") no-repeat center;
-}
-.toremetal.paypal {
-  background: url("https://toremetal.github.io/img/paypal.png") no-repeat center;
-}
-.toremetal.visa-sm {
-  background: url("https://toremetal.github.io/img/visacard-sm.png") no-repeat center;
-}
-.toremetal.master-sm {
-  background: url("https://toremetal.github.io/img/mastercard-sm.png") no-repeat center;
-}
-.toremetal.discover-sm {
-  background: url("https://toremetal.github.io/img/discovercard-sm.png") no-repeat center;
-}
-.toremetal.amer-sm {
-  background: url("https://toremetal.github.io/img/amercard-sm.png") no-repeat center;
-}
-.toremetal.paypal-sm {
-  background: url("https://toremetal.github.io/img/paypal-sm.png") no-repeat center;
-}
-.toremetal.cc:hover {
-  border:0.4px ridge ThreeDShadow;
-  opacity:0.9;
-}
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+    }
+
+        #snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+    @-webkit-keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+
+   /* credit card pre-set images */
+    .toremetal.cc, .toremetal.cc-sm, button {
+        box-shadow: rgba(0,0,0,0.31) 0.5px 0.5px;
+        border: 0.5px groove ButtonShadow;
+        border-radius: 5px;
+    }
+
+        .toremetal.cc-sm:hover, .toremetal.cc:hover, button:hover {
+            border: 0.5px ridge silver;
+            opacity: 0.9;
+        }
+
+    .toremetal.cc {
+        width: 64px;
+        height: 40px;
+    }
+
+    .toremetal.cc-sm {
+        width: 32px;
+        height: 20px;
+    }
+
+    .toremetal.visa {
+        background: url("https://toremetal.github.io/img/visacard.png") no-repeat center;
+    }
+
+    .toremetal.master {
+        background: url("https://toremetal.github.io/img/mastercard.png") no-repeat center;
+    }
+
+    .toremetal.discover {
+        background: url("https://toremetal.github.io/img/discovercard.png") no-repeat center;
+    }
+
+    .toremetal.amer {
+        background: url("https://toremetal.github.io/img/amercard.png") no-repeat center;
+    }
+
+    .toremetal.paypal {
+        background: url("https://toremetal.github.io/img/paypal.png") no-repeat center;
+    }
+
+    .toremetal.visa-sm {
+        background: url("https://toremetal.github.io/img/visacard-sm.png") no-repeat center;
+    }
+
+    .toremetal.master-sm {
+        background: url("https://toremetal.github.io/img/mastercard-sm.png") no-repeat center;
+    }
+
+    .toremetal.discover-sm {
+        background: url("https://toremetal.github.io/img/discovercard-sm.png") no-repeat center;
+    }
+
+    .toremetal.amer-sm {
+        background: url("https://toremetal.github.io/img/amercard-sm.png") no-repeat center;
+    }
+
+    .toremetal.paypal-sm {
+        background: url("https://toremetal.github.io/img/paypal-sm.png") no-repeat center;
+    }
+
+   /* object-fit stretch, clip, resize */
+    .toremetal.stretch {
+        object-fit: fill;
+    }
+
+    .toremetal.resize {
+        object-fit: scale-down;
+    }
+
+    .toremetal.clip {
+        object-fit: cover;
+    }
