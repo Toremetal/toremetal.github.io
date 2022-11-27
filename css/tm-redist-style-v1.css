@@ -1,4 +1,4 @@
-.toremetal.cc {
+.toremetal .cc {
   width: 64px;
   height: 40px;
   object-fit: scale-down;
@@ -14,22 +14,22 @@
 .toremetal .clip {
   object-fit: cover;
 }
-.toremetal.cc .visa {
-  background-image: url("https://toremetal.github.io/img/visacard.png");
+.toremetal .visa {
+  background: url("https://toremetal.github.io/img/visacard.png") no-repeat center;
 }
-.toremetal.cc .master {
-  background-image: url("https://toremetal.github.io/img/mastercard.png");
+.toremetal .master {
+  background: url("https://toremetal.github.io/img/mastercard.png") no-repeat center;
 }
-.toremetal.cc .discover {
-  background-image: url("https://toremetal.github.io/img/discovercard.png");
+.toremetal .discover {
+  background: url("https://toremetal.github.io/img/discovercard.png") no-repeat center;
 }
-.toremetal.cc .amer {
-  background-image: url("https://toremetal.github.io/img/amercard.png");
+.toremetal .amer {
+  background: url("https://toremetal.github.io/img/amercard.png") no-repeat center;
 }
-.toremetal.cc .paypal {
-  background-image: url("https://toremetal.github.io/img/paypal.png");
+.toremetal .paypal {
+  background: url("https://toremetal.github.io/img/paypal.png") no-repeat center;
 }
-.toremetal.cc:hover {
+.toremetal .cc:hover {
   border:0.4px ridge ThreeDShadow;
   opacity:0.9;
 }
