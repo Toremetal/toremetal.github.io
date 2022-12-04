@@ -110,6 +110,14 @@
         background: url("https://toremetal.github.io/img/paypal.png") no-repeat center;
     }
 
+    .toremetal.gpay {
+      background: url("https://toremetal.github.io/img/gpay.png") no-repeat center;
+    }
+
+    .toremetal.gpay-sm {
+      background: url("https://toremetal.github.io/img/gpay-sm.png") no-repeat center;
+    }
+
     .toremetal.visa-sm {
         background: url("https://toremetal.github.io/img/visacard-sm.png") no-repeat center;
     }
