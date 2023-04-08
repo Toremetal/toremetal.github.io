@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="window-target" content="_self"/>
+    <title>Word Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+
+    <style>
+
+        html, body, div, h1, form, input, p, a, h6 {
+            outline: none;
+            font-family: "IM Fell English SC", serif;
+        }
+        #dictionarybox12 TD, INPUT, SELECT {
+            font-family: "IM Fell English SC", serif;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body style="margin:auto;" >
+
+
+<div style="text-align:center;align-content:center;margin:auto;">
+<div style="background-color:teal;margin:auto;width:fit-content;text-align:center;align-content:center;border-radius:5px;border:1px solid black;padding:0 0 0 0;box-shadow: 1px 2px 5px rgba(28,28,28,.51);box-sizing: border-box;">
+    <a id="dictionary" name="#dictionary">
+        <iframe id="#words" target="_SELF" src="wordfinder.html" align="middle" style="padding:4px;margin:0 0 0 0;height:212px;border:none;max-width:288px;">
+        </iframe></a>
+    <br/>
+    <input class="wordfinderbutton" title="Reset to find more words!" type="button" onclick="resetfinder()" value="Reset"/>
+<script>
+    function resetfinder() {
+        document.getElementById("#words").src="wordfinder.html";
+    }
+</script>
+
+<h6 style="margin:auto 2px 2px auto;cursor:default;" title="Powered by thefreedictionary.com">Powered by 
+<a class="adictionary" href="https://www.thefreedictionary.com" title="Powered by thefreedictionary.com" rel="nofollow">TheFreeDictionary.com
+</a>
+</h6>
+<h6 style="margin-right:2px;margin-bottom:1px;text-align:right;cursor:default;font-size:8px;" title="Modified Design by &#169;&#8482;T&#169;ReMeTaL">Modified Design by &#169;
+<a style="font-size:8px;margin:0 0 0 0;" class="adictionary" href="https://toremetal.com" title="Request a Quote? (&#8482;T&#169;ReMeTaL Custom Widgets)" onclick="contactme()" rel="nofollow">&#8482;T&#169;ReMeTaL
+</a>
+</h6><br/><h6 style="font-size:8px;cursor:pointer;color:darkred;" onclick="contactme()" title="Want a widget like this? Request a Quote?">Get a widget like this for your site!</h6>
+<script>function contactme() {window.open("mailto:toremetal@toremetal.com?subject=I need a custom widget for my website!&body=I need a widget to do (purpose)? For my (website-type) website!")}</script>
+</div>
+</div>
+</body>
+</html>

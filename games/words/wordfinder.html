@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="window-target" content="_self"/>
+    <title>Word Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+
+    <style>
+
+        html, body, div, h1, form, input, p, a, h6 {
+            outline: none;
+            font-family: "IM Fell English SC", serif;
+        }
+        #dictionarybox12 TD, INPUT, SELECT {
+            font-family: "IM Fell English SC", serif;
+            font-size: 10pt;
+        }
+    </style>
+<script src="https://www.thefreedictionary.com/dict.js"></script>
+</head>
+<body style="width:100%;margin:auto;padding:30px 0 0;height:fit-content;background-color:teal;border-radius:5px;" ondblclick="dictionary()" >
+<div align="center" style="width:100%;">
+    <!--Word Finder lookup box by TheFreeDictionary.com-->
+    <form action="https://www.thefreedictionary.com/_/partner.aspx" method="get" name="wordfinder"
+          style="align-self:center;width: 270px;display:inline;margin:0;border-radius:5px;background-color:white;box-sizing: border-box;box-shadow: -1px -2px -5px rgba(28,28,28,.31);" target="_self" autocomplete="off">
+        <input type="hidden" name="LookupSrc" value="wf">
+        <table id="dictionarybox12" cellspacing="0" cellpadding="3" style="border:1px #AFAFAF solid;font-family:inherit;width:270px;background-color:#e5f4fb;color:#000000;border-radius:5px;border:1px solid black;">
+            <tr>
+                <td bgcolor="#FFFFFF" style="border-bottom:1px #AFAFAF solid; text-align: center">
+                    <img src="https://img.tfd.com/Help.gif" width="25" height="25" />
+                </td>
+                <td bgcolor="#FFFFFF" style="border-bottom:1px #AFAFAF solid" colspan="2" nowrap>
+<!--<a style="text-decoration:none;color:#000000" href="https://www.thefreedictionary.com/Word-Finder.htm" rel="nofollow">-->
+                        <div style="font-size:12pt">
+                            <b>Dictionary & Word Finder</b>
+                        </div>
+                        <div style="font-size:8pt">
+                            Type any word & DoubleClick it
+                            <br />to look up the definition.
+                        </div>
+                    <!--</a>-->
+                </td>
+            </tr>
+            <tr>
+                <td align="center">Word:</td>
+                <td colspan="2">
+                    <input style="max-width:162px;margin-right:30px;" name="Word" value="" size="26" />
+                </td>
+            </tr>
+            <tr id="dictionarybox_source12">
+                <td colspan=3 style="font-size:8pt;text-align:left" id="boxsource_td12">
+                    <style>
+                        #boxsource_td12 A {
+                            color: #000000;
+                            text-decoration: none
+                        }
+                    </style>
+                    <!--[if IE]><style>#boxsource_td12 INPUT {height:12pt}</style><![endif]-->
+                    <table style="margin: 0 auto 0.5em auto;">
+
+            <tr>
+                <td colspan="3" align=center style="text-align: center">
+                    <input id=box_submit12 style="font-size: 10pt" type="button" onclick="this.form.submit()" value="Search for alternate words.">
+                </td>
+            </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" name="mode" id="opt112" value="s" checked>
+                                <label for=opt112>Starts With</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="mode" id="opt113" value="e">
+                                <label for=opt113>Ends With</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" name="mode" id="opt114" value="c">
+                                <label for=opt114>Contains</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="mode" id="opt115" value="u">
+                                <label for=opt115>Unscramble</label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!--end of Word Finder lookup box-->
+</div>
+</body>
+</html>
+
