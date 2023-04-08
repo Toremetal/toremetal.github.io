@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html charset='utf-8'>
+<head>
+    <meta charset='utf-8'>
+    <link rel='canonical' href='https://toremetal.com/signs' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1' />
+    <meta name='HandheldFriendly' content='true' />
+    <title>&#8482;T&#169;ReMeTaL - Mail-Man</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.1/css/all.css' integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz' crossorigin='anonymous'>
+    <style>
+        .mail-panel body { display: flex; justify-content: center; height: fit-content; margin: 0 auto; padding: 0 0; }
+        .mail-panel { height: fit-content; max-width: 512px; padding: 0 0; margin: 0 auto; border-radius: 5px; border: solid 1px #ccc; box-shadow: 1px 2px 5px rgba(0,0,0,.31); background: #ebebeb; }
+            .mail-panel body, div, h1, form, input, p { padding: 0; margin: 0; outline: none; font-family: Roboto, Arial, sans-serif; font-size: 16px; color: #666; }
+            .mail-panel h1 { padding: 10px 0; font-size: 32px; font-weight: 300; text-align: center; }
+            .mail-panel p { font-size: 12px; }
+            .mail-panel hr { color: #a9a9a9; opacity: 0.3; }
+            .mail-panel form { margin: 0 30px; }
+            .mail-panel .account-type, .gender { margin: 15px 0; }
+            .mail-panel label#icon { margin: 0; border-radius: 5px 0 0 5px; }
+            .mail-panel label#icon2 { margin: 10px 0 0 0; border-radius: 5px 0 0 5px; }
+            .mail-panel input[type=radio] { display: none; }
+            .mail-panel label.radio { position: relative; display: inline-block; padding-top: 4px; margin-right: 20px; text-indent: 30px; overflow: visible; cursor: pointer; }
+                .mail-panel label.radio:before { content: ''; position: absolute; top: 2px; left: 0; width: 20px; height: 20px; border-radius: 50%; background: #1c87c9; }
+                .mail-panel label.radio:after { content: ''; position: absolute; width: 9px; height: 4px; top: 8px; left: 4px; border: 3px solid #fff; border-top: none; border-right: none; transform: rotate(-45deg); opacity: 0; }
+            .mail-panel input[type=radio]:checked + label:after { opacity: 1; }
+            .mail-panel input[type=text], input[type=password], input[type=url], input[type=email], input[type=file] { width: calc(100% - 57px); height: 36px; margin: 13px 0 0 -5px; padding-left: 10px; border-radius: 0 5px 5px 0; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #fff; }
+            .mail-panel input[type=password] { margin-bottom: 15px; }
+            .mail-panel #icon { display: inline-block; padding: 9.3px 15px; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #1c87c9; color: #fff; text-align: center; }
+            .mail-panel #icon2 { display: inline-block; padding: 9.3px 13px; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #1c87c9; color: #fff; text-align: center; float: left; }
+            .mail-panel .btn-block { margin-top: 10px; text-align: center; }
+            .mail-panel input[type=submit] { padding: 10px 20px; margin: 10px auto; border-radius: 5px; border: none; background: #1c87c9; font-size: 14px; font-weight: 600; color: #fff; cursor: pointer; }
+                .mail-panel input[type=submit]:hover { background: #26a9e0; }
+            .mail-panel .auto_height { width: calc(100% - 59px); margin: 10px 0 0 0; padding-left: 10px; border-radius: 0 5px 5px 0; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); }
+    </style>
+</head>
+<body onload='newproblem()'>
+    <div class='mail-panel'>
+        <h1 style='color:darkred;font-weight:600;'>
+            &#8482;T&#169;ReMeTaL<br> &nbsp;<sup style='font-weight: 400;color: orangered'> Math Practice</sup>
+        </h1>
+        <div id='myForm'>
+            <hr>
+            <div style='margin:10px 0 0 0;' align='center'>
+                <input onchange='newproblem()' type='radio' value='true' id='decimaltrue' name='decimal' checked />
+                <label for='decimaltrue' class='radio'>Decimal</label>
+                <input onchange='newproblem()' type='radio' value='false' id='decimalfalse' name='decimal' />
+                <label for='decimalfalse' class='radio'>No decimal</label>
+                <br>
+                <label for='operation'>Choose an Operation:</label>
+                <select onchange='newproblem()' title='select the type of math problem to solve' id='operation' name='operation'>
+                    <option value='add'>Add</option>
+                    <option value='subtract'>Subtract</option>
+                    <option value='multiply' selected>Multiply</option>
+                    <option value='divide'>Divide</option>
+                    <option value='power'>Power</option>
+                    <option value='sqrt'>Sqrt</option>
+                </select><br>
+            </div>
+            <div class='account-type' align='center' style='padding:0 20px;'>
+                <label id='icon' for='numlim'>Number Limit (Solve Problems with numbers from 0 - Limit)</label>
+                <input onchange='newproblem()' style='margin:auto;width:100px;text-align:center;height:32px;' title='Number limit' id='numlim' placeholder='Number Limit' type='number' name='numlim' value=100 required>
+                <br /><label for='yanswer'>Solve this equation.</label>
+                <div style='background-color: cyan; font-size: 24px; margin: auto; width: 80%; text-align: center; height: 32px;' id='problem'></div>
+<br />
+                <textarea id='scratchPad' title='Scratch Pad' name='scratchPad' placeholder='scratchPad' oninput='auto_height(this)'></textarea>
+                <script>
+                    function auto_height(elem) {
+                        elem.style.height = '24px'; elem.style.height = (elem.scrollHeight) + 'px';
+                    }
+                </script>
+                
+                <label style='color:darkgoldenrod;background-color:transparent;' id='icon'>for problems with decimals: 0.00 (Use Two Decimal Places)</label>
+                <!--<b>for problems with decimals: 0.00 (Use Two Decimal Places)</b><br />-->
+                <label id='icon' for='yanswer'><i class='fas fa-user'></i></label>
+                <input style='margin:auto;width:80%;text-align:center;height:32px;' title='Your Answer' id='yanswer' placeholder='Enter your answer here.' type='number' name='yanswer'>
+                <input id='answer' style='text-align:center;' placeholder='answer' type='text' name='answer' disabled hidden>
+            </div>
+            <div class='btn-block'>
+                <button onclick='checkAnswer()'>Check Answer</button>
+                <button onclick='newproblem()'>New Problem</button>
+                <button id='showanswer' onclick='showAnswer()'>Show Answer</button>
+            </div>
+            <hr>
+            <p style='margin: 0 0 0 0;font-size:10px;text-decoration:none;' align='center'>
+                <small>
+                    <a title='legal stuff' style='text-decoration:none;' href='https://toremetal.com/privacypolicy'>Privacy Policy</a>.
+                </small>
+                <br />&#169;2023&#8482;T&#169;ReMeTaL
+            </p>
+        </div>
+
+        <script>
+            function showAnswer() {
+                if (document.getElementById('answer').hidden) {
+                    document.getElementById('answer').hidden = false;
+                    document.getElementById('showanswer').innerText = 'Hide Answer';
+                } else {
+                    document.getElementById('answer').hidden = true;
+                    document.getElementById('showanswer').innerText = 'Show Answer';
+                }
+            }
+            function newproblem() {
+
+                if (document.getElementById('operation').value == 'multiply') {
+                    if (!document.getElementById('decimaltrue').checked) {
+                        let x = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let y = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let z = parseInt(x * y);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerText = x.toString() + ' * ' + y.toString();
+                    } else {
+                        let x = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let y = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let z = parseFloat(x * y).toFixed(2);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerText = x.toString() + ' * ' + y.toString();
+                    }
+                } else if (document.getElementById('operation').value == 'divide') {
+                    if (!document.getElementById('decimaltrue').checked) {
+                        let x = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let y = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let z = parseInt(x / y);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerText = x.toString() + ' / ' + y.toString();
+                    } else {
+                        let x = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let y = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let z = parseFloat(x / y).toFixed(2);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerText = x.toString() + ' / ' + y.toString();
+                    }
+                } else if (document.getElementById('operation').value == 'add') {
+                    if (!document.getElementById('decimaltrue').checked) {
+                        let x = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let y = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let z = parseInt(x) + parseInt(y);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerText = x.toString() + ' + ' + y.toString();
+                    } else {
+                        let x = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let y = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let z = (parseFloat(x) + parseFloat(y)).toFixed(2);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerText = x.toString() + ' + ' + y.toString();
+                    }
+                } else if (document.getElementById('operation').value == 'subtract') {
+                    if (!document.getElementById('decimaltrue').checked) {
+                        let x = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let y = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let z = parseInt(x - y);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerText = x.toString() + ' - ' + y.toString();
+                    } else {
+                        let x = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let y = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let z = parseFloat(x - y).toFixed(2);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerText = x.toString() + ' - ' + y.toString();
+                    }
+                } else if (document.getElementById('operation').value == 'power') {
+                    if (!document.getElementById('decimaltrue').checked) {
+                        let x = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let y = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value));
+                        let z = Math.pow(x, y);
+                        document.getElementById('answer').value = z.toString();
+                        document.getElementById('problem').innerHTML = x.toString() + '<sup>' + y.toString() + '</sup>';
+                    } else {
+                        let x = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2);
+                        let y = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(0);
+                        let z = parseFloat(Math.pow(x, y).toFixed(2));
+                        document.getElementById('answer').value = z.toString(); document.getElementById('problem').innerHTML = x.toString() + '<sup>' + y.toString() + '</sup>';
+                    }
+                } else if (document.getElementById('operation').value == 'sqrt') { if (!document.getElementById('decimaltrue').checked) { let x = parseInt(Math.random() * parseFloat(document.getElementById('numlim').value)); let y = parseInt(parseInt(Math.random() * parseFloat(document.getElementById('numlim').value) + x)); let z = parseInt(Math.sqrt(y)); document.getElementById('answer').value = z.toString(); document.getElementById('problem').innerText = '√' + y.toString(); } else { let x = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value)).toFixed(2); let y = parseFloat(Math.random() * parseFloat(document.getElementById('numlim').value) + x).toFixed(2); let z = parseFloat(Math.sqrt(y)).toFixed(2); document.getElementById('answer').value = z.toString(); document.getElementById('problem').innerText = '√' + y.toString(); } }
+            }</script>
+        <script>function checkAnswer() { if (document.getElementById('answer').value.toString() == document.getElementById('yanswer').value.toString()) { window.alert('You got it Correct, Great Job!'); newproblem(); } else { window.alert('Oops, not the right answer. Keep trying though you\'ll get it.'); } }</script>
+    </div>
+</body>
+</html>
