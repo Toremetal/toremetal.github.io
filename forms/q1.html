@@ -1,0 +1,835 @@
+
+<!DOCTYPE HTML>
+<html lang="en_US" charset="utf-8">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta charset="utf-8" />
+    <meta lang="en_US" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex">
+    <title>Longview Business and Occupation Tax form.</title>
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0, user-scalable=1" />
+    <meta itemprop="url" content="/forms/bno-longview">
+    <meta name="description" content="Longview Business and Occupation Tax form." />
+    <meta name="keywords" content="Longview, Longview Wa, B&O, b&o, b&o longview,Longview B&O, Business and Occupation" />
+    <style>
+        .thisForm {
+            padding: 20px 10px;
+            width: 698px;
+            height: auto;
+            background-color: white;
+            border: none; /*1px solid #0189bc;*/
+        }
+
+        .minTaxableGross {
+            width: 364px;
+            font-size: 10px;
+            text-align: justify;
+            margin: 0 0 0 32px;
+            padding: 0;
+            border: 1px solid #0189bc;
+        }
+
+        .deductions {
+            display: inline-block;
+            width: 670px;
+            border: 1px solid #0189bc;
+            margin: 0 0 0 10px;
+            padding: 0;
+            font-size: 8px;
+        }
+
+        .typeofDeduction {
+            font-size: 10px;
+            text-align: center;
+            width: 90px;
+            border-left: none;
+            border: 1px solid #0189bc;
+            padding: 4px 1px;
+            margin: 0 -1px;
+        }
+
+        .deductExplain {
+            width: 156px;
+        }
+
+        .deductAmount {
+            width: 60px;
+        }
+
+        .deductDescription {
+            font-size: 10px;
+            text-align: left;
+            width: 350px;
+            border: none;
+            padding: 4px 1px;
+            margin: 0 -1px;
+        }
+
+        .printBtnL {
+            left: 10px;
+        }
+
+        .printBtnR {
+            right: 10px;
+        }
+
+        .printButton {
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            box-shadow: 2px 2px 2px rgba(0,0,0,.09);
+            border-radius: 40px;
+            bottom: 10px;
+            color: darkblue;
+            background-color: white;
+            background: white;
+            opacity: 0.7
+        }
+
+            .printButton:hover {
+                opacity: 0.9;
+                border-radius: 24px;
+                box-shadow: 1px 1px 1px rgba(0,0,0,.18);
+                font-weight: 100;
+                /* -ms-transform: scaleY(1.5); */ /* IE 9 */
+                /* transform: scaleY(1.5); */
+                /* -ms-transform: skewY(20deg); */ /* IE 9 */
+                /* transform: skewY(20deg); */
+                -ms-transform: rotate(180deg); /* IE 9 */
+                transform: rotate(180deg);
+            }
+
+        .form-bsets { /* Font & Text */
+            font-family: "IM Fell English SC", serif;
+            font-size: 12px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            letter-spacing: normal;
+            line-height: 21.7028px;
+            text-decoration: none solid rgb(102, 102, 102);
+            text-align: center;
+            text-indent: 0px;
+            text-transform: none;
+            vertical-align: baseline;
+            white-space: normal;
+            word-spacing: 0px;
+            overflow: hidden;
+            text-overflow: clip; /* Color & Background */
+            background: #521818;
+            background-attachment: scroll;
+            background-color: rgb(82, 24, 24);
+            background-image: none;
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            color: rgb(102, 102, 102); /* Box */
+            height: auto;
+            width: auto;
+            margin-right: 10%;
+            border: 1px solid rgb(204, 204, 204);
+            padding: 2px;
+            max-height: none;
+            min-height: 0px;
+            max-width: 50%;
+            min-width: 0px; /* Positioning */
+            position: absolute;
+            clear: none;
+            z-index: 1000; /* List */
+            list-style-image: none;
+            list-style-type: disc;
+            list-style-position: outside; /* Table */
+            border-collapse: separate;
+            border-spacing: 0px 0px;
+            caption-side: top;
+            empty-cells: show;
+            table-layout: auto; /* Miscellaneous */
+            overflow: visible;
+            cursor: auto;
+            visibility: visible; /* Effects */
+            transform: none;
+            transition: all 0s ease 0s; /*outline: rgb(44, 44, 44) dashed 1px;*/
+            outline-offset: 0px;
+            box-sizing: border-box;
+            resize: none;
+            text-shadow: none;
+            text-overflow: clip;
+            word-wrap: normal;
+            box-shadow: rgba(0, 0, 0, 0.7) 1px 2px 5px 0px;
+            border-radius: 10px;
+        }
+
+            .form-bsets h {
+                width: 100%;
+                position: absolute;
+                text-align: center;
+                font-weight: 500;
+                padding: 10px 0 5px 0;
+                margin: 0 0 0 0;
+                left: 0;
+                right: 0;
+                font-size: 30px;
+                color: #779000;
+                text-shadow: 1px 1px #0000ff;
+            }
+
+            .form-bsets h3 {
+                font-size: 21px;
+                font-weight: 400;
+                color: #449000;
+                margin: 5px 0 0 0;
+                padding: 0 0 0 0;
+                text-shadow: 1px 1px #0000ff;
+            }
+
+            .form-bsets h4 {
+                text-shadow: 1px 1px #000f00;
+                padding: 0 0 0 0;
+                margin: 0 0 0 0;
+            }
+
+            .form-bsets h7 {
+                color: #701b00;
+                padding: 0 5px 0 5px;
+                font-size: 21px;
+                font-weight: 400;
+                text-shadow: 1px 1px #000000;
+            }
+
+            .form-bsets p {
+                line-height: 0.9
+            }
+
+            .form-bsets small b {
+                color: #701b00;
+                padding: 0 5px 0 5px;
+                font-size: 21px;
+                font-weight: 400;
+                text-shadow: 1px 1px #000000;
+            }
+
+        .smlcibtn {
+            margin: 2px 4px 2px 4px;
+            padding: 4px;
+            font-size: 10px;
+            background: #776b2bA0;
+            width: 32px;
+            height: 32px;
+            border-radius: 20px;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            border: 1px solid #ccc;
+            color: white;
+        }
+
+            .smlcibtn:hover {
+                margin: 2px 4px 2px 4px;
+                padding: 4px;
+                font-size: 10px;
+                background: #000000A0;
+                width: 32px;
+                height: 32px;
+                border-radius: 20px;
+                box-sizing: border-box;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+                border: 1px solid #ccc;
+                transform: rotate(180deg);
+                -webkit-transition: all 0.5s ease-in-out;
+                -moz-transition: all 0.5s ease-in-out;
+                -o-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+            }
+
+        .s3Dbtn:hover {
+            opacity: 0.7;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px rgba(0,0,0,.09);
+            font-weight: 100;
+        }
+
+        .whttxt:hover {
+            color: #e46b54;
+            transform: rotate(1deg);
+        }
+
+        .bluhover:hover {
+            color: blue;
+            text-shadow: 1px 1px #0000ff;
+        }
+
+        .rotate:hover {
+            transform: rotate(180deg);
+            -webkit-transition: all .5s ease-in-out;
+            -moz-transition: all .5s ease-in-out;
+            -o-transition: all .5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            outline: rgb(92, 0, 0) none 0px;
+            outline-offset: 0px;
+            box-sizing: border-box;
+            resize: none;
+            overflow: hidden;
+            text-shadow: 1px 1px #0000ff;
+            box-shadow: rgba(0, 123, 255, 0.04) 0px 0px 0px 0.524867px;
+        }
+
+        .rotate2:hover {
+            transform: rotate(718deg);
+            -webkit-transition: all .5s ease-in-out;
+            -moz-transition: all .5s ease-in-out;
+            -o-transition: all .5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            outline: rgb(92, 0, 0) none 0px;
+            outline-offset: 0px;
+            box-sizing: border-box;
+            resize: none;
+            overflow: hidden;
+            text-shadow: 1px 1px #0000ff;
+            box-shadow: rgba(0, 123, 255, 0.04) 0px 0px 0px 0.524867px;
+        }
+
+        .form-mylogin-privacy {
+            border: none;
+            width: auto;
+            text-align: center;
+            font-size: 10px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 26px;
+            z-index: 15;
+            position: absolute;
+            line-height: 1.01;
+            background: transparent;
+        }
+
+            .form-mylogin-privacy:hover {
+                color: blue;
+                opacity: 1;
+                border: 1px solid rgba(255,215,0,0.115);
+                box-sizing: border-box;
+            }
+
+        .myformCopyRight {
+            color: #ddd;
+            background-color: transparent;
+            opacity: 0.8;
+            position: relative;
+            cursor: none;
+            padding: 0;
+            font-style: italic;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+            bottom: 5px;
+            z-index: 0;
+        }
+
+        .pbg {
+            background: #000077A0;
+        }
+    </style>
+</head>
+<body onload="cyr('pd')" style="background-color:transparent;">
+    <!--setform-->
+    <div class="form-bsets" id="myFormkk" align="center" hidden>
+        <div class="myforms">
+            <div>
+                <script>
+                    function add_info() {
+                        if (document.getElementById("barcode_Img_UrlVal").value != "") {
+                            document.getElementById('barcodeImgUrl').src = document.getElementById("barcode_Img_UrlVal").value;
+                        }
+                        if (document.getElementById("bnameVal").value != "" && document.getElementById("streetAddressVal").value != "" && document.getElementById("cityStateZipVal").value != "") {
+                            document.getElementById('address').innerHTML = document.getElementById("bnameVal").value + "\r" + document.getElementById("streetAddressVal").value + "\n" + document.getElementById("cityStateZipVal").value;
+                        }
+                        if (document.getElementById("accountNumberVal").value != "") {
+                            document.getElementById('accountNumber').value = document.getElementById("accountNumberVal").value;
+                        }
+                        if (document.getElementById("blocationVal").value != "") {
+                            document.getElementById('blocation').value = document.getElementById("blocationVal").value;
+                        } else if (document.getElementById("streetAddressVal").value != "") {
+                            document.getElementById('blocation').value = document.getElementById("streetAddressVal").value;
+                        }
+                    }
+                </script>
+                <form action="" style="width:100%;text-align:center;">
+                    <h3 style="left:0;right:0;position:absolute;">Business</h3><br>
+                    <h4 style="color:#c76400;font-size:24px;margin:0;padding:0;text-decoration-line: underline; text-decoration-style: double;">Enter Account info</h4>
+                    <!--<label id="icon" for="bnameVal"><i class="fa fa-name"></i></label>-->
+                    <input class="inputs" style="width: calc(100% - 57px); height: 36px; margin: 5px 5px 5px 5px; padding: 3px 10px 3px 10px; border-radius: 5px; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #fff; overflow: hidden;" type="text" name="bname" id="bnameVal" title="Enter your Business name" placeholder="Business Name" value="" /><br />
+                    <!--<label id="icon" for="accountNumberVal"><i class="fa fa-name"></i></label>-->
+                    <input class="inputs" style="width: calc(100% - 57px); height: 36px; margin: 5px 5px 5px 5px; padding: 3px 10px 3px 10px; border-radius: 5px; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #fff; overflow: hidden;" type="text" name="accountNumber" id="accountNumberVal" title="Enter your Account Number" placeholder="Account Number" value="" /><br />
+
+                    <!--<label id="icon" for="streetAddressVal"></label>-->
+                    <input class="inputs" style="width: calc(100% - 57px); height: 36px; margin: 5px 5px 5px 5px; padding: 3px 10px 3px 10px; border-radius: 5px; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #fff; overflow: hidden;" type="text" name="streetAddress" id="streetAddressVal" title="Street Address" placeholder="Street Address" value="" /><br>
+                    <!--<label id="icon" for="streetAddress"></label>-->
+                    <input class="inputs" style="width: calc(100% - 57px); height: 36px; margin: 5px 5px 5px 5px; padding: 3px 10px 3px 10px; border-radius: 5px; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #fff; overflow: hidden;" type="text" name="cityStateZip" id="cityStateZipVal" title="City State Zip" placeholder="City State Zip" value="" />
+                    <br>
+                    <!--<label id="icon" for="blocation"></label>-->
+                    <input style="width: calc(100% - 57px); height: 36px; margin: 5px 5px 5px 5px; padding: 3px 10px 3px 10px; border-radius: 5px; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #fff; overflow: hidden;" type="text" name="blocation" id="blocationVal" title="Business Location" placeholder="Location" value="" />
+                    <br>
+                    <!--<img style="height:auto;width:auto;max-height:128px; margin: 0 0 0 0; padding: 0 0 0 0;" title="Barcode Image" src="barcode.png" alt="Barcode image" />
+                    <br />-->
+                    <!--<label id="icon" for="barcode_Img_Url"></label>-->
+                    <input style="width: calc(100% - 57px); height: 36px; margin: 5px 5px 5px 5px; padding: 3px 10px 3px 10px; border-radius: 5px; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #fff; overflow: hidden;" type="url" name="barcode_Img_Url" id="barcode_Img_UrlVal" title="barcode_Img_Url" placeholder="barcode_Img_Url" value="" pattern="http" />
+                    <br />
+
+                    <input onclick="add_info()" name="sbname" id="sbname" class="smlcibtn btn rotate2 whttxt" title="Save Info" type="button" value="Save" />
+                    <input name="reset" id="reset" title="Reset Form" value="Reset" type="reset" class="smlcibtn pbg btn rotate whttxt" style="padding:0;" />
+                </form>
+                <!-- End Url form-->
+                <div align="center" style="width:100%;">
+
+                    <p style="margin-bottom:4px;padding-right:10px;">
+                        <small>by use of this service:<br>you agree to the policies of</small>
+                        <br>™T©ReMeTaL
+                    </p>
+                    <br />
+                    <button style="background:transparent;color:white;cursor:pointer;margin:20px;" class="form-mylogin-privacy bluhover" onclick="ppol()">Privacy Policy</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <script>function hbtn(btn) { document.getElementById(btn).value = "savin"; }</script>
+        <script>
+            function yr() {
+                const d = new Date(); return '&#169;' + d.getFullYear() + '&#8482;T&#169;ReMeTaL';
+            }
+            document.write('<div align="center" class="myformCopyRight" title="COPYRIGHT ' + yr() + '" >' + yr() + "</div>");
+        </script>
+    </div>
+
+    <div align="center">
+        <form class="thisForm" align="left">
+            <script>
+                term = "Q1";
+                due = "4/15/";
+                barcode_Img_Url = "";
+                accountNumber = "";
+                accountNumber1 = "Account#";
+                blocation = "";
+                blocation1 = "Business Location";
+                address = "";
+                address1 = "Business\nStreet Address\nCity State Zip+4";
+                gmin = 20000;
+                smin = 20000;
+                gminstr = "$20,000";
+                sminstr = "$20,000";
+                ctax = 0.001;
+                wtax = 0.001;
+                mtax = 0.001;
+                rtax = 0.001;
+                ptax = 0.001;
+                stax = 0.002;
+                utax = 0.060;
+
+                /* ****************************************************************************************************************
+                         ****************** Help descriptions (Use \r\n for new lines) **********************
+                   Descriptions display to user on mouse hover. (Limited characters the Retail Description won't display all text.)
+                   **************************************************************************************************************** */
+
+                contractExplain = "Tax Rate\r\nThe extracting tax rate is based on the value of products, including by-products, extracted within the city for sale or for commercial or industrial use. Taxes are assessed at 1/10 of 1% or 1 times the value of the extracted products, determined by the selling price, regardless of the place of sale or the fact that deliveries may be made to points outside the City.\r\n\r\nWhat Extracting Is\r\nExtracting is the mining, quarrying, taking or producing of:\r\n\r\nClay\r\nCoal\r\nGravel\r\nMinerals\r\nNatural gas\r\nOil\r\nOre\r\nSand\r\nStone or other natural resource product\r\nIt can also be the falling, cutting or taking of timber, Christmas trees, other than plantation Christmas trees, or other natural products; or taking fish, or taking, cultivating, or raising shellfish, or other sea or inland water foods or products."
+
+                wholesaleExplain = "Wholesaling is defined as any sale of tangible personal property to persons who are not considered consumers.";
+
+                manufactureExplain = "The manufacturing tax rate is based on the value of the products manufactured, regardless of whether the products are sold or delivered to points outside the City of Longview.";
+
+                retailExplain = "A retail business is defined as a business that sells products and specific services to consumers. The B and O tax rate for retail businesses is 1/10 of 1% or 1 times the gross revenue per quarter. No deductions are allowed for retail businesses.\r\nCategories\r\nConstruction, electrical, plumbing, and other specialty contracting businesses.\r\nRetail Services:\r\nInterior decorating services and dry cleaning, Lawn mowing, maintenance and repair services, Photographers, Personal, Business or Professional Services, the sale of or charge made for personal, business, or professional services such as: Abstract, title insurance, and escrow services, Amusement and recreation services, Automobile parking and storage garage services, Credit bureau services, Landscape maintenance and horticultural services, Personal services such as: Body piercing services, Dating services, Physical fitness services, Tanning salon services, Tattoo parlor services, Service charges associated with tickets to professional sporting events, renting or leasing of tangible personal property to consumers and the rental of equipment with an operator.\r\nThe tax rate for retail services is 1/10 of 1% or 1 times the gross revenue.";
+
+                printExplain = "Publishers of newspapers, magazines, books, and brochures.";
+
+                serviceExplain = "Service businesses include those rendering professional services such as:\r\n\r\n\r\nAccountants\r\nArchitects\r\nAttorneys\r\nBeauty salons\r\nConsultants\r\nEngineers\r\nInstructors\r\nJanitorial services\r\nPhysicians\r\nThis classification also includes any other type of business which is not defined in one of the other categories. The tax rate for service businesses is 1/5 of 1% or 2 times the gross revenue.";
+
+                utilityExplain = "Utilities include the providing of:\r\n\r\n\r\nElectricity\r\nGarbage\r\nGas\r\nSewer\r\nTelephone services\r\nWater\r\nThese services are assessed at a rate provided for in Section 5.04.470 of the Longview Municipal Code. Please contact the B and O tax clerk for a copy of the ordinance to determine your tax rate.";
+
+                /* *********** End Help descriptions *******************************************************************************
+                   ***************************************************************************************************************** */
+
+            </script>
+            <script src="info.txt"></script>
+            <script>
+                function calcForm() {
+                    bb = Number(document.getElementById('c').value) + Number(document.getElementById('w').value) + Number(document.getElementById('m').value) + Number(document.getElementById('r').value) + Number(document.getElementById('p').value) + Number(document.getElementById('s').value) + Number(document.getElementById('u').value);
+                    if (bb >= gmin) {
+                        id = 'c';
+                        document.getElementById(id + '4').value = ((document.getElementById(id).value - document.getElementById(id + '2').value) * ctax).toFixed(2)
+                        document.getElementById(id + '3').value = (document.getElementById(id).value - document.getElementById(id + '2').value).toFixed(2)
+                        id = 'w';
+                        document.getElementById(id + '4').value = ((document.getElementById(id).value - document.getElementById(id + '2').value) * wtax).toFixed(2)
+                        document.getElementById(id + '3').value = (document.getElementById(id).value - document.getElementById(id + '2').value).toFixed(2)
+                        id = 'm';
+                        document.getElementById(id + '4').value = ((document.getElementById(id).value - document.getElementById(id + '2').value) * mtax).toFixed(2)
+                        document.getElementById(id + '3').value = (document.getElementById(id).value - document.getElementById(id + '2').value).toFixed(2)
+                        id = 'r';
+                        document.getElementById(id + '4').value = ((document.getElementById(id).value - document.getElementById(id + '2').value) * rtax).toFixed(2)
+                        document.getElementById(id + '3').value = (document.getElementById(id).value - document.getElementById(id + '2').value).toFixed(2)
+                        id = 'p';
+                        document.getElementById(id + '4').value = ((document.getElementById(id).value - document.getElementById(id + '2').value) * ptax).toFixed(2)
+                        document.getElementById(id + '3').value = (document.getElementById(id).value - document.getElementById(id + '2').value).toFixed(2)
+                        /* Utilties. Run code here if subject to the Gross minimum.
+                        id='u';
+                         document.getElementById(id+'4').value = ((document.getElementById(id).value-document.getElementById(id+'2').value)*utax).toFixed(2)
+                         document.getElementById(id+'3').value = (document.getElementById(id).value-document.getElementById(id+'2').value).toFixed(2)
+                        */
+                        /* End Utilties. */
+                    } else {
+                        document.getElementById('c3').value = "0.00";
+                        document.getElementById('w3').value = "0.00";
+                        document.getElementById('m3').value = "0.00";
+                        document.getElementById('r3').value = "0.00";
+                        document.getElementById('p3').value = "0.00";
+                        document.getElementById('u3').value = "0.00";
+                        document.getElementById('c4').value = "0.00";
+                        document.getElementById('w4').value = "0.00";
+                        document.getElementById('m4').value = "0.00";
+                        document.getElementById('r4').value = "0.00";
+                        document.getElementById('p4').value = "0.00";
+                        document.getElementById('u4').value = "0.00";
+                    }
+                    if (bb >= smin) {
+                        id = 's';
+                        document.getElementById(id + '4').value = ((document.getElementById(id).value - document.getElementById(id + '2').value) * stax).toFixed(2)
+                        document.getElementById(id + '3').value = (document.getElementById(id).value - document.getElementById(id + '2').value).toFixed(2)
+                    } else {
+                        document.getElementById('s3').value = "0.00";
+                        document.getElementById('s4').value = "0.00";
+                    }
+                    /* utilties. Run code here if not subject to the Gross minimum. */
+                    id = 'u';
+                    document.getElementById(id + '4').value = ((document.getElementById(id).value - document.getElementById(id + '2').value) * utax).toFixed(2)
+                    document.getElementById(id + '3').value = (document.getElementById(id).value - document.getElementById(id + '2').value).toFixed(2)
+                    /* End Utilties. */
+                    document.getElementById('lineA').value = (Number(document.getElementById('c4').value) + Number(document.getElementById('w4').value) + Number(document.getElementById('m4').value) + Number(document.getElementById('r4').value) + Number(document.getElementById('p4').value) + Number(document.getElementById('s4').value) + Number(document.getElementById('u4').value)).toFixed(2)
+                    tax = Number(document.getElementById('lineA').value);
+                    x = due + yr();
+                    let ms = Date.parse(x);
+                    let ms1 = Date.now();
+                    x = Math.floor((ms1 - ms) / 86400000);
+                    dayslate = x.toString();
+                    if (x > 60) {
+                        latefee = 0.25 * Number(tax);
+                        if (latefee < 5.01) {
+                            latefee = 5.0;
+                        }
+                        document.getElementById('dlate').innerHTML = "(" + x + " days late)";
+                    } else if (x > 30) {
+                        latefee = 0.15 * tax;
+                        if (latefee < 5.01) {
+                            latefee = 5.0;
+                        }
+                        document.getElementById('dlate').innerHTML = "(" + x + " days late)";
+                    } else if (x > 0) {
+                        latefee = 0.05 * Number(tax);
+                        if (latefee < 5.01) {
+                            latefee = 5.0;
+                        }
+                        document.getElementById('dlate').innerHTML = "(" + x + " days late)";
+                    } else {
+                        latefee = 0.0;
+                    }
+                    document.getElementById('lineB').value = (Number(latefee)).toFixed(2);
+                    document.getElementById('lineD').value = (Number(document.getElementById('lineA').value) + Number(document.getElementById('lineB').value) + Number(document.getElementById('lineC').value)).toFixed(2);
+                }
+                function yr() {
+                    const d = new Date();
+                    return d.getFullYear();
+                }
+
+                /* ******************************************************************
+                      ****************** onLoad() Sequence. **********************
+                   ****************************************************************** */
+                function cyr(id) {
+                    if (term == "ANNUAL") {
+                        document.getElementById(id).value = term + " " + (yr() - 1);
+                    } else if (term == "Q4") {
+                        document.getElementById(id).value = term + " " + (yr() - 1);
+                    } else {
+                        document.getElementById(id).value = term + " " + (yr());
+                    }
+                    document.getElementById("period").innerHTML = term;
+                    document.getElementById("due").value = due + yr();
+                    document.getElementById('blocation').placeholder = blocation1;
+                    document.getElementById('blocation').value = blocation;
+                    document.getElementById('address').innerHTML = address;
+                    document.getElementById('address').placeholder = address1;
+                    document.getElementById("accountNumber").value = accountNumber;
+                    document.getElementById("accountNumber").placeholder = accountNumber1;
+                    document.getElementById("c").title = contractExplain;
+                    document.getElementById("w").title = wholesaleExplain;
+                    document.getElementById("m").title = manufactureExplain;
+                    document.getElementById("r").title = retailExplain;
+                    document.getElementById("p").title = printExplain;
+                    document.getElementById("s").title = serviceExplain;
+                    document.getElementById("u").title = utilityExplain;
+                }
+                /* ******************* End onLoad() Sequence. **********************
+                   ****************************************************************** */
+            </script>
+            <div>
+
+                <!-- Heading --><div style="display:block;font-size:12px; text-align:center;margin:auto;border:none;">
+                    <div style="display:inline-block;font-size:12px; text-align:center;margin:auto;border:none;">
+                        RETURN ORIGINAL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b style="font-size:14px;">CITY OF LONGVIEW BUSINESS and OCCUPATION TAX REPORT</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Questions?
+                    </div>
+
+                    <div style="margin:auto;font-size:12px;text-align:center;padding:0;">
+                        <b id="period" name="period" style="color:#0189bc;padding:0 0 0 88px;">ANNUAL</b>
+                        <small style="position:relative;float:right;padding:0 24px 0 0;">(360) 442-5040</small>
+                    </div>
+
+                    <div style="margin-right:6px;display:block;float:right;text-align:center;border: 1px solid #0189bc;width:110px;">
+                        <!-- position:absolute;top:40px;left:570px -->
+                        Account Number
+                        <input style="height:28px;text-align:center;width:106px;border:none;border-top: 1px solid #0189bc;" name="accountNumber" id="accountNumber" required=required />
+                    </div>
+
+                    <div style="font-size:12px;padding:0; text-align:center;margin:0 120px;color:white;background:#0189bc;">
+                        <b>ALL BUSINESSES MUST FILE A BUSINESS AND OCCUPATION TAX REPORT</b>
+                    </div>
+
+                    <div style="font-size:10px;padding:6px 10px; text-align:left;margin:auto;color:#0189bc;">
+                        You must pay Business and Occupation Tax when the total of your annual taxable gross receipts exceed the following levels for your business classification(s).
+                    </div>
+                    <div style="display:block;float:right;color:white;background:#0189bc;text-align:center;border: 1px solid #0189bc;width:120px;margin-right:6px;">
+                        DATE DUE
+                        <input style="height: 30px; text-align: center; width: 112px; border-top: 1px solid #0189bc; background: white; " name="due" id="due" disabled=disabled />
+                    </div>
+
+                    <div style="display:block;float:right;text-align:center;border: 1px solid #0189bc;width:128px;">
+                        PERIOD
+                        <input style="height: 30px; text-align: center; width: 122px; border-top: 1px solid #0189bc;" name="pd" id="pd" disabled=disabled />
+                    </div>
+                    <div class="minTaxableGross">
+                        &nbsp;<b>
+                            Classification
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Annual Taxable Gross Receipts
+                        </b>&nbsp;
+
+                        <hr style="line-height:1;padding:0;margin:0;" />
+                        &nbsp;
+                        Services
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <script>document.write(sminstr);</script>
+                        <hr style="line-height:1;padding:0;margin:0;" />
+                        &nbsp;
+                        All other Classifications except utilities
+                        <small>.</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <script>document.write(gminstr);</script>
+                    </div>
+                    <!-- End Heading -->
+                </div>
+
+                <div style="width:500px;font-size:10px;margin:0 20px;">
+                    <div style="display:inline-block;text-align:left;float:left;border: 1px solid #0189bc;width:60px;padding:4px 0 4px 4px;margin:4px 0 0 0;">
+                        NAME<br />
+                        ADDRESS<br />
+                        CITY,STATE<br />
+                        ZIP CODE
+                    </div>
+<textarea id="address" rows="3" cols="32" style="text-align:left;display:inline-block;float:left;border: 1px solid #0189bc;padding:4px 0 4px 4px;margin:4px 0 0 0;">
+</textarea>
+                </div><br />&nbsp;<small style="color:#0189bc;">LOCATION</small> &nbsp;&nbsp;<input style="border:none;width:240px;" id="blocation" name="blocation" /><br />
+                <script>document.write('<img id="barcodeimgurl" height="36" width="266" src="' + barcode_Img_Url + '" style="float:right;padding:0 10px 0 0" />');</script>
+                <br />
+                <div style="font-size:8px;padding:0; text-align:left;margin:0 346px 0 86px;">
+                    <b style="color:white;background:#0189bc;">BE SURE THAT NAME, ADDRESS, AND ZIP CODE ARE CORRECT</b>
+                </div>
+                <div style="font-size:10px;padding:0; text-align:left;margin:6px 346px 10px 86px;">
+                    Need a form? See: <a title="www.mylongview.com" href="https://www.mylongview.com" target="_blank">www.mylongview.com</a>
+                </div>
+
+                <div style="margin:3px 0 0 0;">
+                    <span style="border: 2.5px solid #0189bc; padding:0;margin:10px 0 10px 10px;line-height:0.5;font-size:8px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        Business Classification
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Gross Receipts
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Deductions
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Taxable Amount
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        X Rate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Tax Due
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span>
+                    <p style="float:right;margin-top:5px;margin-right:13px;text-align:center;font-size:10px;width:56px;border: 1px solid #0189bc;padding:10px;right:0;color:white;background:#0189bc;">OFFICE USE<BR />ONLY<BR />RECEIPT<BR />NUMBER</p>
+                </div>
+                <div style="width:594px;border: 1px solid #0189bc; margin:3px 0 0 10px; padding:0 0 0 0;">
+                    &nbsp;Contracting &nbsp;&nbsp;&nbsp;&nbsp; 1 <input id="c" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 105px; border:none;border-left: 1px solid #0189bc;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input oninput="calcForm()" id="c2" type="number" style="text-align:right;height:20px;width: 104px; border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="c3" type="number" style="text-align:right;width: 105px;height:20px;border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />&nbsp;
+                    <script>document.write(ctax);</script> &nbsp;<input id="c4" type="number" style="text-align:right;width: 80px;height:20px;border:none;border-left: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />
+                    <hr style="margin:0; padding:0;color:#0189bc;" />
+                    &nbsp;Wholesale &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 <input id="w" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 105px; border:none;border-left: 1px solid #0189bc;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="w2" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 104px; border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="w3" type="number" style="text-align:right;width: 105px;height:20px;border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />&nbsp;
+                    <script>document.write(wtax);</script> &nbsp;<input id="w4" type="number" style="text-align:right;width: 80px;height:20px;border:none;border-left: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />
+                    <hr style="margin:0; padding:0;color:#0189bc;" />
+                    &nbsp;Manufacturing 3 <input id="m" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 105px; border:none;border-left: 1px solid #0189bc;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="m2" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 104px; border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="m3" type="number" style="text-align:right;width: 105px;height:20px;border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />&nbsp;
+                    <script>document.write(mtax);</script> &nbsp;<input id="m4" type="number" style="text-align:right;width: 80px;height:20px;border:none;border-left: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />
+                    <hr style="margin:0; padding:0;color:#0189bc;" />
+                    &nbsp;Retail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 <input id="r" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 105px; border:none;border-left: 1px solid #0189bc;border-right: 1px solid #0189bc;padding:0;margin:0;margin-left:1px;" /><input id="r2" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 104px; border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="r3" type="number" style="text-align:right;width: 105px;height:20px;border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />&nbsp;
+                    <script>document.write(rtax);</script> &nbsp;<input id="r4" type="number" style="text-align:right;width: 80px;height:20px;border:none;border-left: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />
+                    <hr style="margin:0; padding:0;color:#0189bc;" />
+                    &nbsp;Print/Publish &nbsp;&nbsp; 5 <input id="p" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 105px; border:none;border-left: 1px solid #0189bc;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="p2" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 104px; border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="p3" type="number" style="text-align:right;width: 105px;height:20px;border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />&nbsp;
+                    <script>document.write(ptax);</script> &nbsp;<input id="p4" type="number" style="text-align:right;width: 80px;height:20px;border:none;border-left: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />
+                    <hr style="margin:0; padding:0;color:#0189bc;" />
+                    &nbsp;Services &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 <input id="s" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 105px; border:none;border-left: 1px solid #0189bc;border-right: 1px solid #0189bc;padding:0;margin:0;margin-left:1px;" /><input id="s2" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 104px; border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="s3" type="number" style="text-align:right;width: 105px;height:20px;border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />&nbsp;
+                    <script>document.write(stax);</script> &nbsp;<input id="s4" type="number" style="text-align:right;width: 80px;height:20px;border:none;border-left: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />
+                    <hr style="margin:0; padding:0;color:#0189bc;" />
+                    &nbsp;Utilities &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7 <input id="u" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 105px; border:none;border-left: 1px solid #0189bc;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="u2" oninput="calcForm()" type="number" style="text-align:right;height:20px;width: 104px; border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" /><input id="u3" type="number" style="text-align:right;width: 105px;height:20px;border:none;border-right: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />&nbsp; <span style="text-align:right;margin-right:8px;">
+                        <script>document.write(utax);</script>
+                    </span>&nbsp;<input id="u4" type="number" style="text-align:right;width: 80px;height:20px;border:none;border-left: 1px solid #0189bc;padding:0;margin:0;" disabled=disabled />
+                </div>
+
+
+
+                <div style="display:inline;">
+
+                    <div style="float:left;width:318px;height:108px;border: 1px solid #0189bc; margin:0 0 0 10px; padding:2px 0 0 6px;font-size:10px;">
+                        <b>Penalty:</b> (minimum penaltly $5.00)
+                        <br />1 to 30 days late ......... add &nbsp; 5% of tax due
+                        <br />31 to 60 days late ....... add 15% of tax due
+                        <br />61 or more days late .. add 25% of tax due
+                        <br />
+                        <b>
+                            MAIL TAX RETURNS TO: City of Longview
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            PO Box 128
+                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Longview, WA  98632
+                            <br /><br />
+                            PLEASE MAKE CHECK PAYABLE TO: City of Longview
+                        </b>
+                    </div>
+                    <div style="float:left;font-size:12px;text-align:left;margin:0 0 0 0;padding:6px 1px 1px 0;line-height:10px;">
+                        &nbsp;LINE A - Total of Column 6
+                        <hr style="margin:9px 0 6px 0;padding:0 0 0 0;line-height:0;" />
+                        &nbsp;LINE B - Penalty <i style="color:darkred;" id="dlate"></i>
+                        <hr style="margin:8px 0 1px 0;padding:0 0 0 0;line-height:0;" />
+                        &nbsp;LINE C - Over/Underpayment
+                        <small style="font-size:8px;text-align:center;margin:0 0 0 0;padding:0 0 0 0;line-height:40%;">
+                            <br style="font-size:6px;text-align:center;margin:0 0 0 0;padding:0 0 0 0;line-height:40%;" />&nbsp;&nbsp;&nbsp;&nbsp;(-) = Credit Balance (Subtract)
+                            <br style="font-size:6px;text-align:center;margin:0 0 0 0;padding:0 0 0 0;line-height:40%;" />&nbsp;&nbsp;&nbsp;&nbsp;Positive amount = Balance Due (add)
+                        </small>
+                        <hr style="margin:1px 0 1px 0;padding:0 0 0 0;line-height:0;" />
+                        &nbsp;LINE D - Total Tax and Penalty&nbsp;
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <small style="font-size:8px;text-align:center;margin:0 0 0 0;padding:0 0 0 0;line-height:0;">
+                            (Attach Payment)
+                        </small>
+                    </div>
+                    <div style="margin:0 0 0 0;">
+                        <input id="lineA" disabled=disabled type="number" style="text-align:right;height:26px;width: 108px; border: 1px solid #0189bc;padding:0;margin:0;" /><br /><!-- oninput="calcForm()" -->
+                        <input id="lineB" disabled=disabled type="number" style="text-align:right;height:26px;width: 108px; border: 1px solid #0189bc;padding:0;margin:0;" /><br />
+                        <input id="lineC" oninput="calcForm()" type="number" style="text-align:right;height:26px;width: 108px; border: 1px solid #0189bc;padding:0;margin:0;" /><br />
+                        <input id="lineD" disabled=disabled type="number" style="text-align:right;height:26px;width: 108px; border: 1px solid #0189bc;padding:0;margin:0;" />
+
+                    </div>
+                </div>
+
+                <div style="margin:0 92px 0 10px;border: 1px solid #0189bc; padding:4px 5px;font-size:10px;">
+                    If there has been a sale or transfer of the business or the business ceased operation during this period, then fill in the following information.
+                    <hr />
+                    <p style="font-size:10px;margin:0;">
+                        Date Discontinued <input id="dateDiscontinued" type="date" style="text-align:center;width: 180px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:0;" /> &nbsp;&nbsp;&nbsp;
+                        Address <input id="discontinuedAddress" type="text" style="text-align:center;width: 258px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:0;" /><br />
+                        Name of New Owner <input id="newOwner" type="text" style="text-align:center;width: 160px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:4px 0 0 0;" /> &nbsp;&nbsp;&nbsp;
+                        Clerk's Receipt No. <input id="clerksReceipt" type="number" style="text-align:center;width: 72px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:4px 0 0 0;" />
+                        Amount Paid <input id="amountPaid" type="number" style="text-align:center;width: 72px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:4px 0 0 0;" />
+                    </p>
+                </div>
+
+                <div class="deductions">
+                    <input value="Type of Deduction" type="text" class="typeofDeduction" disabled=disabled />
+                    <input value="Explanation" type="text" class="typeofDeduction deductExplain" disabled=disabled />
+                    <input value="Amount" type="text" class="typeofDeduction deductAmount" disabled=disabled />
+                    <input value="Examples of the most common exemptions and deductions:" type="text" class="deductDescription" disabled=disabled />
+                    <br />
+                    <input id="typeofDeduction1" type="text" class="typeofDeduction" />
+                    <input id="explanation1" type="text" class="typeofDeduction deductExplain" />
+                    <input id="amount1" type="number" class="typeofDeduction deductAmount" />
+                    <input value="*  Liquor, beer, and wine sales" type="text" class="deductDescription" disabled=disabled />
+                    <br />
+                    <input id="typeofDeduction2" type="text" class="typeofDeduction" />
+                    <input id="explanation2" type="text" class="typeofDeduction deductExplain" />
+                    <input id="amount2" type="number" class="typeofDeduction deductAmount" />
+                    <input value="*  Manufacturing, selling or distribution motor vehicle fuel" type="text" class="deductDescription" disabled=disabled />
+                    <br />
+                    <input id="typeofDeduction3" type="text" class="typeofDeduction" />
+                    <input id="explanation3" type="text" class="typeofDeduction deductExplain" />
+                    <input id="amount3" type="number" class="typeofDeduction deductAmount" />
+                    <input value="*  Cash discounts taken by customers" type="text" class="deductDescription" disabled=disabled />
+                    <br />
+                    <input id="typeofDeduction4" type="text" class="typeofDeduction" />
+                    <input id="explanation4" type="text" class="typeofDeduction deductExplain" />
+                    <input id="amount4" type="number" class="typeofDeduction deductAmount" />
+                    <input value="*  Credit losses or bad debts sustained by sellers" type="text" class="deductDescription" disabled=disabled />
+                    <br />
+                    <input id="typeofDeduction5" type="text" class="typeofDeduction" />
+                    <input id="explanation5" type="text" class="typeofDeduction deductExplain" />
+                    <input id="amount5" type="number" class="typeofDeduction deductAmount" />
+                    <input value="*  Agricultural products produced and sold by the same farmer and/or gardener" type="text" class="deductDescription" disabled=disabled />
+                    <br />
+                    <input id="typeofDeduction6" type="text" class="typeofDeduction" />
+                    <input id="explanation6" type="text" class="typeofDeduction deductExplain" />
+                    <input id="amount6" type="number" class="typeofDeduction deductAmount" />
+                    <input value="*  Gross receipts reported to and taxed by another city" type="text" class="deductDescription" disabled=disabled />
+                </div>
+
+
+                <div style="position:relative;margin:4px 16px 0 5px;">
+                    <b style="font-size:14px;margin:0 14px;">STATEMENT BY TAX PAYER</b>
+                    <p style="font-size:10px;margin:0 0 8px 14px;">
+                        I/We hereby certify under the penalties of perjury that the sum above shown is the amount of tax for which I am/we are liable for the period above shown under and computed according to the provisions of this Ordinance. I/We further certify that the information herein given and the amount of the tax liability herein reported are full and true and I/we know the same to be so.
+                        <br />
+                        <br />
+                        Signed <input id="signed" type="text" placeholder="(Firm Name)" style="text-align:center;width: 296px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:0;" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        Date <input id="signedDate" type="date" style="text-align:center;width: 266px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:0;" />
+                        <br />
+                        <br />By <input id="agent" type="text" placeholder="(Authorized Agent)" style="text-align:center;width: 314px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:0;" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        Title <input id="title" type="text" style="text-align:center;width: 266px; border: none;border-bottom: 1px solid #0189bc;padding:0;margin:0;" />
+                    </p>
+                </div>
+            </div>
+            <!--class="printButton" -->
+            <div style="font-size:8px;color:darkred;text-align:right;margin:0 0 -16px auto;padding:0;" ng-app="myApp" ng-controller="datCtrl">{{ today | date : "MM/dd/yyyy"}}</div>
+        </form>
+    </div>
+    <script>
+        function myPrintfunction() {
+            document.getElementById("myprintbutton").hidden = true;
+            document.getElementById("myformInfoButton").hidden = true;
+            document.getElementById("myFormkk").hidden = true;
+            window.print();
+            document.getElementById("myprintbutton").hidden = false;
+            document.getElementById("myformInfoButton").hidden = false;
+        }
+    </script>
+    <!-- Buttons -->
+    <button id="myprintbutton" class="printButton printBtnR" title="Print Form" onclick="myPrintfunction()">&#x1F5B6;</button>
+    <button id="myformInfoButton" title="Auto-fill Forms" type="button" class="printButton printBtnL" onclick='document.getElementById("myFormkk").hidden=!document.getElementById("myFormkk").hidden'>Auto-fill</button>
+    <!-- End Buttons -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('datCtrl', function ($scope) {
+            $scope.today = new Date();
+        });
+    </script>
+</body>
+</html>
