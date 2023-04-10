@@ -33,8 +33,22 @@
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<!--<meta http-equiv="content-security-policy" content="default-src 'self'">unsafe-inline-->
-    <meta http-equiv="content-security-policy" content="origin">
+<!--<meta http-equiv="content-security-policy" content="default-src 'self'">
+Referrer-Policy: no-referrer
+Referrer-Policy: no-referrer-when-downgrade
+Referrer-Policy: origin
+Referrer-Policy: origin-when-cross-origin
+Referrer-Policy: same-origin
+Referrer-Policy: strict-origin
+Referrer-Policy: strict-origin-when-cross-origin
+Referrer-Policy: unsafe-url
+
+    in head use dash
+    <meta name="referrer" content="no-referrer">
+in page don't use dash
+<a href="http://example.com" rel="noreferrer">…</a>
+-->
+    <meta name="referrer" content="origin" />
     <title>&#8482;T&#169;ReMeTaL - Technology</title>
     <link rel="canonical" href="/">
     <meta property="og:url" content="/">
