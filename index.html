@@ -35,8 +35,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <!--<meta http-equiv="content-security-policy" content="default-src 'self'">-->
 <!--<meta http-equiv="content-security-policy" content="unsafe-inline">-->
-<meta http-equiv="content-security-policy" content="Access-Control-Allow-Origin">
-<meta http-equiv="content-security-policy" content="Allow-Origin">
     <title>&#8482;T&#169;ReMeTaL - Technology</title>
     <link rel="canonical" href="/">
     <meta property="og:url" content="/">
@@ -475,8 +473,8 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
         </nav>
 
         <!-- facebook SDK code -->
-        <script async defer referrerpolicy="no-referrer" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=218761056974715&autoLogAppEvents=1" nonce="UkA12KSF"></script>
-        <!-- facebook -->
+        <script async defer referrerpolicy="strict-origin-when-cross-origin" crossorigin="use-credentials" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=218761056974715&autoLogAppEvents=1" nonce="UkA12KSF"></script>
+        <!-- facebook use-credentials anonymous referrerpolicy="unsafe-url" strict-origin-when-cross-origin-->
         <div id="fb-root"></div>
         <!-- Messenger Chat Plugin Code -->
         <div id="fb-customer-chat" class="fb-customerchat"></div>
