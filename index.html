@@ -102,13 +102,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script async src="/js/gdpr-cookie-message.js" type="text/javascript" ></script>
     <script async type="text/javascript">
-        var options = {
+            var options = {
             delay: 500,
             expires: 30,
             onAccept: function () {
                 var myPreferences = $.fn.ihavecookies.cookie();
+                console.log("Allow Personal-Ads:" + myPreferences.includes("marketing"));
+                console.log("Allow Analytics:" + myPreferences.includes("analytics"));
+                console.log("Allow Preferences:" + myPreferences.includes("preferences"));
+                //console.save(myPreferences, 'test.txt');
                 if (myPreferences.includes("marketing")) {
-                    if (0) { window.location = '/ad-settings?fc=alwaysshow'; }
+                    if (1) { window.location = '?fc=alwaysshow'; }
                 }
             },
             uncheckBoxes: true
