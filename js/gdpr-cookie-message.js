@@ -64,7 +64,7 @@
                     pplink: '<a id="gdpr-cookie-messagea" title="&#8482;T&#169;ReMeTaL Privacy Policy" onclick="ppol()">Privacy Policy</a>',
                     moreInfoLabel: '',
                     cplink: '',
-                    adBtnLink: '<script>function adSettings() {window.location="?fc=alwaysshow";}</' + 'script>',
+                    adBtnLink: '<script>function adSettings() {window.location="/ad-settings?fc=alwaysshow";}</' + 'script>',
                     /*'<a href="?fc=alwaysshow">',*/
                     adBtnLabel: 'Ad Settings',
                     delay: 500,
