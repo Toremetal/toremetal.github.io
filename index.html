@@ -49,7 +49,6 @@
     <a href="http://example.com" rel="noreferrer">…</a>
     <base href="/" />
     -->
-    <base href="https://github.toremetal.com" />
     <meta name="referrer" content="origin" />
     <title>&#8482;T&#169;ReMeTaL - Technology</title>
     <link rel="canonical" href="/">
@@ -492,12 +491,7 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
         <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=218761056974715&autoLogAppEvents=1" nonce="UkA12KSF"></script>
         <!-- facebook use-credentials anonymous referrerpolicy="unsafe-url" strict-origin-when-cross-origin-->
         <div id="fb-root"></div>
-        <!-- Messenger Chat Plugin Code -->
-        <div id="fb-customer-chat" class="fb-customerchat"></div>
         <script async defer type="text/javascript">
-            var chatbox = document.getElementById('fb-customer-chat');
-            chatbox.setAttribute("page_id", "226195990786734");
-            chatbox.setAttribute("attribution", "biz_inbox");
             window.fbAsyncInit = function () {
                 FB.init({
                     xfbml: true,
@@ -505,13 +499,6 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                 });
             };
 
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
         </script>
         <!-- End facebook -->
 
