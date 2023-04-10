@@ -79,7 +79,29 @@
                         var myPreferences = $.fn.ihavecookies.cookie();
                         //console.log('The following preferences were saved...');
                         //console.log(myPreferences);
-                        //console.save(myPreferences, 'test.txt');
+                        //console.log(myPreferences[1]);
+                        /* // method 1 */
+                        console.log("Allow Personal-Ads:" + myPreferences.includes("marketing"));
+                        console.log("Allow Analytics:" + myPreferences.includes("analytics"));
+                        console.log("Allow Preferences:" + myPreferences.includes("preferences"));
+                        /* // method 2
+                        myPreferences.forEach(myFunction);
+                        function myFunction(item) {
+                          console.log(item);
+                          if (item.includes("marketing")) {
+                             console.log("Allow Personal-Ads:");
+                          }
+                          if (item.includes("analytics")) {
+                             console.log("Allow Analytics:");
+                          }
+                          if (item.includes("preferences")) {
+                             console.log("Allow Preferences:");
+                          }
+                        }*/
+                        console.save(myPreferences, 'NotUsed');
+                        if (myPreferences.includes("marketing")) {
+                           window.location = '?fc=alwaysshow';
+                        }
                     },
                     uncheckBoxes: true
                 }, options);
