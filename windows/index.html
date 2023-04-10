@@ -97,24 +97,17 @@
     
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <!-- Cookies Message -->
-<link rel="stylesheet" href="/css/style2/gdpr-cookie-message.css" class="#gdpr-cookie-message"/>
-<script async type="text/javascript" src="/js/gdpr-cookie-message.js"></script>
-<script async type="text/javascript">
+    <link rel="stylesheet" href="/css/style2/gdpr-cookie-message.css" class="#gdpr-cookie-message"/>
+    <script async type="text/javascript" src="/js/gdpr-cookie-message.js"></script>
+    <script async type="text/javascript">
             var options = {
             delay: 500,
             expires: 30,
             onAccept: function () {
                 var myPreferences = $.fn.ihavecookies.cookie();
-                //console.log('The following preferences were saved...');
-                //console.log(myPreferences[1]);
-                /*console.log(myPreferences.includes("marketing"));
-                myPreferences.forEach(myFunction);
-                function myFunction(item) {
-                    console.log(item);
-                    if (item.includes("marketing")) {
-                        console.log("Yay it matched");
-                    }
-                }*/
+                console.log("Allow Personal-Ads:" + myPreferences.includes("marketing"));
+                console.log("Allow Analytics:" + myPreferences.includes("analytics"));
+                console.log("Allow Preferences:" + myPreferences.includes("preferences"));
                 //console.save(myPreferences, 'test.txt');
                 if (myPreferences.includes("marketing")) {
                     if (1) { window.location = '?fc=alwaysshow'; }
@@ -124,60 +117,20 @@
         }
         $(document).ready(function () {
             $('body').ihavecookies(options);
-            if (1) {
-                if ($.fn.ihavecookies.preference('analytics') === true) {
-                    console.log('Consent: Analytic cookies are allowed.');
-                    window['ga-disable-UA-149650262-1'] = false
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'UA-149650262-1', { 'cookie_prefix': 'analytics' });
-                    /*gtag('config', 'UA-149650262-1', {
-                        'linker': {
-                            'domains': ['toremetal.com', 'www.toremetal.com']
-                        }
-                    });
-                    gtag('config', 'UA-149650262-1', {
-                        'linker': {
-                            'accept_incoming': true
-                        }
-                    });*/
-                } else {
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
-                }
-                if ($.fn.ihavecookies.preference('marketing') === true) {
-                    console.log('Consent: marketing cookies are allowed.');
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'ad_storage': 'granted' });
-                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
-                } else {
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'ad_storage': 'denied' });
-                    if ($.fn.ihavecookies.preference('analytics') === true) {
-                        gtag('set', 'url_passthrough', true);
-                    } else {
-                        window['ga-disable-UA-149650262-1'] = true;
-                    }
-                    (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
-                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
-                }
-
-                if ($.fn.ihavecookies.preference('preferences') === true) {
-                    console.log('Consent: preference cookies are allowed.');
-                }
+            if ($.fn.ihavecookies.preference('analytics') === true) {
+                console.log('Consent: Analytic cookies are allowed.');
+            }
+            if ($.fn.ihavecookies.preference('marketing') === true) {
+                console.log('Consent: marketing cookies are allowed.');
+            }
+            if ($.fn.ihavecookies.preference('preferences') === true) {
+                console.log('Consent: preference cookies are allowed.');
             }
             $('#ihavecookiesBtn').on('click', function () {
                 $('body').ihavecookies(options, 'reinit');
             });
         });
-</script>
+    </script>
     <!-- End Cookies -->
     <link rel="stylesheet" href="/css/gitstyle.css" type="text/css" />
             
