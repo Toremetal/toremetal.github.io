@@ -185,8 +185,24 @@
           * End of Snackbar ***************** */
     </style>
 </head>
-<body style="background-color:#29292990;padding:30px;">
-    <!-- Simulate a smartphone / tablet -->
+<body style="background-color:#29292990;padding:30px;" onload="snackbar('Welcome to ™T©ReMeTaL')">
+    <script>
+        /**
+         * displays a message to the user.
+         * @param message The Message to display.
+         * function snackbar() {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000);
+        }
+         */
+        function snackbar(message) {
+            var x = document.getElementById("snackbar");
+            x.innerText = message;
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+    </script><!-- Simulate a smartphone / tablet -->
     <div class="mobile-container">
         <!-- facebook -->
         <div id="fb-root"></div>
@@ -584,19 +600,7 @@ a {
 			</div>
 		</div> 
 	</div><!-- Start footer2.t -->
-            <!-- *Start adcon  -->
-            <div class="container">
-                <div align="center" style="width:auto;height:auto">
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-8927593002808864"
-                         data-ad-slot="2822185833"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true">
-                    </ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-            </div><br> <!-- *End adcon -->
+            <div id="snackbar"></div>
         </div><!-- End mpagebody -->
         
 <!-- Start form -->
@@ -657,6 +661,22 @@ sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navi
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; cross-origin-isolated" allowfullscreen
  scrolling="no" frameborder="0" id="clog2"></iframe>
 <footer>
+                <!-- *Start adcon  -->
+                <h3 style='color:orangered;text-align:center;margin-bottom:0;text-shadow: 1px 2px 5px rgba(0,255,0,.31);'>Advertisement!</h3>
+                <div class="container" style="padding: 0 30px 0 30px; margin: 0 0 0 0; width: 100%; height: fit-content;">
+                    <div align="center" style="padding: 0 0 0 0; margin: 0 0 0 0; width: inherit; height: inherit;">
+                        <ins class="adsbygoogle"
+                             style="display:block;height:fit-content;width:fit-content;"
+                             data-ad-client="ca-pub-8927593002808864"
+                             data-ad-slot="2822185833"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true">
+                        </ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </div>
+                </div>
+                <br>
+                <!-- *End adcon -->
                 <!-- Start Footer container -->
                 <div class="container1" align="center" style="background-color:#49494900">
                     <!-- Div Google Play -->
