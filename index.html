@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <script>
     function includeHTML() {
@@ -105,15 +104,192 @@
 
     <!-- Cookies Message -->
     <link rel="stylesheet" href="/css/gdpr-cookie-message.css" class="#gdpr-cookie-message" />
+    <!-- Cookies Message -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script async type="text/javascript" src="/js/gdpr-cookie-message.js"></script>
+    <script async type="text/javascript">
+        var options = {
+            delay: 500,
+            expires: 30,
+            onAccept: function () {
+                var myPreferences = $.fn.ihavecookies.cookie();
+                //console.log('The following preferences were saved...');
+                //console.log(myPreferences[1]);
+                /*console.log(myPreferences.includes("marketing"));
+                myPreferences.forEach(myFunction);
+                function myFunction(item) {
+                    console.log(item);
+                    if (item.includes("marketing")) {
+                        console.log("Yay it matched");
+                    }
+                }*/
+                //console.save(myPreferences, 'test.txt');
+                if (myPreferences.includes("marketing")) {
+                    if (1) { window.location = '?fc=alwaysshow'; }
+                }
+            },
+            uncheckBoxes: true
+        }
+        $(document).ready(function () {
+            $('body').ihavecookies(options);
+            if (1) {
+                if ($.fn.ihavecookies.preference('analytics') === true) {
+                    console.log('Consent: Analytic cookies are allowed.');
+                    window['ga-disable-UA-149650262-1'] = false
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'UA-149650262-1', { 'cookie_prefix': 'analytics' });
+                    /*gtag('config', 'UA-149650262-1', {
+                        'linker': {
+                            'domains': ['toremetal.com', 'www.toremetal.com']
+                        }
+                    });
+                    gtag('config', 'UA-149650262-1', {
+                        'linker': {
+                            'accept_incoming': true
+                        }
+                    });*/
+                } else {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); };
+                    gtag('js', new Date());
+                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+                }
+                if ($.fn.ihavecookies.preference('marketing') === true) {
+                    console.log('Consent: marketing cookies are allowed.');
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); };
+                    gtag('js', new Date());
+                    gtag('consent', 'update', { 'ad_storage': 'granted' });
+                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+                } else {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); };
+                    gtag('js', new Date());
+                    gtag('consent', 'update', { 'ad_storage': 'denied' });
+                    if ($.fn.ihavecookies.preference('analytics') === true) {
+                        gtag('set', 'url_passthrough', true);
+                    } else {
+                        window['ga-disable-UA-149650262-1'] = true;
+                    }
+                    (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+                }
+
+                if ($.fn.ihavecookies.preference('preferences') === true) {
+                    console.log('Consent: preference cookies are allowed.');
+                }
+            }
+            $('#ihavecookiesBtn').on('click', function () {
+                $('body').ihavecookies(options, 'reinit');
+            });
+        });
+    </script>
+    <!-- End Cookies -->
+
     <link rel="stylesheet" href="/css/gitstyle.css" type="text/css" />
     <style>
         #mynavmenu a {
             cursor: pointer;
         }
+        /* ****************************
+         *  Snackbar ******************
+         */
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border: 1px ridge rgba(0,0,0,.81);
+            border-radius: 6px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+            box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+
+            #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+        /*
+          * End of Snackbar ***************** */
     </style>
 </head>
-<body style="padding:30px;">
-
+<body style="padding:30px;" onload="snackbar('Welcome to ™T©ReMeTaL')">
+    <script>
+        /**
+         * displays a message to the user.
+         * @param message The Message to display.
+         * function snackbar() {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000);
+        }
+         */
+        function snackbar(message) {
+            var x = document.getElementById("snackbar");
+            x.innerText = message;
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+    </script>
     <!-- Simulate a smartphone / tablet -->
     <div class="mobile-container">
 
@@ -230,7 +406,7 @@
                     <?php $messageCount=0;?>
                     <label id="notifications" for="snackbar-btn" style="color:orange;position:absolute;float:right;top:6px;right:62px;display:none;"><?=$messageCount;?></label>
                     <button id="snackbar-btn" class="zoom" style="font-size:10px;padding:0 4px;border:1px solid whitesmoke;box-shadow:6px 1px 1px rgba(0,0,0,0.89);
-border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-color:rgba(10,10,100,0.89);" onclick="snackbar()">
+border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-color:rgba(10,10,100,0.89);" onclick="snackbar('Welcome to ™T©ReMeTaL')">
                         <sup>
                             <sup style="font-size:24px;z-index:998;color:darkred;text-shadow:1px 1px 1px blue;">
                                 &#9888;
@@ -441,17 +617,17 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                         <!--</a>-->
                     </div><br />
                     <!--<div class="container">
-                        <div align="center" style="width:auto;height:auto">
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-8927593002808864"
-                                 data-ad-slot="2822185833"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true">
-                            </ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    </div><br>-->
+                <div align="center" style="width:auto;height:auto">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8927593002808864"
+                         data-ad-slot="2822185833"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true">
+                    </ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div><br>-->
                     <!-- **************** youtube.com/embed/videoseries ******************* -->
                     <div style="width: 100%; height: 384px;border-radius: 10px;padding: 0 0 0 0;" align="center">
                         <iframe nonce="d57190ef1a34b0166ef2fa1e" class='contactus img-fluid' referrerpolicy="SameSite:None; Secure" style="height: 100%; width: 100%;border-radius: 10px;padding: 0 0 0 0;" src="https://www.youtube.com/embed/videoseries?list=PL0xA7snTym6BVH7Qbn0eHW5PSZRCIEnGu&autoplay=1" title="&#8482;T&#169;ReMeTaL Apps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; cross-origin-isolated" allowfullscreen></iframe>
@@ -557,6 +733,7 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
             </div>
             <!-- Start footer2.t -->
 
+            <div id="snackbar"></div>
         </div><!-- End mpagebody -->
         <!-- Start form -->
         <!-- End form -->
@@ -998,90 +1175,7 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
             }
         </script>
     </div><!-- End Simulate a smartphone / tablet look -->
-    <!-- Cookies Message -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-    <script async type="text/javascript" src="/js/gdpr-cookie-message.js"></script>
-    <script async type="text/javascript">
-        var options = {
-            delay: 500,
-            expires: 30,
-            onAccept: function () {
-                var myPreferences = $.fn.ihavecookies.cookie();
-                //console.log('The following preferences were saved...');
-                //console.log(myPreferences[1]);
-                /*console.log(myPreferences.includes("marketing"));
-                myPreferences.forEach(myFunction);
-                function myFunction(item) {
-                    console.log(item);
-                    if (item.includes("marketing")) {
-                        console.log("Yay it matched");
-                    }
-                }*/
-                //console.save(myPreferences, 'test.txt');
-                if (myPreferences.includes("marketing")) {
-                    if (1) { window.location = '?fc=alwaysshow'; }
-                }
-            },
-            uncheckBoxes: true
-        }
-        $(document).ready(function () {
-            $('body').ihavecookies(options);
-            if (1) {
-                if ($.fn.ihavecookies.preference('analytics') === true) {
-                    console.log('Consent: Analytic cookies are allowed.');
-                    window['ga-disable-UA-149650262-1'] = false
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'UA-149650262-1', { 'cookie_prefix': 'analytics' });
-                    /*gtag('config', 'UA-149650262-1', {
-                        'linker': {
-                            'domains': ['toremetal.com', 'www.toremetal.com']
-                        }
-                    });
-                    gtag('config', 'UA-149650262-1', {
-                        'linker': {
-                            'accept_incoming': true
-                        }
-                    });*/
-                } else {
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
-                }
-                if ($.fn.ihavecookies.preference('marketing') === true) {
-                    console.log('Consent: marketing cookies are allowed.');
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'ad_storage': 'granted' });
-                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
-                } else {
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'ad_storage': 'denied' });
-                    if ($.fn.ihavecookies.preference('analytics') === true) {
-                        gtag('set', 'url_passthrough', true);
-                    } else {
-                        window['ga-disable-UA-149650262-1'] = true;
-                    }
-                    (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
-                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
-                }
-
-                if ($.fn.ihavecookies.preference('preferences') === true) {
-                    console.log('Consent: preference cookies are allowed.');
-                }
-            }
-            $('#ihavecookiesBtn').on('click', function () {
-                $('body').ihavecookies(options, 'reinit');
-            });
-        });
-    </script>
-    <!-- End Cookies -->
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" integrity="sha512-5nBm8I4981vJDHhtHCaImHU+wcnmbheiFpmE03QLuYshaimnRk15jbW6sNK4/URdyqohIUQzNLsqdZ7bB3l5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
