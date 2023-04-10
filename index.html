@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <script>
     function includeHTML() {
@@ -63,7 +64,7 @@
     <meta itemprop="image" content="/img/favicon.png" />
     <meta itemprop="imageUrl" content="/img/favicon.png" />
     <meta name="theme-color" content="#ffffff" />
-    
+
     <script type="application/ld+json">
         {
              "@context": "http://schema.org/",
@@ -83,104 +84,33 @@
     <link rel="icon" href="/img/logo.png" type="image/png" />
     <link rel="icon" href="/img/logo.webp" type="image/webp" />
 
-    <link rel="stylesheet" href="https://toremetal.com/css/toreme.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
-    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://toremetal.github.io/css/toreme.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" integrity="sha512-FKK36sqWcrWs0CJeDVz3UhCFH5XnRAU9fijKZmn2760FDeYmBB7oos2E4V2vS9KjuKDy5rXZa6L1gIjnsDJ9bQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- End CSS -->
+
+
+
+
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149650262-1"></script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927593002808864"
             crossorigin="anonymous"></script>
     <script async src="https://cse.google.com/cse.js?cx=partner-pub-8927593002808864:1031426169"></script>
-    
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <!-- Cookies Message -->
-<link rel="stylesheet" href="/css/gdpr-cookie-message.css" class="#gdpr-cookie-message"/>
-<script async type="text/javascript" src="/js/gdpr-cookie-message.js"></script>
-<script async type="text/javascript">
-            var options = {
-            delay: 500,
-            expires: 30,
-            onAccept: function () {
-                var myPreferences = $.fn.ihavecookies.cookie();
-                //console.log('The following preferences were saved...');
-                //console.log(myPreferences[1]);
-                /*console.log(myPreferences.includes("marketing"));
-                myPreferences.forEach(myFunction);
-                function myFunction(item) {
-                    console.log(item);
-                    if (item.includes("marketing")) {
-                        console.log("Yay it matched");
-                    }
-                }*/
-                //console.save(myPreferences, 'test.txt');
-                if (myPreferences.includes("marketing")) {
-                    if (1) { window.location = '?fc=alwaysshow'; }
-                }
-            },
-            uncheckBoxes: true
-        }
-        $(document).ready(function () {
-            $('body').ihavecookies(options);
-            if (1) {
-                if ($.fn.ihavecookies.preference('analytics') === true) {
-                    console.log('Consent: Analytic cookies are allowed.');
-                    window['ga-disable-UA-149650262-1'] = false
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'UA-149650262-1', { 'cookie_prefix': 'analytics' });
-                    /*gtag('config', 'UA-149650262-1', {
-                        'linker': {
-                            'domains': ['toremetal.com', 'www.toremetal.com']
-                        }
-                    });
-                    gtag('config', 'UA-149650262-1', {
-                        'linker': {
-                            'accept_incoming': true
-                        }
-                    });*/
-                } else {
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
-                }
-                if ($.fn.ihavecookies.preference('marketing') === true) {
-                    console.log('Consent: marketing cookies are allowed.');
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'ad_storage': 'granted' });
-                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
-                } else {
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() { dataLayer.push(arguments); };
-                    gtag('js', new Date());
-                    gtag('consent', 'update', { 'ad_storage': 'denied' });
-                    if ($.fn.ihavecookies.preference('analytics') === true) {
-                        gtag('set', 'url_passthrough', true);
-                    } else {
-                        window['ga-disable-UA-149650262-1'] = true;
-                    }
-                    (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
-                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
-                }
 
-                if ($.fn.ihavecookies.preference('preferences') === true) {
-                    console.log('Consent: preference cookies are allowed.');
-                }
-            }
-            $('#ihavecookiesBtn').on('click', function () {
-                $('body').ihavecookies(options, 'reinit');
-            });
-        });
-</script>
-    <!-- End Cookies -->
+    <!-- Cookies Message -->
+    <link rel="stylesheet" href="/css/gdpr-cookie-message.css" class="#gdpr-cookie-message" />
     <link rel="stylesheet" href="/css/gitstyle.css" type="text/css" />
-            
+    <style>
+        #mynavmenu a {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body style="padding:30px;">
 
@@ -188,14 +118,14 @@
     <div class="mobile-container">
 
         <!--<div w3-include-html="/content/style1/nav.html"></div>-->
-<div style="margin-right:6%;margin-left:6%;">
-    <div style="width:230px;color:#00000080" id="search" class="gcse-searchbox-only">
-        loading...
-    </div>
-</div>
-<nav>
-<!--/* 1[div class="topnavNew topnav"] ******************************|
-            ******** */-->
+        <div style="margin-right:6%;margin-left:6%;">
+            <div style="width:230px;color:#00000080" id="search" class="gcse-searchbox-only">
+                loading...
+            </div>
+        </div>
+        <nav id="mynavmenu">
+            <!--/* 1[div class="topnavNew topnav"] ******************************|
+                        ******** */-->
             <div class="topnavNew topnav" style="background:transparent;width:100%;">
                 <!--/* 2[div class="navbarNew appsocial"] ******************************|
                 ******** */-->
@@ -209,74 +139,61 @@
                     ******** */-->
                     <div class="social" style="width:100%;">
                         <sub class="navbarNewitem1">
-                            <!-- href="/signs/" ********************************************************* -->
-                            <a title="&#8482;T&#169;ReMeTaL WebApps&#8482;" onclick="window.location = '/webapps';">
-                                <img class="navbarNewitemsicon" src="/img/global.gif" alt="WebApps" height="36" width="36" />
+                            <a title="&#8482;T&#169;ReMeTaL Developers" onclick="window.location = '/developers';">
+                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/developers.png" alt="Developers" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem2">
-                            <!--href="/android/" ********************************************************* -->
-                            <a title="&#8482;T&#169;ReMeTaL Android&#8482; Apps" onclick="window.location = '/android';">
-                                <img class="navbarNewitemsicon" src="/img/android.png" alt="Android&#8482;" height="36" width="36" />
+                            <a title="&#8482;T&#169;ReMeTaL Android&#8482; Apps" onclick="window.open('https://play.google.com/store/apps/dev?id=7952290850776080706')">
+                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/android.png" alt="Android&#8482;" height="36" width="36" />
                             </a>
                         </sub>
+
                         <sub class="navbarNewitem3">
-                            <!--href="/windows/" ********************************************************* -->
-                            <a title="&#8482;T&#169;ReMeTaL Windows&#8482; Apps" onclick="window.location = '/windows';">
-                                <img class="navbarNewitemsicon" src="/img/windows.png" alt="Windows&#8482;" height="36" width="36" />
+                            <a title="&#8482;T&#169;ReMeTaL Windows&#8482; Apps" onclick="window.location='/windows/'">
+                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/windows223x226.png" alt="Windows&#8482;" height="36" width="36" />
                             </a>
                         </sub>
+
                         <sub class="navbarNewitem4">
-                            <!-- href="/music/" ********************************************************* -->
-                                <!--<a title="&#8482;T&#169;ReMeTaL Music" onclick="gotoMusic()">
-                                    <img class="navbarNewitemsicon" src="/img/musiclink.png" alt="Music" height="36" width="36" />
-                                </a>-->
-                            <a title="&#8482;T&#169;ReMeTaL Developers" onclick="window.location = '/developers';">
-                                <img class="navbarNewitemsicon" src="/img/developers.png" alt="Developers" height="36" width="36" />
+                            <a title="&#8482;T&#169;ReMeTaL WebApps&#8482;" onclick="window.location = '/webapps';">
+                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/global.gif" alt="WebApps" height="36" width="36" />
                             </a>
                         </sub>
+
                         <sub class="navbarNewitem5">
-                            <a style="cursor:pointer;" title="&#8482;T&#169;ReMeTaL Apps" onclick="window.location = 'https://www.toremetal.com';">
-                                <!--https://www.toremetal.com  href="https://play.google.com/store/apps/dev?id=7952290850776080706"-->
-                                <img class="navbarNewitemsicon" src="/img/logo_tmapps_128.png" alt="&#8482;T&#169;ReMeTaL-Apps" width="36" style="cursor:pointer;" /><!--&#8482;Apps-->
+                            <a title="&#8482;T&#169;ReMeTaL Games" onclick="window.location='/games/'">
+                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL Games" height="36" width="36" src="https://toremetal.com/img/gamesb.png" alt="icon" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem6">
-                            <!--href="https://play.google.com/store/apps/dev?id=7952290850776080706"-->
-                            <a title="GET IT ON Google Play&#8482;" onclick="playstoredevpg('7952290850776080706')">
-                                <img class="navbarNewitemsicon" title="GET IT ON Google Play&#8482;" src="/img/logo_gp_48.png" alt="GET IT ON Google Play&#8482;" height="36" width="36" />
-                                <!--Google Play&#8482;-->
+                            <a title="&#8482;T&#169;ReMeTaL Music" onclick="gotoMusic()">
+                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/musiclink.png" alt="Music" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem7">
-                            <!--href="https://www.youtube.com/channel/UCgyGtbmWqdeSc_JVvENQwsA"-->
-                            <a width="36" height="36" onclick="yttv()" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;">
-                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
-                                <!--YouTube&#8482;-->
+                            <a title="&#8482;T&#169;ReMeTaL Signs A-Z" onclick="window.location='/signs/';">
+                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/signswebapp.png" alt="Signs A-Z" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem8">
-                            <a title="&#8482;T&#169;ReMeTaL's facebook&#8482; page" href="https://www.facebook.com/TheToremetal" target="_blank">
-                                <img class="navbarNewitemsicon" title="facebook&#8482;" src="/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
-                                <!-- facebook&#8482;-->
+                            <a width="36" height="36" onclick="yttv()" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;">
+                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="https://github.toremetal.com/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem9">
-                            <a title="&#8482;T&#169;ReMeTaL Messenger&#8482;" href="https://m.me/TheToremetal" target="_blank">
-                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL Messenger&#8482;" height="36" width="36" src="/img/logo_fbm_48.png" alt="icon" />
-                                <!--Messenger&#8482;-->
+                            <a title="&#8482;T&#169;ReMeTaL's facebook&#8482; page" href="https://www.facebook.com/TheToremetal" target="_blank">
+                                <img class="navbarNewitemsicon" title="facebook&#8482;" src="https://github.toremetal.com/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem10">
                             <a width="36" height="36" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" href="https://twitter.com/TheToReMetal" target="_blank">
-                                <img class="navbarNewitemsicon" src="/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
-                                <!--Twitter&#8482;-->
+                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem11">
-                            <a title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" href="https://www.linkedin.com/in/toremetal/" target="_blank">
-                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" height="36" width="36" src="/img/logo_in_48.png" alt="icon" />
-                                <!--LinkedIn&#8482;-->
+                            <a title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" href="https://www.linkedin.com/in/toremetal/">
+                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" height="36" width="36" src="https://github.toremetal.com/img/logo_in_48.png" alt="icon" />
                             </a>
                         </sub>
                         <sub>
@@ -328,100 +245,79 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                 <div id="myLinks" style="z-index:9999;margin-top:100px;">
                     <ul>
                         <li style="margin: 10px 0 0 0;">
-                            <?php if (isset($lform)) {include $lform;} ?>
-                        </li>
-                        <!--<li style="margin: 10px 0 0 0;">
-                                  <sub class="navitemNew1 navitemNew navitem">
-                        <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-                            </sub>
-                            </li>-->
-                        <li style="margin: 10px 0 0 0;">
                             <sub class="navitemNew1 navitemNew navitem">
-                                <a style="cursor:pointer;" title="&#8482;T&#169;ReMeTaL Apps" onclick="window.location = 'https://www.toremetal.com';">
-                                    <!--https://www.toremetal.com  href="https://play.google.com/store/apps/dev?id=7952290850776080706"-->
-                                    <img class="navbarNewitemsicon" src="/img/logo_tmapps_128.png" alt="&#8482;T&#169;ReMeTaL-Apps" width="36" style="cursor:pointer;" /><!--&#8482;Apps-->
+                                <a title="&#8482;T&#169;ReMeTaL Developers" onclick="window.location='/developers';">
+                                    <img class="topnav icon" src="https://github.toremetal.com/img/developers.png" alt="Developers" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
-                        <li style="margin: 10px 0 0 0;">
+                        <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew2 navitemNew navitem">
-                                <!--href="/android/"-->
-                                <a title="&#8482;T&#169;ReMeTaL Android&#8482; Apps" onclick="window.location = '/android';">
-                                    <img class="navbarNewitemsicon" src="/img/android.png" alt="Android&#8482;" height="36" width="36" />
-                                </a><!--href="/windows/"-->
+                                <a title="&#8482;T&#169;ReMeTaL Android&#8482; Apps" onclick="window.open('https://play.google.com/store/apps/dev?id=7952290850776080706')">
+                                    <img class="topnav icon" src="https://github.toremetal.com/img/androidph.png" alt="Android&#8482;" height="36" width="36" />
+                                </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew3 navitemNew navitem">
-                                <a title="&#8482;T&#169;ReMeTaL Windows&#8482; Apps" onclick="window.location = '/windows';">
-                                    <img class="navbarNewitemsicon" src="/img/windows.png" alt="Windows&#8482;" height="36" width="36" />
-                                </a><!-- href="/music/"-->
-                            </sub>
-                        </li>
-                        <li style="margin: 20px 0 0 0;">
-                            <sub class="nnavitemNew4 navitemNew navitem">
-                                <a title="&#8482;T&#169;ReMeTaL Developers" onclick="window.location = '/developers';">
-                                    <img class="navbarNewitemsicon" src="/img/developers.png" alt="Developers" height="36" width="36" />
+                                <a title="&#8482;T&#169;ReMeTaL Windows&#8482; Apps" onclick="window.location='/windows'">
+                                    <img class="topnav icon" src="https://github.toremetal.com/img/windows223x226.png" alt="Windows&#8482;" height="36" width="36" />
                                 </a>
-                                <!--<a title="&#8482;T&#169;ReMeTaL Music" onclick="gotoMusic()">
-                                    <img class="navbarNewitemsicon" src="/img/musiclink.png" alt="Music" height="36" width="36" />
-                                </a>-->
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
-                            <sub class="navitemNew5 navitemNew navitem"><!-- href="/signs/"-->
+                            <sub class="navitemNew4 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL WebApps&#8482;" onclick="window.location = '/webapps';">
-                                    <img class="navbarNewitemsicon" src="/img/global.gif" alt="WebApps" height="36" width="36" />
+                                    <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/global.gif" alt="WebApps" height="36" width="36" />
+                                </a>
+                            </sub>
+                        </li>
+                        <li style="margin: 20px 0 0 0;">
+                            <sub class="navitemNew5 navitemNew navitem">
+                                <a title="&#8482;T&#169;ReMeTaL Games" onclick="window.location='/games';">
+                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL Games" src="https://github.toremetal.com/img/gamesb.png" alt="&#8482;T&#169;ReMeTaL Games" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew6 navitemNew navitem">
-                                <!--href="https://play.google.com/store/apps/dev?id=7952290850776080706"-->
-                                <a title="GET IT ON Google Play&#8482;" onclick="playstoredevpg('7952290850776080706')">
-                                    <img class="navbarNewitemsicon" title="GET IT ON Google Play&#8482;" src="/img/logo_gp_48.png" alt="GET IT ON Google Play&#8482;" height="36" width="36" />
-                                    <!--Google Play&#8482;-->
+                                <a title="&#8482;T&#169;ReMeTaL Music" onclick="gotoMusic()">
+                                    <img class="topnav icon" src="https://github.toremetal.com/img/musiclink.png" alt="Music" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew7 navitemNew navitem">
-                                <!--href="https://www.youtube.com/channel/UCgyGtbmWqdeSc_JVvENQwsA"-->
-                                <a width="36" height="36" onclick="yttv()" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;">
-                                    <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
-                                    <!--YouTube&#8482;-->
+                                <a title="&#8482;T&#169;ReMeTaL Signs A-Z" onclick="window.location='/signs';">
+                                    <img class="topnav icon" src="https://github.toremetal.com/img/signswebapp.png" alt="Signs A-Z" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew8 navitemNew navitem">
-                                <a title="&#8482;T&#169;ReMeTaL's facebook&#8482; page" href="https://www.facebook.com/TheToremetal" target="_blank">
-                                    <img class="navbarNewitemsicon" title="facebook&#8482;" src="/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
-                                    <!-- facebook&#8482;-->
+                                <a width="36" height="36" onclick="yttv()" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;">
+                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="https://github.toremetal.com/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew9 navitemNew navitem">
-                                <a title="&#8482;T&#169;ReMeTaL Messenger&#8482;" href="https://m.me/TheToremetal">
-                                    <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL Messenger&#8482;" height="36" width="36" src="/img/logo_fbm_48.png" alt="icon" />
-                                    <!--Messenger&#8482;-->
+                                <a title="&#8482;T&#169;ReMeTaL's facebook&#8482; page" href="https://www.facebook.com/TheToremetal" target="_blank">
+                                    <img class="topnav icon" title="facebook&#8482;" src="https://github.toremetal.com/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew10 navitemNew navitem">
                                 <a width="36" height="36" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" href="https://twitter.com/TheToReMetal" target="_blank">
-                                    <img class="navbarNewitemsicon" src="/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
-                                    <!--Twitter&#8482;-->
+                                    <img class="topnav icon" src="https://github.toremetal.com/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew11 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" href="https://www.linkedin.com/in/toremetal/">
-                                    <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" height="36" width="36" src="/img/logo_in_48.png" alt="icon" />
-                                    <!--LinkedIn&#8482;-->
+                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" height="36" width="36" src="https://github.toremetal.com/img/logo_in_48.png" alt="icon" />
                                 </a>
                             </sub>
                         </li>
@@ -430,8 +326,8 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                     <!--/* 3b[Site View Count Display.] ***********************************************************************|
                     ******** */-->
                     <div style="position:absolute;right:0;top:-120px;text-align:right;margin-right:4px;line-height:1;margin-bottom:0;padding:0;">
-                        Site.Visits:<iframe src='https://toremetal.com/php/vcany.php?vc=github' style="text-align:left;margin:-14px 0 0 -14px;border:none; overflow:hidden;" scrolling="no" 
-                                frameborder="0" height="30" width="40"></iframe>
+                        Site.Visits:<iframe src='https://toremetal.com/php/vcany.php?vc=github' style="text-align:left;margin:-14px 0 0 -14px;border:none; overflow:hidden;" scrolling="no"
+                                            frameborder="0" height="30" width="40"></iframe>
                     </div>
                     <!--/* **************************************************************************
                     |* 3b[Site View Count Display.] **************************************************************** */-->
@@ -451,7 +347,7 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
             </div>
             <!--/* ****************|=================================================>
             |* 1[End div class="topnavNew topnav"] ****** */-->
-</nav>
+        </nav>
 
         <!-- facebook SDK code -->
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=218761056974715&autoLogAppEvents=1" nonce="UkA12KSF"></script>
@@ -545,17 +441,17 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                         <!--</a>-->
                     </div><br />
                     <!--<div class="container">
-                    <div align="center" style="width:auto;height:auto">
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-8927593002808864"
-                             data-ad-slot="2822185833"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true">
-                        </ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </div>
-                </div><br>-->
+                        <div align="center" style="width:auto;height:auto">
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-8927593002808864"
+                                 data-ad-slot="2822185833"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true">
+                            </ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                    </div><br>-->
                     <!-- **************** youtube.com/embed/videoseries ******************* -->
                     <div style="width: 100%; height: 384px;border-radius: 10px;padding: 0 0 0 0;" align="center">
                         <iframe nonce="d57190ef1a34b0166ef2fa1e" class='contactus img-fluid' referrerpolicy="SameSite:None; Secure" style="height: 100%; width: 100%;border-radius: 10px;padding: 0 0 0 0;" src="https://www.youtube.com/embed/videoseries?list=PL0xA7snTym6BVH7Qbn0eHW5PSZRCIEnGu&autoplay=1" title="&#8482;T&#169;ReMeTaL Apps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; cross-origin-isolated" allowfullscreen></iframe>
@@ -610,8 +506,7 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
             <!-- end Photos -->
             <!--ShareASale SEO-->
             <div align="center" style="height: 100%; width: 100%;" class="container1">
-                <div w3-include-html="/ads/applead.html" align="center" style="height: 100%; width: 100%; padding-bottom: 2px;" class="container"></div>
-
+                <!--<div w3-include-html="/ads/applead.html" align="center" style="height: 100%; width: 100%; padding-bottom: 2px;" class="container"></div>-->
                 <!-- Contact Us -->
                 <div class="container" align="center">
                     <div class="contactus myformsH" align="center">
@@ -661,6 +556,7 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                 </div>
             </div>
             <!-- Start footer2.t -->
+
         </div><!-- End mpagebody -->
         <!-- Start form -->
         <!-- End form -->
@@ -677,19 +573,38 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
         <!-- Start address -->
         <div class="address">
             <hr />
-            <!-- Start Footer --><footer>
-                <!-- Start Footer container --><div class="container1" align="center" style="background-color:#49494900">
+            <!-- Start Footer -->
+            <footer>
+                <!-- *Start adcon  -->
+                <h3 style='color:orangered;text-align:center;margin-bottom:0;text-shadow: 1px 2px 5px rgba(0,255,0,.31);'>Advertisement!</h3>
+                <div class="container" style="padding: 0 30px 0 30px; margin: 0 0 0 0; width: 100%; height: fit-content;">
+                    <div align="center" style="padding: 0 0 0 0; margin: 0 0 0 0; width: inherit; height: inherit;">
+                        <ins class="adsbygoogle"
+                             style="display:block;height:fit-content;width:fit-content;"
+                             data-ad-client="ca-pub-8927593002808864"
+                             data-ad-slot="2822185833"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true">
+                        </ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </div>
+                </div>
+                <br>
+                <!-- *End adcon -->
+                <!-- Start Footer container -->
+                <div class="container1" align="center" style="background-color:#49494900">
                     <!-- Div Google Play -->
-                    <div class="container" align="center" style="padding:0 15px;">
-                        <a target="_blank" href="https://play.google.com/store/apps/dev?id=7952290850776080706">
-                            <img alt="GET IT ON Google Play&#8482;" title="GET IT ON Google Play&#8482;" style="height: 100%;
-                    border-radius: 10px;
-                    box-sizing: border-box;
-                    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
-                    border: 1px solid #ccc;" src="/img/AppsOnGooglePlay.webp" border="0" />
-                        </a>
-                    </div><!-- End Div Google Play -->
-                    <br>
+                    <div class="container" align="center" style="padding:0;">
+                        <iframe src="https://toremetal.com/img" title="GET IT ON Google Play&#8482;" style="padding:1px 1px 0 0;object-fit:fill;width:100%;max-height: 63px; max-width:470px;border-radius: 7px;box-sizing: border-box; border: none;" border="0"></iframe>
+                        <!--<a target="_blank" onclick="window.location='https://play.google.com/store/apps/dev?id=7952290850776080706'">
+                        <img alt="GET IT ON Google Play&#8482;" title="GET IT ON Google Play&#8482;" style="height: 100%;
+                                    border-radius: 10px;
+                                    box-sizing: border-box;
+                                    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+                                    border: 1px solid #ccc;" src="https://github.toremetal.com/img/AppsOnGooglePlay.webp" border="0" /></a>-->
+                    </div>
+                    <!-- End Div Google Play -->
+                    <hr style="background-color:white;" />
                     <!-- Subscribe -->
                     <div class="subscribe" align="center" style="text-align: center; background-color: transparent; border-radius: 0px 0px 4px 4px;max-width:512px;">
                         <div align="center" title="Enter your email to get the latest News">
@@ -702,8 +617,7 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                     <!-- End Subscribe -->
                     <br>
                     <p class="ampstart-social-follow list-reset flex justify-around items-center flex-wrap m0 mb0" align="center">
-                        <a style="padding: 0 15px 0 15px;cursor:pointer;" href="https://play.google.com/store/apps/dev?id=7952290850776080706"><img title="GET IT ON Google Play&#8482;" alt="GET IT ON Google Play&#8482;" src="/img/play_store.webp" height="22" width="22" /></a>
-                        <a style="padding: 0 15px 0 15px;cursor:pointer;" href="https://twitter.com/TheToReMetal" target="_blank">
+                        <a style="padding: 0 15px 0 15px;" href="https://twitter.com/TheToReMetal" target="_blank">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28" height="28" viewBox="0 0 400 400" xml:space="preserve">
 <style type="text/css">
     .st0 {
@@ -732,8 +646,8 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
 		C110.8,297.5,136.2,305.5,163.4,305.5" /></g>
                             <title>&#8482;T&#169;ReMeTaL tweets on Twitter&#8482;</title></svg>
                         </a>
-                        <a style="padding: 0 15px 10px 15px;" onclick="linkedinMe()" title="linked-in">
-                            <img title="&#8482;T&#169;ReMeTaL LinkedIn" height="24" width="24" src="/img/linkedinlogo.png" alt="&#8482;T&#169;ReMeTaL LinkedIn" />
+                        <a style="padding: 0 15px 10px 15px;" href="https://www.linkedin.com/in/toremetal/">
+                            <img title="&#8482;T&#169;ReMeTaL LinkedIn" height="24" width="24" src="https://github.toremetal.com/img/linkedinlogo.png" alt="&#8482;T&#169;ReMeTaL LinkedIn" />
                         </a>
                         <a style="padding: 0 15px 0 15px;" href="https://www.youtube.com/channel/UCgyGtbmWqdeSc_JVvENQwsA">
                             <svg xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -755,23 +669,23 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                                                                                                inkscape:connector-curvature="0"
                                                                                                style="fill:#ff0000" /><polygon points="80.2,42.5 48.6,24.3 48.6,60.7 " style="fill:#ffffff" /></g><title>&#8482;T&#169;ReMeTaL YouTube&#8482;</title></svg>
                         </a>
-                        <a style="padding: 0 15px 0 15px;cursor:pointer;" href="https://www.facebook.com/TheToremetal" target="_blank">
+                        <a style="padding: 0 15px 0 15px;" href="https://www.facebook.com/TheToremetal" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 14222 14222">
                                 <circle cx="7111" cy="7112" r="7111" fill="#000000" />
                                 <path d="M9879 9168l315-2056H8222V5778c0-562 275-1111 1159-1111h897V2917s-814-139-1592-139c-1624 0-2686 984-2686 2767v1567H4194v2056h1806v4969c362 57 733 86 1111 86s749-30 1111-86V9168z" fill="#FFFFFF" />
                                 <title>&#8482;T&#169;ReMeTaL facebook&#8482;</title>
                             </svg>
                         </a>
-                        <a style="padding: 0 15px 0 15px;cursor:pointer;" href="https://m.me/TheToremetal"><img title="&#8482;T&#169;ReMeTaL Messenger&#8482;" height="24" width="24" src="/img/messenger.webp" alt="&#8482;T&#169;ReMeTaL Messenger&#8482;" /></a>
+                        <a style="padding: 0 15px 0 15px;" href="https://m.me/TheToremetal"><img title="&#8482;T&#169;ReMeTaL Messenger&#8482;" height="24" width="24" src="https://github.toremetal.com/img/messenger.webp" alt="&#8482;T&#169;ReMeTaL Messenger&#8482;" /></a>
                     </p>
-                    <form action="https://www.paypal.com/donate" method="post" target="_top">
-                        <input type="hidden" name="hosted_button_id" value="NCK58ZSYB5WUL" /><input type="image" src="/img/btn_donateCC_LG.webp" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /><img alt="PayPal" border="0" src="/img/btn_donateCC_LG.webp" width="1" height="1" />
+                    <form action="https://www.paypal.com/donate" method="post" target="_top" style="margin:20px auto;">
+                        <input type="hidden" name="hosted_button_id" value="NCK58ZSYB5WUL" /><input type="image" src="https://github.toremetal.com/img/btn_donateCC_LG.webp" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /><img alt="PayPal" border="0" src="https://github.toremetal.com/img/btn_donateCC_LG.webp" width="1" height="1" />
                     </form>
-                    <a title="Click to Verify" onclick="vGPCertMe()">
-                        <img class="rotate transition" style="float:left;position:static;max-width:64px;" width="64" src="/img/gp-badge.png" />
+                    <a title="Click to Verify" onclick="window.open('https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449')">
+                        <img class="rotate transition" style="cursor:pointer;float:left;position:static;max-width:64px;" width="64" src="https://github.toremetal.com/img/gpbadge.png" />
                     </a>
-                    <a title="Check out the G.dev Page❗" onclick="gdevMe()">
-                        <img class="zoom" style="float:right;position:static;border-radius:7px;box-shadow:1px 1px 2px blue, 0 0 1em red 0 0 0.2em darkred;max-width:56px;" width="56" src="/img/gdev.png" />
+                    <a title="Check out the G.dev Page❗" onclick="window.open('https://g.dev/toremetal')">
+                        <img class="zoom" style="cursor: pointer; float: right; position: static; border-radius: 7px; box-shadow: 1px 1px 2px blue, 0 0 1em red 0 0 0.2em darkred; max-width: 56px;" width="56" src="https://github.toremetal.com/img/gdev.png" />
                     </a>
                     <small style=" font-size:12px;line-height: 1;">
                         <a style="padding: 0 5px 0 5px;font-family: 'IM Fell English SC', serif;" title="&#8482;T&#169;ReMeTaL Cookie Policy" href="/cookie-policy">&#x1F36A; Policy</a><!--/privacypolicy#h.b791tw8gfo2s--><a style="padding: 0 5px 0 5px;font-family: 'IM Fell English SC', serif;" title="&#8482;T&#169;ReMeTaL Privacy Policy" href="/privacypolicy">Privacy-Policy&#10082;</a><a style="padding: 0 5px 0 5px;font-family: 'IM Fell English SC', serif;" title="&#8482;T&#169;ReMeTaL Terms and Conditions" href="/termsandconditions">Terms&#10082;</a><br />
@@ -797,7 +711,8 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                         <a title="GET IT ON Google Play" target="_blank" href="https://play.google.com/store/apps/dev?id=7952290850776080706"><img src="/img/footer-logo.webp" alt="www.toremetal.com"></a>
                     </div><!-- End Div Google Play -->
                 </div><!-- End Footer container -->
-            </footer><!-- End Footer -->
+            </footer>
+            <!-- End Footer -->
         </div>
         <!-- End address -->
         <script>
@@ -833,24 +748,6 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
             }
         </script>
         <!-- Javascript files -->
-        <script src="/js/plugin.js"></script>
-        <script src="/js/bootstrap.bundle.min.js"></script>
-        <script src="/js/custom.js"></script>
-        <script src="/js/jquery.fancybox.min.js"></script>
-        <script src="/js/toremetal.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $(".fancybox").fancybox({
-                    openEffect: "none",
-                    closeEffect: "none"
-                });
-                $(".zoom").hover(function () {
-                    $(this).addClass('transition');
-                }, function () {
-                    $(this).removeClass('transition');
-                });
-            });
-        </script>
         <script type="text/javascript">
 
             function myFunction(id) {
@@ -900,13 +797,6 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                     return false;
                 }
             }
-
-
-            (function (console) {
-                console.save = function (data, filename) {
-                    //document.getElementById("clog").src = 'php/save.php?id=null&s=null&log=' + data;
-                }
-            })(console)
 
             function next(id) {
                 var x = document.getElementById(id).innerHTML;
@@ -1050,7 +940,7 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                 gotopg("/webapps");
                 //window.location = "/apps/";
             }
-            
+
             function ppol() {
                 gotopg("/privacypolicy");
                 //window.location = "/privacypolicy";
@@ -1108,5 +998,118 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
             }
         </script>
     </div><!-- End Simulate a smartphone / tablet look -->
+    <!-- Cookies Message -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script async type="text/javascript" src="/js/gdpr-cookie-message.js"></script>
+    <script async type="text/javascript">
+        var options = {
+            delay: 500,
+            expires: 30,
+            onAccept: function () {
+                var myPreferences = $.fn.ihavecookies.cookie();
+                //console.log('The following preferences were saved...');
+                //console.log(myPreferences[1]);
+                /*console.log(myPreferences.includes("marketing"));
+                myPreferences.forEach(myFunction);
+                function myFunction(item) {
+                    console.log(item);
+                    if (item.includes("marketing")) {
+                        console.log("Yay it matched");
+                    }
+                }*/
+                //console.save(myPreferences, 'test.txt');
+                if (myPreferences.includes("marketing")) {
+                    if (1) { window.location = '?fc=alwaysshow'; }
+                }
+            },
+            uncheckBoxes: true
+        }
+        $(document).ready(function () {
+            $('body').ihavecookies(options);
+            if (1) {
+                if ($.fn.ihavecookies.preference('analytics') === true) {
+                    console.log('Consent: Analytic cookies are allowed.');
+                    window['ga-disable-UA-149650262-1'] = false
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'UA-149650262-1', { 'cookie_prefix': 'analytics' });
+                    /*gtag('config', 'UA-149650262-1', {
+                        'linker': {
+                            'domains': ['toremetal.com', 'www.toremetal.com']
+                        }
+                    });
+                    gtag('config', 'UA-149650262-1', {
+                        'linker': {
+                            'accept_incoming': true
+                        }
+                    });*/
+                } else {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); };
+                    gtag('js', new Date());
+                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+                }
+                if ($.fn.ihavecookies.preference('marketing') === true) {
+                    console.log('Consent: marketing cookies are allowed.');
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); };
+                    gtag('js', new Date());
+                    gtag('consent', 'update', { 'ad_storage': 'granted' });
+                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+                } else {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); };
+                    gtag('js', new Date());
+                    gtag('consent', 'update', { 'ad_storage': 'denied' });
+                    if ($.fn.ihavecookies.preference('analytics') === true) {
+                        gtag('set', 'url_passthrough', true);
+                    } else {
+                        window['ga-disable-UA-149650262-1'] = true;
+                    }
+                    (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+                }
+
+                if ($.fn.ihavecookies.preference('preferences') === true) {
+                    console.log('Consent: preference cookies are allowed.');
+                }
+            }
+            $('#ihavecookiesBtn').on('click', function () {
+                $('body').ihavecookies(options, 'reinit');
+            });
+        });
+    </script>
+    <!-- End Cookies -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" integrity="sha512-5nBm8I4981vJDHhtHCaImHU+wcnmbheiFpmE03QLuYshaimnRk15jbW6sNK4/URdyqohIUQzNLsqdZ7bB3l5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--<script src="/js/plugin.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/custom.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>-->
+    <script src="/js/toremetal.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+            $(".zoom").hover(function () {
+                $(this).addClass('transition');
+            }, function () {
+                $(this).removeClass('transition');
+            });
+        });
+    </script>
+
+    <script>
+        (function (console) {
+            console.save = function (data, filename) {
+                //document.getElementById("clog").src = 'php/save.php?id=null&s=null&log=' + data;
+            }
+        })(console)
+    </script>
 </body>
 </html><!-- End footer.t -->
