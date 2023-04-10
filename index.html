@@ -1,53 +1,55 @@
 <!DOCTYPE HTML>
 <html lang="en_US" charset="utf-8">
 <head>
-<script>
-    function includeHTML() {
-        var z, i, elmnt, file, xhttp;
-        /*loop through a collection of all HTML elements:*/
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /*search for elements with a certain attribute:*/
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-                /*make an HTTP request using the attribute value as the file name:*/
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4) {
-                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                        /*remove the attribute, and call this function once more:*/
-                        elmnt.removeAttribute("w3-include-html");
-                        includeHTML();
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain attribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
                     }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
                 }
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                /*exit the function:*/
-                return;
             }
-        }
-    };
-</script>
+        };
+    </script>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<!--<meta http-equiv="content-security-policy" content="default-src 'self'">
-Referrer-Policy: no-referrer
-Referrer-Policy: no-referrer-when-downgrade
-Referrer-Policy: origin
-Referrer-Policy: origin-when-cross-origin
-Referrer-Policy: same-origin
-Referrer-Policy: strict-origin
-Referrer-Policy: strict-origin-when-cross-origin
-Referrer-Policy: unsafe-url
+    <!--<meta http-equiv="content-security-policy" content="default-src 'self'">
+    Referrer-Policy: no-referrer
+    Referrer-Policy: no-referrer-when-downgrade
+    Referrer-Policy: origin
+    Referrer-Policy: origin-when-cross-origin
+    Referrer-Policy: same-origin
+    Referrer-Policy: strict-origin
+    Referrer-Policy: strict-origin-when-cross-origin
+    Referrer-Policy: unsafe-url
 
-    in head use dash
-    <meta name="referrer" content="no-referrer">
-in page don't use dash
-<a href="http://example.com" rel="noreferrer">…</a>
--->
+        in head use dash
+        <meta name="referrer" content="no-referrer">
+    in page don't use dash
+    <a href="http://example.com" rel="noreferrer">…</a>
+    <base href="/" />
+    -->
+    <base href="https://github.toremetal.com" />
     <meta name="referrer" content="origin" />
     <title>&#8482;T&#169;ReMeTaL - Technology</title>
     <link rel="canonical" href="/">
@@ -68,7 +70,7 @@ in page don't use dash
 
     <meta name="twitter:title" content="&#8482;T&#169;ReMeTaL" />
     <meta name="twitter:description" content="Easy-to-Use Applications. Designed for Everyone." />
-    <meta name="twitter:image" content="https://toremetal.github.io/img/banner600x315.png" />
+    <meta name="twitter:image" content="/img/banner600x315.png" />
     <meta name="twitter:site" content="@TheToReMetal" />
     <meta name="twitter:creator" content="@TheToReMetal" />
     <meta itemprop="name" content="&#8482;T&#169;ReMeTaL" />
@@ -84,8 +86,8 @@ in page don't use dash
              "@type": "WebApplication",
              "name": "&#8482;T&#169;ReMeTaL",
              "operatingSystem": "ANDROID",
-             "identifier": "https://toremetal.github.io",
-             "image": "https://toremetal.github.io/img/bannerema.png",
+             "identifier": "https://toremetal.com",
+             "image": "https://github.toremetal.com/img/bannerema.png",
              "thumbnailUrl": "/img/logo.png",
              "applicationCategory": "Apps",
              "description": "Easy-to-Use Applications. Designed for Everyone.",
@@ -98,7 +100,7 @@ in page don't use dash
     <link rel="icon" href="/img/logo.webp" type="image/webp" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://toremetal.github.io/css/toreme.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/toreme.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" integrity="sha512-FKK36sqWcrWs0CJeDVz3UhCFH5XnRAU9fijKZmn2760FDeYmBB7oos2E4V2vS9KjuKDy5rXZa6L1gIjnsDJ9bQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -114,9 +116,9 @@ in page don't use dash
     <link rel="stylesheet" href="/css/gdpr-cookie-message.css" class="#gdpr-cookie-message" />
     <!-- Cookies Message -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-    <script async src="/js/gdpr-cookie-message.js" type="text/javascript" ></script>
+    <script async src="/js/gdpr-cookie-message.js" type="text/javascript"></script>
     <script async type="text/javascript">
-            var options = {
+        var options = {
             delay: 500,
             expires: 30,
             onAccept: function () {
@@ -265,7 +267,7 @@ in page don't use dash
                     ******** */-->
             <div class="topnavNew topnav" style="background:transparent;width:100%;">
                 <!--/* 2[div class="navbarNew appsocial"] ******************************|
-            ******** */-->
+                ******** */-->
                 <div class="navbarNew appsocial" style="background:transparent;width:89%;">
                     <a href="/" title="&#8482;T&#169;ReMeTaL-Home" class="active">
                         <sub> <img style="padding: 0 0 0 1px;margin: 0 0 0 0;" src="/img/favicon.png" alt="&#8482;T&#169;ReMeTaL" width="48" /></sub>
@@ -273,28 +275,28 @@ in page don't use dash
                     </a>
 
                     <!--/* 3[div class="social"] ******************************|
-                ******** */-->
+                    ******** */-->
                     <div class="social" style="width:100%;">
                         <sub class="navbarNewitem1">
                             <a title="&#8482;T&#169;ReMeTaL Developers" onclick="window.location = '/developers';">
-                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/developers.png" alt="Developers" height="36" width="36" />
+                                <img class="navbarNewitemsicon" src="/img/developers.png" alt="Developers" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem2">
                             <a title="&#8482;T&#169;ReMeTaL Android&#8482; Apps" onclick="window.open('https://play.google.com/store/apps/dev?id=7952290850776080706')">
-                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/android.png" alt="Android&#8482;" height="36" width="36" />
+                                <img class="navbarNewitemsicon" src="/img/android.png" alt="Android&#8482;" height="36" width="36" />
                             </a>
                         </sub>
 
                         <sub class="navbarNewitem3">
                             <a title="&#8482;T&#169;ReMeTaL Windows&#8482; Apps" onclick="window.location='/windows/'">
-                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/windows223x226.png" alt="Windows&#8482;" height="36" width="36" />
+                                <img class="navbarNewitemsicon" src="/img/windows223x226.png" alt="Windows&#8482;" height="36" width="36" />
                             </a>
                         </sub>
 
                         <sub class="navbarNewitem4">
                             <a title="&#8482;T&#169;ReMeTaL WebApps&#8482;" onclick="window.location = '/webapps';">
-                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/global.gif" alt="WebApps" height="36" width="36" />
+                                <img class="navbarNewitemsicon" src="/img/global.gif" alt="WebApps" height="36" width="36" />
                             </a>
                         </sub>
 
@@ -305,32 +307,32 @@ in page don't use dash
                         </sub>
                         <sub class="navbarNewitem6">
                             <a title="&#8482;T&#169;ReMeTaL Music" onclick="gotoMusic()">
-                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/musiclink.png" alt="Music" height="36" width="36" />
+                                <img class="navbarNewitemsicon" src="/img/musiclink.png" alt="Music" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem7">
                             <a title="&#8482;T&#169;ReMeTaL Signs A-Z" onclick="window.location='/signs/';">
-                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/signswebapp.png" alt="Signs A-Z" height="36" width="36" />
+                                <img class="navbarNewitemsicon" src="/img/signswebapp.png" alt="Signs A-Z" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem8">
                             <a width="36" height="36" onclick="yttv()" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;">
-                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="https://github.toremetal.com/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
+                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem9">
                             <a title="&#8482;T&#169;ReMeTaL's facebook&#8482; page" href="https://www.facebook.com/TheToremetal" target="_blank">
-                                <img class="navbarNewitemsicon" title="facebook&#8482;" src="https://github.toremetal.com/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
+                                <img class="navbarNewitemsicon" title="facebook&#8482;" src="/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem10">
                             <a width="36" height="36" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" href="https://twitter.com/TheToReMetal" target="_blank">
-                                <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
+                                <img class="navbarNewitemsicon" src="/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
                             </a>
                         </sub>
                         <sub class="navbarNewitem11">
                             <a title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" href="https://www.linkedin.com/in/toremetal/">
-                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" height="36" width="36" src="https://github.toremetal.com/img/logo_in_48.png" alt="icon" />
+                                <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" height="36" width="36" src="/img/logo_in_48.png" alt="icon" />
                             </a>
                         </sub>
                         <sub>
@@ -363,7 +365,7 @@ in page don't use dash
                         </sub>
                     </div>
                     <!--/* ****************|===========================================================>
-                |* 3[End div class="social"] ****** */-->
+                    |* 3[End div class="social"] ****** */-->
                     <?php $messageCount=0;?>
                     <label id="notifications" for="snackbar-btn" style="color:orange;position:absolute;float:right;top:6px;right:62px;display:none;"><?=$messageCount;?></label>
                     <button id="snackbar-btn" class="zoom" style="font-size:10px;padding:0 4px;border:1px solid whitesmoke;box-shadow:6px 1px 1px rgba(0,0,0,0.89);
@@ -376,114 +378,114 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                     </button>
                 </div>
                 <!--/* ****************|===========================================================>
-            |* 2[End div class="navbarNew appsocial"] ****** */-->
+                |* 2[End div class="navbarNew appsocial"] ****** */-->
                 <!--/* 2b[div id="myLinks"] ******************************|
-            ******** */-->
+                ******** */-->
                 <div id="myLinks" style="z-index:9999;margin-top:100px;">
                     <ul>
                         <li style="margin: 10px 0 0 0;">
                             <sub class="navitemNew1 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL Developers" onclick="window.location='/developers';">
-                                    <img class="topnav icon" src="https://github.toremetal.com/img/developers.png" alt="Developers" height="36" width="36" />
+                                    <img class="topnav icon" src="/img/developers.png" alt="Developers" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew2 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL Android&#8482; Apps" onclick="window.open('https://play.google.com/store/apps/dev?id=7952290850776080706')">
-                                    <img class="topnav icon" src="https://github.toremetal.com/img/androidph.png" alt="Android&#8482;" height="36" width="36" />
+                                    <img class="topnav icon" src="/img/androidph.png" alt="Android&#8482;" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew3 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL Windows&#8482; Apps" onclick="window.location='/windows'">
-                                    <img class="topnav icon" src="https://github.toremetal.com/img/windows223x226.png" alt="Windows&#8482;" height="36" width="36" />
+                                    <img class="topnav icon" src="/img/windows223x226.png" alt="Windows&#8482;" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew4 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL WebApps&#8482;" onclick="window.location = '/webapps';">
-                                    <img class="navbarNewitemsicon" src="https://github.toremetal.com/img/global.gif" alt="WebApps" height="36" width="36" />
+                                    <img class="navbarNewitemsicon" src="/img/global.gif" alt="WebApps" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew5 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL Games" onclick="window.location='/games';">
-                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL Games" src="https://github.toremetal.com/img/gamesb.png" alt="&#8482;T&#169;ReMeTaL Games" height="36" width="36" />
+                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL Games" src="/img/gamesb.png" alt="&#8482;T&#169;ReMeTaL Games" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew6 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL Music" onclick="gotoMusic()">
-                                    <img class="topnav icon" src="https://github.toremetal.com/img/musiclink.png" alt="Music" height="36" width="36" />
+                                    <img class="topnav icon" src="/img/musiclink.png" alt="Music" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew7 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL Signs A-Z" onclick="window.location='/signs';">
-                                    <img class="topnav icon" src="https://github.toremetal.com/img/signswebapp.png" alt="Signs A-Z" height="36" width="36" />
+                                    <img class="topnav icon" src="/img/signswebapp.png" alt="Signs A-Z" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew8 navitemNew navitem">
                                 <a width="36" height="36" onclick="yttv()" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;">
-                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="https://github.toremetal.com/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
+                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew9 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL's facebook&#8482; page" href="https://www.facebook.com/TheToremetal" target="_blank">
-                                    <img class="topnav icon" title="facebook&#8482;" src="https://github.toremetal.com/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
+                                    <img class="topnav icon" title="facebook&#8482;" src="/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew10 navitemNew navitem">
                                 <a width="36" height="36" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" href="https://twitter.com/TheToReMetal" target="_blank">
-                                    <img class="topnav icon" src="https://github.toremetal.com/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
+                                    <img class="topnav icon" src="/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
                                 </a>
                             </sub>
                         </li>
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew11 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" href="https://www.linkedin.com/in/toremetal/">
-                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" height="36" width="36" src="https://github.toremetal.com/img/logo_in_48.png" alt="icon" />
+                                    <img class="topnav icon" title="&#8482;T&#169;ReMeTaL LinkedIn&#8482;" height="36" width="36" src="/img/logo_in_48.png" alt="icon" />
                                 </a>
                             </sub>
                         </li>
                     </ul>
 
                     <!--/* 3b[Site View Count Display.] ***********************************************************************|
-                ******** */-->
+                    ******** */-->
                     <div style="position:absolute;right:0;top:-120px;text-align:right;margin-right:4px;line-height:1;margin-bottom:0;padding:0;">
                         Site.Visits:<iframe src='https://toremetal.com/php/vcany.php?vc=github' style="text-align:left;margin:-14px 0 0 -14px;border:none; overflow:hidden;" scrolling="no"
                                             frameborder="0" height="30" width="40"></iframe>
                     </div>
                     <!--/* **************************************************************************
-                |* 3b[Site View Count Display.] **************************************************************** */-->
+                    |* 3b[Site View Count Display.] **************************************************************** */-->
                 </div>
                 <!--/* ****************|===========================================================>
-            |* 2b[End div id="myLinks"] ****** */-->
+                |* 2b[End div id="myLinks"] ****** */-->
                 <!--/* 2c[Mobile Menu.] **********************************************************|
-            |**** */-->
+                |**** */-->
                 <a style="margin:0 0 0 0;padding: 1px 6px 6px 8px;max-height:32px;height:32px;width:32px;max-width:32px;" href="javascript:void(0);" class="icon" onclick="sh('myLinks')">
                     <i style="margin:0 0 0 0;padding: 0 0 0 0;max-height:32px;height:32px;width:32px;max-width:32px;" title="Links to cool stuff" class="fa fa-bars"></i>
                 </a>
                 <!--/* *************************************************
-            |* 2c[Mobile Menu.] ********************************************* */-->
+                |* 2c[Mobile Menu.] ********************************************* */-->
                 <!--<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars mob_nav"></i>
-                </a>-->
+                <i class="fa fa-bars mob_nav"></i>
+                    </a>-->
             </div>
             <!--/* ****************|=================================================>
-        |* 1[End div class="topnavNew topnav"] ****** */-->
+            |* 1[End div class="topnavNew topnav"] ****** */-->
         </nav>
 
         <!-- facebook SDK code -->
@@ -493,24 +495,24 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
         <!-- Messenger Chat Plugin Code -->
         <div id="fb-customer-chat" class="fb-customerchat"></div>
         <script async defer type="text/javascript">
-	    var chatbox = document.getElementById('fb-customer-chat');
-chatbox.setAttribute("page_id", "226195990786734");
-chatbox.setAttribute("attribution", "biz_inbox");
-window.fbAsyncInit = function () {
+            var chatbox = document.getElementById('fb-customer-chat');
+            chatbox.setAttribute("page_id", "226195990786734");
+            chatbox.setAttribute("attribution", "biz_inbox");
+            window.fbAsyncInit = function () {
                 FB.init({
                     xfbml: true,
                     version: 'v12.0'
                 });
             };
 
-(function (d, s, id) {
+            (function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js = d.createElement(s); js.id = id;
                 js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
                 fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-	    </script>
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <!-- End facebook -->
 
 
@@ -596,17 +598,17 @@ window.fbAsyncInit = function () {
                         <!--</a>-->
                     </div><br />
                     <!--<div class="container">
-                    <div align="center" style="width:auto;height:auto">
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-8927593002808864"
-                             data-ad-slot="2822185833"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true">
-                        </ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </div>
-                </div><br>-->
+                        <div align="center" style="width:auto;height:auto">
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-8927593002808864"
+                                 data-ad-slot="2822185833"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true">
+                            </ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                    </div><br>-->
                     <!-- **************** youtube.com/embed/videoseries ******************* -->
                     <div style="width: 100%; height: 384px;border-radius: 10px;padding: 0 0 0 0;" align="center">
                         <iframe nonce="d57190ef1a34b0166ef2fa1e" class='contactus img-fluid' referrerpolicy="SameSite:None; Secure" style="height: 100%; width: 100%;border-radius: 10px;padding: 0 0 0 0;" src="https://www.youtube.com/embed/videoseries?list=PL0xA7snTym6BVH7Qbn0eHW5PSZRCIEnGu&autoplay=1" title="&#8482;T&#169;ReMeTaL Apps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; cross-origin-isolated" allowfullscreen></iframe>
@@ -750,11 +752,11 @@ window.fbAsyncInit = function () {
                     <div class="container" align="center" style="padding:0;">
                         <iframe src="https://toremetal.com/img" title="GET IT ON Google Play&#8482;" style="padding:1px 1px 0 0;object-fit:fill;width:100%;max-height: 63px; max-width:470px;border-radius: 7px;box-sizing: border-box; border: none;" border="0"></iframe>
                         <!--<a target="_blank" onclick="window.location='https://play.google.com/store/apps/dev?id=7952290850776080706'">
-                    <img alt="GET IT ON Google Play&#8482;" title="GET IT ON Google Play&#8482;" style="height: 100%;
-                                border-radius: 10px;
-                                box-sizing: border-box;
-                                box-shadow: 1px 2px 5px rgba(0,0,0,.31);
-                                border: 1px solid #ccc;" src="https://github.toremetal.com/img/AppsOnGooglePlay.webp" border="0" /></a>-->
+                        <img alt="GET IT ON Google Play&#8482;" title="GET IT ON Google Play&#8482;" style="height: 100%;
+                                    border-radius: 10px;
+                                    box-sizing: border-box;
+                                    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+                                    border: 1px solid #ccc;" src="/img/AppsOnGooglePlay.webp" border="0" /></a>-->
                     </div>
                     <!-- End Div Google Play -->
                     <hr style="background-color:white;" />
@@ -800,7 +802,7 @@ window.fbAsyncInit = function () {
                             <title>&#8482;T&#169;ReMeTaL tweets on Twitter&#8482;</title></svg>
                         </a>
                         <a style="padding: 0 15px 10px 15px;" href="https://www.linkedin.com/in/toremetal/">
-                            <img title="&#8482;T&#169;ReMeTaL LinkedIn" height="24" width="24" src="https://github.toremetal.com/img/linkedinlogo.png" alt="&#8482;T&#169;ReMeTaL LinkedIn" />
+                            <img title="&#8482;T&#169;ReMeTaL LinkedIn" height="24" width="24" src="/img/linkedinlogo.png" alt="&#8482;T&#169;ReMeTaL LinkedIn" />
                         </a>
                         <a style="padding: 0 15px 0 15px;" href="https://www.youtube.com/channel/UCgyGtbmWqdeSc_JVvENQwsA">
                             <svg xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -829,16 +831,16 @@ window.fbAsyncInit = function () {
                                 <title>&#8482;T&#169;ReMeTaL facebook&#8482;</title>
                             </svg>
                         </a>
-                        <a style="padding: 0 15px 0 15px;" href="https://m.me/TheToremetal"><img title="&#8482;T&#169;ReMeTaL Messenger&#8482;" height="24" width="24" src="https://github.toremetal.com/img/messenger.webp" alt="&#8482;T&#169;ReMeTaL Messenger&#8482;" /></a>
+                        <a style="padding: 0 15px 0 15px;" href="https://m.me/TheToremetal"><img title="&#8482;T&#169;ReMeTaL Messenger&#8482;" height="24" width="24" src="/img/messenger.webp" alt="&#8482;T&#169;ReMeTaL Messenger&#8482;" /></a>
                     </p>
                     <form action="https://www.paypal.com/donate" method="post" target="_top" style="margin:20px auto;">
-                        <input type="hidden" name="hosted_button_id" value="NCK58ZSYB5WUL" /><input type="image" src="https://github.toremetal.com/img/btn_donateCC_LG.webp" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /><img alt="PayPal" border="0" src="https://github.toremetal.com/img/btn_donateCC_LG.webp" width="1" height="1" />
+                        <input type="hidden" name="hosted_button_id" value="NCK58ZSYB5WUL" /><input type="image" src="/img/btn_donateCC_LG.webp" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /><img alt="PayPal" border="0" src="/img/btn_donateCC_LG.webp" width="1" height="1" />
                     </form>
                     <a title="Click to Verify" onclick="window.open('https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449')">
-                        <img class="rotate transition" style="cursor:pointer;float:left;position:static;max-width:64px;" width="64" src="https://github.toremetal.com/img/gpbadge.png" />
+                        <img class="rotate transition" style="cursor:pointer;float:left;position:static;max-width:64px;" width="64" src="/img/gpbadge.png" />
                     </a>
                     <a title="Check out the G.dev Page❗" onclick="window.open('https://g.dev/toremetal')">
-                        <img class="zoom" style="cursor: pointer; float: right; position: static; border-radius: 7px; box-shadow: 1px 1px 2px blue, 0 0 1em red 0 0 0.2em darkred; max-width: 56px;" width="56" src="https://github.toremetal.com/img/gdev.png" />
+                        <img class="zoom" style="cursor: pointer; float: right; position: static; border-radius: 7px; box-shadow: 1px 1px 2px blue, 0 0 1em red 0 0 0.2em darkred; max-width: 56px;" width="56" src="/img/gdev.png" />
                     </a>
                     <small style=" font-size:12px;line-height: 1;">
                         <a style="padding: 0 5px 0 5px;font-family: 'IM Fell English SC', serif;" title="&#8482;T&#169;ReMeTaL Cookie Policy" href="/cookie-policy">&#x1F36A; Policy</a><!--/privacypolicy#h.b791tw8gfo2s--><a style="padding: 0 5px 0 5px;font-family: 'IM Fell English SC', serif;" title="&#8482;T&#169;ReMeTaL Privacy Policy" href="/privacypolicy">Privacy-Policy&#10082;</a><a style="padding: 0 5px 0 5px;font-family: 'IM Fell English SC', serif;" title="&#8482;T&#169;ReMeTaL Terms and Conditions" href="/termsandconditions">Terms&#10082;</a><br />
@@ -1150,7 +1152,7 @@ window.fbAsyncInit = function () {
             }
         </script>
     </div><!-- End Simulate a smartphone / tablet look -->
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js" integrity="sha512-5nBm8I4981vJDHhtHCaImHU+wcnmbheiFpmE03QLuYshaimnRk15jbW6sNK4/URdyqohIUQzNLsqdZ7bB3l5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
