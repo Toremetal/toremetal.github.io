@@ -113,8 +113,15 @@
                 console.log("Allow Analytics:" + myPreferences.includes("analytics"));
                 console.log("Allow Preferences:" + myPreferences.includes("preferences"));
                 //console.save(myPreferences, 'test.txt');
+                if (myPreferences.includes("analytics")) {
+		    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+                }
                 if (myPreferences.includes("marketing")) {
-                    if (1) { window.location = '?fc=alwaysshow'; }
+                    gtag('consent', 'update', { 'ad_storage': 'granted' });
+                    window.location = '?fc=alwaysshow';
+                }
+                if (myPreferences.includes("preferences")) {
+                    gtag('consent', 'update', { 'functionality_storage': 'granted' });
                 }
             },
             uncheckBoxes: true
