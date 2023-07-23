@@ -1,6 +1,15 @@
 <!DOCTYPE HTML>
 <html lang="en_US" charset="utf-8">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M20V5KWRLY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M20V5KWRLY');
+</script>
     <script>
         function includeHTML() {
             var z, i, elmnt, file, xhttp;
@@ -319,11 +328,11 @@
                                 <img class="navbarNewitemsicon" title="&#8482;T&#169;ReMeTaL on YouTube&#8482;" src="/img/logo_yt_sq_w.png" alt="&#8482;T&#169;ReMeTaL on YouTube&#8482;" height="36" width="36" />
                             </a>
                         </sub>
-                        <sub class="navbarNewitem9">
+                        <!--<sub class="navbarNewitem9">
                             <a title="&#8482;T&#169;ReMeTaL's facebook&#8482; page" href="https://www.facebook.com/TheToremetal" target="_blank">
                                 <img class="navbarNewitemsicon" title="facebook&#8482;" src="/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
                             </a>
-                        </sub>
+                        </sub>-->
                         <sub class="navbarNewitem10">
                             <a width="36" height="36" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" href="https://twitter.com/TheToReMetal" target="_blank">
                                 <img class="navbarNewitemsicon" src="/img/logo_tw_p.png" alt="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" width="36" />
@@ -438,13 +447,13 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                                 </a>
                             </sub>
                         </li>
-                        <li style="margin: 20px 0 0 0;">
+                        <!--<li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew9 navitemNew navitem">
                                 <a title="&#8482;T&#169;ReMeTaL's facebook&#8482; page" href="https://www.facebook.com/TheToremetal" target="_blank">
                                     <img class="topnav icon" title="facebook&#8482;" src="/img/logo_fb_48.png" alt="facebook&#8482;" height="36" width="36" />
                                 </a>
                             </sub>
-                        </li>
+                        </li>-->
                         <li style="margin: 20px 0 0 0;">
                             <sub class="navitemNew10 navitemNew navitem">
                                 <a width="36" height="36" title="&#8482;T&#169;ReMeTaL tweets @TheToReMeTaL (Twitter&#8482;)" href="https://twitter.com/TheToReMetal" target="_blank">
@@ -486,22 +495,6 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
             <!--/* ****************|=================================================>
             |* 1[End div class="topnavNew topnav"] ****** */-->
         </nav>
-
-        <!-- facebook SDK code -->
-        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=218761056974715&autoLogAppEvents=1" nonce="UkA12KSF"></script>
-        <!-- facebook use-credentials anonymous referrerpolicy="unsafe-url" strict-origin-when-cross-origin-->
-        <div id="fb-root"></div>
-        <script async defer type="text/javascript">
-            window.fbAsyncInit = function () {
-                FB.init({
-                    xfbml: true,
-                    version: 'v12.0'
-                });
-            };
-
-        </script>
-        <!-- End facebook -->
-
 
         <div id="mpagebody" style="margin: 0 0 0 0; padding: 0 10px 0 10px">
             <!-- End header.t -->
@@ -604,19 +597,116 @@ border-radius:50%;position:absolute;float:right;top:30px;right:60px;background-c
                 </figure>
             </div>
 
-            <div w3-include-html="/content/allapps.html"></div>
+            <!--<div w3-include-html="/content/allapps.html"></div>-->
+
+<div class="container" align="center">
+<style>
+.cube {
+    background-color: transparent;
+  --s: 250px; /* the size */
+  border-radius:6px;
+  display: grid;
+  transform-style: preserve-3d;
+  --_p: perspective(calc(2.5*var(--s)));
+  animation: cuber 18s infinite cubic-bezier(.5,-0.5,.5,1.5);
+}
+.cube img {
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.31);
+    border-radius:6px;
+    border: 1px groove rgb(177, 176, 176);
+  background-color: white;
+  animation: cubeb 18s infinite;
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: var(--_t,) translateZ(calc(var(--s)/2));
+}
+.cube img:nth-child(2) {--_t: rotateX(-90deg)}
+.cube img:nth-child(3) {--_t: rotateY( 90deg)}
+.cube img:nth-child(4) {--_t: rotateX(180deg) rotate( 90deg)}
+.cube img:nth-child(5) {--_t: rotateX( 90deg)}
+.cube img:nth-child(6) {--_t: rotateY(-90deg)}
+
+@keyframes cuber {
+  0%,3%   {transform: var(--_p) rotate3d(0, 0, 0, 0deg)}
+  14%,19% {transform: var(--_p) rotate3d(-1, 1, 0, 180deg)}
+  31%,36% {transform: var(--_p) rotate3d(0, -1, 0, 90deg)}
+  47%,52% {transform: var(--_p) rotate3d(1, 0, 0, 90deg)}
+  64%,69% {transform: var(--_p) rotate3d(1, 0, 0, -90deg)}
+  81%,86% {transform: var(--_p) rotate3d(0, 1, 0, 90deg)}
+  97%,100%{transform: var(--_p) rotate3d(0, 0, 0, 0deg)}
+}
+
+@keyframes cubeb {
+  0%,3%   {background: #774F3881}
+  14%,19% {background: #C5E0DC81}
+  31%,36% {background: #03656481}
+  45%,55% {background: #B3818481}
+  64%,69% {background: #42425481}
+  81%,86% {background: #4DBCE981}
+  97%,to  {background: #774F3881}
+}
+.cubebody {
+    margin:100px 4px;
+  display: grid;
+  place-content: center;
+  /*animation: b 9s infinite;*/
+}
+.cube2 {
+    background-color: transparent;
+  --s: 250px; /* the size */
+  border-radius:6px;
+  display: grid;
+  transform-style: preserve-3d;
+  --_p: perspective(calc(2.5*var(--s)));
+  animation: cuber2 18s infinite cubic-bezier(.5,-0.5,.5,1.5);
+}
+.cube2 img {
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.31);
+    border-radius:6px;
+    border: 1px groove rgb(177, 176, 176);
+  background-color: white;
+  animation: cubeb 9s infinite;
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: var(--_t,) translateZ(calc(var(--s)/2));
+}
+.cube2 img:nth-child(2) {--_t: rotateX(-90deg)}
+.cube2 img:nth-child(3) {--_t: rotateY( 90deg)}
+.cube2 img:nth-child(4) {--_t: rotateX(180deg) rotate(-90deg)}
+.cube2 img:nth-child(5) {--_t: rotateX( 90deg)}
+.cube2 img:nth-child(6) {--_t: rotateY(-90deg)}
+
+@keyframes cuber2 {
+  0%,3%   {transform: var(--_p) rotate3d(0, 0, 0, 0deg)}
+  14%,19% {transform: var(--_p) rotate3d(1, 1, 0, -180deg)}
+  31%,36% {transform: var(--_p) rotate3d(0, -1, 0, 90deg)}
+  47%,52% {transform: var(--_p) rotate3d(1, 0, 0, 90deg)}
+  64%,69% {transform: var(--_p) rotate3d(1, 0, 0, -90deg)}
+  81%,86% {transform: var(--_p) rotate3d(0, 1, 0, 90deg)}
+  97%,100%{transform: var(--_p) rotate3d(0, 0, 0, 0deg)}
+}
+</style>
+            <div class="cubebody"><!-- onclick='window.location="https://play.google.com/store/apps/dev?id=7952290850776080706"' -->
+                <div style='cursor:pointer;' class="cube" align="center" onclick='window.location="/android/"'>
+                    
+                    <img src="/img/androidph.png"/>
+                    <img src="/img/logo3.png"/>
+                    <img src="/img/logo4.png"/>
+                    <img style='object-fit:scale-down;' src="/img/gp.png"/>
+                    <img src="/img/logo-signsplus.png"/>
+                    <img src="/img/logo5.png"/>
+                </div>
+            </div>
+            </div>
+		
 
             <script>
                 includeHTML();
             </script>
-            <div align="center" style="width:100%;height:100%;">
-                <h1 align="center" style="color:#FFFFFF">&#8482;T&#169;ReMeTaL Meta™(fb) pg.</h1>
-                <div class="fb-page" data-href="https://www.facebook.com/TheToremetal/" data-tabs="timeline" data-width="420" data-height="420" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" style="border-radius: 5px; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,.31); border: 1px solid #ccc;width:440px;padding:1px;background:#C0C0C099">
-                    <blockquote cite="https://www.facebook.com/TheToremetal/" class="fb-xfbml-parse-ignore">
-                        <a href="https://www.facebook.com/TheToremetal/">Toremetal</a>
-                    </blockquote>
-                </div>
-            </div>
             <!-- Photos -->
             <div id="screenshot" class="Albums" style="background-color:#80808000;">
                 <div class="container1">
