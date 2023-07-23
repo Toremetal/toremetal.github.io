@@ -7,8 +7,12 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-GBD3J0ZC1Z');
+  gtag('consent', 'default', { 
+	'ad_storage': 'denied', 
+	'analytics_storage': 'denied',
+	'functionality_storage': 'denied'
+  });
 </script>
     <script>
         function includeHTML() {
@@ -145,12 +149,15 @@
             $('body').ihavecookies(options);
             if ($.fn.ihavecookies.preference('analytics') === true) {
                 console.log('Consent: Analytic cookies are allowed.');
+		gtag('consent', 'update', { 'analytics_storage': 'granted' });
             }
             if ($.fn.ihavecookies.preference('marketing') === true) {
                 console.log('Consent: marketing cookies are allowed.');
+                gtag('consent', 'update', { 'ad_storage': 'granted' });
             }
             if ($.fn.ihavecookies.preference('preferences') === true) {
                 console.log('Consent: preference cookies are allowed.');
+                gtag('consent', 'update', { 'functionality_storage': 'granted' });
             }
             $('#ihavecookiesBtn').on('click', function () {
                 $('body').ihavecookies(options, 'reinit');
