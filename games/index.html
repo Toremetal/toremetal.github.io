@@ -1,6 +1,15 @@
 <!DOCTYPE HTML>
 <html lang="en_US">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBD3J0ZC1Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GBD3J0ZC1Z');
+</script>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -76,29 +85,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
-    <!--
-                gtag('consent', 'update', {'analytics_storage': 'granted'});
-                //gtag('config', 'UA-149650262-1', {
-                //    cookie_flags: 'domain=  =?>$_SERVER['HTTP_HOST']?>;secure;samesite=none'
-                //});
-                //gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
-                //gtag('config', 'UA-149650262-1', {'cookie_prefix': 'analytics'});
-                //gtag('config', 'UA-149650262-1', {'cookie_domain': ''});
-                //gtag('config', 'UA-149650262-1', {'cookie_update': false});
-                //gtag('set', {'user_id': 'USER_ID'});//setuser() 'USER_ID'
-                //ga('set', 'userId', 'USER_ID'); // Set the user ID using signed-in user_id.
-                // gtag('get', {'user_id': 'USER_ID'})+" : "+setuser()
-                -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); };
-        gtag('js', new Date());
-        gtag('consent', 'default', { 'ad_storage': 'denied', 'region': ['US-CA'] });
-        gtag('consent', 'default', { 'ad_storage': 'denied', 'wait_for_update': 500 });
-        gtag('consent', 'default', { 'analytics_storage': 'denied', 'region': ['US-CA'] });
-        gtag('consent', 'default', { 'analytics_storage': 'denied', 'wait_for_update': 500 });
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149650262-1"></script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927593002808864"
             crossorigin="anonymous"></script>
     <script async src="https://cse.google.com/cse.js?cx=partner-pub-8927593002808864:1031426169"></script>
@@ -609,13 +595,14 @@
             $('body').ihavecookies(options);
             if (1) {
                 if ($.fn.ihavecookies.preference('analytics') === true) {
-                    window['ga-disable-UA-149650262-1'] = false
+                    console.log('Consent: Analytic cookies are allowed.');
+                    /*window['ga-disable-UA-149650262-1'] = false
                     window.dataLayer = window.dataLayer || [];
                     function gtag() { dataLayer.push(arguments); }
                     gtag('js', new Date());
                     gtag('config', 'UA-149650262-1', { 'cookie_prefix': 'analytics' });
                     gtag('consent', 'update', { 'analytics_storage': 'granted' });
-                    /*gtag('config', 'UA-149650262-1', {
+                    gtag('config', 'UA-149650262-1', {
                         'linker': {
                             'domains': ['toremetal.com', 'www.toremetal.com']
                         }
@@ -625,22 +612,21 @@
                             'accept_incoming': true
                         }
                     });*/
-                    console.log('Consent: Analytic cookies are allowed.');
                 } else {
-                    window.dataLayer = window.dataLayer || [];
+                    /*window.dataLayer = window.dataLayer || [];
                     function gtag() { dataLayer.push(arguments); };
                     gtag('js', new Date());
-                    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+                    gtag('consent', 'update', { 'analytics_storage': 'denied' });*/
                 }
                 if ($.fn.ihavecookies.preference('marketing') === true) {
                     console.log('Consent: marketing cookies are allowed.');
-                    window.dataLayer = window.dataLayer || [];
+                    /*window.dataLayer = window.dataLayer || [];
                     function gtag() { dataLayer.push(arguments); };
                     gtag('js', new Date());
                     gtag('consent', 'update', { 'ad_storage': 'granted' });
-                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;*/
                 } else {
-                    window.dataLayer = window.dataLayer || [];
+                    /*window.dataLayer = window.dataLayer || [];
                     function gtag() { dataLayer.push(arguments); };
                     gtag('js', new Date());
                     gtag('consent', 'update', { 'ad_storage': 'denied' });
@@ -650,7 +636,7 @@
                         window['ga-disable-UA-149650262-1'] = true;
                     }
                     (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
-                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;*/
                 }
 
                 if ($.fn.ihavecookies.preference('preferences') === true) {
