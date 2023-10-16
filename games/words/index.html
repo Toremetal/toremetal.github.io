@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBD3J0ZC1Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GBD3J0ZC1Z');
-</script>
 <meta http-equiv="window-target" content="_self"/>
     <title>Word Finder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,28 +23,56 @@
 
 
 <div style="text-align:center;align-content:center;margin:auto;">
-<div style="background-color:teal;margin:auto;width:fit-content;text-align:center;align-content:center;border-radius:5px;border:1px solid black;padding:0 0 0 0;box-shadow: 1px 2px 5px rgba(28,28,28,.51);box-sizing: border-box;">
+<div style="background-color:lightskyblue;margin:auto;width:fit-content;text-align:center;align-content:center;border-radius:5px;border:1px solid black;padding:0 0 0 0;box-shadow: 1px 2px 5px rgba(28,28,28,.51);box-sizing: border-box;">
     <a id="dictionary" name="#dictionary">
-        <iframe id="#words" target="_SELF" src="wordfinder.html" align="middle" style="padding:4px;margin:0 0 0 0;height:212px;border:none;max-width:288px;">
+        <iframe id="#words" target="_blank" src="wordfinder.html" align="middle" style="padding:4px;margin:0 0 0 0;height:212px;border:none;max-width:288px;">
         </iframe></a>
     <br/>
-    <input class="wordfinderbutton" title="Reset to find more words!" type="button" onclick="resetfinder()" value="Reset"/>
+    <input class="wordfinderbutton" style="cursor: pointer;" title="Reset to find more words!" type="button" onclick="resetfinder()" value="Reset"/>
+    <br />
 <script>
     function resetfinder() {
         document.getElementById("#words").src="wordfinder.html";
     }
 </script>
 
-<h6 style="margin:auto 2px 2px auto;cursor:default;" title="Powered by thefreedictionary.com">Powered by 
+<h6 style="margin:14px auto 0;cursor:default;" title="Powered by thefreedictionary.com">Powered by 
 <a class="adictionary" href="https://www.thefreedictionary.com" title="Powered by thefreedictionary.com" rel="nofollow">TheFreeDictionary.com
 </a>
 </h6>
-<h6 style="margin-right:2px;margin-bottom:1px;text-align:right;cursor:default;font-size:8px;" title="Modified Design by &#169;&#8482;T&#169;ReMeTaL">Modified Design by &#169;
-<a style="font-size:8px;margin:0 0 0 0;" class="adictionary" href="https://toremetal.com" title="Request a Quote? (&#8482;T&#169;ReMeTaL Custom Widgets)" onclick="contactme()" rel="nofollow">&#8482;T&#169;ReMeTaL
+<h6 style="margin:10px 2px 0 0;text-align:right;cursor:default;font-size:10px;" title="Modified Design by &#8482;T&#169;ReMeTaL">Modified Design by &#169;
+<a style="font-size:10px;margin:0 0 0 0;cursor:pointer;" class="adictionary" onclick="contactme()" title="Request a Quote? (&#8482;T&#169;ReMeTaL Custom Widgets)" rel="nofollow"><b style="color:blue">&#8482;T&#169;ReMeTaL</b>
 </a>
-</h6><br/><h6 style="font-size:8px;cursor:pointer;color:darkred;" onclick="contactme()" title="Want a widget like this? Request a Quote?">Get a widget like this for your site!</h6>
+</h6><h6 style="font-size: 8px; cursor: pointer; color: darkred; margin: 12px auto 4px;" onclick="contactme()" title="Want a widget like this? Request a Quote?">Get a widget like this for your site!</h6>
 <script>function contactme() {window.open("mailto:toremetal@toremetal.com?subject=I need a custom widget for my website!&body=I need a widget to do (purpose)? For my (website-type) website!")}</script>
 </div>
 </div>
+    <!-- View Count Style -->
+    <style>
+        .visits {
+            background-color: transparent;
+            text-align: center;
+            align-content: center;
+            position: absolute;
+            top: 52px;
+            right: 80px;
+            color: red;
+            border: none;
+            padding: 0;
+            margin: 0;
+            width: 60px;
+            height: 30px;
+        }
+        /* Modify frame location with 3-Bar button */
+        @media screen and (min-width: 845px) {
+            .visits {
+                right: 12px;
+            }
+        }
+    </style>
+    <!-- View Count Script auto Pg Name (window.location.pathname) -->
+    <script>
+        document.write("<iframe hidden class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
+    </script>
 </body>
 </html>

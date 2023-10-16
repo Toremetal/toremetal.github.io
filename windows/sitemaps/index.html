@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=1, shrink-to-fit=yes" />
+    <title></title>
+</head>
+<body style="margin: 4px; padding: 10px;">
+
+    <style>
+        .software-flip-card {
+            background-color: transparent;
+            width: 256px;
+            height: 150px;
+            perspective: 1000px;
+            margin-bottom: 10px;
+        }
+
+            .software-flip-card h1 {
+                color: darkred;
+                margin-bottom:0;
+            }
+
+            .software-flip-card p {
+                color: white;
+            }
+
+        .software-flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .software-flip-card:hover .software-flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .software-flip-card-front, .software-flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .software-flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .software-flip-card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .zoomy {
+            width: 90%;
+            max-width: 256px;
+            height: auto;
+            cursor: pointer;
+        }
+
+            .zoomy:hover {
+                width: 100%;
+                height: auto;
+                max-width: 264px;
+            }
+
+        .zoomy1:hover {
+            width: 70%;
+            height: auto;
+        }
+
+        .zoomy1 {
+            padding: 4px;
+            width: 192px;
+            height: 174px;
+            cursor: pointer;
+        }
+
+        .combtn {
+            background-color: #e5ffff;
+            border-radius: 6px;
+            cursor: pointer;
+            padding: 2px;
+            border: 1px groove rgba(0,0,0,0.3);
+            text-shadow: 0.25px 0.25px 0.25px #1e88e5, 0 0 1em #005cb2,0 0 0.2em #7b1fa2;
+        }
+
+            .combtn:hover {
+                opacity: 0.8;
+                text-shadow: 0.25px 0.25px 0.25px orangered, 0 0 1em red,0 0 0.2em darkred;
+                border: 1px groove rgba(0,0,0,0.09);
+            }
+
+        .mygrid {
+            display: grid;
+            grid-template-rows: auto auto auto;
+            grid-gap: 10px;
+        }
+
+        @media screen and (min-width: 664px) {
+            .mygrid {
+                display: grid;
+                grid-template-columns: auto auto auto;
+            }
+        }
+
+        .mydownloader {
+            border: 1px ridge silver;
+            border-radius: 6px;
+            background-color: #00838f;
+            color: #004d40;
+            opacity: 0.9;
+            padding: 8px 4px;
+        }
+
+            .mydownloader p {
+                color: white;
+            }
+
+            .mydownloader sup {
+                color: gold;
+            }
+
+        .mydownloadbtn {
+            cursor: pointer;
+            border: 1px groove silver;
+            border-radius: 6px;
+            padding: 8px 4px;
+            margin: 8px;
+            background-color: whitesmoke;
+            text-shadow: 0.25px 0.25px 0.25px red, 0 0 1px orangered,0 0 0.2em gold;
+        }
+
+            .mydownloadbtn:hover {
+                border: 1px ridge red;
+                opacity: 0.8;
+            }
+    </style>
+    <div align="center" style="font-family: 'IM Fell English SC', serif;
+            text-align:center;
+            padding:1px;
+            margin:auto;
+            border-radius:5px;
+            border:5px groove rgb(202, 149, 4, 0.80);
+            background-color: lightcyan;cursor:default;">
+        <h1 style="background-color:#00838f;text-align: center;
+        color:whitesmoke;
+            margin: 4px auto;
+            width:fit-content;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px groove rgb(225, 225, 224, 0.40);
+            box-shadow:rgba(0,0,0,0.2) 2px 2px;cursor:default;">
+            &trade;T&copy;ReMeTaL - SiteMaps
+        </h1>
+        <h2 style="color:#00838f;text-shadow:-0.25px 0.25px 0.25px grey, 0 0 1em goldenrod,0 0 0.2em whitesmoke;cursor:default;">PHP Site-mapping Software</h2>
+        <div class="mygrid">
+            <div style="margin:0 auto;width:256px;">
+                <img id="cppic" onclick="document.getElementById('lipic').hidden=false;this.hidden=true" class="zoomy" alt="control panel" src="control.png" />
+                <img id="lipic" onclick="document.getElementById('cppic').hidden=false;this.hidden=true" class="zoomy1" alt="login" src="login.png" hidden />
+            </div>
+            <div align="center" style="margin: 0 auto; width: fit-content;">
+                <div style="color:limegreen;background-color: black;
+      text-align: center; width:fit-content;min-width:320px;
+      padding: 2px; border: 1px groove grey; border-radius: 4px; ">
+
+                    <code style="cursor:default;width:fit-content;text-align:center;font-size:10px;background-color: black;border:none;text-shadow: 1px 1px rgba(0, 123, 255, 0.44);">
+                        /***************************************************\
+                        <br />  *   ***** &trade;T&copy;ReMeTaL - SEO Solutions! *****     *
+                        <br />  *     Automated SiteMaps and Robots.txt          *
+                        <br />  *        ----- { &copy;2023&trade;T&copy;ReMeTaL } -----           *
+                        <br />  *        * ** [ServerSide PHP code] ** *            *
+                        <br />  *   Note: This Solution Auto-Writes files for,      *
+                        <br />  Sitemap.xml, Sitemap.html, SiteMap.txt and, Robots.txt.
+                        <br />  *******************************************************
+                        <br />  [Version:2023.01.27.01 (Released: Jan 27 2023)]
+                        <br />  Copyright (c) &trade;T&copy;ReMeTaL
+                        <br />  Development and Test Environment:
+                        <br />  [PHP Build Version] PHP 8.0.0 (cli)
+                        <br />  =======================================================
+                    </code>
+                </div>
+                <p style="cursor:default;font-size:medium;color:#004d40;">
+                    &trade;T&copy;ReMeTaL - SiteMaps Software
+                    <br /> A PHP code solution that automatically
+                    <br />scans your website and writes your site maps.
+                    <br /><label style="text-align:left;width:100%;">Features:</label>
+                </p>
+                <ol style="margin-left:20px;text-align:left;font-size:medium;line-height:1; list-style:disc;">
+                    <li>Creates Sitemap.xml and Sitemap.html</li>
+                    <li>Creates Sitemap.txt and robots.txt</li>
+                    <li>Convenient Control Panel.</li>
+                    <li>Easily Exclude any directory.</li>
+                    <li>Auto-scans for site changes.</li>
+                    <li>Start from any directory.</li>
+                    <li>Back up files before re-writing.</li>
+                    <li>Log in account to protect your settings.</li>
+                    <li>Add reCAPTCHA for bot protection.</li>
+                </ol>
+                <br />
+                <p style="cursor:default;font-size:medium;color:#004d40;">
+                    For Use On: PHP Compatible HTML Websites.
+                    <br /><sub style="font-size:small;">(Not Compatible with Git-Pages, WordPress, or Google-Sites)</sub>
+                </p>
+                <div class="mydownloader" align="center">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <h4 style="color:white;">&trade;T&copy;ReMeTaL-Sitemaps.iso<br />(USD)$9.99</h4>
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="4SFD6TR58YPHA">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+
+                </div>
+            </div>
+            <div align="center" style="margin:0 auto;width: fit-content;">
+
+                <!--<form method="post" style="background-color:#00838f;border-radius:6px;border:1px double gold; width:256px;height:fit-content;margin:0 auto 10px;">
+                    <label style="background-color:transparent;color:white;font-size:medium;">Share your feedback</label><hr style="margin:0 0 2px;" />
+                    <div style="background-color:#b2ebf2;padding-bottom:10px;margin-top:-10px;">
+                        <radiogroup>
+                            Avatar:
+                            <input id="man" type="radio" name="avatar" value="m1"><label for="man"> Man </label>
+                            <input id="woman" type="radio" name="avatar" value="w1"><label for="woman"> Woman </label>
+                            <input id="anonymous" type="radio" name="avatar" value="a" checked><label for="anonymous"> Anonymous </label>
+                        </radiogroup><br />
+                        <input required type="text" name="name" style="width:60px;margin:0 0 4px;" placeholder="Name" />
+                        <input required type="text" name="comment" style="width:90px;margin:0 0 4px;" placeholder="front" />
+                        <input required type="text" name="commentb" style="width:90px;margin:0 0;" placeholder="back" />
+                        <input class="combtn" type="submit" name="subpost" value="Submit Comment" onclick="alert('Thanks for your feed-back')" />
+                    </div>
+                </form>-->
+                <div class="software-flip-card">
+                    <div class="software-flip-card-inner">
+                        <div class="software-flip-card-front">
+                            <img src="avatarw1.png" alt="Avatar" style="width:300px;height:100px;">
+                            <p>`I like how easy it is to change settings`</p>
+                        </div>
+                        <div class="software-flip-card-back">
+                            <h1>Katie</h1>
+                            <img src="avatarw1.png" alt="Avatar" style="width:100px;height:60px;">
+                            <p style="margin-top:0;">Pick a map and hit save.</p>
+                            <p>The control panel is great.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="software-flip-card">
+                    <div class="software-flip-card-inner">
+                        <div class="software-flip-card-front">
+                            <img src="avatara.png" alt="Avatar" style="width:300px;height:100px;">
+                            <p>I love how fast it works.</p>
+                        </div>
+                        <div class="software-flip-card-back">
+                            <h1>Anonymous</h1>
+                            <p style="margin-bottom:0;">And to think of all the time</p>
+                            <p>I spent trying to make my own.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="software-flip-card">
+                    <div class="software-flip-card-inner">
+                        <div class="software-flip-card-front">
+                            <img src="avatarm1.png" alt="Avatar" style="width:300px;height:100px;">
+                            <p>Works great with my hostinger site</p>
+                        </div>
+                        <div class="software-flip-card-back">
+                            <h1>John </h1>
+                            <img src="avatarm1.png" alt="Avatar" style="margin-bottom:0;width:100px;height:60px;">
+                            <p style="margin-top:0;">Good-bye hard way</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <h6><sub>faqs:</sub>troubleshoot settings - Leave a blank line at the end of the file</h6>
+    </div>
+
+
+</body>
+</html>

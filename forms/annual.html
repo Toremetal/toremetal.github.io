@@ -337,20 +337,55 @@
         <div class="myforms">
             <div>
                 <script>
+                    function getCookie(cname) {
+                        let name = cname + "=";
+                        let decodedCookie = decodeURIComponent(document.cookie);
+                        let ca = decodedCookie.split(';');
+                        for (let i = 0; i < ca.length; i++) {
+                            let c = ca[i];
+                            while (c.charAt(0) == ' ') {
+                                c = c.substring(1);
+                            }
+                            if (c.indexOf(name) == 0) {
+                                return c.substring(name.length, c.length);
+                            }
+                        }
+                        return "";
+                    }
+                    var setCookie = function (name, value, expiry_days) {
+                        var d = new Date();
+                        d.setTime(d.getTime() + (expiry_days * 24 * 60 * 60 * 1000));
+                        var expires = "expires=" + d.toUTCString();
+                        document.cookie = name + "=" + value + ";" + expires + ";secure;samesite=strict";
+                        return getCookie(name);
+                    };
+                </script>
+                <script>
                     function add_info() {
                         if (document.getElementById("barcode_Img_UrlVal").value != "") {
-                            document.getElementById('barcodeImgUrl').src = document.getElementById("barcode_Img_UrlVal").value;
+                            newVal = document.getElementById("barcode_Img_UrlVal").value;
+                            document.getElementById('barcodeImgUrl').src = barCodeVal;
+                            setCookie("barcode", newVal, 30);
                         }
                         if (document.getElementById("bnameVal").value != "" && document.getElementById("streetAddressVal").value != "" && document.getElementById("cityStateZipVal").value != "") {
+                            setCookie("bnameVal", document.getElementById("bnameVal").value, 30);
+                            setCookie("streetAddressVal", document.getElementById("streetAddressVal").value, 30);
+                            setCookie("cityStateZipVal", document.getElementById("cityStateZipVal").value, 30);
                             document.getElementById('address').innerHTML = document.getElementById("bnameVal").value + "\r" + document.getElementById("streetAddressVal").value + "\n" + document.getElementById("cityStateZipVal").value;
                         }
                         if (document.getElementById("accountNumberVal").value != "") {
+                            newVal = document.getElementById("accountNumberVal").value;
                             document.getElementById('accountNumber').value = document.getElementById("accountNumberVal").value;
+                            setCookie("accountNumber", newVal, 30);
                         }
                         if (document.getElementById("blocationVal").value != "") {
+                            newVal = document.getElementById("blocationVal").value;
                             document.getElementById('blocation').value = document.getElementById("blocationVal").value;
+                            setCookie("blocation", newVal, 30);
                         } else if (document.getElementById("streetAddressVal").value != "") {
+                            newVal = document.getElementById("streetAddressVal").value;
                             document.getElementById('blocation').value = document.getElementById("streetAddressVal").value;
+                            setCookie("blocation", newVal, 30);
                         }
                     }
                 </script>
@@ -406,12 +441,17 @@
             <script>
                 term = "ANNUAL";
                 due = "4/15/";
-                barcode_Img_Url = "barcode.png";
-                accountNumber = "";
+                barVal = getCookie("barcode");
+                if (barVal != "") {
+                    barcode_Img_Url = barVal;
+                } else {
+                    barcode_Img_Url = "barcode.png";
+                }
+                accountNumber = getCookie("accountNumber");
                 accountNumber1 = "Account#";
-                blocation = "";
+                blocation = getCookie("blocation");
                 blocation1 = "Business Location";
-                address = "";
+                address = getCookie("bnameVal") + "\r" + getCookie("streetAddressVal") + "\n" + getCookie("cityStateZipVal");
                 address1 = "Business\nStreet Address\nCity State Zip+4";
                 gmin = 20000;
                 smin = 20000;
@@ -569,8 +609,8 @@
                    ****************************************************************** */
             </script>
             <div>
-
-                <!-- Heading --><div style="display:block;font-size:12px; text-align:center;margin:auto;border:none;">
+                <!-- Heading -->
+                <div style="display:block;font-size:12px; text-align:center;margin:auto;border:none;">
                     <div style="display:inline-block;font-size:12px; text-align:center;margin:auto;border:none;">
                         RETURN ORIGINAL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b style="font-size:14px;">CITY OF LONGVIEW BUSINESS and OCCUPATION TAX REPORT</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Questions?
                     </div>
@@ -806,8 +846,17 @@
                     </p>
                 </div>
             </div>
-            <!--class="printButton" -->
-            <div style="font-size:8px;color:darkred;text-align:right;margin:0 0 -16px auto;padding:0;" ng-app="myApp" ng-controller="datCtrl">{{ today | date : "MM/dd/yyyy"}}</div>
+            <!-- Date -->
+            <script>
+                function getDate() {
+                    const d = new Date();
+                    month = d.getMonth() + 1;
+                    day = d.getDay() + 1;
+                    if (day < 10) { day = "0" + day; }
+                    return month + '/' + day + '/' + d.getFullYear();
+                }
+                document.write('<div style="font-size:8px;color:darkred;text-align:right;margin:0 0 -16px auto;padding:0;">' + getDate() + "</div>");
+            </script>
         </form>
     </div>
     <script>
@@ -825,12 +874,5 @@
     <button id="myformInfoButton" title="Auto-fill Forms" type="button" class="printButton printBtnL" onclick='document.getElementById("myFormkk").hidden=!document.getElementById("myFormkk").hidden'>Auto-fill</button>
     <!-- End Buttons -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script>
-        var app = angular.module('myApp', []);
-        app.controller('datCtrl', function ($scope) {
-            $scope.today = new Date();
-        });
-    </script>
 </body>
 </html>

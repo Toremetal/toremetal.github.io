@@ -1,1 +1,1 @@
-Ads.txt Cleaner
+Ads.txt Clean up tool

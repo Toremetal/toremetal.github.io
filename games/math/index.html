@@ -1,46 +1,199 @@
 <!DOCTYPE html>
 <html charset='utf-8'>
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBD3J0ZC1Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GBD3J0ZC1Z');
-</script>
-    <meta charset='utf-8'>
-    <link rel='canonical' href='https://toremetal.com/signs' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1' />
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0, user-scalable=1' />
     <meta name='HandheldFriendly' content='true' />
-    <title>&#8482;T&#169;ReMeTaL - Mail-Man</title>
+    <meta name="theme-color" content="#ffffff" />
+    <title>&#8482;T&#169;ReMeTaL - Math Practice</title>
+    <meta name="description" content="&#8482;T&#169;ReMeTaL - Math Practice" />
+    <meta name="keywords" content="math, practice, &#8482;T&#169;ReMeTaL" />
+    <meta name="copyright" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="author" content="&#8482;T&#169;ReMeTaL" />
+    <meta itemprop="name" content="&#8482;T&#169;ReMeTaL - Math Practice" />
+    <meta itemprop="description" content="&#8482;T&#169;ReMeTaL - Math Practice" />
+    <meta itemprop="thumbnailUrl" content="favicon.png" />
+    <meta itemprop="image" content="favicon.png" />
+    <meta itemprop="imageUrl" content="favicon.png" />
+    <link rel='canonical' href='/games/math' />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="icon" href="favicon.ico" type="image/icon" />
+
+
+
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.1/css/all.css' integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz' crossorigin='anonymous'>
     <style>
-        .mail-panel body { display: flex; justify-content: center; height: fit-content; margin: 0 auto; padding: 0 0; }
-        .mail-panel { height: fit-content; max-width: 512px; padding: 0 0; margin: 0 auto; border-radius: 5px; border: solid 1px #ccc; box-shadow: 1px 2px 5px rgba(0,0,0,.31); background: #ebebeb; }
-            .mail-panel body, div, h1, form, input, p { padding: 0; margin: 0; outline: none; font-family: Roboto, Arial, sans-serif; font-size: 16px; color: #666; }
-            .mail-panel h1 { padding: 10px 0; font-size: 32px; font-weight: 300; text-align: center; }
-            .mail-panel p { font-size: 12px; }
-            .mail-panel hr { color: #a9a9a9; opacity: 0.3; }
-            .mail-panel form { margin: 0 30px; }
-            .mail-panel .account-type, .gender { margin: 15px 0; }
-            .mail-panel label#icon { margin: 0; border-radius: 5px 0 0 5px; }
-            .mail-panel label#icon2 { margin: 10px 0 0 0; border-radius: 5px 0 0 5px; }
-            .mail-panel input[type=radio] { display: none; }
-            .mail-panel label.radio { position: relative; display: inline-block; padding-top: 4px; margin-right: 20px; text-indent: 30px; overflow: visible; cursor: pointer; }
-                .mail-panel label.radio:before { content: ''; position: absolute; top: 2px; left: 0; width: 20px; height: 20px; border-radius: 50%; background: #1c87c9; }
-                .mail-panel label.radio:after { content: ''; position: absolute; width: 9px; height: 4px; top: 8px; left: 4px; border: 3px solid #fff; border-top: none; border-right: none; transform: rotate(-45deg); opacity: 0; }
-            .mail-panel input[type=radio]:checked + label:after { opacity: 1; }
-            .mail-panel input[type=text], input[type=password], input[type=url], input[type=email], input[type=file] { width: calc(100% - 57px); height: 36px; margin: 13px 0 0 -5px; padding-left: 10px; border-radius: 0 5px 5px 0; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #fff; }
-            .mail-panel input[type=password] { margin-bottom: 15px; }
-            .mail-panel #icon { display: inline-block; padding: 9.3px 15px; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #1c87c9; color: #fff; text-align: center; }
-            .mail-panel #icon2 { display: inline-block; padding: 9.3px 13px; box-shadow: 1px 2px 5px rgba(0,0,0,.09); background: #1c87c9; color: #fff; text-align: center; float: left; }
-            .mail-panel .btn-block { margin-top: 10px; text-align: center; }
-            .mail-panel input[type=submit] { padding: 10px 20px; margin: 10px auto; border-radius: 5px; border: none; background: #1c87c9; font-size: 14px; font-weight: 600; color: #fff; cursor: pointer; }
-                .mail-panel input[type=submit]:hover { background: #26a9e0; }
-            .mail-panel .auto_height { width: calc(100% - 59px); margin: 10px 0 0 0; padding-left: 10px; border-radius: 0 5px 5px 0; border: solid 1px #cbc9c9; box-shadow: 1px 2px 5px rgba(0,0,0,.09); }
+        .mail-panel body {
+            display: flex;
+            justify-content: center;
+            height: fit-content;
+            margin: 0 auto;
+            padding: 0 0;
+        }
+
+        .mail-panel {
+            height: fit-content;
+            max-width: 512px;
+            padding: 0 0;
+            margin: 0 auto;
+            border-radius: 5px;
+            border: solid 1px #ccc;
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            background: #ebebeb;
+        }
+
+            .mail-panel body, div, h1, form, input, p {
+                padding: 0;
+                margin: 0;
+                outline: none;
+                font-family: Roboto, Arial, sans-serif;
+                font-size: 16px;
+                color: #666;
+            }
+
+            .mail-panel h1 {
+                padding: 10px 0;
+                font-size: 32px;
+                font-weight: 300;
+                text-align: center;
+            }
+
+            .mail-panel p {
+                font-size: 12px;
+            }
+
+            .mail-panel hr {
+                color: #a9a9a9;
+                opacity: 0.3;
+            }
+
+            .mail-panel form {
+                margin: 0 30px;
+            }
+
+            .mail-panel .account-type, .gender {
+                margin: 15px 0;
+            }
+
+            .mail-panel label#icon {
+                margin: 0;
+                border-radius: 5px 0 0 5px;
+            }
+
+            .mail-panel label#icon2 {
+                margin: 10px 0 0 0;
+                border-radius: 5px 0 0 5px;
+            }
+
+            .mail-panel input[type=radio] {
+                display: none;
+            }
+
+            .mail-panel label.radio {
+                position: relative;
+                display: inline-block;
+                padding-top: 4px;
+                margin-right: 20px;
+                text-indent: 30px;
+                overflow: visible;
+                cursor: pointer;
+            }
+
+                .mail-panel label.radio:before {
+                    content: '';
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background: #1c87c9;
+                }
+
+                .mail-panel label.radio:after {
+                    content: '';
+                    position: absolute;
+                    width: 9px;
+                    height: 4px;
+                    top: 8px;
+                    left: 4px;
+                    border: 3px solid #fff;
+                    border-top: none;
+                    border-right: none;
+                    transform: rotate(-45deg);
+                    opacity: 0;
+                }
+
+            .mail-panel input[type=radio]:checked + label:after {
+                opacity: 1;
+            }
+
+            .mail-panel input[type=text], input[type=password], input[type=url], input[type=email], input[type=file] {
+                width: calc(100% - 57px);
+                height: 36px;
+                margin: 13px 0 0 -5px;
+                padding-left: 10px;
+                border-radius: 0 5px 5px 0;
+                border: solid 1px #cbc9c9;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+                background: #fff;
+            }
+
+            .mail-panel input[type=password] {
+                margin-bottom: 15px;
+            }
+
+            .mail-panel #icon {
+                display: inline-block;
+                padding: 9.3px 15px;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+                background: #1c87c9;
+                color: #fff;
+                text-align: center;
+            }
+
+            .mail-panel #icon2 {
+                display: inline-block;
+                padding: 9.3px 13px;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+                background: #1c87c9;
+                color: #fff;
+                text-align: center;
+                float: left;
+            }
+
+            .mail-panel .btn-block {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .mail-panel input[type=submit] {
+                padding: 10px 20px;
+                margin: 10px auto;
+                border-radius: 5px;
+                border: none;
+                background: #1c87c9;
+                font-size: 14px;
+                font-weight: 600;
+                color: #fff;
+                cursor: pointer;
+            }
+
+                .mail-panel input[type=submit]:hover {
+                    background: #26a9e0;
+                }
+
+            .mail-panel .auto_height {
+                width: calc(100% - 59px);
+                margin: 10px 0 0 0;
+                padding-left: 10px;
+                border-radius: 0 5px 5px 0;
+                border: solid 1px #cbc9c9;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+            }
     </style>
 </head>
 <body onload='newproblem()'>
@@ -71,14 +224,14 @@
                 <input onchange='newproblem()' style='margin:auto;width:100px;text-align:center;height:32px;' title='Number limit' id='numlim' placeholder='Number Limit' type='number' name='numlim' value=100 required>
                 <br /><label for='yanswer'>Solve this equation.</label>
                 <div style='background-color: cyan; font-size: 24px; margin: auto; width: 80%; text-align: center; height: 32px;' id='problem'></div>
-<br />
+                <br />
                 <textarea id='scratchPad' title='Scratch Pad' name='scratchPad' placeholder='scratchPad' oninput='auto_height(this)'></textarea>
                 <script>
                     function auto_height(elem) {
                         elem.style.height = '24px'; elem.style.height = (elem.scrollHeight) + 'px';
                     }
                 </script>
-                
+
                 <label style='color:darkgoldenrod;background-color:transparent;' id='icon'>for problems with decimals: 0.00 (Use Two Decimal Places)</label>
                 <!--<b>for problems with decimals: 0.00 (Use Two Decimal Places)</b><br />-->
                 <label id='icon' for='yanswer'><i class='fas fa-user'></i></label>
@@ -184,5 +337,32 @@
             }</script>
         <script>function checkAnswer() { if (document.getElementById('answer').value.toString() == document.getElementById('yanswer').value.toString()) { window.alert('You got it Correct, Great Job!'); newproblem(); } else { window.alert('Oops, not the right answer. Keep trying though you\'ll get it.'); } }</script>
     </div>
+    <!-- View Count Style -->
+    <style>
+        .visits {
+            background-color: transparent;
+            text-align: center;
+            align-content: center;
+            position: absolute;
+            top: 52px;
+            right: 80px;
+            color: red;
+            border: none;
+            padding: 0;
+            margin: 0;
+            width: 60px;
+            height: 30px;
+        }
+        /* Modify frame location with 3-Bar button */
+        @media screen and (min-width: 845px) {
+            .visits {
+                right: 12px;
+            }
+        }
+    </style>
+    <!-- View Count Script auto Pg Name (window.location.pathname) -->
+    <script>
+        document.write("<iframe hidden class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
+    </script>
 </body>
 </html>

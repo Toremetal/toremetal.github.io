@@ -1,20 +1,526 @@
-<div align='center' style='width:100%;'><h3>Tool-Boxes</h3>
-<button style='border-radius:5px;padding:5px;margin:5px;' onclick='sitemapper()'>Site-Mapping
-</button>
-<button style='border-radius:5px;padding:5px;margin:5px;' onclick='designer()'>Html.pg-Designer
-</button>
-</div>
-<iframe id='codeFrame' src='site-mapping.html' style='width:100%;min-height:996px;border:none;border-radius:5px;'>
-</iframe>
-<br /><br />
-<br />
-<!--<iframe id='codeFrame2' src='html-designer.html' style='width:100%;min-height:996px;border:none;border-radius:5px;'></iframe>-->
-    
-<script>
-function sitemapper() {
-   document.getElementById('codeFrame').src='site-mapping.html';
-} 
-function designer() {
-   document.getElementById('codeFrame').src='designer.html';
-} 
-</script>
+<!DOCTYPE HTML>
+<html lang="en_US">
+<head>
+    <!--
+    ~   ************************************************************************
+    ~     toremetal properties : Copyright (c) 2023 ™T©ReMeTaL.
+    ~   ************************************************************************
+    ~
+    ~    ™T©ReMeTaL toremetal.com
+    ~    Copyright (C) 2023 ™T©ReMeTaL.
+    ~    Unless required by applicable law or agreed to in writing, software
+    ~    is on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND
+    ~    either express or implied. Created with best intent, Use at your own risk.
+    ~    ™T©ReMeTaL assumes no-liability for any functionality of any kind.
+    ~
+    ~   ************************************************************************
+    -->
+    <meta lang="en_US" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=1, shrink-to-fit=yes" />
+    <title>&#8482;T&#169;ReMeTaL - Solutions</title>
+    <link rel="canonical" href="/developers/solutions">
+    <meta property="og:url" content="/developers/solutions">
+    <meta property="og:title" content="&#8482;T&#169;ReMeTaL - developers/solutions">
+    <meta itemprop="url" content="/developers/solutions">
+    <meta name="description" content="Easy-to-Use Applications, Designed for Everyone." />
+    <meta name="keywords" content="Toremetal, ReMeTaL, Designed, Easy-to-Use Designed, Easy-to-Use, ReMeTaL Facebook, ReMeTaL YouTube, app, applications, Point of Sale, Purchase Tracker, Signs, &#8482;T&#169;ReMeTaL" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="copyright" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="author" content="&#8482;T&#169;ReMeTaL" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://github.toremetal.com/img/banner1200x630.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Easy-to-Use Applications. Designed for Everyone." />
+    <meta property="og:site_name" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="twitter:title" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="twitter:description" content="Easy-to-Use Applications. Designed for Everyone." />
+    <meta name="twitter:image" content="https://github.toremetal.com/img/banner600x315.png" />
+    <meta name="twitter:site" content="@TheToReMetal" />
+    <meta name="twitter:creator" content="@TheToReMetal" />
+    <meta itemprop="name" content="&#8482;T&#169;ReMeTaL" />
+    <meta itemprop="description" content="Easy-to-Use Applications. Designed for Everyone." />
+    <meta itemprop="thumbnailUrl" content="https://github.toremetal.com/img/favicon.png" />
+    <meta itemprop="image" content="https://github.toremetal.com/img/favicon.png" />
+    <meta itemprop="imageUrl" content="https://github.toremetal.com/img/favicon.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="https://toremetal.github.io/img/favicon.png" type="image/png" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/theme1toremetal-v2023.10.14.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- End CSS -->
+
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain attribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        };
+    </script>
+    <script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        var setCookie = function (name, value, expiry_days) {
+            var d = new Date();
+            d.setTime(d.getTime() + (expiry_days * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";secure;samesite=strict";
+            return getCookie(name);
+        };
+    </script>
+    <script>
+        function checkMessage() {
+            var message = getCookie("message");
+            if (message != "") {
+                barcode_Img_Url = barVal;
+                snackbar(message);
+            } else {
+                snackbar('Welcome to ™T©ReMeTaL');
+            }
+        }
+    </script>
+    <script async src="https://cse.google.com/cse.js?cx=partner-pub-8927593002808864:1031426169"></script>
+
+</head>
+<body style="background-color:#29292990;" onload="snackbar('Welcome to ™T©ReMeTaL')">
+
+    <!-- Search -->
+    <div style="margin: 2px 70px 0 2px; border-radius: 5px; ">
+        <div style="margin: 0 auto; color: #00000080;" id="search" class="gcse-searchbox-only">
+            loading...
+        </div>
+    </div>
+    <!--<div style="background: yellow; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,0.7);">
+        <form onsubmit='window.open("https://www.google.com/search?q="+document.getElementById("search").value)'>
+            <input style="width:calc(100% - 44px);text-align:center;" id="search" type="search" placeholder="search.." /><input type="submit" value="&#128270;" />
+        </form>
+    </div>-->
+    <!-- Navigation Bar -->
+    <div w3-include-html="/content/nav.html"></div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>™T©ReMeTaL Technology</h1>
+        <p>Software Designed for Performance, Efficiency, and Functionality.</p>
+    </div>
+
+    <!-- The flexible grid (content) -->
+    <div class="row">
+        <div class="side">
+            <h2>™T©ReMeTaL </h2>
+            <div class="fakeimg" style="height:200px;" align="center">
+                <img class="zoom highlight chrome-border" src="/img/lil-Reaper_Animated.gif" style='width:180px; object-fit: contain;' />
+
+
+            </div>
+            <br />
+            <h5>&nbsp;&nbsp;&nbsp; Client Side:</h5>
+            <div id="designer" class="fakeimg repo" style="height: 60px; cursor: pointer;" onclick='document.getElementById("gamess").src=id'>Html Designer</div>
+            <h5 style="margin-bottom:0;">&nbsp;&nbsp;&nbsp; Server Side:</h5>
+            <div id="site-mapping" class="fakeimg repo repo3" style="height: 60px; cursor: pointer;" onclick='document.getElementById("gamess").src=id'>Site-Mapping</div>
+        </div>
+        <div class="main">
+            <!--/* Content */-->
+            <style>
+                .mygames iframe {
+                    min-width: 100%;
+                    min-height: 90px;
+                    align-self: center;
+                    align-content: center;
+                    align-items: center;
+                    object-fit: contain;
+                    object-position: center;
+                }
+
+                .mygames .gamess {
+                    min-height: 512px;
+                    border: none;
+                    contain-intrinsic-height: auto;
+                    min-width: 100%;
+                    margin: 0 0;
+                    padding: 0 0;
+                    object-fit: contain;
+                    object-position: center;
+                    align-self: center;
+                    align-content: center;
+                    align-items: center;
+                }
+
+                .mygames .gamebody {
+                    min-height: 512px;
+                    align-self: center;
+                    /*background: url('https://toremetal.github.io/img/gamebackground/b1.jpg') no-repeat center;*/
+                    background-size: 776px 100%;
+                    align-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                }
+
+                .mygames .lost {
+                    height: 512px;
+                    width: 100%;
+                    background: url('https://toremetal.github.io/img/gamebackground/explosion.gif') no-repeat center;
+                    background-size: 512px 100%;
+                    align-content: center;
+                    align-items: center;
+                }
+
+                .mygames .won {
+                    height: 512px;
+                    width: 100%;
+                    background: url('https://toremetal.github.io/img/gamebackground/cheers1.jpg') no-repeat center;
+                    background-size: 512px 100%;
+                    align-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                }
+
+                .gamebody table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                    max-width: 776px;
+                    opacity: 0.9;
+                    margin: auto;
+                }
+
+                .gamebody td, th {
+                    border: 1px solid red; /*#dddddd;*/
+                    text-align: left;
+                    padding: initial;
+                    width: auto;
+                    opacity: 0.9;
+                }
+
+                @media screen and (max-width: 836px) {
+                    .gamebody td, th {
+                        padding: initial;
+                        margin: auto;
+                        width: 776px;
+                    }
+                }
+
+                .gamebody tr:nth-child(even) {
+                    /*background-color: #dddddd;*/
+                    opacity: 0.9;
+                }
+                /* The Modal (background) */
+                .gamebody .modal {
+                    display: none; /* Hidden by default */
+                    position: fixed; /* Stay in place */
+                    z-index: 1; /* Sit on top */
+                    padding-top: 100px; /* Location of the box */
+                    left: 0;
+                    top: 0;
+                    width: 100%; /* Full width */
+                    height: 100%; /* Full height */
+                    overflow: auto; /* Enable scroll if needed */
+                    background-color: rgb(0,0,0); /* Fallback color */
+                    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                }
+
+                /* Modal Content */
+                .gamebody .modal-content {
+                    background-color: #fefefe;
+                    margin: auto;
+                    margin-top: 100px;
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 320px;
+                }
+
+                /* The Close Button */
+                .gamebody .close {
+                    color: #aaaaaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+
+                    .gamebody .close:hover,
+                    .gamebody .close:focus {
+                        color: #000;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                /* Popup container - can be anything you want */
+                .gamebody .popup {
+                    position: relative;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                    /* The actual popup */
+                    .gamebody .popup .popuptext {
+                        visibility: hidden;
+                        width: 200px;
+                        background-color: #555;
+                        color: red;
+                        font-size: 24px;
+                        text-align: center;
+                        border-radius: 6px;
+                        padding: 14px 0;
+                        position: absolute;
+                        z-index: 1;
+                    }
+
+                        /* Popup arrow */
+                        .gamebody .popup .popuptext::after {
+                            content: "";
+                            position: absolute;
+                            margin-left: -5px;
+                            border-width: 5px;
+                            border-style: solid;
+                            border-color: #555 transparent transparent transparent;
+                        }
+
+                    /* Toggle this class - hide and show the popup */
+                    .gamebody .popup .show {
+                        visibility: visible;
+                        /*-webkit-animation: fadeIn 1s;*/
+                        /*animation: fadeIn 1s;*/
+                        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                    }
+
+                /* Add animation (fade in the popup) */
+                @-webkit-keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                @-webkit-keyframes fadeout {
+                    from {
+                        bottom: 30px;
+                        opacity: 1;
+                    }
+
+                    to {
+                        bottom: 0;
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes fadeout {
+                    from {
+                        bottom: 30px;
+                        opacity: 1;
+                    }
+
+                    to {
+                        bottom: 0;
+                        opacity: 0;
+                    }
+                }
+
+                .mygames button {
+                    color: red;
+                    border-radius: 6px;
+                    text-shadow: rgba(0,0,0,0.4) 1px 1px 2px;
+                    font-size: medium;
+                }
+
+                    .mygames button:hover {
+                        opacity: 0.9;
+                        text-shadow: rgba(0,0,0,0.09) 1px 1px 2px;
+                    }
+            </style>
+            <div class="mygames">
+                <div id="bomb" class="gamebody">
+                    <iframe id="gamess" src="designer" height="512" style="min-height:512px;" align="middle"></iframe>
+                </div>
+
+                <br />
+
+                <script>
+                    var frame = document.getElementById("gamess");
+                    frame.onload = function () {
+                        ht = frame.contentWindow.document.body.scrollHeight;
+                        if (ht > 512) {
+                            frame.style.height =
+                                parseInt(frame.contentWindow.document.body.scrollHeight + 80) + 'px';
+                        }
+                        /* frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px'; */
+                    }
+                </script>
+            </div>
+            <!--/* End Content */-->
+        </div>
+    </div>
+    <!-- ###################### Start Pg footer ###################### -->
+    <div id="snackbar"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div w3-include-html="/content/footer.html"></div>
+        <script>
+            function yr() {
+                const d = new Date(); return '&#169;' + d.getFullYear() + '&#8482;T&#169;ReMeTaL';
+            }
+            document.write('<b style="color:#752975;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</b>");
+            document.write('<small style="color:#752929;text-align: left;position: fixed;z-index:8; bottom: 6px; left: 5px;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</small>");
+        </script>
+        <div w3-include-html="/content/footerb.html"></div>
+    </footer>
+    <script>
+        /**
+         * displays a message to the user.
+         * @param message The Message to display.
+         * function snackbar() {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000);
+        }
+         */
+        function snackbar(message) {
+            var x = document.getElementById("snackbar");
+            x.innerText = message;
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+    </script>
+    <script type="text/javascript">
+        function sh(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                try {
+                    var btn = document.getElementById(id + "btn");
+                    if (btn.innerHTML.includes('↧')) {
+                        let result = btn.innerHTML.replace('↧', '↥');
+                        btn.innerHTML = result;
+                    } else if (btn.innerHTML.includes("-")) {
+                        let result = btn.innerHTML.replace("-", "+");
+                        btn.innerHTML = result;
+                    }
+                } catch (err) { }
+                if (id.includes("reset")) {
+                    document.getElementById(id).reset;
+                }
+            } else {
+                x.style.display = "block";
+                try {
+                    var btn = document.getElementById(id + "btn");
+                    if (btn.innerHTML.includes("+")) {
+                        let result = btn.innerHTML.replace("+", "-");
+                        btn.innerHTML = result;
+                    } else if (btn.innerHTML.includes('↥')) {
+                        let result = btn.innerHTML.replace('↥', '↧');
+                        btn.innerHTML = result;
+                    }
+                } catch (err) { }
+            }
+        }
+        function yttv() {
+            var x = document.getElementById("tvs");
+            x.src = "https://www.youtube.com/embed/videoseries?list=PL0xA7snTym6BVH7Qbn0eHW5PSZRCIEnGu";
+            sh("tv");
+        }
+        function tv() {
+            var x = document.getElementById("tvs");
+            x.src = "https://www.youtube.com/embed/videoseries?list=PL2B3qw7jcGKNfvXWRiAXx6eXXkR-q6FtM";
+            sh("tv");
+        }
+        function clstv() {
+            var x = document.getElementById("tv");
+            x.style.display = "none";
+        }
+        function mytv(chlnk) {
+            var x = document.getElementById("tvs");
+            x.src = chlnk;
+            sh("tv");
+        }
+        function fullscrn() {
+            var x = document.getElementById("fs");
+            if (x.innerHTML.includes('Full')) {
+                x.innerHTML = "Reg";
+                x.style = "bottom:20px;right:50px;width:60px;font-size:10px;";
+                document.getElementById("fscb").style = "position:absolute;bottom:20px;right:10px;font-size:10px;padding: 0 0 0 0;";
+                document.getElementById("tv").style = "font-family: 'IM Fell English SC', serif; font-size: 12px; color: #666; display: block; position: absolute;top:0;left:0;right:0;bottom:0; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,.31); padding: 0 0 0 0; margin: 2px 4px 2px 4px; border: 4px solid lightgrey; border-radius: 5px; border: 1px solid #ccc; background-color: #f1f1f1; z-index: 999999; text-align: center; max-width: none;";
+            } else {
+                x.innerHTML = "Full";
+                x.style = "width:60px;font-size:10px;float:right;position:relative;";
+                document.getElementById("fscb").style = "font-size:10px;padding: 0 0 10px 0;margin: 0 0 0 20px;float:right;position:relative;";
+                document.getElementById("tv").style = "font-family: 'IM Fell English SC', serif; font-size: 12px; color: #666; display: block; position: fixed; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,.31); top: 40%; left:40%; padding: 2px 2px 0 2px; margin: 2px 4px 2px 4px; border: 4px solid lightgrey; border-radius: 5px; border: 1px solid #ccc; background-color: #f1f1f1; z-index: 14; text-align: center; max-width: 512px;";
+            }
+        }
+        function lour() { window.location = "/"; }
+        function ppol() { window.location = "/privacypolicy"; }
+        function gotoWebapp() { window.location = "/signs/app"; }
+        function gotoMusic() { window.location = "/radio"; }
+        function gotoAndroid() { window.location = "/android"; }
+        function gotoWindows() { window.location = "/windows"; }
+        function tmappsws() { window.location = "/apps/"; }
+        /*window.location="https://play.google.com/store/apps/dev?id="+id;*/
+        function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); }
+        function gdevMe() { gotopg("https://g.dev/toremetal"); }
+        function vGPCertMe() { gotopg("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449"); }
+        function gotopg(pg) { window.location = pg; }
+    </script>
+    <script>
+        includeHTML();
+    </script>
+    <!-- View Count Script auto Pg Name (window.location.pathname) -->
+    <script>
+        document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
+    </script>
+
+</body>
+</html>

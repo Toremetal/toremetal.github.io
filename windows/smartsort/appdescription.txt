@@ -1,1 +1,1 @@
-Smart-Sort uses your pictures folders<br />to identify, catogorize, and sort your pictures.
+Smart-Sort uses picture folders <br />to identify, catogorize, and sort.

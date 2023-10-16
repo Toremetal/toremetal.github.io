@@ -1,0 +1,1 @@
+<button onclick="myFunction('setup.exe', 'downloadfilemod')" type="button" class="bluhover closeButton s3Dbtn hover-btn" title="Download">Download Installer</button>
