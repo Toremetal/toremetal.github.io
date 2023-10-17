@@ -467,7 +467,7 @@
                 //var x = document.getElementById(id).innerHTML;
                 //x = parseInt(x.replace("Thanks for Checking it out! ", "").replace("Downloads: ", "")) + 1;
                 document.getElementById(id).innerHTML = 'Thanks for Checking it out!';// Downloads: ' + x;
-                document.getElementById("slog").src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + lnk;
+                document.getElementById("slog").src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + lnk + '&ext=';
             };
             function shiA() {
                 document.getElementById('devlist').style.display = "none"
@@ -484,11 +484,11 @@
             }
         </script>
 
-        <iframe id="slog" style="border:none; overflow:hidden;" scrolling="no" frameborder="0" height="0" width="0" hidden></iframe>
+        <iframe id="slog" src="" style="border:none; overflow:hidden;" scrolling="no" frameborder="0" height="0" width="0" hidden></iframe>
 
         <!-- View Count Script auto Pg Name (window.location.pathname) -->
         <script>
-            document.write("<iframe hidden scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
+            document.write("<iframe hidden scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "&ext='></iframe>");
         </script>
         <style>
             .devapplist {
@@ -520,12 +520,12 @@
             <br />
             <sub style="transform: rotate(90deg); cursor: pointer; font-size: 40px; font-weight: 600; line-height: 0; text-shadow: 1px 1px blue; text-align: right; float: right;">⇯</sub>
             <!--<div id="devlist" style="text-shadow:1px 1px 2px blue, 0 0 1em red, 0 0 0.2em darkred;margin-top:10px;width:fit-content;height:fit-content;display:none;text-align:left">
-                <ul>
-                    <li>
-                        <a href='?dev=™T©ReMeTaL'>™T©ReMeTaL</a>
-                    </li>
-                </ul>
-            </div>-->
+            <ul>
+                <li>
+                    <a href='?dev=™T©ReMeTaL'>™T©ReMeTaL</a>
+                </li>
+            </ul>
+        </div>-->
             <div id="appslist" style="text-shadow: 1px 1px 2px blue, 0 0 1em red, 0 0 0.2em darkred; margin-top: 10px; width: fit-content; height: fit-content; display: block; text-align: left">
                 <ul style="list-style:none;">
                     <li style="margin-left:-40px;">
@@ -674,7 +674,7 @@
                                                 <TD COLSPAN="2" align="center" w3-include-html="button.txt">
                                                     <!-- w3-include-html="button.txt"-->
                                                     <!--If these components are already installed,
-                                                    <br /> you can <A id='Adstxt.application' onclick="myFunction('Adstxt.application', 'Adstxt.application')" style="border:1px groove grey;border-radius:5px;" class="hover-btn">(launch)</A> the application now.-->
+                                                <br /> you can <A id='Adstxt.application' onclick="myFunction('Adstxt.application', 'Adstxt.application')" style="border:1px groove grey;border-radius:5px;" class="hover-btn">(launch)</A> the application now.-->
                                                 </TD>
                                             </TR>
                                             <TR><TD COLSPAN="2">&nbsp;</TD></TR>

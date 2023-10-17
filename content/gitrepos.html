@@ -7,11 +7,11 @@
         border: ridge 2px rgb(233, 146, 62, 0.96);
     }
 
-    .repo:hover {
-        box-shadow: rgb(0, 0, 0, 0.20) 0.2px 0.5px;
-        opacity: 0.8;
-        transform: rotate(-1deg);
-    }
+        .repo:hover {
+            box-shadow: rgb(0, 0, 0, 0.20) 0.2px 0.5px;
+            opacity: 0.8;
+            transform: rotate(-1deg);
+        }
 
     .repo2:hover {
         transform: scale(0.99);
@@ -37,3 +37,11 @@
         <br>
         <div id="repoFileSorter" class="fakeimg" style="height: 60px; cursor: pointer;" onclick="countPg(this.id); window.open('https://github.com/Toremetal/Windows-FileSorter')">(Windows) Ads.Txt File Clean Up Tool</div>
     -->
+<!-- repocnt -->
+<iframe id="repolog" src="" style="border:none;border-radius:5px;margin:0;padding:0;" frameborder="0" scrolling="no" align="middle" hidden></iframe>
+<script>
+    function countPg(pg) {
+        document.getElementById('repolog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
+    }
+</script>
+<!-- End Repocnt -->

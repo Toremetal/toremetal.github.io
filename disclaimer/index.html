@@ -139,7 +139,7 @@
 <body style="background-color:#29292990;" onload="snackbar('Welcome to ™T©ReMeTaL')">
     <!-- View Count Script auto Pg Name (window.location.pathname) -->
     <script>
-        document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
+        document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "&ext='></iframe>");
     </script>
     <!--var w = window.innerWidth;
     var h = window.innerHeight;-->
@@ -233,22 +233,19 @@
         <div w3-include-html="/content/footer.html"></div>
         <!-- Subscribe -->
         <div class="subscribe" align="center" style="text-align: center; background-color: transparent; border-radius: 0px 0px 4px 4px;">
-            <form align="center" title="Enter your email to get the latest News" onsubmit="" style="margin: auto; max-width: 512px;" autocomplete="on">
-                <div align="center" style="text-align: center; background-color: rgb(241 159 12); width:100%;border: 1px ridge grey; border-radius:6px;box-shadow: rgba(0,0,0,0.9) 1px 2px">
-                    <h5 style="margin:0;padding:0;">&#8482;T&#169;ReMeTaL News</h5>
-                    <input title="Enter your Name" type="email" name="name" id="name" placeholder="Name">
-                    <input title="Enter your email" type="email" name="email" id="email" placeholder="Email" required>
-                    <input title="Enter your email to get the latest News" type="button" name="submit" id="submit" value="Subscribe" onclick="if (document.getElementById('email').value != '' && document.getElementById('email').value.toString().includes('@') && document.getElementById('email').value.toString().includes('.')) { document.getElementById('subDialog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?action=sub&email=' + document.getElementById('email').value.toString() + '&name=' + document.getElementById('name').value.toString(); document.getElementById('email').value = ''; document.getElementById('name').value = '' } else { window.alert('Please Enter a valid Email')}">
-                </div>
-            </form>
-            <iframe id="subDialog" src="" style="border:none;border-radius:5px;margin:0;padding:0;" frameborder="0" draggable="true" scrolling="no" align="middle" hidden></iframe>
-            <script>
-                function countPg(pg) {
-                    document.getElementById('subDialog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString();
-                }
-            </script>
+            <iframe id="subscribeFrame" name="subscribeFrame" sandbox="allow-same-origin allow-scripts allow-forms" frameborder="0" scrolling="no" style="object-fit: scale-down; max-height: 74px; min-width: 512px; padding: 2px 4px; background-color: transparent; border-radius: 10px" align="middle" src="https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?action=get_subform"></iframe>
         </div>
+        <!-- End Subscribe -->
         <br />
+        <!-- repocnt -->
+        <iframe id="subDialog" src="" style="border:none;border-radius:5px;margin:0;padding:0;" frameborder="0" draggable="true" scrolling="no" align="middle" hidden></iframe>
+        <script>
+            function countPg(pg) {
+                document.getElementById('subDialog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
+            }
+        </script>
+        <!-- End Repocnt -->
+        <!-- Copyright -->
         <script>
             function yr() {
                 const d = new Date(); return '&#169;' + d.getFullYear() + '&#8482;T&#169;ReMeTaL';
@@ -256,7 +253,8 @@
             document.write('<b style="color:#752975;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</b>");
             document.write('<small style="color:#752929;text-align: left;position: fixed;z-index:8; bottom: 6px; left: 5px;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</small>");
         </script>
-        <!-- End Subscribe -->
+        <!-- End Copyright -->
+        <!-- footerb -->
         <div w3-include-html="/content/footerb.html"></div>
     </footer>
     <script>

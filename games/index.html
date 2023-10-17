@@ -422,6 +422,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div w3-include-html="/content/footer.html"></div>
+        <!-- Subscribe -->
+        <div class="subscribe" align="center" style="text-align: center; background-color: transparent; border-radius: 0px 0px 4px 4px;">
+            <iframe id="subscribeFrame" name="subscribeFrame" sandbox="allow-same-origin allow-scripts allow-forms" frameborder="0" scrolling="no" style="object-fit: scale-down; max-height: 74px; min-width: 512px; padding: 2px 4px; background-color: transparent; border-radius: 10px" align="middle" src="https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?action=get_subform"></iframe>
+        </div>
+        <!-- End Subscribe -->
+        <br />
+        <!-- Copyright -->
         <script>
             function yr() {
                 const d = new Date(); return '&#169;' + d.getFullYear() + '&#8482;T&#169;ReMeTaL';
@@ -429,6 +436,8 @@
             document.write('<b style="color:#752975;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</b>");
             document.write('<small style="color:#752929;text-align: left;position: fixed;z-index:8; bottom: 6px; left: 5px;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</small>");
         </script>
+        <!-- End Copyright -->
+        <!-- footerb -->
         <div w3-include-html="/content/footerb.html"></div>
     </footer>
     <script>
@@ -531,7 +540,7 @@
     </script>
     <!-- View Count Script auto Pg Name (window.location.pathname) -->
     <script>
-        document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
+        document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "&ext='></iframe>");
     </script>
 
 </body>
