@@ -12,7 +12,7 @@
     <meta itemprop="url" content="/games/chess">
     <meta name="description" content="&#8482;T&#169;ReMeTaL Chess - 2 Player, Digital Chess Board." />
     <meta name="keywords" content="chess, java, html, Toremetal, ReMeTaL, easy to use, Easy-to-Use, Chess, app, applications, &#8482;T&#169;ReMeTaL" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0, user-scalable=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0, user-scalable=1, skrink-to-fit=yes" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="copyright" content="&#8482;T&#169;ReMeTaL" />
     <meta name="author" content="&#8482;T&#169;ReMeTaL" />
@@ -101,7 +101,11 @@
             padding: 0;
             margin: 0;
             text-align: center;
-            min-height:680px;
+            min-height: 680px;
+            object-fit: scale-down;
+        }
+        * {
+            object-fit: scale-down;
         }
 
         @media only screen and (min-width: 360px) {
@@ -1094,8 +1098,8 @@
             text-align: center;
             align-content: center;
             position: absolute;
-            top: 52px;
-            right: 80px;
+            top: 2px;
+            right: 2px;
             color: red;
             border: none;
             padding: 0;
@@ -1112,7 +1116,7 @@
     </style>
     <!-- View Count Script auto Pg Name (window.location.pathname) -->
     <script>
-        document.write("<iframe hidden class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
+        document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
     </script>
 </body>
 </html>
