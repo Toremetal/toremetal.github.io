@@ -1,0 +1,155 @@
+<!-- ###################### Pg content ###################### -->
+<!-- Page Body -->
+<div align="center" style="width: 100%; text-align: center;">
+
+    <!-- Item List -->
+    <div align="center">
+        <div class="container">
+            <div align="center" style="background-color:#26f7fd;margin:10px;padding:10px;border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+    border: 1px solid #ccc;max-width:680px;">
+                <h1>Business & Occupation Tax Forms</h1>
+                <style>
+                    .myrgallery {
+                        --s: 280px; /* control the size */
+
+                        display: grid;
+                        width: var(--s);
+                        aspect-ratio: 1;
+                        overflow: hidden;
+                        padding: calc(var(--s)/20);
+                        border-radius: 50%;
+                        position: relative;
+                        clip-path: circle(49.5%); /* to avoid a few glitch cause by overflow: hidden */
+                    }
+
+                        .myrgallery::after {
+                            content: "";
+                            position: absolute;
+                            inset: 0;
+                            padding: inherit;
+                            border-radius: inherit;
+                            background: repeating-conic-gradient(#789048 0 30deg,#DFBA69 0 60deg);
+                            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                            -webkit-mask-composite: xor;
+                            mask-composite: exclude;
+                        }
+
+                        .myrgallery > img {
+                            z-index: 99;
+                            grid-area: 1/1;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: inherit;
+                            transform-origin: 50% 120.7%;
+                        }
+
+                        .myrgallery::after,
+                        .myrgallery > img {
+                            animation: mygal 10s infinite cubic-bezier(.5,-0.2,.5,1.2);
+                        }
+
+                            .myrgallery > img:nth-child(2) {
+                                animation-delay: -2s
+                            }
+
+                            .myrgallery > img:nth-child(3) {
+                                animation-delay: -4s
+                            }
+
+                            .myrgallery > img:nth-child(4) {
+                                animation-delay: -6s
+                            }
+
+                            .myrgallery > img:nth-child(5) {
+                                animation-delay: -8s
+                            }
+
+                    @keyframes mygal {
+                        0%,3% {
+                            transform: rotate(0)
+                        }
+
+                        17%,22% {
+                            transform: rotate(-72deg)
+                        }
+
+                        37%,42% {
+                            transform: rotate(-144deg)
+                        }
+
+                        67%,62% {
+                            transform: rotate(-216deg)
+                        }
+
+                        77%,82% {
+                            transform: rotate(-288deg)
+                        }
+
+                        98%,100% {
+                            transform: rotate(-360deg)
+                        }
+                    }
+
+                    .myrgallery_body {
+                        margin: 0;
+                        min-height: 100vh;
+                        display: grid;
+                        place-content: center;
+                        background: #C2CBCE;
+                    }
+                </style>
+
+                <div class="myrgallery">
+                    <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="annual.html"' src="y1.png">
+                    <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q4.html"' src="q4.png">
+                    <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q3.html"' src="q3.png">
+                    <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q2.html"' src="q2.png">
+                    <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q1.html"' src="q1.png">
+                </div>
+                <ul style="list-style-position:inside;list-style-type:none;">
+                    <li style="margin-left:-20px;"><a style='cursor:pointer;' title="Business & Occupation Tax Annual Form" onclick='document.getElementById("current_form").src="annual.html"'>B&O Tax-Longview Washington (Annual)</a></li>
+                    <li style="margin-left:-20px;"><a style='cursor:pointer;' title="Business & Occupation Tax Q1 Form" onclick='document.getElementById("current_form").src="q1.html"'>B&O Tax-Longview Washington (Q1)</a></li>
+                    <li style="margin-left:-20px;"><a style='cursor:pointer;' title="Business & Occupation Tax Q2 Form" onclick='document.getElementById("current_form").src="q2.html"'>B&O Tax-Longview Washington (Q2)</a></li>
+                    <li style="margin-left:-20px;"><a style='cursor:pointer;' title="Business & Occupation Tax Q3 Form" onclick='document.getElementById("current_form").src="q3.html"'>B&O Tax-Longview Washington (Q3)</a></li>
+                    <li style="margin-left:-20px;"><a style='cursor:pointer;' title="Business & Occupation Tax Q4 Form" onclick='document.getElementById("current_form").src="q4.html"'>B&O Tax-Longview Washington (Q4)</a></li>
+                </ul>
+            </div>
+        </div>
+        <h6 style="color: goldenrod; font-family: algerian, courier; font-size: medium; ">
+            <i style="color:red;"><sub><span style="width: 0.7em; font-size: 180%; line-height: 80%;">P</span></sub>lease <sub><span style=" text-shadow: 0.5px 0.5px 1px ThreeDFace, 0 0 0.1em ThreeDDarkShadow, 0 0 0.1px ThreeDDarkShadow; width: 0.7em; font-size: 180%; line-height: 80%;">N</span></sub>ote:</i><br /><i style="color: #b27c05; font-size: smaller; text-shadow: 0.5px 0.5px 1px ThreeDFace, 0 0 0.1em ThreeDDarkShadow, 0 0 0 ThreeDDarkShadow; ">TOREMETAL is Not a tax company & makes no claim to accurately know tax calculating methods.<br /> Please do not rely on these forms for accurracy and verify any numbers before filing.<br />These forms are intended for assistance only and can not at this time be submitted as official forms.</i>
+        </h6>
+    </div>
+    <!-- End Item List -->
+    <iframe id="current_form" src="annual.html" align="middle" style="height:896px;width:100%;border:none;object-fit:fill;">
+    </iframe>
+    <!-- Disclaimer -->
+    <div align="center">
+        <div class="container">
+            <div align="center" style="background-color:#FFFAFA;margin:10px;padding:10px;border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+    border: 1px solid #ccc;max-width:680px;">
+                <p id="d" onclick="pd()" title="Disclaimer" style="display: block; font-size: 12px;">
+                    <b style="font-size: 24px;">UNDER NO CIRCUMSTANCE</b><br /><i style="color: var(--disclaimerText, #686868);"></i> <small style="color:var(--themeBlue1,red);">
+                        Shall &#8482;T&#169;ReMeTaL Have any liability to you or anyone<br />
+                        else for any loss or any damage of any kind incurred or otherwise<br />
+                        in relation to &#8482;T&#169;ReMeTaL as a result of the use of any<br />
+                        software, any information, any service, or any application provided<br />
+                        by &#8482;T&#169;ReMeTaL or reliance on any software, any information,<br />
+                        any service, or any application provided by &#8482;T&#169;ReMeTaL.<br />
+                        YOUR USE OF &#8482;T&#169;ReMeTaL sites, services, products, information, software<br />
+                        and your reliance on any provision of &#8482;T&#169;ReMeTaL IS SOLELY AT YOUR OWN RISK.
+                    </small>
+                </p>
+                <div align="right"><i title="last updated: 7/14/2022">last updated: 7/14/2022</i></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Disclaimer -->
+
+</div>
+<!-- End Page Body -->
+<!-- ###################### End Pg content ###################### -->

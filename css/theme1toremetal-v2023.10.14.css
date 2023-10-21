@@ -16,11 +16,11 @@
     --width: 100%;
     --height: 100%;
     --myGold: #c34e2d;
-    --themeMetal1CopperRed: /*CopperRed*/ #CD6E53;
-    --themeMetal2CrayolaCopper: /*CrayolaCopper*/ #D88968;
-    --themeMetal3CrayolaGold: /*CrayolaGold*/ #E4BA99;
-    --themeMetal4Brass: /*Brass*/ #E4BA99;
-    --themeMetal5CaliforniaGold: /*CaliforniaGold*/ #AD9B2E;
+    --themeMetal1: /*CopperRed*/ #CD6E53;
+    --themeMetal2: /*CrayolaCopper*/ #D88968;
+    --themeMetal3: /*CrayolaGold*/ #E4BA99;
+    --themeMetal4: /*Brass*/ #E4BA99;
+    --themeMetal5: /*CaliforniaGold*/ #AD9B2E;
     --themeBlue1: #062DA2;
     --themeBlue2: #2BDDF9;
     --themeBlue3: #57F2FF;
