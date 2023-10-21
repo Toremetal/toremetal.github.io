@@ -2149,220 +2149,192 @@
             }
         };
     </script>
+    <script>function checkMessage() { snackbar('™T©ReMeTaL Forms'); }</script>
+
 </head>
 <body style="background-color:#29292990;padding:30px;" onload="snackbar('™T©ReMeTaL Forms')">
-    <script>
-        /**
-         * displays a message to the user.
-         * @param message The Message to display.
-         * function snackbar() {
-            var x = document.getElementById("snackbar");
-            x.className = "show";
-            setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000);
-        }
-         */
-        function snackbar(message) {
-            var x = document.getElementById("snackbar");
-            x.innerText = message;
-            x.className = "show";
-            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-        }
-    </script>
     <!-- Simulate a smartphone / tablet -->
     <div class="mobile-container">
         <!-- Search -->
-        <div style="background: yellow; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,0.7);">
-            <form onsubmit='window.open("https://www.google.com/search?q="+document.getElementById("search").value)'>
-                <input style="width:calc(100% - 44px);text-align:center;" id="search" type="search" placeholder="search.." /><input type="submit" value="&#128270;" />
-            </form>
-        </div>
+        <!--<div style="background: yellow; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,0.7);">
+        <form onsubmit='window.open("https://www.google.com/search?q="+document.getElementById("search").value)'>
+            <input style="width:calc(100% - 44px);text-align:center;" id="search" type="search" placeholder="search.." /><input type="submit" value="&#128270;" />
+        </form>
+    </div>-->
 
+        <div style="margin: 2px 70px 0 2px; border-radius: 5px; ">
+            <div style="margin: 0 auto; color: #00000080;" id="search" class="gcse-searchbox-only"> loading... </div>
+        </div>
 
         <!-- Navigation Bar -->
-    <div w3-include-html="/content/nav.html" ></div>
-        
-    <script>includeHTML();</script>
-    <div id="mpagebody" style="margin:0 0 0 0; padding: 0 5px 0">
+        <div w3-include-html="/content/nav.html"></div>
 
-        <!-- Header -->
-        <div class="header" align="center">
-            <h1>™T©ReMeTaL Technology</h1>
-            <p style="color:whitesmoke;">Software Designed for Performance, Efficiency, and Functionality.</p>
-        </div>
-        <!-- ###################### Pg content ###################### -->
-        <!-- Page Body -->
-        <div align="center" style="width:100%;text-align:center;">
+        <script>includeHTML();</script>
+        <div id="mpagebody" style="margin:0 0 0 0; padding: 0 5px 0">
 
-            <!-- Item List -->
-            <div align="center">
-                <div class="container">
-                    <div align="center" style="background-color:#26f7fd;margin:10px;padding:10px;border-radius: 10px;
+            <!-- Header -->
+            <div class="header" align="center">
+                <h1>™T©ReMeTaL Technology</h1>
+                <p style="color:whitesmoke;">Software Designed for Performance, Efficiency, and Functionality.</p>
+            </div>
+            <!-- ###################### Pg content ###################### -->
+            <!-- Page Body -->
+            <div align="center" style="width:100%;text-align:center;">
+
+                <!-- Item List -->
+                <div align="center">
+                    <div class="container">
+                        <div align="center" style="background-color:#26f7fd;margin:10px;padding:10px;border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 1px 2px 5px rgba(0,0,0,.31);
     border: 1px solid #ccc;max-width:680px;">
-                        <h1>Business & Occupation Tax Forms</h1>
-                        <style>
-                            .myrgallery {
-                                --s: 280px; /* control the size */
+                            <h1>Business & Occupation Tax Forms</h1>
+                            <style>
+                                .myrgallery {
+                                    --s: 280px; /* control the size */
 
-                                display: grid;
-                                width: var(--s);
-                                aspect-ratio: 1;
-                                overflow: hidden;
-                                padding: calc(var(--s)/20);
-                                border-radius: 50%;
-                                position: relative;
-                                clip-path: circle(49.5%); /* to avoid a few glitch cause by overflow: hidden */
-                            }
-
-                                .myrgallery::after {
-                                    content: "";
-                                    position: absolute;
-                                    inset: 0;
-                                    padding: inherit;
-                                    border-radius: inherit;
-                                    background: repeating-conic-gradient(#789048 0 30deg,#DFBA69 0 60deg);
-                                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                                    -webkit-mask-composite: xor;
-                                    mask-composite: exclude;
+                                    display: grid;
+                                    width: var(--s);
+                                    aspect-ratio: 1;
+                                    overflow: hidden;
+                                    padding: calc(var(--s)/20);
+                                    border-radius: 50%;
+                                    position: relative;
+                                    clip-path: circle(49.5%); /* to avoid a few glitch cause by overflow: hidden */
                                 }
 
-                                .myrgallery > img {
-                                    z-index: 99;
-                                    grid-area: 1/1;
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
-                                    border-radius: inherit;
-                                    transform-origin: 50% 120.7%;
-                                }
-
-                                .myrgallery::after,
-                                .myrgallery > img {
-                                    animation: mygal 10s infinite cubic-bezier(.5,-0.2,.5,1.2);
-                                }
-
-                                    .myrgallery > img:nth-child(2) {
-                                        animation-delay: -2s
+                                    .myrgallery::after {
+                                        content: "";
+                                        position: absolute;
+                                        inset: 0;
+                                        padding: inherit;
+                                        border-radius: inherit;
+                                        background: repeating-conic-gradient(#789048 0 30deg,#DFBA69 0 60deg);
+                                        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                                        -webkit-mask-composite: xor;
+                                        mask-composite: exclude;
                                     }
 
-                                    .myrgallery > img:nth-child(3) {
-                                        animation-delay: -4s
+                                    .myrgallery > img {
+                                        z-index: 99;
+                                        grid-area: 1/1;
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                        border-radius: inherit;
+                                        transform-origin: 50% 120.7%;
                                     }
 
-                                    .myrgallery > img:nth-child(4) {
-                                        animation-delay: -6s
+                                    .myrgallery::after,
+                                    .myrgallery > img {
+                                        animation: mygal 10s infinite cubic-bezier(.5,-0.2,.5,1.2);
                                     }
 
-                                    .myrgallery > img:nth-child(5) {
-                                        animation-delay: -8s
+                                        .myrgallery > img:nth-child(2) {
+                                            animation-delay: -2s
+                                        }
+
+                                        .myrgallery > img:nth-child(3) {
+                                            animation-delay: -4s
+                                        }
+
+                                        .myrgallery > img:nth-child(4) {
+                                            animation-delay: -6s
+                                        }
+
+                                        .myrgallery > img:nth-child(5) {
+                                            animation-delay: -8s
+                                        }
+
+                                @keyframes mygal {
+                                    0%,3% {
+                                        transform: rotate(0)
                                     }
 
-                            @keyframes mygal {
-                                0%,3% {
-                                    transform: rotate(0)
+                                    17%,22% {
+                                        transform: rotate(-72deg)
+                                    }
+
+                                    37%,42% {
+                                        transform: rotate(-144deg)
+                                    }
+
+                                    67%,62% {
+                                        transform: rotate(-216deg)
+                                    }
+
+                                    77%,82% {
+                                        transform: rotate(-288deg)
+                                    }
+
+                                    98%,100% {
+                                        transform: rotate(-360deg)
+                                    }
                                 }
 
-                                17%,22% {
-                                    transform: rotate(-72deg)
+                                .myrgallery_body {
+                                    margin: 0;
+                                    min-height: 100vh;
+                                    display: grid;
+                                    place-content: center;
+                                    background: #C2CBCE;
                                 }
+                            </style>
 
-                                37%,42% {
-                                    transform: rotate(-144deg)
-                                }
-
-                                67%,62% {
-                                    transform: rotate(-216deg)
-                                }
-
-                                77%,82% {
-                                    transform: rotate(-288deg)
-                                }
-
-                                98%,100% {
-                                    transform: rotate(-360deg)
-                                }
-                            }
-
-                            .myrgallery_body {
-                                margin: 0;
-                                min-height: 100vh;
-                                display: grid;
-                                place-content: center;
-                                background: #C2CBCE;
-                            }
-                        </style>
-
-                        <div class="myrgallery">
-                            <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="annual.html"' src="y1.png">
-                            <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q4.html"' src="q4.png">
-                            <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q3.html"' src="q3.png">
-                            <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q2.html"' src="q2.png">
-                            <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q1.html"' src="q1.png">
+                            <div class="myrgallery">
+                                <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="annual.html"' src="y1.png">
+                                <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q4.html"' src="q4.png">
+                                <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q3.html"' src="q3.png">
+                                <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q2.html"' src="q2.png">
+                                <img style='cursor:pointer;' onclick='document.getElementById("current_form").src="q1.html"' src="q1.png">
+                            </div>
+                            <ul>
+                                <li><a style='cursor:pointer;' title="Business & Occupation Tax Annual Form" onclick='document.getElementById("current_form").src="annual.html"'>B&O Tax-Longview Washington (Annual)</a></li>
+                                <li><a style='cursor:pointer;' title="Business & Occupation Tax Q1 Form" onclick='document.getElementById("current_form").src="q1.html"'>B&O Tax-Longview Washington (Q1)</a></li>
+                                <li><a style='cursor:pointer;' title="Business & Occupation Tax Q2 Form" onclick='document.getElementById("current_form").src="q2.html"'>B&O Tax-Longview Washington (Q2)</a></li>
+                                <li><a style='cursor:pointer;' title="Business & Occupation Tax Q3 Form" onclick='document.getElementById("current_form").src="q3.html"'>B&O Tax-Longview Washington (Q3)</a></li>
+                                <li><a style='cursor:pointer;' title="Business & Occupation Tax Q4 Form" onclick='document.getElementById("current_form").src="q4.html"'>B&O Tax-Longview Washington (Q4)</a></li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li><a style='cursor:pointer;' title="Business & Occupation Tax Annual Form" onclick='document.getElementById("current_form").src="annual.html"'>B&O Tax-Longview Washington (Annual)</a></li>
-                            <li><a style='cursor:pointer;' title="Business & Occupation Tax Q1 Form" onclick='document.getElementById("current_form").src="q1.html"'>B&O Tax-Longview Washington (Q1)</a></li>
-                            <li><a style='cursor:pointer;' title="Business & Occupation Tax Q2 Form" onclick='document.getElementById("current_form").src="q2.html"'>B&O Tax-Longview Washington (Q2)</a></li>
-                            <li><a style='cursor:pointer;' title="Business & Occupation Tax Q3 Form" onclick='document.getElementById("current_form").src="q3.html"'>B&O Tax-Longview Washington (Q3)</a></li>
-                            <li><a style='cursor:pointer;' title="Business & Occupation Tax Q4 Form" onclick='document.getElementById("current_form").src="q4.html"'>B&O Tax-Longview Washington (Q4)</a></li>
-                        </ul>
                     </div>
+                    <h6 style="color: goldenrod; font-family: algerian, courier; font-size:small;">
+                        <i style="color:red;"><sub><span style="width: 0.7em; font-size: 180%; line-height: 80%;">P</span></sub>lease <sub><span style="width: 0.7em; font-size: 180%; line-height: 80%;">N</span></sub>ote:</i><br /><i style="font-size:smaller;">TOREMETAL is Not a tax company & makes no claim to accurately know tax calculating methods.<br /> Please do not rely on these forms for accurracy and verify any numbers before filing.<br />These forms are intended for assistance only and can not at this time be submitted as official forms.</i>
+                    </h6>
                 </div>
-                <h6 style="color: goldenrod; font-family: algerian, courier; font-size:small;">
-                    <i style="color:red;"><sub><span style="width: 0.7em; font-size: 180%; line-height: 80%;">P</span></sub>lease <sub><span style="width: 0.7em; font-size: 180%; line-height: 80%;">N</span></sub>ote:</i><br /><i style="font-size:smaller;">TOREMETAL is Not a tax company & makes no claim to accurately know tax calculating methods.<br /> Please do not rely on these forms for accurracy and verify any numbers before filing.<br />These forms are intended for assistance only and can not at this time be submitted as official forms.</i>
-                </h6>
-            </div>
-            <!-- End Item List -->
-            <iframe id="current_form" src="annual.html" align="middle" style="height:896px;width:100%;border:none;object-fit:fill;">
-            </iframe>
-            <!-- *Start adcon  -->
-            <h3 style='color:orangered;text-align:center;margin-bottom:0;text-shadow: 1px 2px 5px rgba(0,255,0,.31);'>Advertisement!</h3>
-            <div class="container" style="padding: 0 30px 0 30px; margin: 0 0 0 0; width: 100%; height: fit-content;">
-                <div align="center" style="padding: 0 0 0 0; margin: 0 0 0 0; width: inherit; height: inherit;">
-                    <ins class="adsbygoogle"
-                         style="display:block;height:fit-content;width:fit-content;"
-                         data-ad-client="ca-pub-8927593002808864"
-                         data-ad-slot="2822185833"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true">
-                    </ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-            </div>
-            <br>
-            <!-- *End adcon -->
-            <!-- Disclaimer -->
-            <div align="center">
-                <div class="container">
-                    <div align="center" style="background-color:#FFFAFA;margin:10px;padding:10px;border-radius: 10px;
+                <!-- End Item List -->
+                <iframe id="current_form" src="annual.html" align="middle" style="height:896px;width:100%;border:none;object-fit:fill;">
+                </iframe>
+                <!-- Disclaimer -->
+                <div align="center">
+                    <div class="container">
+                        <div align="center" style="background-color:#FFFAFA;margin:10px;padding:10px;border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 1px 2px 5px rgba(0,0,0,.31);
     border: 1px solid #ccc;max-width:680px;">
-                        <p id="d" onclick="pd()" title="Disclaimer" style="display: block; font-size: 12px;">
-                            <b style="font-size: 24px;">UNDER NO CIRCUMSTANCE</b><br>Shall <small>
-                                &#8482;T&#169;ReMeTaL Have any liability to you or anyone else<br>
-                                for any loss or any damage of any kind incurred or otherwise<br>
-                                in relation to &#8482;T&#169;ReMeTaL as a result of<br>
-                                the use of any software, any information, any service, or any application provided by &#8482;T&#169;ReMeTaL<br>
-                                or reliance on any software, any information, any service, or any application provided by &#8482;T&#169;ReMeTaL.<br>YOUR USE OF &#8482;T&#169;ReMeTaL sites, services, products, information, software<br>and your reliance on any provision of &#8482;T&#169;ReMeTaL IS SOLELY AT YOUR OWN RISK.
-                            </small>
-                        </p>
-                        <div align="right"><i title="last updated: 7/14/2022">last updated: 7/14/2022</i></div>
+                            <p id="d" onclick="pd()" title="Disclaimer" style="display: block; font-size: 12px;">
+                                <b style="font-size: 24px;">UNDER NO CIRCUMSTANCE</b><br>Shall <small>
+                                    &#8482;T&#169;ReMeTaL Have any liability to you or anyone else<br>
+                                    for any loss or any damage of any kind incurred or otherwise<br>
+                                    in relation to &#8482;T&#169;ReMeTaL as a result of<br>
+                                    the use of any software, any information, any service, or any application provided by &#8482;T&#169;ReMeTaL<br>
+                                    or reliance on any software, any information, any service, or any application provided by &#8482;T&#169;ReMeTaL.<br>YOUR USE OF &#8482;T&#169;ReMeTaL sites, services, products, information, software<br>and your reliance on any provision of &#8482;T&#169;ReMeTaL IS SOLELY AT YOUR OWN RISK.
+                                </small>
+                            </p>
+                            <div align="right"><i title="last updated: 7/14/2022">last updated: 7/14/2022</i></div>
+                        </div>
                     </div>
                 </div>
+                <!-- End Disclaimer -->
+
             </div>
-            <!-- End Disclaimer -->
+            <!-- End Page Body -->
+            <!-- ###################### End Pg content ###################### -->
+            <!-- ###################### Start Pg footer ###################### -->
+
+
+            <div id="snackbar"></div>
 
         </div>
-        <!-- End Page Body -->
-        <!-- ###################### End Pg content ###################### -->
-        <!-- ###################### Start Pg footer ###################### -->
-        
-
-        <div id="snackbar"></div>
-
-    </div>
         <!-- End mpagebody -->
         <!-- Start form -->
         <!-- End form -->
@@ -2373,37 +2345,32 @@
         </div>
         <!-- End Hidden -->
         <!-- Start address -->
-        <div class="address">
+        <div class="address" style="width:100%;" align="center" >
             <hr />
             <!-- Start Footer -->
-            <footer>
+            <footer align="center" >
                 <!-- Start Footer container -->
-                <div class="container1" align="center" style="background-color:#49494900">
+                <div class="container1" align="center" style="background-color: #49494900; width: fit-content;">
                     <!-- Div Google Play -->
-                    <div class="container" align="center" style="padding:0;">
+                    <div class="container" align="center" style="padding: 0; width: fit-content;">
                         <h3 style='font-size:small;color:orangered;text-align:center;margin-bottom:0;text-shadow: 1px 2px 5px rgba(0,255,0,.31);'>Advertisement!</h3>
-                        <iframe src="/ads" title="GET IT ON Google Play&#8482;" style="padding:1px 1px 0 0;object-fit:fill;width:100%;max-height: 63px; max-width:470px;border-radius: 7px;box-sizing: border-box; border: none;" border="0"></iframe>
-                        <!--<a target="_blank" onclick="window.location='https://play.google.com/store/apps/dev?id=7952290850776080706'">
-    <img alt="GET IT ON Google Play&#8482;" title="GET IT ON Google Play&#8482;" style="height: 100%;
-                border-radius: 10px;
-                box-sizing: border-box;
-                box-shadow: 1px 2px 5px rgba(0,0,0,.31);
-                border: 1px solid #ccc;" src="https://github.toremetal.com/img/AppsOnGooglePlay.webp" border="0" /></a>-->
+                        <iframe src="/ads" title="GET IT ON Google Play&#8482;" style="padding: 1px 1px 0 0; object-fit: scale-down; width: fit-content; max-height: 63px; max-width: 470px; border-radius: 7px; box-sizing: border-box; border: none;" border="0"></iframe>
+                        
                     </div>
                     <!-- End Div Google Play -->
                     <hr style="background-color:white;" />
 
                     <!-- Subscribe -->
                     <!--<div class="subscribe" align="center" style="margin: 10px auto; text-align: center; background-color: transparent; border-radius: 0px 0px 4px 4px; max-width: 512px;">
-                        <form align="center" title="Enter your email to get the latest News" method="post" action="https://toremetal.com/home">
-                            <div align="center" style="text-align: center; background-color: transparent; width:100%;">
-                                <input title="Enter your email to get the latest News" type="email" name="subscribe" id="subscribe" placeholder="Email" required>
-                                <input title="Enter your email to get the latest News" type="submit" name="submit" id="submit" value="Subscribe">
-                            </div>
-                        </form>
-                    </div>-->
+                    <form align="center" title="Enter your email to get the latest News" method="post" action="https://toremetal.com/home">
+                        <div align="center" style="text-align: center; background-color: transparent; width:100%;">
+                            <input title="Enter your email to get the latest News" type="email" name="subscribe" id="subscribe" placeholder="Email" required>
+                            <input title="Enter your email to get the latest News" type="submit" name="submit" id="submit" value="Subscribe">
+                        </div>
+                    </form>
+                </div>-->
                     <!-- End Subscribe -->
-                    
+
                     <form action="https://www.paypal.com/donate" method="post" target="_top" style="margin:20px auto;">
                         <input type="hidden" name="hosted_button_id" value="NCK58ZSYB5WUL" /><input type="image" src="https://github.toremetal.com/img/btn_donateCC_LG.webp" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /><img alt="PayPal" border="0" src="https://github.toremetal.com/img/btn_donateCC_LG.webp" width="1" height="1" />
                     </form>
@@ -2432,8 +2399,9 @@
                     </small>
                     <!-- Div Google Play -->
                     <!--<div style="text-align: left;position: fixed;z-index:7;bottom: 0%;width: auto;right: 0%;cursor: pointer;line-height: 0;display:block !important;">
-                        <a title="GET IT ON Google Play" onclick="window.location='https://play.google.com/store/apps/dev?id=7952290850776080706'"><img src="https://github.toremetal.com/img/footer-logo.webp" alt="toremetal.com"></a>
-                    </div>--><!-- End Div Google Play -->
+                    <a title="GET IT ON Google Play" onclick="window.location='https://play.google.com/store/apps/dev?id=7952290850776080706'"><img src="https://github.toremetal.com/img/footer-logo.webp" alt="toremetal.com"></a>
+                </div>-->
+                    <!-- End Div Google Play -->
                 </div><!-- End Footer container -->
             </footer>
             <!-- End Footer -->
@@ -2441,62 +2409,20 @@
         <!-- End address -->
 
         <script>
-            function next(id) {
-                var x = document.getElementById(id).innerHTML;
-                if (parseInt(x.replace('Track: ', '')) <= 7) {
-                    x = parseInt(x.replace('Track: ', '')) + 1;
-                    if (x == 7) { x = 1; }
-                    if (x == 1) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' Only the Memory Remains';
-                        document.getElementById('trc').src = '/media/1.mp3';
-                    } else if (x == 2) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' Never';
-                        document.getElementById('trc').src = '/media/2.mp3';
-                    } else if (x == 3) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' Hey You';
-                        document.getElementById('trc').src = '/media/3.mp3';
-                    } else if (x == 4) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' No Emotion';
-                        document.getElementById('trc').src = '/media/4.wav';
-                    } else if (x == 5) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' BadLuck';
-                        document.getElementById('trc').src = '/media/5.wav';
-                    } else if (x == 6) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' WeightoftheWorld';
-                        document.getElementById('trc').src = '/media/6.mp3';
-                    } else { }
-                    document.getElementById('trc').load();
-                }
+            /**
+             * displays a message to the user.
+             * @param message The Message to display.
+             * function snackbar() {
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000);
             }
-            function prev(id) {
-                var x = document.getElementById(id).innerHTML;
-                if (parseInt(x.replace('Track: ', '')) > 1) {
-                    x = parseInt(x.replace('Track: ', '')) - 1;
-                    if (x == 1) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' Only the Memory Remains';
-                        document.getElementById('trc').src = '/media/1.mp3';
-                    } else if (x == 2) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' Never';
-                        document.getElementById('trc').src = '/media/2.mp3';
-                    } else if (x == 3) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' Hey You';
-                        document.getElementById('trc').src = '/media/3.mp3';
-                    } else if (x == 4) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' No Emotion';
-                        document.getElementById('trc').src = '/media/4.wav';
-                    } else if (x == 5) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' BadLuck';
-                        document.getElementById('trc').src = '/media/5.wav';
-                    } else if (x == 6) {
-                        document.getElementById(id).innerHTML = 'Track: ' + x + ' WeightoftheWorld';
-                        document.getElementById('trc').src = '/media/6.mp3';
-                    } else { }
-                    document.getElementById('trc').load();
-                }
-            }
-            function track(nm, tk) {
-                document.getElementById('track').innerHTML = 'Track: ' + nm;
-                document.getElementById('trc').src = '/media/' + tk;
+             */
+            function snackbar(message) {
+                var x = document.getElementById("snackbar");
+                x.innerText = message;
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
             }
         </script>
         <script type="text/javascript">
@@ -2585,20 +2511,7 @@
             });
         });
     </script>
-    <script>
-        (function (console) {
-            console.save = function (data, filename) {
-                document.getElementById("clog").src = '/php/save.php?id=TM.1680996777.a494a495e7ccb882abe77d23.23015&s=23015&log=' + data;
-            }
-        })(console)</script>
-    <script>
-        function ppol() { window.location = "/privacypolicy"; }
-        function gotoMusic() { window.location = "/radio"; }
-        function gotoAndroid() { window.open('https://play.google.com/store/apps/dev?id=7952290850776080706'); }/* window.location = "/android"; */
-        function gotoWindows() { window.location = "/windows"; }
-        function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); }
-        function gotopg(pg) { window.location = pg; }
-    </script>    <!-- View Count Style -->
+    <!-- View Count Style -->
     <style>
         .visits {
             background-color: transparent;

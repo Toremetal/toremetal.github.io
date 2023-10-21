@@ -15,6 +15,27 @@
 :root {
     --width: 100%;
     --height: 100%;
+    --myGold: #c34e2d;
+    --themeMetal1CopperRed: /*CopperRed*/ #CD6E53;
+    --themeMetal2CrayolaCopper: /*CrayolaCopper*/ #D88968;
+    --themeMetal3CrayolaGold: /*CrayolaGold*/ #E4BA99;
+    --themeMetal4Brass: /*Brass*/ #E4BA99;
+    --themeMetal5CaliforniaGold: /*CaliforniaGold*/ #AD9B2E;
+    --themeBlue1: #062DA2;
+    --themeBlue2: #2BDDF9;
+    --themeBlue3: #57F2FF;
+    --themeBlue4: #015CE0;
+    --themeBlue5: #0B1A51;
+    --themeChrome1: #4B505A;
+    --themeChrome2: #B0C4DE;
+    --themeChrome3: #D1E1F6;
+    --themeChrome4: #CCCCCC;
+    --themeChrome5: #D8D8D8;
+    --themeGold1: #FFDD6B;
+    --themeGold2: #F8D060;
+    --themeGold3: #F8C04D;
+    --themeGold4: #EBA831;
+    --themeGold5: #E69400;
 }
 
 * {

@@ -16,12 +16,6 @@
 		<lastmod>2023-10-16T04:10:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/contactus/</loc>
-		<changefreq>Daily</changefreq>
-		<priority>0.50</priority>
-		<lastmod>2023-10-16T04:10:17+00:00</lastmod>
-	</url>
-	<url>
 		<loc>https://toremetal.com/developers/</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
@@ -59,6 +53,12 @@
 	</url>
 	<url>
 		<loc>https://toremetal.com/privacypolicy/</loc>
+		<changefreq>Daily</changefreq>
+		<priority>0.50</priority>
+		<lastmod>2023-10-16T04:10:17+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://toremetal.com/radio/</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
 		<lastmod>2023-10-16T04:10:17+00:00</lastmod>
