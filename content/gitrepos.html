@@ -21,26 +21,19 @@
         transform: rotate(1deg);
     }
 </style>
-<!--<div id="reposAll" class="fakeimg" style="height: 60px; cursor: pointer; border-radius: 5px; box-shadow: rgb(0, 0, 0, 0.90) 0.5px 1px; border: ridge 2px rgb(233, 146, 62, 0.96);" onclick="countPg(this.id); window.open('https://github.com/Toremetal')">All</div>
+<!--<div id="reposAll" class="fakeimg" style="height: 60px; cursor: pointer; border-radius: 5px; box-shadow: rgb(0, 0, 0, 0.90) 0.5px 1px; border: ridge 2px rgb(233, 146, 62, 0.96);" onclick="countRepo(this.id); window.open('https://github.com/Toremetal')">All</div>
 <h5 style="margin-bottom:0;">&nbsp;&nbsp;&nbsp; featured:</h5>-->
-<div id="repoESP32" class="fakeimg repo repo2" onclick="countPg(this.id); window.open('https://github.com/Toremetal/ESP32_Examples-ESP32-Camera-CameraWebServer')">(Arduino&trade;) ESP32-Camera-CameraWebServer</div>
+<div id="repoESP32" class="fakeimg repo repo2" onclick="countRepo(this.id); window.open('https://github.com/Toremetal/ESP32_Examples-ESP32-Camera-CameraWebServer')">(Arduino&trade;) ESP32-Camera-CameraWebServer</div>
 <br>
-<div id="repoAdsTxt" class="fakeimg repo" onclick="countPg(this.id); window.open('https://github.com/Toremetal/AdsTxt_Source')">(Windows&trade;) Ads.Txt File Clean Up Tool</div>
+<div id="repoAdsTxt" class="fakeimg repo" onclick="countRepo(this.id); window.open('https://github.com/Toremetal/AdsTxt_Source')">(Windows&trade;) Ads.Txt File Clean Up Tool</div>
 <br>
-<div id="repoPos" class="fakeimg repo repo3" onclick="countPg(this.id); window.open('https://github.com/Toremetal/Pos')">(Android&trade;) Small Business Management/Sales App</div>
+<div id="repoPos" class="fakeimg repo repo3" onclick="countRepo(this.id); window.open('https://github.com/Toremetal/Pos')">(Android&trade;) Small Business Management/Sales App</div>
 <br>
-<div id="repoFileMod" class="fakeimg repo" onclick="countPg(this.id); window.open('https://github.com/Toremetal/filemod')">(Windows&trade;) File Line Batch Tool</div>
-<!--    <br>
-        <div id="repoBob" class="fakeimg" style="height: 60px; cursor: pointer;" onclick="countPg(this.id); window.open('https://github.com/Toremetal/Windows-FileSorter')">(Windows) Ads.Txt File Clean Up Tool</div>
-        <br>
-        <div id="repoPoliceCar" class="fakeimg" style="height: 60px; cursor: pointer;" onclick="countPg(this.id); window.open('https://github.com/Toremetal/Windows-FileSorter')">(Windows) Ads.Txt File Clean Up Tool</div>
-        <br>
-        <div id="repoFileSorter" class="fakeimg" style="height: 60px; cursor: pointer;" onclick="countPg(this.id); window.open('https://github.com/Toremetal/Windows-FileSorter')">(Windows) Ads.Txt File Clean Up Tool</div>
-    -->
+<div id="repoFileMod" class="fakeimg repo" onclick="countRepo(this.id); window.open('https://github.com/Toremetal/filemod')">(Windows&trade;) File Line Batch Tool</div>
 <!-- repocnt -->
 <iframe id="repolog" src="" style="border:none;border-radius:5px;margin:0;padding:0;" frameborder="0" scrolling="no" align="middle" hidden></iframe>
 <script>
-    function countPg(pg) {
+    function countRepo(pg) {
         document.getElementById('repolog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
     }
 </script>
