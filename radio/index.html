@@ -196,8 +196,8 @@
                             <source src="/media/4.mp3" type="audio/mpeg">Your browser does not support the audio element.
                         </audio>
                         <!--<button class="rotate2 s3Dbtn" onclick="prev('track')" title="Previous" alt="Previous" style="padding: 4px;float:left;margin:0;background-color:#00000000;color:orange;">&#x23ea;</button>
-                        <button class="rotate2 s3Dbtn" src="next.png" onclick="next('track')" title="Next" alt="Next" style="z-index:999999;padding: 4px 4px 4px 0;float:left;margin:0;background-color:#00000000;color:orange;">&#x23e9;</button>
-                        -->
+            <button class="rotate2 s3Dbtn" src="next.png" onclick="next('track')" title="Next" alt="Next" style="z-index:999999;padding: 4px 4px 4px 0;float:left;margin:0;background-color:#00000000;color:orange;">&#x23e9;</button>
+            -->
                         <button title="Stop" id="stop" class="rotate2 s3Dbtn" style="text-align: center; font-size: 24px; line-height: 10px; padding: 8px 2px 4px 4px; margin: 7px 0 0 0; border-radius: 4px; float: left; background-color: #00000000; color: darkred; box-shadow: 1px 2px 5px rgba(0,0,0,.31); box-sizing: border-box; ">
                             &#x25FC;
                         </button><!--&#x23f9;-->
@@ -213,17 +213,17 @@
                 <div class="tm_music" hidden id="Select-track" align='center'>
                     <div>
                         <!--
-                         note: To add tracks; Copy and Paste the Example li to the end of the list and modify the values.
-                             * title="physical name of the file to play, must be in current directory"
-                             * id="btn-(increment number)"
-                             * value="[must match btn-(Number)] Display Name"
-                           -New buttons auto detected no other changes necessaary.
-                            ## WARNING! ## btn's skipping numbers and duplicate id values cause errors.
-                                ex..
-                            <li>
-                                <input id="btn-9" title="myawesomesong.mp3" value="9 My Awesome Song" type="button" onclick="track(this.value, this.title)" />
-                            </li>
-                         -->
+             note: To add tracks; Copy and Paste the Example li to the end of the list and modify the values.
+                 * title="physical name of the file to play, must be in current directory"
+                 * id="btn-(increment number)"
+                 * value="[must match btn-(Number)] Display Name"
+               -New buttons auto detected no other changes necessaary.
+                ## WARNING! ## btn's skipping numbers and duplicate id values cause errors.
+                    ex..
+                <li>
+                    <input id="btn-9" title="myawesomesong.mp3" value="9 My Awesome Song" type="button" onclick="track(this.value, this.title)" />
+                </li>
+             -->
                         <ul id="songlist">
                             <li>
                                 <input id="btn-1" title="onlythememoryremains.mp3" value="1 Only Memories Remain" type="button" onclick="track(this.value, this.title)" />
@@ -280,8 +280,10 @@
                     function track(nm, tk) {
                         document.getElementById('track').innerHTML = 'Track: ' + nm;
                         document.getElementById('trc').src = window.location.pathname + tk;
+                        document.getElementById('playCount').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + tk.toString() + '&ext=';
                     }
                 </script>
+                <iframe id='playCount' src="" width="0" height="0" scrolling='no' frameborder='0' hidden style="display:none;"></iframe>
             </div>
             <br />
             <!-- End Music Player -->
