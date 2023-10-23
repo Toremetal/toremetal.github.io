@@ -25,4 +25,4 @@ Allow: /windows/
 
 Disallow: /ads/
 
-Sitemap: /sitemap.xml
+Sitemap: https://toremetal.com/sitemap.xml
