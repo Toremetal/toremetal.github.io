@@ -401,6 +401,20 @@
         <div class="main" style="background-color: var(--contentBackground, inherit);">
 
             <div w3-include-html="https://toremetal.com/forms/content.html"></div>
+            <form style="padding:4px 10px 8px;background-color:aliceblue;border-radius:6px;text-align: left;float:left; top: 20%; position: fixed; width: fit-content; height: fit-content;" oninput="y.value=parseInt(a.value)+parseInt(c.value)+parseInt(d.value)+parseInt(e.value);m.value=y.value;n.value=y.value;o.value=y.value;x.value=parseInt(y.value)*parseInt(b.value);v.value=parseInt(b.value)/parseInt(y.value);w.value=parseInt(y.value)+parseInt(b.value);z.value=parseInt(b.value)-parseInt(y.value)">
+                <input style="float:left" type="button" onclick='document.getElementById("calc").hidden=!document.getElementById("calc").hidden' value="X"/>
+                <div id="calc">
+                    <input type="range" id="a" value="0"><br />
+                    <input type="range" id="c" value="0"><br />
+                    <input type="range" id="d" value="0"><br />
+                    <input type="number" id="e" value="0" style="margin: 0; width: 130px; text-align: center "><hr />
+                    <input type="number" id="b" value="25" style="margin:0 auto; width: 130px; text-align: center">
+                    <br />*<output style="color:red;" name="y" for="a c d e">0</output>=<output name="x" for="y b">0</output>
+                    <br />/<output style="color:red;" name="m" for="y">0</output>=<output name="v" for="y b">Infinity</output>
+                    <br />+<output style="color:red;" name="n" for="y">0</output>=<output name="w" for="y b">0</output>
+                    <br />-<output style="color:red;" name="o" for="y">0</output>=<output name="z" for="y b">0</output>
+                </div>
+            </form>
         </div>
     </div>  <!-- ###################### Start Pg footer ###################### -->
     <div id="snackbar"></div> <!-- Footer -->
