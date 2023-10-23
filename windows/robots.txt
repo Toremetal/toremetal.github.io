@@ -1,6 +1,0 @@
-User-agent: *
-
-Disallow: adstxt/
-Disallow: filemod/
-Disallow: smartsort/
-Disallow: isomaker/
