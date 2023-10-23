@@ -1,7 +1,7 @@
 # Thanks for Stopping by.
 # Questions, Comments, Concerns or, Curiousity.
 #  Visit us on the web at: www.toremetal.com
-#              ©2021 ™T©ReMeTaL
+#              ©2023 ™T©ReMeTaL
 #AdMob
 google.com, pub-8927593002808864, DIRECT, f08c47fec0942fa0
 google.com, pub-8927593002808864, RESELLER, f08c47fec0942fa0
@@ -653,4 +653,4 @@ contact=https://www.toremetal.com
 # Thanks for Stopping by.
 # Questions, Comments, Concerns or, Curiousity.
 #  Visit us on the web at: www.toremetal.com
-#              ©2021 ™T©ReMeTaL
+#              ©2023 ™T©ReMeTaL
