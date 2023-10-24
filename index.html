@@ -57,16 +57,15 @@
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-M20V5KWRLY');</script> <!-- adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927593002808864" crossorigin="anonymous"></script> <!-- Google Search -->
     <script async src="https://cse.google.com/cse.js?cx=partner-pub-8927593002808864:1031426169"></script>
-    <script>function includeHTML() { var z, i, elmnt, file, xhttp; z = document.getElementsByTagName("*"); for (i = 0; i < z.length; i++) { elmnt = z[i]; file = elmnt.getAttribute("w3-include-html"); if (file) { xhttp = new XMLHttpRequest(); xhttp.onreadystatechange = function () { if (this.readyState == 4) { if (this.status == 200) { elmnt.innerHTML = this.responseText; } if (this.status == 404) { elmnt.innerHTML = ""; } elmnt.removeAttribute("w3-include-html"); includeHTML(); } }; xhttp.open("GET", file, true); xhttp.send(); return; } } };</script>
-    <script>function getCookie(cname) { let name = cname + "="; let decodedCookie = decodeURIComponent(document.cookie); let ca = decodedCookie.split(';'); for (let i = 0; i < ca.length; i++) { let c = ca[i]; while (c.charAt(0) == ' ') { c = c.substring(1); } if (c.indexOf(name) == 0) { return c.substring(name.length, c.length); } } return ""; } var setCookie = function (name, value, expiry_days) { var d = new Date(); d.setTime(d.getTime() + (expiry_days * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toUTCString(); document.cookie = name + "=" + value + ";" + expires + ";secure;samesite=strict"; return getCookie(name); };</script>
-    <script>function checkMessage() { var message = getCookie("message"); if (message != "") { snackbar(message); } else { snackbar('Welcome to ™T©ReMeTaL'); } }</script>
     <style>
         html {
             padding: 10px;
         }
+
         body {
             margin: 0;
         }
+
         * {
             text-shadow: 0.5px 0.5px 1px ThreeDFace, 0 0 0.1em ThreeDLightShadow, 0 0 0 ThreeDDarkShadow;
         }
@@ -74,7 +73,124 @@
         p {
             color: gold;
         }
+
+        #disclaimerText p {
+            color: darkred;
+        }
     </style>
+
+    <style>
+        /* id="tm_ContactForm" Style */
+        #tm_ContactForm {
+            background: conic-gradient(#808080,#0094ff);
+            margin: 4px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+            #tm_ContactForm *, .* {
+                border-radius: 6px;
+                text-align: center;
+                object-position: center;
+                align-items: center;
+                object-fit: scale-down;
+            }
+
+            #tm_ContactForm #tm_ContactFormDiv {
+                margin: 0 0 0 0;
+                border: 1px ridge grey;
+                box-shadow: 1px 2px 5px rgba(0,0,0,0.31);
+                border: 1px groove rgb(177, 176, 176);
+                text-align: center;
+                border-radius: 6px;
+            }
+
+            #tm_ContactForm .tm_ContactForm-inputDiv {
+                padding: 5px;
+                margin: 0 0 0 0;
+            }
+
+            #tm_ContactForm input[type=text], input[type=email] {
+                cursor: pointer;
+                margin: 5px auto;
+                padding: 3px 6px;
+                border: solid 1px #cbc9c9;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+                background: #fff;
+                text-align: center;
+                height: 26px;
+                width: 168px;
+                border-radius: 6px;
+            }
+
+            #tm_ContactForm textarea {
+                cursor: pointer;
+                margin: 5px auto;
+                padding: 3px 6px;
+                border: solid 1px #cbc9c9;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+                background: #fff;
+                width: 80%;
+                border-radius: 6px;
+                text-align: center;
+            }
+
+        #tm_ContactFormResponse {
+            text-align: center;
+            object-position: center;
+            align-items: center;
+            object-fit: scale-down;
+            margin: 4px;
+            padding: 0 0 0 0;
+            background-color: #69a1f8;
+            border: 1px ridge grey;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.31);
+            border: 1px groove rgb(177, 176, 176);
+            border-radius: 6px;
+        }
+
+            #tm_ContactFormResponse #tm_ContactFormResponse-frame {
+                background-color: inherit;
+                border-radius: inherit;
+                text-align: inherit;
+                object-position: inherit;
+                align-items: inherit;
+                object-fit: inherit;
+                margin: 0 0 0 0;
+                padding: 0 0 0 0;
+                width: 100%;
+                border-radius: 6px;
+            }
+    </style>
+    <script>
+        /* <!-- */
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    xhttp = new XMLHttpRequest(); xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "";
+                            }
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    };
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                }
+            }
+        }
+        /* --> */
+    </script>
 </head>
 <body style="background-color:#29292990;" onload="snackbar('Welcome to &#8482;T&#169;ReMeTaL')">
     <iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=home&ext='></iframe>
@@ -105,7 +221,7 @@
                                 <br />
                                 <sub> PHP, JS, HTML, C++, VB, C#, JAVA</sub>
                                 <br />Android, Windows, Web, and more.
-                                <h4 class="transition rotate2" style="margin: 0 0 0 0; padding: 0 0 0 0; color: whitesmoke; text-shadow: 0.5px 0.5px 1px darkred, 0 0 1em blue, 0 0 0.2em red; cursor: pointer;" onclick="window.open('https://g.dev/toremetal');">g.dev/toremetal</h4>
+                                <h4 class="transition rotate2" style="margin: 0 0 0 0; padding: 0 0 0 0; color: whitesmoke; text-shadow: 0.5px 0.5px 1px darkred, 0 0 1em blue, 0 0 0.2em red; cursor: pointer;" onclick="gdevMe();">g.dev/toremetal</h4>
                             </p>
                         </div>
                     </div>
@@ -134,11 +250,6 @@
             </p>
             <h3>Github Repositories</h3>
             <div w3-include-html="/content/gitrepos.html"></div><!--#D88968 #CD6E53-->
-            <style>
-                #disclaimerText p {
-                    color: darkred;
-                }
-            </style>
             <div id="disclaimerText">
                 <p style="cursor: default; color: var(--themeBlue4, #E4BA99); " title="By use of this service you agree to the terms, conditions, and policies of ™T©ReMeTaL." align="center">By use of this service you agree to the terms, conditions, and policies of ™T©ReMeTaL.</p>
                 <b style="cursor: pointer; color: var(--themeBlue5,#CD6E53);" class="dis" onclick="disclaimer()" id="disclaimerbtn">Disclaimer ↧</b>
@@ -146,14 +257,6 @@
                     <b id="dis1">The information, services, and applications provided by ™T©ReMeTaL (“we”, “us”, or “our”) are for general purposes only. All information, services, and applications by ™T©ReMeTaL are provided in good faith however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information, service, or application provided by ™T©ReMeTaL.</b>
                     <b hidden id="dis2">UNDER NO CIRCUMSTANCE SHALL ™T©ReMeTaL HAVE ANY LIABILITY TO YOU OR ANY OWNER OF ANY MEDIA FOR ANY LOSS OR ANY DAMAGE OF ANY KIND INCURRED OR OTHERWISE IN RELATION TO ™T©ReMeTaL AS A RESULT OF THE USE OF ANY INFORMATION, MEDIA, SERVICE, OR APPLICATION PROVIDED BY ™T©ReMeTaL OR RELIANCE ON ANY INFORMATION, MEDIA, SERVICE, OR APPLICATION PROVIDED BY ™T©ReMeTaL. YOUR USE OF ™T©ReMeTaL SITES, SERVICES, PRODUCTS, MEDIA, INFORMATION AND YOUR RELIANCE ON ANY PROVISION OF ™T©ReMeTaL IS SOLELY AT YOUR OWN RISK.</b>
                 </p>
-                <script>
-                    function swapDisclaimer() {
-                        document.getElementById("dis1").hidden = document.getElementById("dis2").hidden;
-                        document.getElementById("dis2").hidden = !document.getElementById("dis1").hidden;
-                    }
-                </script>
-                <script>/* <!-- */function disclaimer() { var x = document.getElementById("disclaimer"); if (x.style.display === "block") { x.style.display = "none"; } else { x.style.display = "block"; } try { var btn = document.getElementById("disclaimerbtn"); if (btn.innerHTML.includes("↧")) { let result = btn.innerHTML.replace("↧", "↥"); btn.innerHTML = result; } else if (btn.innerHTML.includes("↥")) { let result = btn.innerHTML.replace("↥", "↧"); btn.innerHTML = result; } else if (btn.innerHTML.includes("-")) { let result = btn.innerHTML.replace("-", "+"); btn.innerHTML = result; } else if (btn.innerHTML.includes("+")) { let result = btn.innerHTML.replace("+", "-"); btn.innerHTML = result; } } catch (err) { } }/* --> */</script>
-
                 <div align="right">
                     <i style="color:#0097a7;font-size:12px;cursor:default;text-shadow: 1px 1px 1px rgba(0,0,0,.31);" title="last updated: 7/30/2022">last updated: 7/30/2022</i>
                 </div>
@@ -162,7 +265,7 @@
         <div class="main" style="object-fit:scale-down; height: fit-content; max-width:100%;">
             <div class="cubebody">
                 <div class="cube" align="center">
-                    <img src="/img/cube1.png" onclick='window.open("https://play.google.com/store/apps/dev?id=7952290850776080706")' style='cursor: pointer; object-fit: scale-down; border-radius: 5px;' />
+                    <img src="/img/cube1.png" onclick='playStoreMe()' style='cursor: pointer; object-fit: scale-down; border-radius: 5px;' />
                     <img src="/windows/favicon.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/windows"' />
                     <img src="/img/cube3.png" style='object-fit: scale-down; border-radius: 5px;' />
                     <img src="/games/favicon.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/games"' />
@@ -178,88 +281,6 @@
             <div class="fakeimg" style="margin: auto; height: fit-content; place-content: center; border-radius: 6px;">
                 <h2>Send &#8482;T&#169;ReMeTaL a Message</h2>
                 <div style="overflow: hidden; object-fit: scale-down; height: fit-content; position: relative; left: 0; right: 0; margin: 0 0 0 0; padding: 0; background-color: #ffffff32; border-radius: 6px ">
-                    <style>
-                        #tm_ContactForm {
-                            background: conic-gradient(#808080,#0094ff);
-                            margin: 4px;
-                            text-align: center;
-                            border-radius: 6px;
-                        }
-
-                            #tm_ContactForm *, .* {
-                                border-radius: 6px;
-                                text-align: center;
-                                object-position: center;
-                                align-items: center;
-                                object-fit: scale-down;
-                            }
-
-                            #tm_ContactForm #tm_ContactFormDiv {
-                                margin: 0 0 0 0;
-                                border: 1px ridge grey;
-                                box-shadow: 1px 2px 5px rgba(0,0,0,0.31);
-                                border: 1px groove rgb(177, 176, 176);
-                                text-align: center;
-                                border-radius: 6px;
-                            }
-
-                            #tm_ContactForm .tm_ContactForm-inputDiv {
-                                padding: 5px;
-                                margin: 0 0 0 0;
-                            }
-
-                            #tm_ContactForm input[type=text], input[type=email] {
-                                cursor: pointer;
-                                margin: 5px auto;
-                                padding: 3px 6px;
-                                border: solid 1px #cbc9c9;
-                                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
-                                background: #fff;
-                                text-align: center;
-                                height: 26px;
-                                width: 168px;
-                                border-radius: 6px;
-                            }
-
-                            #tm_ContactForm textarea {
-                                cursor: pointer;
-                                margin: 5px auto;
-                                padding: 3px 6px;
-                                border: solid 1px #cbc9c9;
-                                box-shadow: 1px 2px 5px rgba(0,0,0,.09);
-                                background: #fff;
-                                width: 80%;
-                                border-radius: 6px;
-                                text-align: center;
-                            }
-
-                        #tm_ContactFormResponse {
-                            text-align: center;
-                            object-position: center;
-                            align-items: center;
-                            object-fit: scale-down;
-                            margin: 4px;
-                            padding: 0 0 0 0;
-                            background-color: #69a1f8;
-                            border: 1px ridge grey;
-                            box-shadow: 1px 2px 5px rgba(0,0,0,0.31);
-                            border: 1px groove rgb(177, 176, 176);
-                            border-radius: 6px;
-                        }
-
-                            #tm_ContactFormResponse #tm_ContactFormResponse-frame {
-                                background-color: inherit;
-                                border-radius: inherit;
-                                text-align: inherit;
-                                object-position: inherit;
-                                align-items: inherit;
-                                object-fit: inherit;
-                                margin: 0 0 0 0;
-                                padding: 0 0 0 0;
-                                width: 100%;
-                                border-radius: 6px;
-                            }
-                    </style>
                     <form id="tm_ContactForm" method="post" onsubmit="swapFrame()" target="tm_ContactFormResponse-frame" align="center" title="Contact Us" autocomplete="on" action="https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec">
                         <div id="tm_ContactFormDiv" align="center">
                             <div class="tm_ContactForm-inputDiv">
@@ -279,11 +300,8 @@
                     <div hidden id="tm_ContactFormResponse" align="center">
                         <iframe id="tm_ContactFormResponse-frame" align="middle" name="tm_ContactFormResponse-frame" frameborder="0" scrolling="no"></iframe>
                     </div>
-                    <script>function swapFrame() { document.getElementById("tm_ContactForm").hidden = true; document.getElementById("tm_ContactFormResponse").hidden = false; }</script>
-                    <script type="text/javascript">var verifyCallbackIframe = function (token) { document.getElementById('tm_ContactForm-verify').value = "true"; try { document.getElementById('tm_ContactForm-verification').srcdoc = '<!DOCTYPE html> <html> <body onload="document.getElementById(' + "'siteVerify-btn'" + ').click()"><form id="siteVerify" action="https://www.google.com/recaptcha/api/siteverify" method="POST"> <input type="text" name="secret" value="6LfS6VEjAAAAAFjpeOi4UXhBW3mxAEbK5PWFLUsf"><input type="text" name="response" value="' + token + '"><input id="siteVerify-btn" type="submit" value="Submit"></form></body></html>'; } catch (error) { alert(error); } };</script>
                     <input type="hidden" id="tm_ContactForm-verify" value="false" />
                     <iframe id="tm_ContactForm-verification" onload="submittheform()" style="display:none;" height="0" width="0" srcdoc="" hidden></iframe>
-                    <script>function submittheform() { var ready = document.getElementById('tm_ContactForm-verify').value == "true"; if (ready) { console.log("Authorization Verified!"); document.getElementById('tm_ContactForm-verify').value = "false"; document.getElementById("tm_ContactForm-btn").click(); } }</script>
                     <script src="https://www.google.com/recaptcha/api.js"></script>
                 </div>
             </div>
@@ -296,10 +314,77 @@
         <script>function yr() { const d = new Date(); return '&#169;' + d.getFullYear() + '&#8482;T&#169;ReMeTaL'; } document.write('<b style="color:#752975;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</b>"); document.write('<small style="color:#752929;text-align: right;position: fixed;z-index:8; bottom: 6px; left: 5px;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</small>");</script> <!-- End Copyright --> <!-- footerb -->
         <div w3-include-html="/content/footerb.html"></div>
     </footer>
-    <script>/** * displays a message to the user. * @param message The Message to display. * function snackbar() { var x = document.getElementById("snackbar"); x.className = "show"; setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000); } */ function snackbar(message) { var x = document.getElementById("snackbar"); x.innerText = message; x.className = "show"; setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000); }</script>
-    <script type="text/javascript">function sh(id) { var x = document.getElementById(id); if (x.style.display === "block") { x.style.display = "none"; x.hidden = true; try { var btn = document.getElementById(id + "btn"); if (btn.innerHTML.includes('↧')) { let result = btn.innerHTML.replace('↧', '↥'); btn.innerHTML = result; } else if (btn.innerHTML.includes("-")) { let result = btn.innerHTML.replace("-", "+"); btn.innerHTML = result; } } catch (err) { } if (id.includes("reset")) { document.getElementById(id).reset; } } else { x.style.display = "block"; x.hidden = false; try { var btn = document.getElementById(id + "btn"); if (btn.innerHTML.includes("+")) { let result = btn.innerHTML.replace("+", "-"); btn.innerHTML = result; } else if (btn.innerHTML.includes('↥')) { let result = btn.innerHTML.replace('↥', '↧'); btn.innerHTML = result; } } catch (err) { } } } function clstv() { var x = document.getElementById("tv"); x.hidden = !x.hidden; } function mytv(chlnk) { var x = document.getElementById("tvs"); x.src = chlnk; document.getElementById('tv').hidden = false; } function lour() { window.location = "/"; } function ppol() { window.location = "/privacypolicy"; } function gotoWebapp() { window.location = "/signs/app"; } function gotoMusic() { window.location = "/radio"; } function gotoAndroid() { window.location = "/android"; } function gotoWindows() { window.location = "/windows"; } function tmappsws() { window.location = "/apps/"; } function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); } function gdevMe() { gotopg("https://g.dev/toremetal"); } function vGPCertMe() { gotopg("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449"); } function gotopg(pg) { window.location = pg; }</script>
     <script>includeHTML();</script>
-    <script>
+    <script type="text/javascript">
+        /* <!-- */
+        /** Display a message to the user.
+         * * @param message The Message to display.
+         * */
+        function snackbar(message) {
+            var x = document.getElementById("snackbar");
+            x.innerText = message;
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            } return "";
+        }
+        var setCookie = function (name, value, expiry_days) {
+            var d = new Date();
+            d.setTime(d.getTime() + (expiry_days * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString(); document.cookie = name + "=" + value + ";" + expires + ";secure;samesite=strict";
+            return getCookie(name);
+        }
+        function checkMessage() {
+            var message = getCookie("message");
+            if (message != "") {
+                snackbar(message);
+            } else {
+                snackbar('Welcome to ™T©ReMeTaL');
+            }
+        }
+
+        function swapDisclaimer() {
+            document.getElementById("dis1").hidden = document.getElementById("dis2").hidden;
+            document.getElementById("dis2").hidden = !document.getElementById("dis1").hidden;
+        }
+
+        function disclaimer() {
+            sh("disclaimer");
+        }
+        function swapFrame() {
+            document.getElementById("tm_ContactForm").hidden = true;
+            document.getElementById("tm_ContactFormResponse").hidden = false;
+        }
+        var verifyCallbackIframe = function (token) {
+            document.getElementById('tm_ContactForm-verify').value = "true";
+            try {
+                document.getElementById('tm_ContactForm-verification').srcdoc = '<!DOCTYPE html> <html> <body onload="document.getElementById(' + "'siteVerify-btn'" + ').click()"><form id="siteVerify" action="https://www.google.com/recaptcha/api/siteverify" method="POST"> <input type="text" name="secret" value="6LfS6VEjAAAAAFjpeOi4UXhBW3mxAEbK5PWFLUsf"><input type="text" name="response" value="' + token + '"><input id="siteVerify-btn" type="submit" value="Submit"></form></body></html>';
+            } catch (error) {
+                alert(error);
+            }
+        };
+        function submittheform() {
+            var ready = document.getElementById('tm_ContactForm-verify').value == "true";
+            if (ready) {
+                console.log("Authorization Verified!");
+                document.getElementById('tm_ContactForm-verify').value = "false";
+                document.getElementById("tm_ContactForm-btn").click();
+            }
+        }
+
         function countRepo(pg) {
             document.getElementById('repolog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
             switch (pg) {
@@ -319,6 +404,53 @@
                 // no default.
             }
         }
+        function sh(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                x.hidden = true;
+                try {
+                } catch (err) { }
+                if (id.includes("reset")) {
+                    document.getElementById(id).reset;
+                }
+            } else {
+                x.style.display = "block";
+                x.hidden = false;
+            }
+            try {
+                var btn = document.getElementById(id + "btn");
+                if (btn.innerHTML.includes('↧')) {
+                    let result = btn.innerHTML.replace('↧', '↥');
+                    btn.innerHTML = result;
+                } else if (btn.innerHTML.includes("-")) {
+                    let result = btn.innerHTML.replace("-", "+");
+                    btn.innerHTML = result;
+                } else if (btn.innerHTML.includes("+")) {
+                    let result = btn.innerHTML.replace("+", "-");
+                    btn.innerHTML = result;
+                } else if (btn.innerHTML.includes('↥')) {
+                    let result = btn.innerHTML.replace('↥', '↧');
+                    btn.innerHTML = result;
+                }
+            } catch (err) { }
+        }
+        function clstv() {
+            var x = document.getElementById("tv");
+            x.hidden = !x.hidden;
+        }
+        function mytv(chlnk) {
+            var x = document.getElementById("tvs");
+            x.src = chlnk;
+            document.getElementById('tv').hidden = false;
+        }
+        function gotoPg(pg) { window.location = pg; }
+        function openPg(pg) { window.open(pg) }
+        function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); }
+        function playStoreMe() { playstoredevpg("7952290850776080706"); }
+        function gdevMe() { openPg("https://g.dev/toremetal"); }
+        function vGPCertMe() { openPg("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449"); }
+        /* --> */
     </script>
 </body>
 </html>
