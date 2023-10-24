@@ -159,7 +159,7 @@
 
     <!-- The flexible grid (content) -->
     <div class="row">
-        <div class="side">
+        <div class="side" style="object-fit:scale-down; height: fit-content; max-width:100%;">
             <h2>™T©ReMeTaL </h2>
             <div class="fakeimg" style="height:200px;" align="center">
                 <img class="zoom highlight chrome-border" src="/img/lil-Reaper_Animated.gif" style='width:180px; object-fit: contain;' />
@@ -172,12 +172,12 @@
             <h5 style="margin-bottom:0;">&nbsp;&nbsp;&nbsp; Server Side:</h5>
             <div id="site-mapping" class="fakeimg repo repo3" style="height: 60px; cursor: pointer;" onclick='document.getElementById("gamess").src=id'>Site-Mapping</div>
         </div>
-        <div class="main">
+        <div class="main" style="object-fit:scale-down; height: fit-content; max-width:100%;">
             <!--/* Content */-->
             <style>
                 .mygames iframe {
                     min-width: 100%;
-                    min-height: 90px;
+                    min-height: fit-content;
                     align-self: center;
                     align-content: center;
                     align-items: center;
@@ -398,7 +398,7 @@
             </style>
             <div class="mygames">
                 <div id="bomb" class="gamebody">
-                    <iframe id="gamess" src="designer" height="512" style="min-height:512px;" align="middle"></iframe>
+                    <iframe id="gamess" src="designer" loading="eager" height="768" style="min-height: 512px;" align="middle"></iframe>
                 </div>
 
                 <br />
