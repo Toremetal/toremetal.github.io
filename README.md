@@ -1,13 +1,11 @@
-**/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.github.io ############ #<br />
+**/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.com ############ #<br />
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website for Apps, Software, and Coding Solutions.<br />
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; visit us at https://toremetal.github.io<br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or https://github.toremetal.com<br />
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or https://toremetal.com<br />
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.github.io ############ #<br />
-  *  **********/ &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ™T©ReMeTaL Software : Copyright (c) 2022 ™T©ReMeTaL. \**********
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; visit us at https://toremetal.com<br />
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.com ############ #<br />
+  *  **********/ &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ™T©ReMeTaL Software : Copyright (c) 2023 ™T©ReMeTaL. \**********
      ***************************************************************************************
                                     ™T©ReMeTaL Software.
-            Copyright (C) 2022 : ©2022™T©ReMeTaL(David W. Rick).    Date:8/29/2022
+            Copyright (C) 2023 : ©2023™T©ReMeTaL(David W. Rick).    Date:10/24/2023
                              Computer Scientist:  David W. Rick
             Licensed under this License Agreement,  Version 1.0  (this "License").
             You may not use this Software except, in compliance with this License.
@@ -80,16 +78,16 @@
        
  *     ™T©ReMeTaL
        Privacy Policy Available online at
- *     https://toremetal.com/privacypolicy
+ * * https://toremetal.com/privacypolicy
        
  *     For Questions, comments, and inquiries
        Email:
  *     toremetal@toremetal.com
  *     Or
        Visit us on the web at
- *     https://toremetal.com
+ * * https://toremetal.com
        
  *     ™T©ReMeTaL
-       ©2022™T©ReMeTaL
+       ©2023™T©ReMeTaL
        All Rights Reserved.
      **********************************************************************************************************
