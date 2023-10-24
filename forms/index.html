@@ -353,56 +353,20 @@
         <p>Software Designed for Performance, Efficiency, and Functionality.</p>
     </div>  <!-- Main Body -->
     <div class="row">
-        <!--<div class="side">
-            <h2>&#8482;T&#169;ReMeTaL</h2>
-            <div class="fakeimg" style="height:200px;">
-                <div class="flip-card" style="margin: 0 0 0 0; padding: 0 0 0 0;">
-                    <div class="flip-card-inner" style="width: 140px; margin: 0 0 0 0; padding: 0 0 0 0; background-color: whitesmoke; ">
-                        <div class="flip-card-front" style="width: fit-content; margin: 0 0 0 0; padding: 0 0 0 0;color:ThreeDLightShadow">
-                            <img src="/img/gdev.png" alt="&#8482;T&#169;ReMeTaL" style="margin: 0 0 0 0; padding: 0 0 0 0; height: 160px; width:fit-content;object-fit: scale-down;">
-                        </div>
-                        <div class="flip-card-back">
-                            <h2 style="text-shadow: 0.5px 0.5px 1px ThreeDHighlight, 0 0 0.1em ThreeDFace, 0 0 0.2em ThreeDLightShadow; font-size: smaller; margin: 0 0 0 0; padding: 0 0 0 0; color: goldenrod; ">&#8482;T&#169;ReMeTaL</h2>
-                            <p style="color:whitesmoke;margin:0 0 10px;">
-                                <sup style="margin: 0 0 0 0; padding: 0 0 0 0; color: chartreuse; font-size: medium;">Skills:</sup>
-                                <br />
-                                <sub> PHP, JS, HTML, C++, VB, C#, JAVA</sub>
-                                <br />Android, Windows, Web, and more.
-                                <h4 class="transition rotate2" style="margin: 0 0 0 0; padding: 0 0 0 0; color: whitesmoke; text-shadow: 0.5px 0.5px 1px darkred, 0 0 1em blue, 0 0 0.2em red; cursor: pointer;" onclick="window.open('https://g.dev/toremetal');">g.dev/toremetal</h4>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div style="height: 200px; width: 212px; float: left;padding:4px;">
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badgelink.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:PHP Assesment (top 5% of 757.3k)" />--> <!-- onclick='window.open("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449")' -->
-                    <!--<img class="zoom2 chrome-border" onclick="mytv(this.src)" style="max-width: 64px; cursor: pointer;" width="64" src="/img/gpbadge.png" title="Click to Verify" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge7.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Android Studio User" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge6.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:25+ Codelabs" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge9.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Architecture Components" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge10.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Display Internet Data" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge11.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Architecture Components" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge12.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Advanced Nav App" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge8.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Advanced Nav App" />
-                </div>
-            </div>
-            <br />
-            <p style="color: #c34e2d;">
-                The &#8482;T&#169;ReMeTaL Github
-                <br /> &nbsp;projects for Android, Windows, Arduino, Web, and More..
-            </p>
-            <p style="color: darkred">
-                Code Languages Including:
-                <small>(Non-Exhaustive)</small>
-                <br /> kotlin, java, c++, c#, visual basic, html, css, javascript, php, sql
-            </p>
-            <h3>Github Repositories</h3>
-            <div w3-include-html="/content/gitrepos.html"></div>
-        </div>-->
-        <div class="main" style="background-color: var(--contentBackground, inherit);">
-
-            <div w3-include-html="https://toremetal.com/forms/content.html"></div>
+        <div class="main" style="background-color: var(--contentBackground, inherit); object-fit: scale-down; height: fit-content; max-width: 100%;">
+            <style>
+                #theform {
+                    object-fit: scale-down;
+                    padding: 0;
+                    overflow-y: hidden;
+                    overflow-x: hidden;
+                    height: fit-content;
+                    max-width: 100%;
+                }
+            </style>
+            <div id="theform" w3-include-html="https://toremetal.com/forms/content.html"></div>
             <form style="padding:4px 10px 8px;background-color:aliceblue;border-radius:6px;text-align: left;float:left; top: 20%; position: fixed; width: fit-content; height: fit-content;" oninput="y.value=parseInt(a.value)+parseInt(c.value)+parseInt(d.value)+parseInt(e.value);m.value=y.value;n.value=y.value;o.value=y.value;x.value=parseInt(y.value)*parseInt(b.value);v.value=parseInt(b.value)/parseInt(y.value);w.value=parseInt(y.value)+parseInt(b.value);z.value=parseInt(b.value)-parseInt(y.value)">
-                <input style="float:left" type="button" onclick='document.getElementById("calc").hidden=!document.getElementById("calc").hidden' value="X"/>
+                <input style="float:left" type="button" onclick='document.getElementById("calc").hidden=!document.getElementById("calc").hidden' value="X" />
                 <div id="calc">
                     <input type="range" id="a" value="0"><br />
                     <input type="range" id="c" value="0"><br />
