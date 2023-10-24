@@ -557,6 +557,64 @@
         </script>
         <script type="text/javascript">
             /* <!-- */
+            /**
+             * function checkSquare(cur, sqr = 0, eqto, plus = true) {
+             *   var pass = false;
+             *   try {
+             *     if (plus) {
+             *         pass = document.getElementById(parseInt(cur) + sqr).alt == eqto;
+             *     } else {
+             *         pass = document.getElementById(parseInt(cur) - sqr).alt == eqto;
+             *     }
+             *   } catch (e) { pass = false; }
+             *   return pass;
+             * }
+             * @param cur document.getElementById(parseInt(cur) + sqr).alt
+             * @param sqr parseInt(cur) + sqr
+             * @param eqto document.getElementById().alt == eqto
+             * @param plus [true]_parseInt(cur)+sqr(default)
+             * [false]_parseInt(cur)-sqr
+             */
+            function checkSquare(cur, sqr = 0, eqto, plus = true) {
+                var pass = false;
+                try {
+                    if (plus) {
+                        pass = document.getElementById(parseInt(cur) + sqr).alt == eqto;
+                    } else {
+                        pass = document.getElementById(parseInt(cur) - sqr).alt == eqto;
+                    }
+                } catch (e) { pass = false; }
+                return pass;
+            }
+            /**
+             * function checkID(cur, sqr = 0, eqto, plus = true) {
+             *   var pass = false;
+             *   try {
+             *     if (plus) {
+             *         pass = parseInt(document.getElementById(cur).value) + sqr == eqto;
+             *     } else {
+             *         pass = parseInt(document.getElementById(cur).value) - sqr == eqto;
+             *     }
+             *   } catch (e) { pass = false; }
+             *   return pass;
+             * }
+             * @param cur document.getElementById(cur).value
+             * @param sqr ..value + sqr
+             * @param eqto ..value + sqr == eqto;
+             * @param plus [true]_parseInt(..value)+sqr(default)
+             * [false]_parseInt(..value)-sqr
+             */
+            function checkID(cur, sqr = 0, eqto, plus = true) {
+                var pass = false;
+                try {
+                    if (plus) {
+                        pass = parseInt(document.getElementById(cur).value) + sqr == eqto;
+                    } else {
+                        pass = parseInt(document.getElementById(cur).value) - sqr == eqto;
+                    }
+                } catch (e) { pass = false; }
+                return pass;
+            }
             function move(id, alt) {
                 id = id;
                 snackMessage = "";
@@ -576,19 +634,65 @@
                     document.getElementById('mid').value = "";
                     document.getElementById(id).style = "border:none";
                 } else if (document.getElementById('alt').value != "" && document.getElementById('mid').value != id && document.getElementById('alt').value[0] != alt[0]) {
+                    var tNum = 1000;
+                    try {
+                        tNum = parseInt(document.getElementById('mid').value);
+                    } catch (e) {
+                        tNum = 1000;
+                    }
                     m = "false";
                     if (document.getElementById('alt').value[1] == "p") {
-                        if (parseInt(document.getElementById('mid').value) + 11 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt != "-" || parseInt(document.getElementById('mid').value) - 11 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt != "-") {
+                        var myVal = document.getElementById('alt').value[0];
+                        var midVal = document.getElementById('mid').value[0];
+                        var ww = myVal == "w";
+                        var bb = myVal == "b";
+                        if (tNum + 11 == id && ww && !checkSquare(tNum, 11, "-") || tNum - 11 == id && bb && !checkSquare(tNum, 11, "-", false)) {
                             m = "true";
-                        } else if (parseInt(document.getElementById('mid').value) + 9 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt != "-" || parseInt(document.getElementById('mid').value) - 9 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt != "-") {
+                        } else if (tNum + 9 == id && ww && !checkSquare(tNum, 9, "-") || tNum - 9 == id && bb && !checkSquare(tNum, 9, "-", false)) {
                             m = "true";
-                        } else if (parseInt(document.getElementById('mid').value) + 10 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" || parseInt(document.getElementById('mid').value) - 10 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-") {
+                        } else if (tNum + 10 == id && ww && checkSquare(tNum, 10, "-") || tNum - 10 == id && bb && checkSquare(tNum, 10, "-", false)) {
                             m = "true";
-                        } else if (parseInt(document.getElementById('mid').value) + 20 == id && document.getElementById('alt').value[0] == "w" && document.getElementById('mid').value[0] == "2" && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" || parseInt(document.getElementById('mid').value) - 20 == id && document.getElementById('alt').value[0] == "b" && document.getElementById('mid').value[0] == "7" && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-") {
+                        } else if (tNum + 20 == id && ww && midVal == "2" && checkSquare(tNum, 10, "-") || tNum - 20 == id && bb && midVal == "7" && checkSquare(tNum, 10, "-", false)) {
                             m = "true";
                         }
+                      /*  if (tNum + 11 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 11).alt != "-" || tNum - 11 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(tNum - 11).alt != "-") {
+                            m = "true";
+                        } else if (tNum + 9 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 9).alt != "-" || tNum - 9 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(tNum - 9).alt != "-") {
+                            m = "true";
+                        } else if (tNum + 10 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 10).alt == "-" || tNum - 10 == id && document.getElementById('alt').value[0] == "b" && checkSquare(tNum, 10, "-", false)) {
+                            m = "true";
+                        } else if (tNum + 20 == id && document.getElementById('alt').value[0] == "w" && document.getElementById('mid').value[0] == "2" && document.getElementById(tNum + 10).alt == "-" || tNum - 20 == id && document.getElementById('alt').value[0] == "b" && document.getElementById('mid').value[0] == "7" && checkSquare(tNum, 10, "-", false)) {
+                            m = "true";
+                        }*/
                     } else if (document.getElementById('alt').value[1] == "k") {
-                        if (parseInt(document.getElementById('mid').value) + 1 == id || parseInt(document.getElementById('mid').value) - 1 == id || parseInt(document.getElementById('mid').value) + 9 == id || parseInt(document.getElementById('mid').value) + 10 == id || parseInt(document.getElementById('mid').value) + 11 == id || parseInt(document.getElementById('mid').value) - 9 == id || parseInt(document.getElementById('mid').value) - 10 == id || parseInt(document.getElementById('mid').value) - 11 == id) {
+                        var pass = false;
+                        
+                        if (tNum + 1 == id) {
+                            pass = true;
+                        } else if (tNum - 1 == id) {
+                            pass = true;
+                        } else if (tNum + 9 == id) {
+                            pass = true;
+                        } else if (tNum - 9 == id) {
+                            pass = true;
+                        } else if (tNum + 10 == id) {
+                            pass = true;
+                        } else if (tNum - 10 == id) {
+                            pass = true;
+                        } else if (tNum + 11 == id) {
+                            pass = true;
+                        } else if (tNum - 11 == id) {
+                            pass = true;
+                        }
+                       /* if (parseInt(document.getElementById('mid').value) + 1 == id ||
+                            parseInt(document.getElementById('mid').value) - 1 == id ||
+                            parseInt(document.getElementById('mid').value) + 9 == id ||
+                            parseInt(document.getElementById('mid').value) + 10 == id ||
+                            parseInt(document.getElementById('mid').value) + 11 == id ||
+                            parseInt(document.getElementById('mid').value) - 9 == id ||
+                            parseInt(document.getElementById('mid').value) - 10 == id ||
+                            parseInt(document.getElementById('mid').value) - 11 == id ) { */
+                        if (pass) {
                             m = "true";
                             if (document.getElementById('alt').value[0] == "w") {
                                 try {
@@ -601,7 +705,44 @@
                                         m = "false";
                                     }
                                 } catch (e) { }
-                                if (document.getElementById(parseInt(id) + 12).alt == "bh" ||
+                                if (checkSquare(id, 12, "bh")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 12, "bh", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 19, "bh")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 19, "bh", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 8, "bh")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 8, "bh", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 21, "bh")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 21, "bh", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 9, "bp")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 11, "bp")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 1, "bk")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 1, "bk", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 9, "bk")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 9, "bk", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 10, "bk")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 10, "bk", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 11, "bk")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 11, "bk", false)) {
+                                    m = "false";
+                                }
+                               /* if (document.getElementById(parseInt(id) + 12).alt == "bh" ||
                                     document.getElementById(parseInt(id) - 12).alt == "bh" ||
                                     document.getElementById(parseInt(id) + 19).alt == "bh" ||
                                     document.getElementById(parseInt(id) - 19).alt == "bh" ||
@@ -624,7 +765,7 @@
                                     document.getElementById(parseInt(id) + 10).alt == "bk" ||
                                     document.getElementById(parseInt(id) + 9).alt == "bk") {
                                     m = "false";
-                                }
+                                }*/
                             } else if (document.getElementById('alt').value[0] == "b") {
                                 try {
                                     if (inCheckS(id, "wr") || inCheckS(id, "wq")) {
@@ -636,7 +777,44 @@
                                         m = "false";
                                     }
                                 } catch (e) { }
-                                if (document.getElementById(parseInt(id) + 12).alt == "wh" ||
+                                if (checkSquare(id, 12, "wh")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 12, "wh", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 19, "wh")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 19, "wh", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 8, "wh")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 8, "wh", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 21, "wh")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 21, "wh", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 11, "wp", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 9, "wp", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 1, "wk")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 1, "wk", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 9, "wk")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 9, "wk", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 10, "wk")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 10, "wk", false)) {
+                                    m = "false";
+                                } else if (checkSquare(id, 11, "wk")) {
+                                    m = "false";
+                                } else if (checkSquare(id, 11, "wk", false)) {
+                                    m = "false";
+                                }
+                                /*if (document.getElementById(parseInt(id) + 12).alt == "wh" ||
                                     document.getElementById(parseInt(id) - 12).alt == "wh" ||
                                     document.getElementById(parseInt(id) + 19).alt == "wh" ||
                                     document.getElementById(parseInt(id) - 19).alt == "wh" ||
@@ -659,113 +837,113 @@
                                     document.getElementById(parseInt(id) + 10).alt == "wk" ||
                                     document.getElementById(parseInt(id) + 9).alt == "wk") {
                                     m = "false";
-                                }
+                                }*/
                             }
                         }
                     } else if (document.getElementById('alt').value[1] == "h") {
-                        if (parseInt(document.getElementById('mid').value) + 12 == id ||
-                            parseInt(document.getElementById('mid').value) - 12 == id ||
-                            parseInt(document.getElementById('mid').value) + 19 == id ||
-                            parseInt(document.getElementById('mid').value) - 19 == id ||
-                            parseInt(document.getElementById('mid').value) + 8 == id ||
-                            parseInt(document.getElementById('mid').value) - 8 == id ||
-                            parseInt(document.getElementById('mid').value) + 21 == id ||
-                            parseInt(document.getElementById('mid').value) - 21 == id) {
+                        if (tNum + 12 == id ||
+                            tNum - 12 == id ||
+                            tNum + 19 == id ||
+                            tNum - 19 == id ||
+                            tNum + 8 == id ||
+                            tNum - 8 == id ||
+                            tNum + 21 == id ||
+                            tNum - 21 == id) {
                             m = "true";
                         }
                     } else if (document.getElementById('alt').value[1] == "r") {
-                        if (parseInt(document.getElementById('mid').value) + 10 == id || parseInt(document.getElementById('mid').value) - 10 == id ||
-                            parseInt(document.getElementById('mid').value) + 20 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 20 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 30 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 30 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 40 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 30).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 40 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 30).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 50 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 40).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 50 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 40).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 60 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 40).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 50).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 60 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 40).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 50).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 70 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 40).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 50).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 60).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 70 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 40).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 50).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 60).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 1 == id ||
-                            parseInt(document.getElementById('mid').value) - 1 == id ||
-                            parseInt(document.getElementById('mid').value) + 2 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 2 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 3 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 3 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 4 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 3).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 4 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 3).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 5 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 4).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 5 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 4).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 6 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 4).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 5).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 6 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 4).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 5).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 7 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 4).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 5).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 6).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 7 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 4).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 5).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 6).alt == "-") {
+                        if (tNum + 10 == id || tNum - 10 == id ||
+                            tNum + 20 == id && checkSquare(tNum, 10, "-") ||
+                            tNum - 20 == id && checkSquare(tNum, 10, "-", false) ||
+                            tNum + 30 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") ||
+                            tNum - 30 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) ||
+                            tNum + 40 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") && checkSquare(tNum, 30, "-") ||
+                            tNum - 40 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) && checkSquare(tNum, 30, "-", false) ||
+                            tNum + 50 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") && checkSquare(tNum, 30, "-") && checkSquare(tNum, 40, "-") ||
+                            tNum - 50 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) && checkSquare(tNum, 30, "-", false) && checkSquare(tNum, 40, "-", false) ||
+                            tNum + 60 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") && checkSquare(tNum, 30, "-") && checkSquare(tNum, 40, "-") && checkSquare(tNum, 50, "-") ||
+                            tNum - 60 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) && checkSquare(tNum, 30, "-", false) && checkSquare(tNum, 40, "-", false) && checkSquare(tNum, 50, "-", false) ||
+                            tNum + 70 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") && checkSquare(tNum, 30, "-") && checkSquare(tNum, 40, "-") && checkSquare(tNum, 50, "-") && checkSquare(tNum, 60, "-") ||
+                            tNum - 70 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) && checkSquare(tNum, 30, "-", false) && checkSquare(tNum, 40, "-", false) && checkSquare(tNum, 50, "-", false) && checkSquare(tNum, 60, "-", false) ||
+                            tNum + 1 == id ||
+                            tNum - 1 == id ||
+                            tNum + 2 == id && checkSquare(tNum, 1, "-") ||
+                            tNum - 2 == id && checkSquare(tNum, 1, "-", false) ||
+                            tNum + 3 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") ||
+                            tNum - 3 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) ||
+                            tNum + 4 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") && checkSquare(tNum, 3, "-") ||
+                            tNum - 4 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) && checkSquare(tNum, 3, "-", false) ||
+                            tNum + 5 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") && checkSquare(tNum, 3, "-") && checkSquare(tNum, 4, "-") ||
+                            tNum - 5 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) && checkSquare(tNum, 3, "-", false) && checkSquare(tNum, 4, "-", false) ||
+                            tNum + 6 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") && checkSquare(tNum, 3, "-") && checkSquare(tNum, 4, "-") && checkSquare(tNum, 5, "-") ||
+                            tNum - 6 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) && checkSquare(tNum, 3, "-", false) && checkSquare(tNum, 4, "-", false) && checkSquare(tNum, 5, "-", false) ||
+                            tNum + 7 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") && checkSquare(tNum, 3, "-") && checkSquare(tNum, 4, "-") && checkSquare(tNum, 5, "-") && checkSquare(tNum, 6, "-") ||
+                            tNum - 7 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) && checkSquare(tNum, 3, "-", false) && checkSquare(tNum, 4, "-", false) && checkSquare(tNum, 5, "-", false) && checkSquare(tNum, 6, "-", false)) {
                             m = "true";
                         }
                     } else if (document.getElementById('alt').value[1] == "b") {
-                        if (parseInt(document.getElementById('mid').value) + 11 == id ||
-                            parseInt(document.getElementById('mid').value) - 11 == id ||
-                            parseInt(document.getElementById('mid').value) + 22 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 22 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 33 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 33 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 44 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 33).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 44 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 33).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 55 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 44).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 55 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 44).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 66 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 44).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 55).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 66 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 44).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 55).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 77 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 44).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 55).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 66).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 77 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 44).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 55).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 66).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 9 == id ||
-                            parseInt(document.getElementById('mid').value) - 9 == id ||
-                            parseInt(document.getElementById('mid').value) + 18 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 18 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 27 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 27 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 36 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 36 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 45 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 36).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 45 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 36).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 54 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 45).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 54 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 45).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 63 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 45).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 54).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 63 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 45).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 54).alt == "-") {
+                        if (tNum + 11 == id ||
+                            tNum - 11 == id ||
+                            tNum + 22 == id && checkSquare(tNum, 11, "-") ||
+                            tNum - 22 == id && checkSquare(tNum, 11, "-", false) ||
+                            tNum + 33 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") ||
+                            tNum - 33 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) ||
+                            tNum + 44 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") && checkSquare(tNum, 33, "-") ||
+                            tNum - 44 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) && checkSquare(tNum, 33, "-", false) ||
+                            tNum + 55 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") && checkSquare(tNum, 33, "-") && checkSquare(tNum, 44, "-") ||
+                            tNum - 55 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) && checkSquare(tNum, 33, "-", false) && checkSquare(tNum, 44, "-", false) ||
+                            tNum + 66 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") && checkSquare(tNum, 33, "-") && checkSquare(tNum, 44, "-") && checkSquare(tNum, 55, "-") ||
+                            tNum - 66 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) && checkSquare(tNum, 33, "-", false) && checkSquare(tNum, 44, "-", false) && checkSquare(tNum, 55, "-", false) ||
+                            tNum + 77 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") && checkSquare(tNum, 33, "-") && checkSquare(tNum, 44, "-") && checkSquare(tNum, 55, "-") && checkSquare(tNum, 66, "-") ||
+                            tNum - 77 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) && checkSquare(tNum, 33, "-", false) && checkSquare(tNum, 44, "-", false) && checkSquare(tNum, 55, "-", false) && checkSquare(tNum, 66, "-", false) ||
+                            tNum + 9 == id ||
+                            tNum - 9 == id ||
+                            tNum + 18 == id && checkSquare(tNum, 9, "-") ||
+                            tNum - 18 == id && checkSquare(tNum, 9, "-", false) ||
+                            tNum + 27 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") ||
+                            tNum - 27 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) ||
+                            tNum + 36 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") ||
+                            tNum - 36 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) ||
+                            tNum + 45 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") && checkSquare(tNum, 36, "-") ||
+                            tNum - 45 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) && checkSquare(tNum, 36, "-", false) ||
+                            tNum + 54 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") && checkSquare(tNum, 36, "-") && checkSquare(tNum, 45, "-") ||
+                            tNum - 54 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) && checkSquare(tNum, 36, "-", false) && checkSquare(tNum, 45, "-", false) ||
+                            tNum + 63 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") && checkSquare(tNum, 36, "-") && checkSquare(tNum, 45, "-") && checkSquare(tNum, 54, "-") ||
+                            tNum - 63 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) && checkSquare(tNum, 36, "-", false) && checkSquare(tNum, 45, "-", false) && checkSquare(tNum, 54, "-", false)) {
                             m = "true";
                         }
                     } else if (document.getElementById('alt').value[1] == "q") {
-                        if (parseInt(document.getElementById('mid').value) + 10 == id || parseInt(document.getElementById('mid').value) - 10 == id || parseInt(document.getElementById('mid').value) + 20 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" || parseInt(document.getElementById('mid').value) - 20 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" || parseInt(document.getElementById('mid').value) + 30 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" || parseInt(document.getElementById('mid').value) - 30 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" || parseInt(document.getElementById('mid').value) + 40 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 30).alt == "-" || parseInt(document.getElementById('mid').value) - 40 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 30).alt == "-" || parseInt(document.getElementById('mid').value) + 50 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 40).alt == "-" || parseInt(document.getElementById('mid').value) - 50 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 40).alt == "-" || parseInt(document.getElementById('mid').value) + 60 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 40).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 50).alt == "-" || parseInt(document.getElementById('mid').value) - 60 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 40).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 50).alt == "-" || parseInt(document.getElementById('mid').value) + 70 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 40).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 50).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 60).alt == "-" || parseInt(document.getElementById('mid').value) - 70 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 10).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 20).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 30).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 40).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 50).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 60).alt == "-" || parseInt(document.getElementById('mid').value) + 1 == id || parseInt(document.getElementById('mid').value) - 1 == id || parseInt(document.getElementById('mid').value) + 2 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" || parseInt(document.getElementById('mid').value) - 2 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" || parseInt(document.getElementById('mid').value) + 3 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" || parseInt(document.getElementById('mid').value) - 3 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" || parseInt(document.getElementById('mid').value) + 4 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 3).alt == "-" || parseInt(document.getElementById('mid').value) - 4 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 3).alt == "-" || parseInt(document.getElementById('mid').value) + 5 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 4).alt == "-" || parseInt(document.getElementById('mid').value) - 5 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 4).alt == "-" || parseInt(document.getElementById('mid').value) + 6 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 4).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 5).alt == "-" || parseInt(document.getElementById('mid').value) - 6 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 4).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 5).alt == "-" || parseInt(document.getElementById('mid').value) + 7 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 4).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 5).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 6).alt == "-" || parseInt(document.getElementById('mid').value) - 7 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 1).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 2).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 3).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 4).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 5).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 6).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 11 == id ||
-                            parseInt(document.getElementById('mid').value) - 11 == id ||
-                            parseInt(document.getElementById('mid').value) + 22 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 22 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 33 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 33 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 44 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 33).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 44 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 33).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 55 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 44).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 55 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 44).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 66 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 44).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 55).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 66 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 44).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 55).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 77 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 44).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 55).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 66).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 77 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 11).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 22).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 33).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 44).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 55).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 66).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 9 == id ||
-                            parseInt(document.getElementById('mid').value) - 9 == id ||
-                            parseInt(document.getElementById('mid').value) + 18 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 18 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 27 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 27 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 36 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 36 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 45 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 36).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 45 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 36).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 54 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 45).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 54 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 45).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 63 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 45).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 54).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 63 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 45).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 54).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) + 72 == id && document.getElementById(parseInt(document.getElementById('mid').value) + 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 45).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 54).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) + 63).alt == "-" ||
-                            parseInt(document.getElementById('mid').value) - 72 == id && document.getElementById(parseInt(document.getElementById('mid').value) - 9).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 18).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 27).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 36).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 45).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 54).alt == "-" && document.getElementById(parseInt(document.getElementById('mid').value) - 63).alt == "-") {
+                        if (tNum + 10 == id || tNum - 10 == id || tNum + 20 == id && checkSquare(tNum, 10, "-") || tNum - 20 == id && checkSquare(tNum, 10, "-", false) || tNum + 30 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") || tNum - 30 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) || tNum + 40 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") && checkSquare(tNum, 30, "-") || tNum - 40 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) && checkSquare(tNum, 30, "-", false) || tNum + 50 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") && checkSquare(tNum, 30, "-") && checkSquare(tNum, 40, "-") || tNum - 50 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) && checkSquare(tNum, 30, "-", false) && checkSquare(tNum, 40, "-", false) || tNum + 60 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") && checkSquare(tNum, 30, "-") && checkSquare(tNum, 40, "-") && checkSquare(tNum, 50, "-") || tNum - 60 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) && checkSquare(tNum, 30, "-", false) && checkSquare(tNum, 40, "-", false) && checkSquare(tNum, 50, "-", false) || tNum + 70 == id && checkSquare(tNum, 10, "-") && checkSquare(tNum, 20, "-") && checkSquare(tNum, 30, "-") && checkSquare(tNum, 40, "-") && checkSquare(tNum, 50, "-") && checkSquare(tNum, 60, "-") || tNum - 70 == id && checkSquare(tNum, 10, "-", false) && checkSquare(tNum, 20, "-", false) && checkSquare(tNum, 30, "-", false) && checkSquare(tNum, 40, "-", false) && checkSquare(tNum, 50, "-", false) && checkSquare(tNum, 60, "-", false) || tNum + 1 == id || tNum - 1 == id || tNum + 2 == id && checkSquare(tNum, 1, "-") || tNum - 2 == id && checkSquare(tNum, 1, "-", false) || tNum + 3 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") || tNum - 3 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) || tNum + 4 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") && checkSquare(tNum, 3, "-") || tNum - 4 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) && checkSquare(tNum, 3, "-", false) || tNum + 5 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") && checkSquare(tNum, 3, "-") && checkSquare(tNum, 4, "-") || tNum - 5 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) && checkSquare(tNum, 3, "-", false) && checkSquare(tNum, 4, "-", false) || tNum + 6 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") && checkSquare(tNum, 3, "-") && checkSquare(tNum, 4, "-") && checkSquare(tNum, 5, "-") || tNum - 6 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) && checkSquare(tNum, 3, "-", false) && checkSquare(tNum, 4, "-", false) && checkSquare(tNum, 5, "-", false) || tNum + 7 == id && checkSquare(tNum, 1, "-") && checkSquare(tNum, 2, "-") && checkSquare(tNum, 3, "-") && checkSquare(tNum, 4, "-") && checkSquare(tNum, 5, "-") && checkSquare(tNum, 6, "-") || tNum - 7 == id && checkSquare(tNum, 1, "-", false) && checkSquare(tNum, 2, "-", false) && checkSquare(tNum, 3, "-", false) && checkSquare(tNum, 4, "-", false) && checkSquare(tNum, 5, "-", false) && checkSquare(tNum, 6, "-", false) ||
+                            tNum + 11 == id ||
+                            tNum - 11 == id ||
+                            tNum + 22 == id && checkSquare(tNum, 11, "-") ||
+                            tNum - 22 == id && checkSquare(tNum, 11, "-", false) ||
+                            tNum + 33 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") ||
+                            tNum - 33 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) ||
+                            tNum + 44 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") && checkSquare(tNum, 33, "-") ||
+                            tNum - 44 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) && checkSquare(tNum, 33, "-", false) ||
+                            tNum + 55 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") && checkSquare(tNum, 33, "-") && checkSquare(tNum, 44, "-") ||
+                            tNum - 55 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) && checkSquare(tNum, 33, "-", false) && checkSquare(tNum, 44, "-", false) ||
+                            tNum + 66 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") && checkSquare(tNum, 33, "-") && checkSquare(tNum, 44, "-") && checkSquare(tNum, 55, "-") ||
+                            tNum - 66 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) && checkSquare(tNum, 33, "-", false) && checkSquare(tNum, 44, "-", false) && checkSquare(tNum, 55, "-", false) ||
+                            tNum + 77 == id && checkSquare(tNum, 11, "-") && checkSquare(tNum, 22, "-") && checkSquare(tNum, 33, "-") && checkSquare(tNum, 44, "-") && checkSquare(tNum, 55, "-") && checkSquare(tNum, 66, "-") ||
+                            tNum - 77 == id && checkSquare(tNum, 11, "-", false) && checkSquare(tNum, 22, "-", false) && checkSquare(tNum, 33, "-", false) && checkSquare(tNum, 44, "-", false) && checkSquare(tNum, 55, "-", false) && checkSquare(tNum, 66, "-", false) ||
+                            tNum + 9 == id ||
+                            tNum - 9 == id ||
+                            tNum + 18 == id && checkSquare(tNum, 9, "-") ||
+                            tNum - 18 == id && checkSquare(tNum, 9, "-", false) ||
+                            tNum + 27 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") ||
+                            tNum - 27 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) ||
+                            tNum + 36 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") ||
+                            tNum - 36 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) ||
+                            tNum + 45 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") && checkSquare(tNum, 36, "-") ||
+                            tNum - 45 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) && checkSquare(tNum, 36, "-", false) ||
+                            tNum + 54 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") && checkSquare(tNum, 36, "-") && checkSquare(tNum, 45, "-") ||
+                            tNum - 54 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) && checkSquare(tNum, 36, "-", false) && checkSquare(tNum, 45, "-", false) ||
+                            tNum + 63 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") && checkSquare(tNum, 36, "-") && checkSquare(tNum, 45, "-") && checkSquare(tNum, 54, "-") ||
+                            tNum - 63 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) && checkSquare(tNum, 36, "-", false) && checkSquare(tNum, 45, "-", false) && checkSquare(tNum, 54, "-", false) ||
+                            tNum + 72 == id && checkSquare(tNum, 9, "-") && checkSquare(tNum, 18, "-") && checkSquare(tNum, 27, "-") && checkSquare(tNum, 36, "-") && checkSquare(tNum, 45, "-") && checkSquare(tNum, 54, "-") && checkSquare(tNum, 63, "-") ||
+                            tNum - 72 == id && checkSquare(tNum, 9, "-", false) && checkSquare(tNum, 18, "-", false) && checkSquare(tNum, 27, "-", false) && checkSquare(tNum, 36, "-", false) && checkSquare(tNum, 45, "-", false) && checkSquare(tNum, 54, "-", false) && checkSquare(tNum, 63, "-", false)) {
                             m = "true";
                         }
                     }
@@ -804,51 +982,85 @@
                         }
                         /** King inCheck test */
                         if (document.getElementById('alt').value[1] == "p") {
-                            if (document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(id) + 9).alt[1] == "k" ||
-                                document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(id) + 11).alt[1] == "k" ||
-                                document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(id) - 9).alt[1] == "k" ||
-                                document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(id) - 11).alt[1] == "k") {
-                                if (document.getElementById('alt').value[0] == "b") {
-                                    snackMessage = "Check! P2-Pawn to P1-King";
-                                } else {
-                                    snackMessage = "Check! P1-Pawn to P2-King";
+                            try {
+                                if (document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(id) + 9).alt[1] == "k" ||
+                                    document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(id) + 11).alt[1] == "k" ||
+                                    document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(id) - 9).alt[1] == "k" ||
+                                    document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(id) - 11).alt[1] == "k") {
+                                    if (document.getElementById('alt').value[0] == "b") {
+                                        snackMessage = "Check! P2-Pawn to P1-King";
+                                    } else {
+                                        snackMessage = "Check! P1-Pawn to P2-King";
+                                    }
                                 }
+                            } catch (er) {
+                                try {
+                                    if (document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(id) - 9).alt[1] == "k" ||
+                                        document.getElementById('alt').value[0] == "w" && document.getElementById(parseInt(id) - 11).alt[1] == "k" ||
+                                        document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(id) + 9).alt[1] == "k" ||
+                                        document.getElementById('alt').value[0] == "b" && document.getElementById(parseInt(id) + 11).alt[1] == "k") {
+                                        if (document.getElementById('alt').value[0] == "b") {
+                                            snackMessage = "Check! P2-Pawn to P1-King";
+                                        } else {
+                                            snackMessage = "Check! P1-Pawn to P2-King";
+                                        }
+                                    }
+                                } catch (erre) { }
                             }
                         } else if (document.getElementById('alt').value[1] == "k") {
-                            if (document.getElementById(parseInt(id) - 1).alt[1] == "k" ||
-                                document.getElementById(parseInt(id) + 1).alt[1] == "k" ||
-                                document.getElementById(parseInt(id) + 9).alt[1] == "k" ||
-                                document.getElementById(parseInt(id) + 10).alt[1] == "k" ||
-                                document.getElementById(parseInt(id) + 11).alt[1] == "k" ||
-                                document.getElementById(parseInt(id) - 9).alt[1] == "k" ||
-                                document.getElementById(parseInt(id) - 10).alt[1] == "k" ||
-                                document.getElementById(parseInt(id) - 11).alt[1] == "k") {
-                                if (document.getElementById('alt').value[0] == "b") {
-                                    snackMessage = "Check! P2-King to P1-King";
-                                } else {
-                                    snackMessage = "Check! P1-King to P2-King";
+                            try {
+                                if (document.getElementById(parseInt(id) + 1).alt[1] == "k" ||
+                                    document.getElementById(parseInt(id) + 9).alt[1] == "k" ||
+                                    document.getElementById(parseInt(id) + 10).alt[1] == "k" ||
+                                    document.getElementById(parseInt(id) + 11).alt[1] == "k" ||
+                                    document.getElementById(parseInt(id) - 1).alt[1] == "k" ||
+                                    document.getElementById(parseInt(id) - 9).alt[1] == "k" ||
+                                    document.getElementById(parseInt(id) - 10).alt[1] == "k" ||
+                                    document.getElementById(parseInt(id) - 11).alt[1] == "k") {
+                                    if (document.getElementById('alt').value[0] == "b") {
+                                        snackMessage = "Check! P2-King to P1-King";
+                                    } else {
+                                        snackMessage = "Check! P1-King to P2-King";
+                                    }
                                 }
+                            } catch (e) {
+                                try {
+                                    if (document.getElementById(parseInt(id) - 1).alt[1] == "k" ||
+                                        document.getElementById(parseInt(id) - 9).alt[1] == "k" ||
+                                        document.getElementById(parseInt(id) - 10).alt[1] == "k" ||
+                                        document.getElementById(parseInt(id) - 11).alt[1] == "k" ||
+                                        document.getElementById(parseInt(id) + 1).alt[1] == "k" ||
+                                        document.getElementById(parseInt(id) + 9).alt[1] == "k" ||
+                                        document.getElementById(parseInt(id) + 10).alt[1] == "k" ||
+                                        document.getElementById(parseInt(id) + 11).alt[1] == "k") {
+                                        if (document.getElementById('alt').value[0] == "b") {
+                                            snackMessage = "Check! P2-King to P1-King";
+                                        } else {
+                                            snackMessage = "Check! P1-King to P2-King";
+                                        }
+                                    }
+                                } catch (f) { }
                             }
                         } else if (document.getElementById('alt').value == "wh") {
-                            if (document.getElementById(parseInt(id) + 8).alt == "bk" ||
-                                document.getElementById(parseInt(id) + 12).alt == "bk" ||
-                                document.getElementById(parseInt(id) + 19).alt == "bk" ||
-                                document.getElementById(parseInt(id) + 21).alt == "bk" ||
-                                document.getElementById(parseInt(id) - 8).alt == "bk" ||
-                                document.getElementById(parseInt(id) - 12).alt == "bk" ||
-                                document.getElementById(parseInt(id) - 19).alt == "bk" ||
-                                document.getElementById(parseInt(id) - 21).alt == "bk") {
+                            if (checkSquare(id, 8, "bk") ||
+                                checkSquare(id, 12, "bk") ||
+                                checkSquare(id, 19, "bk") ||
+                                checkSquare(id, 21, "bk") ||
+                                checkSquare(id, 8, "bk", false) ||
+                                checkSquare(id, 12, "bk", false) ||
+                                checkSquare(id, 19, "bk", false) ||
+                                checkSquare(id, 21, "bk", false)) {
                                 snackMessage = "Check! P1-Knight to P2-King";
                             }
                         } else if (document.getElementById('alt').value == "bh") {
-                            if (document.getElementById(parseInt(id) + 8).alt == "wk" ||
-                                document.getElementById(parseInt(id) + 12).alt == "wk" ||
-                                document.getElementById(parseInt(id) + 19).alt == "wk" ||
-                                document.getElementById(parseInt(id) + 21).alt == "wk" ||
-                                document.getElementById(parseInt(id) - 8).alt == "wk" ||
-                                document.getElementById(parseInt(id) - 12).alt == "wk" ||
-                                document.getElementById(parseInt(id) - 19).alt == "wk" ||
-                                document.getElementById(parseInt(id) - 21).alt == "wk") {
+                            if (checkSquare(id, 8, "wk") ||
+                                checkSquare(id, 12, "wk") ||
+                                checkSquare(id, 19, "wk") ||
+                                checkSquare(id, 21, "wk") ||
+                                checkSquare(id, 8, "wk", false) ||
+                                checkSquare(id, 12, "wk", false) ||
+                                checkSquare(id, 19, "wk", false) ||
+                                checkSquare(id, 21, "wk", false)) {
                                 snackMessage = "Check! P2-Knight to P1-King";
                             }
                         } else if (document.getElementById('alt').value == "wr") {
@@ -928,170 +1140,154 @@
 
             /* In check test, Diagonal path to king. */
             function inCheckD(id, ck) {
-                // Down Right.
+                /* Note: try statements required to detect check in all cases.
+                  *  Error occurrs with certain peice positions.
+                  *  Due to lacking surrounding squares (Non existent ID's).
+                  */
+                 /* Down Right.*/
                 function downR(id, ck) {
                     for (i = id; i < 90;) {
                         i = parseInt(i) + 11;
-                        if (document.getElementById(i).alt != "-") {
-                            if (document.getElementById(i).alt == ck) {
-                                return true;
+                        try {
+                            if (document.getElementById(i).alt != "-") {
+                                if (document.getElementById(i).alt == ck) {
+                                    return true;
+                                }
+                                break;
                             }
-                            break;
-                        }
+                        } catch (err) { }
                     }
                 }
-                // Down Left.
+                /* Down Left.*/
                 function downL(id, ck) {
                     for (i = id; i < 90;) {
                         i = parseInt(i) + 9;
-                        if (document.getElementById(i).alt != "-") {
-                            if (document.getElementById(i).alt == ck) {
-                                return true;
+                        try {
+                            if (document.getElementById(i).alt != "-") {
+                                if (document.getElementById(i).alt == ck) {
+                                    return true;
+                                }
+                                break;
                             }
-                            break;
-                        }
+                        } catch (err) { }
                     }
                 }
-                // Up Right.
+                /* Up Right.*/
                 function upR(id, ck) {
                     for (i = id; i > 0;) {
                         i = parseInt(i) - 11;
-                        if (document.getElementById(i).alt != "-") {
-                            if (document.getElementById(i).alt == ck) {
-                                return true;
+                        try {
+                            if (document.getElementById(i).alt != "-") {
+                                if (document.getElementById(i).alt == ck) {
+                                    return true;
+                                }
+                                break;
                             }
-                            break;
-                        }
+                        } catch (err) { }
                     }
                 }
-                // Up Left.
+                /* Up Left.*/
                 function upL(id, ck) {
                     for (i = id; i > 0;) {
                         i = parseInt(i) - 9;
-                        if (document.getElementById(i).alt != "-") {
-                            if (document.getElementById(i).alt == ck) {
-                                return true;
+                        try {
+                            if (document.getElementById(i).alt != "-") {
+                                if (document.getElementById(i).alt == ck) {
+                                    return true;
+                                }
+                                break;
                             }
-                            break;
-                        }
+                        } catch (err) { }
                     }
                 }
-                /* Note: try statements required to detect check in all cases.
-                 *  Some error is occurring with certain peice positions.
-                 *  The function fails sometimes depending on surrounding peices.
-                 *  ** Exact cause yet to be determined. */
-                try {
-                    if (downR(id, ck)) {
-                        return true;
-                    }
-                } catch (e) {
-
+                if (downR(id, ck)) {
+                    return true;
                 }
-                try {
-                    if (downL(id, ck)) {
-                        return true;
-                    }
-                } catch (e) {
-
+                if (downL(id, ck)) {
+                    return true;
                 }
-                try {
-                    if (upR(id, ck)) {
-                        return true;
-                    }
-                } catch (e) {
-
+                if (upR(id, ck)) {
+                    return true;
                 }
-                try {
-                    if (upL(id, ck)) {
-                        return true;
-                    }
-                } catch (e) {
-
+                if (upL(id, ck)) {
+                    return true;
                 }
                 return false;
             }
 
             /* In check test, Straight path to king. */
             function inCheckS(id, ck) {
-                // check for clear path to king from peice to row start.
+                /** check for clear path to king from peice to row start. */
                 function rowCheckS(id, ck) {
                     rs = id[0] + 0;
                     rowStart = parseInt(rs);
                     for (i = id; i > rowStart;) {
                         i = parseInt(i) - 1;
-                        if (document.getElementById(i).alt != "-") {
-                            if (document.getElementById(i).alt == ck) {
-                                return true;
+                        try {
+                            if (document.getElementById(i).alt != "-") {
+                                if (document.getElementById(i).alt == ck) {
+                                    return true;
+                                }
+                                break;
                             }
-                            break;
-                        }
+                        } catch (err) { }
                     }
                 }
-                // check for clear path to king from peice to row end.
+                /* check for clear path to king from peice to row end. */
                 function rowCheckE(id, ck) {
                     re = id[0] + 9;
                     rowEnd = parseInt(re);
                     for (i = id; i < rowEnd;) {
                         i = parseInt(i) + 1;
-                        if (document.getElementById(i).alt != "-") {
-                            if (document.getElementById(i).alt == ck) {
-                                return true;
+                        try {
+                            if (document.getElementById(i).alt != "-") {
+                                if (document.getElementById(i).alt == ck) {
+                                    return true;
+                                }
+                                break;
                             }
-                            break;
-                        }
+                        } catch (err) { }
                     }
                 }
-                // check for clear path to king from peice to column end.
+                /* check for clear path to king from peice to column end. */
                 function colCheckD(id, ck) {
                     for (i = id; i < 90;) {
                         i = parseInt(i) + 10;
-                        if (document.getElementById(i).alt != "-") {
-                            if (document.getElementById(i).alt == ck) {
-                                return true;
+                        try {
+                            if (document.getElementById(i).alt != "-") {
+                                if (document.getElementById(i).alt == ck) {
+                                    return true;
+                                }
+                                break;
                             }
-                            break;
-                        }
+                        } catch (err) { }
                     }
                 }
-                // check for clear path to king from peice to column start.
+                /* check for clear path to king from peice to column start. */
                 function colCheckU(id, ck) {
                     for (i = id; i > 0;) {
                         i = parseInt(i) - 10;
-                        if (document.getElementById(i).alt != "-") {
-                            if (document.getElementById(i).alt == ck) {
-                                return true;
+                        try {
+                            if (document.getElementById(i).alt != "-") {
+                                if (document.getElementById(i).alt == ck) {
+                                    return true;
+                                }
+                                break;
                             }
-                            break;
-                        }
+                        } catch (err) { }
                     }
                 }
-                try {
-                    if (rowCheckS(id, ck)) {
-                        return true;
-                    }
-                } catch (e) {
-
+                if (rowCheckS(id, ck)) {
+                    return true;
                 }
-                try {
-                    if (rowCheckE(id, ck)) {
-                        return true;
-                    }
-                } catch (e) {
-
+                if (rowCheckE(id, ck)) {
+                    return true;
                 }
-                try {
-                    if (colCheckD(id, ck)) {
-                        return true;
-                    }
-                } catch (e) {
-
+                if (colCheckD(id, ck)) {
+                    return true;
                 }
-                try {
-                    if (colCheckU(id, ck)) {
-                        return true;
-                    }
-                } catch (e) {
-
+                if (colCheckU(id, ck)) {
+                    return true;
                 }
                 return false;
             }
