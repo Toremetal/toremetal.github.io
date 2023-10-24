@@ -340,5 +340,26 @@
     <script>
         includeHTML();
     </script>
+    <script>
+        function countRepo(pg) {
+            document.getElementById('repolog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
+            switch (pg) {
+                case "repoESP32":
+                    window.open('https://github.com/Toremetal/ESP32_Examples-ESP32-Camera-CameraWebServer');
+                    break;
+                case "repoAdsTxt":
+                    window.open('https://github.com/Toremetal/AdsTxt_Source');
+                    break;
+                case "repoPos":
+                    window.open('https://github.com/Toremetal/Pos');
+                    break;
+                case "repoFileMod":
+                    window.open('https://github.com/Toremetal/filemod');
+                    break;
+                default:
+                // no default.
+            }
+        }
+    </script>
 </body>
 </html>

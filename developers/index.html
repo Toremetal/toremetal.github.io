@@ -209,9 +209,9 @@
         </div>
         <div class="main" style="object-fit:scale-down; height: fit-content; max-width:100%;">
             <!-- Page Content -->
-            <div style="object-fit:scale-down;padding:0;overflow-y: hidden; scroll-behavior: auto; height: fit-content;max-width:100%; background-color: transparent; border-radius: 5px;" w3-include-html="https://toremetal.com/developers/developers.html" >
+            <div style="object-fit:scale-down;padding:0;overflow-y: hidden; scroll-behavior: auto; height: fit-content;max-width:100%; background-color: transparent; border-radius: 5px;" w3-include-html="https://toremetal.com/developers/developers.html">
 
-                
+
             </div>
             <!-- End Page Content -->
         </div>
@@ -333,6 +333,27 @@
         includeHTML();
     </script>
 
+    <script>
+        function countRepo(pg) {
+            document.getElementById('repolog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
+            switch (pg) {
+                case "repoESP32":
+                    window.open('https://github.com/Toremetal/ESP32_Examples-ESP32-Camera-CameraWebServer');
+                    break;
+                case "repoAdsTxt":
+                    window.open('https://github.com/Toremetal/AdsTxt_Source');
+                    break;
+                case "repoPos":
+                    window.open('https://github.com/Toremetal/Pos');
+                    break;
+                case "repoFileMod":
+                    window.open('https://github.com/Toremetal/filemod');
+                    break;
+                default:
+                // no default.
+            }
+        }
+    </script>
     <!-- View Count Script auto Pg Name (window.location.pathname) -->
     <script>
         document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "&ext='></iframe>");

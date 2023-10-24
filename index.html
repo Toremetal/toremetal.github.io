@@ -293,5 +293,26 @@
     <script>/** * displays a message to the user. * @param message The Message to display. * function snackbar() { var x = document.getElementById("snackbar"); x.className = "show"; setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000); } */ function snackbar(message) { var x = document.getElementById("snackbar"); x.innerText = message; x.className = "show"; setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000); }</script>
     <script type="text/javascript">function sh(id) { var x = document.getElementById(id); if (x.style.display === "block") { x.style.display = "none"; x.hidden = true; try { var btn = document.getElementById(id + "btn"); if (btn.innerHTML.includes('↧')) { let result = btn.innerHTML.replace('↧', '↥'); btn.innerHTML = result; } else if (btn.innerHTML.includes("-")) { let result = btn.innerHTML.replace("-", "+"); btn.innerHTML = result; } } catch (err) { } if (id.includes("reset")) { document.getElementById(id).reset; } } else { x.style.display = "block"; x.hidden = false; try { var btn = document.getElementById(id + "btn"); if (btn.innerHTML.includes("+")) { let result = btn.innerHTML.replace("+", "-"); btn.innerHTML = result; } else if (btn.innerHTML.includes('↥')) { let result = btn.innerHTML.replace('↥', '↧'); btn.innerHTML = result; } } catch (err) { } } } function clstv() { var x = document.getElementById("tv"); x.hidden = !x.hidden; } function mytv(chlnk) { var x = document.getElementById("tvs"); x.src = chlnk; document.getElementById('tv').hidden = false; } function lour() { window.location = "/"; } function ppol() { window.location = "/privacypolicy"; } function gotoWebapp() { window.location = "/signs/app"; } function gotoMusic() { window.location = "/radio"; } function gotoAndroid() { window.location = "/android"; } function gotoWindows() { window.location = "/windows"; } function tmappsws() { window.location = "/apps/"; } function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); } function gdevMe() { gotopg("https://g.dev/toremetal"); } function vGPCertMe() { gotopg("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449"); } function gotopg(pg) { window.location = pg; }</script>
     <script>includeHTML();</script>
+    <script>
+        function countRepo(pg) {
+            document.getElementById('repolog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
+            switch (pg) {
+                case "repoESP32":
+                    window.open('https://github.com/Toremetal/ESP32_Examples-ESP32-Camera-CameraWebServer');
+                    break;
+                case "repoAdsTxt":
+                    window.open('https://github.com/Toremetal/AdsTxt_Source');
+                    break;
+                case "repoPos":
+                    window.open('https://github.com/Toremetal/Pos');
+                    break;
+                case "repoFileMod":
+                    window.open('https://github.com/Toremetal/filemod');
+                    break;
+                default:
+                // no default.
+            }
+        }
+    </script>
 </body>
 </html>
