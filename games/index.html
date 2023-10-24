@@ -159,7 +159,7 @@
 
     <!-- The flexible grid (content) -->
     <div class="row">
-        <div class="side">
+        <div class="side" style="object-fit:scale-down; height: fit-content; max-width:100%;">
             <h2>The ™T©ReMeTaL Games</h2>
             <div class="fakeimg" style="height:200px;" align="center">
                 <img class="zoom highlight chrome-border" src="/img/cube4.png" style='height: 175px; width:340px; object-fit: fill;' />
@@ -176,12 +176,12 @@
             <!--<br>
             <div id="words" class="fakeimg repo" style="height: 60px; cursor: pointer;" onclick='document.getElementById("gamess").src=id'>Word tools</div>-->
         </div>
-        <div class="main">
+        <div class="main" style="object-fit:scale-down; height: fit-content; max-width:100%;">
             <!--/* Content */-->
             <style>
                 .mygames iframe {
                     min-width: 100%;
-                    min-height: 90px;
+                    min-height: fit-content;
                     align-self: center;
                     align-content: center;
                     align-items: center;
@@ -450,7 +450,7 @@
             </style>
             <div class="mygames">
                 <div id="bomb" class="gamebody">
-                    <iframe id="gamess" src="chess" align="middle" frameborder="0"></iframe>
+                    <iframe loading="eager" id="gamess" src="chess" align="middle" frameborder="0"></iframe>
                 </div>
 
                 <br />
