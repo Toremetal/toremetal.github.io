@@ -88,7 +88,8 @@
 
         .body {
             min-width: fit-content;
-            height: fit-content;
+            min-height: fit-content;
+            height: 100%;
             position: fixed;
             bottom: 0;
             top: 0;
@@ -105,7 +106,8 @@
             margin: 0;
             text-align: center;
             min-width: fit-content;
-            height: fit-content;
+            min-height: fit-content;
+            height: 100%;
             object-fit: scale-down;
         }
         * {
@@ -291,7 +293,7 @@
         /* End of Snackbar */
     </style>
 </head>
-<body>
+<body onload="setMinMaxBtn()">
     <div class="body">
         <form id="win" action="" hidden style="padding:8px; border:groove 1px grey; position: absolute; top: 20%; left: 47%; background-color: orangered; border-radius: 6px;">
             <label id="winner" style="color: mediumblue; text-shadow: 1px 1px 1px grey, 0 0 1em white, 0 0 0.2em silver;"></label><br /><input type="submit" value="New Game" />
@@ -300,9 +302,9 @@
         <input id="alt" value="" hidden />
         <div class="board">
             <!-- hidden elements are used to prevent non existing element errors
-            from occuring during the move and check testing functions. Essentially creating
-            a full 0 to 90 box grid and allow functions to treat all active squares equally
-            without the need for modified code to handle the start and end squares. -->
+        from occuring during the move and check testing functions. Essentially creating
+        a full 0 to 90 box grid and allow functions to treat all active squares equally
+        without the need for modified code to handle the start and end squares. -->
             <img id="0" alt="-" hidden />
             <img id="1" alt="-" hidden />
             <img id="2" alt="-" hidden />
@@ -531,14 +533,30 @@
             <img id="97" alt="-" hidden />
             <img id="98" alt="-" hidden />
             <img id="99" alt="-" hidden />
-        </div>
+        </div>    
+        <h6 style="height:12px;position:absolute;left:2%;bottom:5%;"><a hidden style="color:#ef2400;" id="max" target="_top" href="/games/chess">Maximize</a><a hidden style="color:#ee2400;" id="min" target="_top" href="/games">Minimize</a></h6>
+
         <div style="background-color:lightblue;border: groove 1px black;border-radius:6px;width:fit-content;margin:auto;padding:0 4px;">
             <h3 style="margin:0;padding:0;color:blue;text-shadow:1px 1px 1px grey, 0 0 1em white, 0 0 0.2em silver;">Current Move</h3>
             <input id="player1" value="1" type="radio" checked disabled /><label for="player1">Player 1</label>
             <input id="player2" value="2" type="radio" disabled /><label for="player2">Player 2</label>
-        </div>
+        </div><br /><br />
+        <script>
+            /* <!-- */
+            function pageInIframe() {
+                return (window.location !== window.parent.location);
+            }
+            function setMinMaxBtn() {
+                if (pageInIframe()) {
+                    document.getElementById("max").hidden = false;
+                } else {
+                    document.getElementById("min").hidden = false;
+                }
+            }
+        /* --> */
+        </script>
         <script type="text/javascript">
-
+            /* <!-- */
             function move(id, alt) {
                 id = id;
                 snackMessage = "";
@@ -1077,9 +1095,11 @@
                 }
                 return false;
             }
+            /* --> */
         </script>
 
         <script type="text/javascript">
+            /* <!-- */
             /** Displays a message to the user.
              *   @param message
              * Displays a message to the user. */
@@ -1089,6 +1109,7 @@
                 x.className = "show";
                 setTimeout(function () { x.className = x.className.replace("show", ""); }, 2900);
             }
+            /* --> */
         </script>
         <!-- snackbar -->
         <div id="snackbar">
@@ -1120,7 +1141,9 @@
     </style>
     <!-- View Count Script auto Pg Name (window.location.pathname) -->
     <script>
+        /* <!-- */
         document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "'></iframe>");
+        /* --> */
     </script>
 </body>
 </html>
