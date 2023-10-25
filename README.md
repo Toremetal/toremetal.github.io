@@ -1,13 +1,11 @@
-**/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.github.io ############ #<br />
+**/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.com ############ #<br />
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website for Apps, Software, and Coding Solutions.<br />
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; visit us at https://toremetal.github.io<br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or https://github.toremetal.com<br />
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or https://toremetal.com<br />
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.github.io ############ #<br />
-  *  **********/ &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ™T©ReMeTaL Software : Copyright (c) 2022 ™T©ReMeTaL. \**********
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; visit us at https://toremetal.com<br />
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.com ############ #<br />
+  *  **********/ &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ™T©ReMeTaL Software : Copyright (c) 2023 ™T©ReMeTaL. \**********
      ***************************************************************************************
                                     ™T©ReMeTaL Software.
-            Copyright (C) 2022 : ©2022™T©ReMeTaL(David W. Rick).    Date:8/29/2022
+            Copyright (C) 2023 : ©2023™T©ReMeTaL(David W. Rick).    Date:10/24/2023
                              Computer Scientist:  David W. Rick
             Licensed under this License Agreement,  Version 1.0  (this "License").
             You may not use this Software except, in compliance with this License.
@@ -40,7 +38,8 @@
  *     Users specifically waive and disclaim the applicability of the Uniform Commercial Code, Uniform
        Electronic Transactions Act, and Uniform Computer Information Transactions Act to this Agreement.
        
- *     The License Agreement consists of a description of the rights and duties of the User of the Computer Software.
+ *     The License Agreement consists of a description of the rights and duties of the User of the
+       Computer Software.
        
  *     THE RIGHTS AND DUTIES OF THE USER
        The Producer permits the User to("User's Software"):
@@ -59,37 +58,39 @@
        - to remove or change any trademarks or information about the Producer included
        in the Computer Software and the materials provided together with it.
        
- *     The Producer does not warrant that the Computer Software will meet the expectations of the User or
-       that it will properly cooperate with other Computer Software. The Producer does not warrant either
-       that the Computer Software will function without errors. If the User intends to use the Computer Software
-       for any particular purpose, they accept the full risk of the results they may obtain.
+ *     The Producer does not warrant that the Computer Software will meet the expectations of the
+       User or that it will properly cooperate with other Computer Software. The Producer does not
+       warrant either that the Computer Software will function without errors. If the User intends
+       to use the Computer Software for any particular purpose, they accept the full risk of the
+       results they may obtain.
        
  *     The Producer may collect and use technical information, gathered as part of a support or other
        services provided to you related to the Computer Software, to improve our products or services
        or provide customized services or technologies to you. We may disclose this information to others,
        but not in a form that personally identifies you.
        
- *     THE PRODUCER ASSUMES NO RESPONSIBILITY FOR ANY RESULT FROM THE USE OR IMPOSSIBILITY TO USE THE SOFTWARE.
-       THE PRODUCER IS NOT LIABLE AND REVOKES ANY AND ALL LIABILITIES IN ASSOCIATION WITH THIS OR THE USE OF
-       THIS SOFTWARE UNDER THIS AGREEMENT.
+ *     THE PRODUCER ASSUMES NO RESPONSIBILITY FOR ANY RESULT FROM THE USE OR IMPOSSIBILITY TO USE THE
+       SOFTWARE. THE PRODUCER IS NOT LIABLE AND REVOKES ANY AND ALL LIABILITIES IN ASSOCIATION WITH
+       THIS OR THE USE OF THIS SOFTWARE UNDER THIS AGREEMENT.
   
- *     EVERY ATTEMPT IS MADE TO ENSURE THE COMPLETENESS, FUNCTIONALITY, AND RELIABILITY OF ™T©ReMeTaL SOFTWARE.
-       HOWEVER, IN AN EVER EVOLVING WORLD SOFTWARE CAN BREAK DUE TO ADVANCEMENT OF THE TECHNOLOGY IT OPERATES WITHIN.
+ *     EVERY ATTEMPT IS MADE TO ENSURE THE COMPLETENESS, FUNCTIONALITY, AND RELIABILITY OF
+       ™T©ReMeTaL SOFTWARE. HOWEVER, IN AN EVER EVOLVING WORLD SOFTWARE CAN BREAK DUE TO
+       ADVANCEMENT OF THE TECHNOLOGY IT OPERATES WITHIN.
        
  *     Software is As-Is Without Warranty of Any Kind, Implied or otherwise.
        
  *     ™T©ReMeTaL
        Privacy Policy Available online at
- *     https://toremetal.com/privacypolicy
+ * * https://toremetal.com/privacypolicy
        
  *     For Questions, comments, and inquiries
        Email:
  *     toremetal@toremetal.com
  *     Or
        Visit us on the web at
- *     https://toremetal.com
+ * * https://toremetal.com
        
  *     ™T©ReMeTaL
-       ©2022™T©ReMeTaL
+       ©2023™T©ReMeTaL
        All Rights Reserved.
      **********************************************************************************************************
