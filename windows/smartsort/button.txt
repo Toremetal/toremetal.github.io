@@ -1,1 +1,1 @@
-If these components are already installed,<br />you can <A id='Smart_Sort.application' onclick="myFunction('Smart_Sort.application', 'downloadsmartsort')" style="border:1px groove grey;border-radius:5px;" class="hover-btn">(launch)</A> the application now.
+If these components are already installed,<br />you can <A id='Smart_Sort.application' onclick="myFunction('https://toremetal.com/Smart-Sort/myMLApp/app/setup.exe', 'downloadsmartsort')" style="border:1px groove grey;border-radius:5px;" class="hover-btn">(launch)</A> the application now.
