@@ -506,7 +506,6 @@
                 padding: 4px 0;
                 min-width: 140px;
             }
-
                 .devapplist:hover {
                     background-color: #00000094;
                     width: fit-content;
@@ -515,40 +514,12 @@
                 }
         </style>
         <div class='devapplist'>
-            <!--<div style="margin-top: 30px;width:156px;float:left;">-->
             <div style="display:inline;">
                 <button id="appbtn" class="closeButton s3Dbtn hover-btn" style="color:red;border-radius:5px;padding:0 4px;margin:4px 10px;max-width:100px;max-height:34px;width:fit-content;height:fit-content;" onclick="shiA()">Apps-List</button>
-                <!--<button id="devbtn" class="closeButton s3Dbtn hover-btn" style="color:white;border-radius:5px;padding:0 4px;margin:4px 10px;max-width:108px;max-height:34px;width:fit-content;height:fit-content;" onclick="shiD();">Developers</button>-->
             </div>
             <br />
             <sub style="transform: rotate(90deg); cursor: pointer; font-size: 40px; font-weight: 600; line-height: 0; text-shadow: 1px 1px blue; text-align: right; float: right;">⇯</sub>
-            <!--<div id="devlist" style="text-shadow:1px 1px 2px blue, 0 0 1em red, 0 0 0.2em darkred;margin-top:10px;width:fit-content;height:fit-content;display:none;text-align:left">
-                <ul>
-                    <li>
-                        <a href='?dev=™T©ReMeTaL'>™T©ReMeTaL</a>
-                    </li>
-                </ul>
-            </div>-->
-            <div id="appslist" style="text-shadow: 1px 1px 2px blue, 0 0 1em red, 0 0 0.2em darkred; margin-top: 10px; width: fit-content; height: fit-content; display: block; text-align: left">
-                <ul style="list-style:none;">
-                    <li style="margin-left:-40px;">
-                        <a href='/windows/adstxt/'>Ads.txt</a>
-                    </li>
-                    <li style="margin-left:-40px;">
-                        <a href='/windows/filemod/'>FileMod</a>
-                    </li>
-                    <li style="margin-left:-40px;">
-                        <a href='/windows/isomaker/'>ISO-Maker</a>
-                    </li>
-                    <li style="margin-left:-40px;">
-                        <a href='/windows/smartsort/'>Smart-Sort</a>
-                    </li>
-                    <li style="margin-left:-40px;">
-                        <a href='/windows/sitemaps/'>Site Maps</a>
-                    </li>
-                </ul>
-            </div>
-            <!--</div>-->
+            <div id="appslist" w3-include-html="/content/menu.html" style="text-shadow: 1px 1px 2px blue, 0 0 1em red, 0 0 0.2em darkred; margin-top: 10px; width: fit-content; height: fit-content; display: block; text-align: left"></div>
         </div>
         <br />
 
@@ -558,7 +529,6 @@
         border-radius: 5px;
         border: 1px solid #ccc;
         background-color:whitesmoke; overflow:auto;width:fit-content;padding:8px;">
-                <!-- Begin Banner -->
                 <TABLE CELLPADDING="2" CELLSPACING="0" BORDER="0" BGCOLOR="#cecece" WIDTH="100%">
                     <TR>
                         <TD>
