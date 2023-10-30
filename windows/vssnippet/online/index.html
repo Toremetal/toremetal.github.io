@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta lang="en_US" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=0, shrink-to-fit=no" />
+    <meta name="description" content="&#8482;T&#169;ReMeTaL Technology - Software and Coding Solutions. Visual Studio code snippet generator helps you quickly and easily create code snippets for Visual Studio" />
+    <meta name="keywords" content="snippet, snippets, code, snippet, code snippet, code snippets, visual studio, Visual Studio, Visual Studio 2022, Visual Studio code snippet" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="copyright" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="author" content="&#8482;T&#169;ReMeTaL" />
+    <link rel="canonical" href="https://toremetal.com/vssnippet/online" />
+    <link rel="icon" href="https://toremetal.com/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link crossorigin=crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+
+    <title>&trade;T&copy;ReMeTaL - VS Code-Snippets Generator</title>
+
+    <style>
+        #tm_snippet {
+            font-family: 'IM Fell English SC', serif;
+        }
+
+            #tm_snippet img {
+                cursor: pointer;
+                border-radius: 25%;
+            }
+            #tm_snippet i {
+                color: red;
+            }
+            #tm_snippet b {
+                color: aqua;
+            }
+
+                #tm_snippet img:hover {
+                    background-color: #d8070789;
+                    opacity: 0.85;
+                    box-shadow: 0.5px 1px 2px rgba(0,0,0,0.21);
+                }
+
+            #tm_snippet a:hover {
+                color: #d8070795;
+                opacity: 0.85;
+                text-shadow: 0.5px 1px 2px rgba(0,0,0,0.21);
+            }
+
+        #snippet-panel {
+            width: calc(100% - 30px);
+            float: left;
+            display: flex-block;
+            border: 1px solid black;
+            padding: 4px 15px 10px;
+            object-position: top;
+            margin: 4px 0;
+            border-radius: 5px;
+            background-color: lightskyblue;
+            text-align: right;
+        }
+
+            #snippet-panel input[type=text] {
+                text-align: left;
+                width: calc(100% - 130px);
+                margin: 4px 10px 4px 0;
+            }
+
+            #snippet-panel select {
+                text-align: left;
+                width: calc(100% - 130px);
+                margin: 4px 10px 4px 0;
+            }
+
+            #snippet-panel textarea {
+                text-align: left;
+                width: calc(100% - 130px);
+                margin: 4px 10px 4px 0;
+            }
+
+        #preview {
+            text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+            border-radius: 5px;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.41);
+            border: 1px solid rgb(177, 176, 176);
+            display: flex-block;
+            padding: 4px 2px 10px;
+            width: calc(100% - 30px);
+            height: fit-content;
+            margin: 4px;
+            position: absolute;
+            background-color: lightgrey;
+        }
+
+            #preview textarea {
+                width: 100%;
+                color: darkgreen;
+                margin: 0 0;
+                text-shadow: 0.5px 0.5px 0.5px whitesmoke;
+                border-radius: 5px;
+                box-sizing: border-box;
+                box-shadow: 1px 2px 5px rgba(0,0,0,0.41);
+                border: 1px solid rgb(177, 176, 176);
+            }
+
+            #preview label {
+                color: blue;
+            }
+
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+            #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body style="background-color:deepskyblue">
+    <div id="tm_snippet" align="center">
+        <div align="center" style="width: fit-content; padding: 4px; height: fit-content; position: absolute; left: 0; right: 0; margin: 0 auto; background-color: black; color: chartreuse; white-space: pre-line; border-radius: 10px;" id="help" hidden=hidden onclick="document.getElementById(this.id).hidden=true">
+            [<i>Shortcut element</i>]
+            Specifies the shortcut text used to insert the snippet. The text value of a Shortcut
+            element can only contain alphanumeric characters, and underscores ( _ ).
+            < Shortcut>
+            <b>mycodesnippet</b>
+            < /Shortcut>
+            ------------------------------------------------------------------
+            [<i>SnippetTypes element</i>]
+            <b>SurroundsWith</b>: allows the code snippet to be placed around a selected piece of code.
+            <b>Expansion</b>: allows the code snippet to be inserted at the cursor.
+            --------------------------------------------------------------------
+            [<i>Literal element</i>]
+            < Declarations>
+            < Literal>
+            < ID><b>Number</b>< /ID>
+            < ToolTip><b>Choose the number you want the square root of.</b>< /ToolTip>
+            < Default><b>16</b>< /Default>
+            < /Literal>
+            < /Declarations>
+
+            < ![CDATA[
+            <sup style="color: aquamarine; font-size: larger;">double root = Math.Sqrt(<b>$Number$</b>);</sup>
+            ]] >
+
+            inserted as:
+            <sup style="color: aquamarine; font-size: larger;">double root = Math.Sqrt(<b>16</b>);</sup>
+            with 16 highlighted for replacement with tooltip
+
+        </div>
+        <div id="snippet-panel">
+            <button name="help" style="float:right;" onclick="document.getElementById(this.name).hidden=!document.getElementById(this.name).hidden">?</button>
+            <h1 style="margin: 0; width: 100%; text-align: center;color:gold; text-shadow: 0.5px 0.5px 0.5px ThreeDFace, 0 0 0.1em ThreeDHighlight;">&trade;T&copy;ReMeTaL</h1>
+            <h2 align="center" style="padding: 4px; border-radius: 10px; background-color: black; width: fit-content; text-align: center; color: springgreen; margin: 0 auto; text-shadow: 0.5px 0.5px 0.5px ThreeDHighlight; "> Code-Snippets Generator >_</h2>
+            <h5 align="center" style="font-size: small; color: black; text-align: center; margin: 0 auto; width: fit-content; ">for</h5>
+            <h2 style="width: fit-content; text-align: center; color: blue; margin: 0 auto; border:1px ridge black; border-radius:6px; padding:2px; background-color:#c69f07a6;">Visual-Studio&trade;<br /><small style="color: darkblue; font-size:small;">&copy; Microsoft Corporation. All Rights Reserved</small></h2>
+            <hr />
+            <input id="title" value="<Title></Title>" type="text" hidden=hidden readonly=readonly />
+            <label for="titleTxt">Title</label>
+            <input id="titleTxt" onchange="txtChanged('title','<Title>'+this.value+'</Title>')" value="" placeholder="Title" type="text" /><br />
+
+            <input id="author" value="<Author></Author>" type="text" hidden=hidden readonly=readonly />
+            <label for="authorTxt">Author</label>
+            <input id="authorTxt" onchange="txtChanged('author','<Author>'+this.value+'</Author>')" value="" placeholder="Author" type="text" /><br />
+
+            <input id="shortcut" value="<Shortcut></Shortcut>" type="text" hidden=hidden readonly=readonly />
+            <label for="shortcutTxt">Shortcut</label>
+            <input id="shortcutTxt" onchange="txtChanged('shortcut','<Shortcut>'+this.value+'</Shortcut>')" value="" placeholder="Shortcut" type="text" /><br />
+
+            <input id="description" value="<Description></Description>" type="text" hidden=hidden readonly=readonly />
+            <label for="descriptionTxt">Description</label>
+            <input id="descriptionTxt" onchange="txtChanged('description','<Description>'+this.value+'</Description>')" value="" placeholder="Description" type="text" /><br />
+
+            <hr />
+            <h5 style="width:100%;text-align:center; margin: 0 0;">Literal Declaration (Optional)</h5>
+            <input id="mId" value="<ID></ID>" type="text" hidden=hidden readonly=readonly />
+            <label for="idTxt">ID</label>
+            <input id="idTxt" onchange="txtChanged('mId','<ID>'+this.value+'</ID>')" value="" placeholder="html" type="text" /><br />
+
+            <input id="toolTip" value="<ToolTip></ToolTip>" type="text" hidden=hidden readonly=readonly />
+            <label for="toolTipTxt">ToolTip</label>
+            <input id="toolTipTxt" onchange="txtChanged('toolTip','<ToolTip>'+this.value+'</ToolTip>')" value="" placeholder="html" type="text" /><br />
+
+            <input id="mDefault" value="<Default></Default>" type="text" hidden=hidden readonly=readonly />
+            <label for="defaultTxt">Default</label>
+            <input id="defaultTxt" onchange="txtChanged('mDefault','<Default>'+this.value+'</Default>')" value="" placeholder="#" type="text" /><br />
+            <hr />
+            <input id="snippetType" value="<SnippetType>Expansion</SnippetType>" type="text" hidden=hidden readonly=readonly />
+            <label for="snippetTypeTxt">SnippetType</label>
+            <select readonly=readonly title="SurroundsWith Expansion" id="snippetTypeTxt" onchange="txtChanged('snippetType','<SnippetType>'+this.value+'</SnippetType>')" value="Expansion" placeholder="SnippetType" type="text">
+                <optgroup label="Snippet Type">
+                    <option selected=selected value="Expansion">Expansion</option>
+                    <option value="SurroundsWith">SurroundsWith</option>
+                </optgroup>
+            </select><br />
+
+            <input id="codeLanguage" value='Language="HTML"' type="text" hidden=hidden readonly=readonly />
+            <label for="codeLanguageTxt">Code Language</label>
+            <select id="codeLanguageTxt" onchange="txtChanged('codeLanguage','Language=&quot;'+this.value+'&quot;')" value="HTML" placeholder="Select Language" type="text">
+                <optgroup label="Languages">
+                    <option value="HTML">HTML</option>
+                    <option value="CSharp">CSharp</option>
+                    <option value="VB">VB</option>
+                    <option value="CPP">CPP</option>
+                    <option value="XAML">XAML</option>
+                    <option value="XML">XML</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="TypeScript">TypeScript</option>
+                    <option value="SQL">SQL</option>
+                </optgroup>
+            </select><br />
+
+            <textarea id="mCode" value="<![CDATA[]]>" type="text" hidden=hidden readonly=readonly><![CDATA[]]></textarea>
+            <label style="float:left; margin-right:0; margin-left:auto; width:106px" for="codeTxt">Code</label>
+            <textarea id="codeTxt" rows="4" onchange="txtChanged('mCode','<![CDATA['+this.value+']]>')" value="" placeholder="Code" type="text"></textarea>
+            <hr />
+
+            <label for="filename">Save File-Name</label>
+            <input type="text" title="Download File-Name" id="filename" value="VisualStudio-CodeSnippet" placeholder="VisualStudio-CodeSnippet" /><br />
+            <div align="center" style="width:100%;">
+                <img title="Download Snippet File!" width="24" height="24" style="object-fit:scale-down;" src="/img/download.png" id="download-btn" />
+                &nbsp;
+                <img title="Copy to Clipboard" width="24" height="24" style="object-fit:scale-down;" src="/img/copy.png" onclick="copyText(document.getElementById('text-val').value)" />
+                &nbsp;
+                <img id="showSource-btn" title="Show Source Code!" width="24" height="24" style="object-fit:scale-down;" src="/img/show.png" onclick="showSource()" />
+                <script>
+                    function showSource() {
+                        document.getElementById('preview').hidden = !document.getElementById('preview').hidden;
+                        if (document.getElementById('preview').hidden) {
+                            document.getElementById('showSource-btn').src = "/img/show.png";
+                            document.getElementById('showSource-btn').title = "Show Source Code!";
+                        } else {
+                            document.getElementById('showSource-btn').src = "/img/show-close.png";
+                            document.getElementById('showSource-btn').title = "Close Source Code!";
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div id="preview" hidden=hidden>
+            <div align="center" style="width:100%;">
+                <img title="Download Snippet File!" width="24" height="24" style="object-fit:scale-down;" src="/img/download.png" id="download-btn" />
+                &nbsp;
+                <img title="Copy to Clipboard" width="24" height="24" style="object-fit: scale-down;" src="/img/copy.png" onclick="copyText(document.getElementById('text-val').value)" />
+                &nbsp;
+                <img title="Close Source Code!" width="24" height="24" style="object-fit: scale-down;" src="/img/show-close.png" alt="X" onclick="showSource()" />
+            </div>
+            <label>Snippet: Source Code</label>
+
+            <br />
+            <textarea onclick="copyText(this.value)" id="text-val" readonly=readonly rows="28">
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title></Title>
+            <Author></Author>
+            <Shortcut></Shortcut>
+            <Description></Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID></ID>
+                    <ToolTip></ToolTip>
+                    <Default></Default>
+                </Literal>
+            </Declarations>
+            <Code Language="HTML">
+                <![CDATA[]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
+</textarea>
+        </div>
+        <div id="snackbar">Copied to Clipboard.</div>
+        <script>
+            /** displays a message to the user.
+             * @param message The Message to display. */
+            function snackbar(message) {
+                var x = document.getElementById("snackbar");
+                x.innerText = message;
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+            }
+        </script>
+        <script>
+            /** function download(String filename, String text).
+             * @param filename (String) The name of the file to be created.
+             * @param text (String) The content to be added to the file. */
+            function download(filename, text) {
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                element.setAttribute('download', filename);
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
+            // Initiates the file download.
+            document.getElementById("download-btn").addEventListener("click", function () {
+                // Assign "filename" with "text-val" content.
+                var filename = document.getElementById("filename").value + '.snippet';
+                var text = document.getElementById("text-val").value;
+                // Initiate download function.
+                download(filename, text);
+            }, false);
+
+            /** [onchange] Update the snippet code with user information.
+             * @param id (ElementID) The name of the Element Updated.
+             * @param newText (String) The content to update the snippet with. */
+            function txtChanged(id, newText) {
+                var curVal = document.getElementById(id).value;
+                var curText = document.getElementById("text-val").value;
+                document.getElementById("text-val").value = curText.replace(curVal, newText);
+                document.getElementById(id).value = newText;
+            }
+        </script>
+
+        <script>
+            /**
+             * Copy a Text String to the clipboard.
+             *  onclick="copyText(this.value)"
+             *  onclick="copyText(document.getElementById('id').value)"
+             * @param copyText The text to copy to the clipboard.
+             */
+            function copyText(copyText) {
+                // Get the text field
+                //var copyText = document.getElementById(id).innerText;
+                /* Select the text field
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); // For mobile devices
+                * Copy the text inside the text field */
+                navigator.clipboard.writeText(copyText);
+
+                /* Alert the copied text.
+                alert("Copied to clipboard: " + copyText);
+                snackbar(copyText + " [Copied to Clipboard]"); */
+                snackbar("[Snippet Copied to Clipboard]");
+            }
+        </script>
+        <h4 align="center">
+            <small style=" font-size:12px;line-height: 1;">
+                <a style="text-decoration: none; padding: 0 5px 0 5px;" title="&#8482;T&#169;ReMeTaL Privacy Policy" href="/privacypolicy">Privacy-Policy</a> &nbsp; &#9751; &nbsp;
+                <a style="text-decoration: none; margin-right: 15px; padding: 0 5px;" title="&#8482;T&#169;ReMeTaL Disclaimer" href="/disclaimer">Disclaimer</a>
+                <br />
+            </small>
+        </h4>
+    </div>
+
+    <!-- Copyright -->
+    <script>
+        function yr() {
+            const d = new Date(); return '&#169;' + d.getFullYear() + '&#8482;T&#169;ReMeTaL';
+        }
+        /*document.write('<b style="color:#752975;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</b>");*/
+        document.write('<small style="color:#752929;text-align: left;position: fixed;z-index:8; bottom: 6px; left: 5px;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</small>");
+    </script>
+    <!-- End Copyright -->
+</body>
+</html>

@@ -1,1 +1,1 @@
-If these components are already installed,<br />you can <A id='VisualStudioSnippetGenerator.exe' onclick="myFunction('VisualStudioSnippetGenerator.exe', 'downloadCodeSnippet')" style="border:1px groove grey;border-radius:5px;" class="hover-btn">(launch)</A> the application now.
+Try the,<br /><A target="_blank" href="online" style="border:1px groove grey;border-radius:5px;" class="hover-btn">(Online)VS Snippet Generator</A>

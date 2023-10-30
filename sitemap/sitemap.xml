@@ -4,81 +4,87 @@
  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://toremetal.com/</loc>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<loc>https://toremetal.com</loc>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 		<changefreq>Daily</changefreq>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://toremetal.com/css/</loc>
+		<loc>https://toremetal.com/css</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/developers/</loc>
+		<loc>https://toremetal.com/developers</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/developers/solutions/</loc>
+		<loc>https://toremetal.com/developers/solutions</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/disclaimer/</loc>
+		<loc>https://toremetal.com/disclaimer</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/forms/</loc>
+		<loc>https://toremetal.com/forms</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/games/</loc>
+		<loc>https://toremetal.com/games</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/img/</loc>
+		<loc>https://toremetal.com/img</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/privacypolicy/</loc>
+		<loc>https://toremetal.com/privacypolicy</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/radio/</loc>
+		<loc>https://toremetal.com/radio</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/sitemap/</loc>
+		<loc>https://toremetal.com/sitemap</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/windows/</loc>
+		<loc>https://toremetal.com/windows</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/windows/sitemaps/</loc>
+		<loc>https://toremetal.com/windows/sitemaps</loc>
 		<changefreq>Daily</changefreq>
 		<priority>0.50</priority>
-		<lastmod>2023-10-23T00:50:17+00:00</lastmod>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://toremetal.com/windows/vssnippet/online</loc>
+		<changefreq>Daily</changefreq>
+		<priority>0.50</priority>
+		<lastmod>2023-10-30T00:50:17+00:00</lastmod>
 	</url>
 </urlset>

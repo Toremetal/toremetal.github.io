@@ -23,9 +23,10 @@ Allow: /img/
 Allow: /privacypolicy/
 Allow: /signs/
 Allow: /windows/
+Allow: /windows/vssnippet/
 
 Disallow: /ads/
-Disallow: /games/words
+Disallow: /games/words/
 
 Sitemap: https://toremetal.com/sitemap.xml
 Sitemap: https://www.toremetal.com/sitemap.xml
