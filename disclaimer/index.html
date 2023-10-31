@@ -71,105 +71,61 @@
     <script async src="https://cse.google.com/cse.js?cx=partner-pub-8927593002808864:1031426169"></script>
 
     <script>
+        /* <!-- */
         function includeHTML() {
             var z, i, elmnt, file, xhttp;
-            /*loop through a collection of all HTML elements:*/
             z = document.getElementsByTagName("*");
             for (i = 0; i < z.length; i++) {
                 elmnt = z[i];
-                /*search for elements with a certain attribute:*/
                 file = elmnt.getAttribute("w3-include-html");
                 if (file) {
-                    /*make an HTTP request using the attribute value as the file name:*/
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
+                    xhttp = new XMLHttpRequest(); xhttp.onreadystatechange = function () {
                         if (this.readyState == 4) {
-                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                            /*remove the attribute, and call this function once more:*/
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "";
+                            }
                             elmnt.removeAttribute("w3-include-html");
                             includeHTML();
                         }
-                    }
+                    };
                     xhttp.open("GET", file, true);
                     xhttp.send();
-                    /*exit the function:*/
                     return;
                 }
             }
-        };
-    </script>
-    <script>
-        function getCookie(cname) {
-            let name = cname + "=";
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let ca = decodedCookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
         }
-        var setCookie = function (name, value, expiry_days) {
-            var d = new Date();
-            d.setTime(d.getTime() + (expiry_days * 24 * 60 * 60 * 1000));
-            var expires = "expires=" + d.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";secure;samesite=strict";
-            return getCookie(name);
-        };
+        /* --> */
     </script>
-    <script>
-        function checkMessage() {
-            var message = getCookie("message");
-            if (message != "") {
-                barcode_Img_Url = barVal;
-                snackbar(message);
-            } else {
-                snackbar('Welcome to ™T©ReMeTaL');
-            }
-        }
-    </script>
-
 </head>
 <body style="background-color:#29292990;" onload="snackbar('Welcome to ™T©ReMeTaL')">
     <!-- View Count Script auto Pg Name (window.location.pathname) -->
     <script>
         document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "&ext='></iframe>");
     </script>
-    <!--var w = window.innerWidth;
-    var h = window.innerHeight;-->
     <!-- Search -->
     <div style="margin: 2px 70px 0 2px; border-radius: 5px; ">
         <div style="margin: 0 auto; color: #00000080;" id="search" class="gcse-searchbox-only">
             loading...
         </div>
     </div>
-    <!--<div style="background: yellow; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,0.7);">
-        <form onsubmit='window.open("https://www.google.com/search?q="+document.getElementById("search").value)'>
-            <input style="width:calc(100% - 44px);text-align:center;" id="search" type="search" placeholder="search.." /><input type="submit" value="&#128270;" />
-        </form>
-    </div>-->
     <!-- Navigation Bar -->
     <div w3-include-html="/content/nav.html"></div>
-
+    <div id="tv" hidden align="center" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; padding: 0 0 0 0; margin: 2px 4px 2px 4px; font-family: 'IM Fell English SC', serif; font-size: 12px; color: #666; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,.31); border-radius: 5px; border: 1px solid #ccc; background-color: transparent; z-index: 14; text-align: center; object-fit: scale-down; height: 100%; width: 100%; object-position: center;">
+        <img name="tvs" id="tvs" onclick='clstv()' style="object-fit: scale-down; height: 100%; width: 100%;" src="" title="&#8482;T&#169;ReMeTaL" />
+    </div>
     <!-- Header -->
     <div class="header">
         <h1>™T©ReMeTaL Technology</h1>
         <p>Software Designed for Performance, Efficiency, and Functionality.</p>
     </div>
-
-    <!-- The flexible grid (content) -->
+    <!-- (content) -->
     <div class="row">
         <div class="side">
             <h2>™T©ReMeTaL</h2>
             <div class="fakeimg" style="height:200px;">
-                <!--<img title="Click to check out the G.dev Page❗" class="zoom highlight chrome-border" src="/img/gdev.png" style='cursor: pointer; float: left; height: 200px; object-fit: scale-down;' onclick='window.open("https://g.dev/toremetal")' />-->
-
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -187,15 +143,15 @@
                     </div>
                 </div>
                 <div style="height: 200px; width: 212px; float: left;padding:4px;">
-                    <img class="zoom2 chrome-border" src="/img/badges/badgelink.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:PHP Assesment (top 5% of 757.3k)" />
-                    <img class="zoom2 chrome-border" style="max-width: 64px; cursor: pointer;" width="64" src="/img/gpbadge.png" title="Click to Verify" onclick='window.open("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449")' />
-                    <img class="zoom2 chrome-border" src="/img/badges/badge7.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Android Studio User" />
-                    <img class="zoom2 chrome-border" src="/img/badges/badge6.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:25+ Codelabs" />
-                    <img class="zoom2 chrome-border" src="/img/badges/badge9.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Architecture Components" />
-                    <img class="zoom2 chrome-border" src="/img/badges/badge10.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Display Internet Data" />
-                    <img class="zoom2 chrome-border" src="/img/badges/badge11.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Architecture Components" />
-                    <img class="zoom2 chrome-border" src="/img/badges/badge12.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Advanced Nav App" />
-                    <img class="zoom2 chrome-border" src="/img/badges/badge8.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Advanced Nav App" />
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badgelink.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:PHP Assesment (top 5% of 757.3k)" /> <!-- onclick='window.open("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449")' -->
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" style="max-width: 64px; cursor: pointer;" width="64" src="/img/gpbadge.png" title="Click to Verify" />
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge7.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Android Studio User" />
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge6.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:25+ Codelabs" />
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge9.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Architecture Components" />
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge10.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Display Internet Data" />
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge11.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Architecture Components" />
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge12.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Advanced Nav App" />
+                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="/img/badges/badge8.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Advanced Nav App" />
                 </div>
 
             </div>
@@ -209,20 +165,20 @@
             </p>
             <h3>Github Repositories</h3>
             <div w3-include-html="/content/gitrepos.html"></div>
+            <!--<div id="disclaimerText">
+        <p onclick="window.location='termsandconditions'" style="cursor: pointer; color: var(--themeBlue4, #E4BA99); " title="By use of this service you agree to the terms, conditions, and policies of ™T©ReMeTaL." align="center">By use of this service you agree to the terms, conditions, and policies of ™T©ReMeTaL.</p>
+        <b style="cursor: pointer; color: var(--themeBlue5,#CD6E53);" class="dis" onclick="disclaimer()" id="disclaimerbtn">Disclaimer ↧</b>
+        <p style="display: none; cursor: pointer;" id="disclaimer" onclick="swapDisclaimer()">
+            <b id="dis1">The information, services, and applications provided by ™T©ReMeTaL (“we”, “us”, or “our”) are for general purposes only. All information, services, and applications by ™T©ReMeTaL are provided in good faith however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information, service, or application provided by ™T©ReMeTaL.</b>
+            <b hidden id="dis2">UNDER NO CIRCUMSTANCE SHALL ™T©ReMeTaL HAVE ANY LIABILITY TO YOU OR ANY OWNER OF ANY MEDIA FOR ANY LOSS OR ANY DAMAGE OF ANY KIND INCURRED OR OTHERWISE IN RELATION TO ™T©ReMeTaL AS A RESULT OF THE USE OF ANY INFORMATION, MEDIA, SERVICE, OR APPLICATION PROVIDED BY ™T©ReMeTaL OR RELIANCE ON ANY INFORMATION, MEDIA, SERVICE, OR APPLICATION PROVIDED BY ™T©ReMeTaL. YOUR USE OF ™T©ReMeTaL SITES, SERVICES, PRODUCTS, MEDIA, INFORMATION AND YOUR RELIANCE ON ANY PROVISION OF ™T©ReMeTaL IS SOLELY AT YOUR OWN RISK.</b>
+        </p>
+        <div align="right">
+            <i style="color:#0097a7;font-size:12px;cursor:default;text-shadow: 1px 1px 1px rgba(0,0,0,.31);" title="last updated: 7/30/2022">last updated: 7/30/2022</i>
+        </div>
+    </div>-->
         </div>
         <div class="main">
             <div style="padding:0;overflow-y: hidden; scroll-behavior: auto; height: fit-content;width:fit-content; background-color: transparent; border-radius: 5px; box-shadow: rgb(9, 9, 9, 0.91) 1px 2px; box-sizing: content-box;" w3-include-html="/disclaimer/disclaimer.html"></div>
-
-            <div class="cubebody">
-                <div class="cube" align="center">
-                    <img src="/img/cube1.png" onclick='window.open("https://play.google.com/store/apps/dev?id=7952290850776080706")' style='cursor: pointer; object-fit: scale-down; border-radius: 5px;' />
-                    <img src="/windows/favicon.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/windows"' />
-                    <img src="/img/cube3.png" style='object-fit: scale-down; border-radius: 5px;' />
-                    <img src="/games/favicon.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/games"' />
-                    <img src="/signs/favicon.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/signs"' />
-                    <img src="/img/cube0.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/"' />
-                </div>
-            </div>
         </div>
     </div>
 
@@ -232,14 +188,6 @@
     <footer class="footer">
         <div w3-include-html="/content/footer.html"></div>
         <br />
-        <!-- repocnt -->
-        <iframe id="subDialog" src="" style="border:none;border-radius:5px;margin:0;padding:0;" frameborder="0" draggable="true" scrolling="no" align="middle" hidden></iframe>
-        <script>
-            function countPg(pg) {
-                document.getElementById('subDialog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
-            }
-        </script>
-        <!-- End Repocnt -->
         <!-- Copyright -->
         <script>
             function yr() {
@@ -253,104 +201,78 @@
         <div w3-include-html="/content/footerb.html"></div>
     </footer>
     <script>
-        /**
-         * displays a message to the user.
-         * @param message The Message to display.
-         * function snackbar() {
-            var x = document.getElementById("snackbar");
-            x.className = "show";
-            setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000);
-        }
-         */
+        includeHTML();
+    </script>
+    <script type="text/javascript">
+        /* <!-- */
+        /** Display a message to the user.
+         * * @param message The Message to display.
+         * */
         function snackbar(message) {
             var x = document.getElementById("snackbar");
             x.innerText = message;
             x.className = "show";
             setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         }
-    </script>
-    <script type="text/javascript">
-        function sh(id) {
-            var x = document.getElementById(id);
-            if (x.style.display === "block") {
-                x.style.display = "none";
-                try {
-                    var btn = document.getElementById(id + "btn");
-                    if (btn.innerHTML.includes('↧')) {
-                        let result = btn.innerHTML.replace('↧', '↥');
-                        btn.innerHTML = result;
-                    } else if (btn.innerHTML.includes("-")) {
-                        let result = btn.innerHTML.replace("-", "+");
-                        btn.innerHTML = result;
-                    }
-                } catch (err) { }
-                if (id.includes("reset")) {
-                    document.getElementById(id).reset;
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
                 }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            } return "";
+        }
+        var setCookie = function (name, value, expiry_days) {
+            var d = new Date();
+            d.setTime(d.getTime() + (expiry_days * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString(); document.cookie = name + "=" + value + ";" + expires + ";secure;samesite=strict";
+            return getCookie(name);
+        }
+        function checkMessage() {
+            var message = getCookie("message");
+            if (message != "") {
+                snackbar(message);
             } else {
-                x.style.display = "block";
-                try {
-                    var btn = document.getElementById(id + "btn");
-                    if (btn.innerHTML.includes("+")) {
-                        let result = btn.innerHTML.replace("+", "-");
-                        btn.innerHTML = result;
-                    } else if (btn.innerHTML.includes('↥')) {
-                        let result = btn.innerHTML.replace('↥', '↧');
-                        btn.innerHTML = result;
-                    }
-                } catch (err) { }
+                snackbar('Welcome to ™T©ReMeTaL');
             }
         }
-        function yttv() {
-            var x = document.getElementById("tvs");
-            x.src = "https://www.youtube.com/embed/videoseries?list=PL0xA7snTym6BVH7Qbn0eHW5PSZRCIEnGu";
-            sh("tv");
+
+        function swapDisclaimer() {
+            document.getElementById("dis1").hidden = document.getElementById("dis2").hidden;
+            document.getElementById("dis2").hidden = !document.getElementById("dis1").hidden;
         }
-        function tv() {
-            var x = document.getElementById("tvs");
-            x.src = "https://www.youtube.com/embed/videoseries?list=PL2B3qw7jcGKNfvXWRiAXx6eXXkR-q6FtM";
-            sh("tv");
+
+        function disclaimer() {
+            sh("disclaimer");
         }
-        function clstv() {
-            var x = document.getElementById("tv");
-            x.style.display = "none";
+        function swapFrame() {
+            document.getElementById("tm_ContactForm").hidden = true;
+            document.getElementById("tm_ContactFormResponse").hidden = false;
         }
-        function mytv(chlnk) {
-            var x = document.getElementById("tvs");
-            x.src = chlnk;
-            sh("tv");
-        }
-        function fullscrn() {
-            var x = document.getElementById("fs");
-            if (x.innerHTML.includes('Full')) {
-                x.innerHTML = "Reg";
-                x.style = "bottom:20px;right:50px;width:60px;font-size:10px;";
-                document.getElementById("fscb").style = "position:absolute;bottom:20px;right:10px;font-size:10px;padding: 0 0 0 0;";
-                document.getElementById("tv").style = "font-family: 'IM Fell English SC', serif; font-size: 12px; color: #666; display: block; position: absolute;top:0;left:0;right:0;bottom:0; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,.31); padding: 0 0 0 0; margin: 2px 4px 2px 4px; border: 4px solid lightgrey; border-radius: 5px; border: 1px solid #ccc; background-color: #f1f1f1; z-index: 999999; text-align: center; max-width: none;";
-            } else {
-                x.innerHTML = "Full";
-                x.style = "width:60px;font-size:10px;float:right;position:relative;";
-                document.getElementById("fscb").style = "font-size:10px;padding: 0 0 10px 0;margin: 0 0 0 20px;float:right;position:relative;";
-                document.getElementById("tv").style = "font-family: 'IM Fell English SC', serif; font-size: 12px; color: #666; display: block; position: fixed; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,.31); top: 40%; left:40%; padding: 2px 2px 0 2px; margin: 2px 4px 2px 4px; border: 4px solid lightgrey; border-radius: 5px; border: 1px solid #ccc; background-color: #f1f1f1; z-index: 14; text-align: center; max-width: 512px;";
+        var verifyCallbackIframe = function (token) {
+            document.getElementById('tm_ContactForm-verify').value = "true";
+            try {
+                document.getElementById('tm_ContactForm-verification').srcdoc = '<!DOCTYPE html> <html> <body onload="document.getElementById(' + "'siteVerify-btn'" + ').click()"><form id="siteVerify" action="https://www.google.com/recaptcha/api/siteverify" method="POST"> <input type="text" name="secret" value="6LfS6VEjAAAAAFjpeOi4UXhBW3mxAEbK5PWFLUsf"><input type="text" name="response" value="' + token + '"><input id="siteVerify-btn" type="submit" value="Submit"></form></body></html>';
+            } catch (error) {
+                alert(error);
+            }
+        };
+        function submittheform() {
+            var ready = document.getElementById('tm_ContactForm-verify').value == "true";
+            if (ready) {
+                console.log("Authorization Verified!");
+                document.getElementById('tm_ContactForm-verify').value = "false";
+                document.getElementById("tm_ContactForm-btn").click();
             }
         }
-        function lour() { window.location = "/"; }
-        function ppol() { window.location = "/privacypolicy"; }
-        function gotoWebapp() { window.location = "/signs/app"; }
-        function gotoMusic() { window.location = "/radio"; }
-        function gotoAndroid() { window.location = "/android"; }
-        function gotoWindows() { window.location = "/windows"; }
-        function tmappsws() { window.location = "/apps/"; }
-        /*window.location="https://play.google.com/store/apps/dev?id="+id;*/
-        function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); }
-        function gdevMe() { window.open("https://g.dev/toremetal"); }
-        function vGPCertMe() { window.open("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449"); }
-        function gotopg(pg) { window.location = pg; }
-    </script>
-    <script>
-        includeHTML();
-    </script>
-    <script>
+
         function countRepo(pg) {
             document.getElementById('repolog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
             switch (pg) {
@@ -370,6 +292,53 @@
                 // no default.
             }
         }
+        function sh(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                x.hidden = true;
+                try {
+                } catch (err) { }
+                if (id.includes("reset")) {
+                    document.getElementById(id).reset;
+                }
+            } else {
+                x.style.display = "block";
+                x.hidden = false;
+            }
+            try {
+                var btn = document.getElementById(id + "btn");
+                if (btn.innerHTML.includes('↧')) {
+                    let result = btn.innerHTML.replace('↧', '↥');
+                    btn.innerHTML = result;
+                } else if (btn.innerHTML.includes("-")) {
+                    let result = btn.innerHTML.replace("-", "+");
+                    btn.innerHTML = result;
+                } else if (btn.innerHTML.includes("+")) {
+                    let result = btn.innerHTML.replace("+", "-");
+                    btn.innerHTML = result;
+                } else if (btn.innerHTML.includes('↥')) {
+                    let result = btn.innerHTML.replace('↥', '↧');
+                    btn.innerHTML = result;
+                }
+            } catch (err) { }
+        }
+        function clstv() {
+            var x = document.getElementById("tv");
+            x.hidden = !x.hidden;
+        }
+        function mytv(chlnk) {
+            var x = document.getElementById("tvs");
+            x.src = chlnk;
+            document.getElementById('tv').hidden = false;
+        }
+        function gotoPg(pg) { window.location = pg; }
+        function openPg(pg) { window.open(pg) }
+        function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); }
+        function playStoreMe() { playstoredevpg("7952290850776080706"); }
+        function gdevMe() { openPg("https://g.dev/toremetal"); }
+        function vGPCertMe() { openPg("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449"); }
+                /* --> */
     </script>
 </body>
 </html>
