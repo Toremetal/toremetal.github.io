@@ -53,7 +53,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/theme1toremetal-v2023.10.14.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  <!-- Google tag (gtag.js) analytics -->
+    <link rel="stylesheet" href="https://toremetal.com/css/theme1toremetal-v2023.10.14.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  <!-- Google tag (gtag.js) analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M20V5KWRLY"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-M20V5KWRLY');</script> <!-- adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927593002808864" crossorigin="anonymous"></script> <!-- Google Search -->
@@ -135,147 +135,132 @@
             <div w3-include-html="/content/gitrepos.html"></div>
         </div>
         <div class="main">
-            <div class="cubebody">
-                <div class="cube" align="center">
-                    <img src="/img/cube1.png" onclick='window.open("https://play.google.com/store/apps/dev?id=7952290850776080706")' style='cursor: pointer; object-fit: scale-down; border-radius: 5px;' />
-                    <img src="/windows/favicon.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/windows"' />
-                    <img src="/img/cube3.png" style='object-fit: scale-down; border-radius: 5px;' />
-                    <img src="/games/favicon.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/games"' />
-                    <img src="/signs/favicon.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/signs"' />
-                    <img src="/img/cube0.png" style='object-fit: scale-down; border-radius: 5px; cursor: pointer;' onclick='window.location="/"' />
-                </div>
-            </div>
-            <br />
-            <div class="fakeimg" style="height: fit-content;">
-                <h2>&#8482;T&#169;ReMeTaL Applications</h2>
-                <p>Projects for Android, Windows, Arduino, Web, and More..</p>
-            </div>
-            <br />
             <!-- Video Player -->
             <div class="fakeimg" style="height: fit-content;" align="center">
-                
-    <style>
-        /* Toremetal videoplayer style */
-        #video {
-            border-radius: 40px;
-            background-color: black;
-            box-shadow: rgba(0,0,0,0.3) 1px 2px;
-            padding: 8px;
-        }
 
-        #vids {
-            border-radius: 40px;
-            background-color: grey;
-            box-shadow: rgba(0,0,0,0.3) 1px 2px;
-            padding: 8px;
-            width: fit-content;
-            color: white;
-            text-align: left;
-            list-style-position: inside;
-            list-style-image: url('play.png');
-        }
-
-            #vids ul {
-                max-height: 108px;
-                overflow-y: auto;
-                padding-right: 30px;
-            }
-
-        #videos li {
-            cursor: pointer;
-        }
-
-        #tm_videoplayer_btns {
-            border-radius: 40px;
-            background-color: grey;
-            box-shadow: rgba(0,0,0,0.3) 1px 2px;
-            padding: 8px;
-            width: fit-content;
-            color: white;
-        }
-
-            #tm_videoplayer_btns .restart {
-                transform: rotate(-90deg);
-            }
-
-            #tm_videoplayer_btns .slow {
-                transform: rotate(90deg);
-            }
-
-            #tm_videoplayer_btns button {
-                cursor: pointer;
-                border: none;
-                background-color: transparent;
-                margin: 2px;
-                font-size: xx-large;
-                border-radius: 40px;
-                border: rgb(254, 4, 4, 0.2) -1px -1px groove;
-                text-shadow: rgb(4, 4, 4, 0.2) 1px 1px;
-            }
-
-                #tm_videoplayer_btns button:hover {
-                    transform: scale(0.9) rotate(-10deg);
-                    opacity: 0.8;
-                }
-    </style>
-    <div align="center" style="width:100%;">
-
-        <div align="center" style="width:fit-content;height:fit-content;">
-            <script>
-                /* <!-- */
-                function loadXMLDoc(file) {
-                    var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            myXMLFunction(this);
-                        }
-                    };
-                    xmlhttp.open("GET", file, true);
-                    xmlhttp.send();
-                }
-
-                function myXMLFunction(xml) {
-                    var x, i, xmlDoc, txt, txt2;
-                    xmlDoc = xml.responseXML;
-                    txt = "";
-                    txt2 = "";
-                    w = xmlDoc.getElementsByTagName("videoURL");
-                    x = xmlDoc.getElementsByTagName("Title");
-                    y = xmlDoc.getElementsByTagName("thumbURL");
-                    for (i = 0; i < x.length; i++) {
-                        txt += '<source id="v' + i + '" src="' + w[i].childNodes[0].nodeValue + '" type="video/mp4" />';
-                        txt2 += '<li title="Play Now" onclick="playV(' + i + ')"><img class="icons" src="' + y[i].childNodes[0].nodeValue + '" width="32" height="32"/>' + x[i].childNodes[0].nodeValue + '</li>';
+                <h2>&#8482;T&#169;ReMeTaL Tv</h2>
+                <style>
+                    /* Toremetal videoplayer style */
+                    #video {
+                        border-radius: 40px;
+                        background-color: black;
+                        box-shadow: rgba(0,0,0,0.3) 1px 2px;
+                        padding: 8px;
                     }
-                    document.getElementById("video").innerHTML = txt;
-                    document.getElementById("videos").innerHTML = txt2;
-                }
-                loadXMLDoc("videos.xml");
-                /* --> */
-            </script>
-            <input hidden type="number" id="cnt" value="0" />
-            <video muted autoplay="autoplay" preload="auto" id="video" width="700" height="400" controlsList="nodownload" controls="controls">
-            </video>
-            <br />
-            <div id="tm_videoplayer_btns">
-                <button title="Previous" onclick="last()">⏮️</button>
-                <button title="Restart" onclick="restart()"><div class="restart">⏏️</div></button>
-                <button title="Back 10 seconds" onclick="back()">[⏪ </button><small>10sec</small>
-                <button title="Forward 10 seconds" onclick="forward()"> ⏩]</button>
-                <button id="play-btn" title="Pause" onclick="mPlay()">⏸️</button>
-                <button title="Slow" onclick="halfSpeed()"><div class="slow">⏏️</div></button>
-                <button title="Fast Forward" onclick="doubleSpeed()">⏩</button>|
-                <button title="Next" onclick="next()">⏭️</button>
-            </div>
-            <br />
-            <div id="vids">
-                <ul id="videos"></ul>
-            </div>
-        </div>
-    </div>
-    <script w3-include-html="vieoplayer.js"></script>
-    <script>
-        includeHTML();
-    </script>
+
+                    #vids {
+                        border-radius: 40px;
+                        background-color: grey;
+                        box-shadow: rgba(0,0,0,0.3) 1px 2px;
+                        padding: 8px;
+                        width: fit-content;
+                        color: white;
+                        text-align: left;
+                        list-style-position: inside;
+                        list-style-image: url('play.png');
+                    }
+
+                        #vids ul {
+                            max-height: 108px;
+                            overflow-y: auto;
+                            padding-right: 30px;
+                        }
+
+                    #videos li {
+                        cursor: pointer;
+                    }
+
+                    #tm_videoplayer_btns {
+                        border-radius: 40px;
+                        background-color: grey;
+                        box-shadow: rgba(0,0,0,0.3) 1px 2px;
+                        padding: 8px;
+                        width: fit-content;
+                        color: white;
+                    }
+
+                        #tm_videoplayer_btns .restart {
+                            transform: rotate(-90deg);
+                        }
+
+                        #tm_videoplayer_btns .slow {
+                            transform: rotate(90deg);
+                        }
+
+                        #tm_videoplayer_btns button {
+                            cursor: pointer;
+                            border: none;
+                            background-color: transparent;
+                            margin: 2px;
+                            font-size: xx-large;
+                            border-radius: 40px;
+                            border: rgb(254, 4, 4, 0.2) -1px -1px groove;
+                            text-shadow: rgb(4, 4, 4, 0.2) 1px 1px;
+                        }
+
+                            #tm_videoplayer_btns button:hover {
+                                transform: scale(0.9) rotate(-10deg);
+                                opacity: 0.8;
+                            }
+                </style>
+                <div align="center" style="width:100%;">
+
+                    <div align="center" style="width:fit-content;height:fit-content;">
+                        <script>
+                            /* <!-- */
+                            function loadXMLDoc(file) {
+                                var xmlhttp = new XMLHttpRequest();
+                                xmlhttp.onreadystatechange = function () {
+                                    if (this.readyState == 4 && this.status == 200) {
+                                        myXMLFunction(this);
+                                    }
+                                };
+                                xmlhttp.open("GET", file, true);
+                                xmlhttp.send();
+                            }
+
+                            function myXMLFunction(xml) {
+                                var x, i, xmlDoc, txt, txt2;
+                                xmlDoc = xml.responseXML;
+                                txt = "";
+                                txt2 = "";
+                                w = xmlDoc.getElementsByTagName("videoURL");
+                                x = xmlDoc.getElementsByTagName("Title");
+                                y = xmlDoc.getElementsByTagName("thumbURL");
+                                for (i = 0; i < x.length; i++) {
+                                    txt += '<source id="v' + i + '" src="' + w[i].childNodes[0].nodeValue + '" type="video/mp4" />';
+                                    txt2 += '<li title="Play Now" onclick="playV(' + i + ')"><img class="icons" src="' + y[i].childNodes[0].nodeValue + '" width="32" height="32"/>' + x[i].childNodes[0].nodeValue + '</li>';
+                                }
+                                document.getElementById("video").innerHTML = txt;
+                                document.getElementById("videos").innerHTML = txt2;
+                            }
+                            loadXMLDoc("videos.xml");
+                            /* --> */
+                        </script>
+                        <input hidden type="number" id="cnt" value="0" />
+                        <video muted autoplay="autoplay" preload="auto" id="video" width="700" height="400" controlsList="nodownload" controls="controls">
+                        </video>
+                        <br />
+                        <div id="tm_videoplayer_btns">
+                            <button title="Previous" onclick="last()">⏮️</button>
+                            <button title="Restart" onclick="restart()"><div class="restart">⏏️</div></button>
+                            <button title="Back 10 seconds" onclick="back()">[⏪ </button><small>10sec</small>
+                            <button title="Forward 10 seconds" onclick="forward()"> ⏩]</button>
+                            <button id="play-btn" title="Pause" onclick="mPlay()">⏸️</button>
+                            <button title="Slow" onclick="halfSpeed()"><div class="slow">⏏️</div></button>
+                            <button title="Fast Forward" onclick="doubleSpeed()">⏩</button>|
+                            <button title="Next" onclick="next()">⏭️</button>
+                        </div>
+                        <br />
+                        <div id="vids">
+                            <ul id="videos"></ul>
+                        </div>
+                    </div>
+                </div>
+                <script w3-include-html="vieoplayer.js"></script>
+                <script>
+                    includeHTML();
+                </script>
             </div>
             <br />
             <!-- End Video Player -->

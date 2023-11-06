@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta lang="en_US" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=1, shrink-to-fit=yes" />
+    <title>&trade;T&copy;oReMeTaL - Notifications</title>
+    <link rel="icon" href="https://toremetal.com/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="https://toremetal.com/favicon.png" type="image/png" />
+    <style>
+        .subscribe input[type=email], input[type=text], input[type=url] {
+            width: calc(50% - 158px);
+            margin: 5px 5px 5px 10px;
+            padding: 3px 10px 3px 10px;
+            border-radius: 5px;
+            border: solid 1px #cbc9c9;
+            box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+            background: #fff;
+        }
+
+        .subscribe input[type=submit], input[type=button] {
+            margin: 2px 10px 2px 5px;
+            padding: 1px 4px 1px 4px;
+            cursor: pointer;
+            background-color: darkred;
+            color: orange;
+            font-weight: 600;
+            opacity: 0.9;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+        }
+
+        .subscribe input[type=button]:hover {
+            transform: rotate(-10deg);
+            padding: 3.5px;
+            border: solid 0.5px #cbc9c9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.09);
+            opacity: 0.7;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.09);
+        }
+
+        .subscribe input[type=submit]:hover {
+            opacity: 0.7;
+            box-shadow: 1px 1px 1px rgba(0,0,0,.09);
+        }
+    </style>
+</head>
+<body style="width:fit-content; height:fit-content;margin:0;padding:0 2px 0 0;background-color:transparent;">
+    <form method="post" onsubmit="swapFrame()" target="subscribeFrame" action="https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec" class="subscribe" align="center" title="Enter your email to get the latest News" style="margin: auto; max-width: 512px; height:fit-content;text-align: center; background-color: transparent; border-radius: 4px;" autocomplete="on">
+        <div id="frameform" align="center" style="text-align: center; background-color: rgb(241 159 12); width:100%;border: 1px ridge grey; border-radius:6px;box-shadow: rgba(0,0,0,0.9) 1px 2px">
+            <h5 style="margin:0;padding:0;">&#8482;T&#169;ReMeTaL News</h5>
+            <input style="height: 32px; width: 33%;" title="Enter your Name" type="text" name="name" value="" placeholder="Name">
+            <input style="height: 32px; width: 34%;" title="Enter your email" type="email" name="email" value="" placeholder="Email" required>
+            <br />
+            <div style="margin: 0 0 0 0;position:relative;left:0;right:0;" align="center">
+                <input type="submit" name="action" value="UnSubscribe" title="Click to UnSubscribe" style="height: 32px; min-width: 48px; width: fit-content; padding-left: 4px; padding-right: 4px;" />
+                <input type="submit" name="action" value="Subscribe" title="Click to Subscribe" style="height: 32px; min-width: 48px; width: fit-content; padding-left: 4px; padding-right: 4px;" />
+            </div>
+        </div>
+    </form>
+    <div hidden id="frameResponse" style="margin: auto; max-width: 512px; height:fit-content;text-align: center; background-color: transparent; border-radius: 4px;">
+        <div align="center" style="text-align: center; background-color: rgb(241 159 12); width:100%;border: 1px ridge grey; border-radius:6px;box-shadow: rgba(0,0,0,0.9) 1px 2px">
+            <iframe id="subscribeFrame" name="subscribeFrame" frameborder="0" scrolling="no" style="object-fit: scale-down; max-height: 124px; max-width: 512px; width:100%; padding: 2px 4px; background-color: transparent; border-radius: 10px" align="middle"></iframe>
+        </div>
+    </div>
+    <script>function swapFrame() { document.getElementById("frameform").hidden = true; document.getElementById("frameResponse").hidden = false; }</script>
+</body>
+</html>
