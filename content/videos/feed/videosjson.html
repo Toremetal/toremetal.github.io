@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+    <div id="body">
+    </div>
+    <script>
+        /* <!-- */
+        function loadXMLDoc(file) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myXMLFunction(this);
+                }
+            };
+            xmlhttp.open("GET", file, true);
+            xmlhttp.send();
+        }
+
+        function myXMLFunction(xml) {
+            var x, i, xmlDoc, txt;
+            xmlDoc = xml.responseXML;
+            txt = "[ ";
+            a = xmlDoc.getElementsByTagName("id");
+            b = xmlDoc.getElementsByTagName("Title");
+            c = xmlDoc.getElementsByTagName("description");
+            d = xmlDoc.getElementsByTagName("duration");
+            e = xmlDoc.getElementsByTagName("thumbURL");
+            f = xmlDoc.getElementsByTagName("imgURL");
+            g = xmlDoc.getElementsByTagName("videoURL");
+            o = xmlDoc.getElementsByTagName("categories");
+            j = xmlDoc.getElementsByTagName("channel_id");
+            for (i = 0; i < a.length; i++) {
+                if (i > 0) {
+                    txt += ',';
+                }
+
+                txt += '{ "id": "' + a[i].childNodes[0].nodeValue;
+                txt += '", "title": "' + b[i].childNodes[0].nodeValue;
+                txt += '", "description": "' + c[i].childNodes[0].nodeValue;
+                txt += '", "duration": "' + d[i].childNodes[0].nodeValue;
+                txt += '", "thumbURL": "' + e[i].childNodes[0].nodeValue;
+                txt += '", "imgURL": "' + f[i].childNodes[0].nodeValue;
+                txt += '", "videoURL": "' + g[i].childNodes[0].nodeValue;
+                txt += '", "categories": ["' + o[i].childNodes[0].nodeValue;
+                txt += '"], "channel_id": "' + j[i].childNodes[0].nodeValue + '}';
+            }
+            txt += " ]";
+            document.getElementById("body").innerHTML = txt;
+        }
+        loadXMLDoc("https://toremetal.com/content/videos/feed/videos.xml");
+                            /*
+[
+{
+"id": "169310",
+"title": "™T©ReMeTaL Applications",
+"description": "For Windows Android and more.",
+"duration": "23",
+"thumbURL": "https:\/\/toremetal.github.io\/content\/videos\/feed\/all\/thumb.png",
+"imgURL": "https:\/\/toremetal.github.io\/content\/videos\/feed\/all\/main.png",
+"videoURL": "https:\/\/toremetal.github.io\/content\/videos\/feed\/all\/all.mp4",
+"categories": [
+"Software & Applications"
+],
+"channel_id": "13452"
+},
+
+--> */
+    </script>
+</body>
+</html>

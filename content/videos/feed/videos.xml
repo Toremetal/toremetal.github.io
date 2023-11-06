@@ -8,7 +8,7 @@
 		<videoURL>https://toremetal.github.io/content/videos/feed/all/all.mp4</videoURL>
 		<thumbURL>https://toremetal.github.io/content/videos/feed/all/thumb.png</thumbURL>
 		<imgURL>https://toremetal.github.io/content/videos/feed/all/main.png</imgURL>
-		<catogories>Software &amp; Applications</catogories>
+		<categories>Software &amp; Applications</categories>
 		<channel_id>13452</channel_id>
 	</Video>
 	<Video>
@@ -19,7 +19,7 @@
 		<videoURL>https://toremetal.github.io/content/videos/feed/pos/pos.mp4</videoURL>
 		<thumbURL>https://toremetal.github.io/content/videos/feed/pos/thumb.png</thumbURL>
 		<imgURL>https://toremetal.github.io/content/videos/feed/pos/main.png</imgURL>
-		<catogories>Software &amp; Applications</catogories>
+		<categories>Software &amp; Applications</categories>
 		<channel_id>13454</channel_id>
 	</Video>
 	<Video>
@@ -30,7 +30,7 @@
 		<videoURL>https://toremetal.github.io/content/videos/feed/pt/pt.mp4</videoURL>
 		<thumbURL>https://toremetal.github.io/content/videos/feed/pt/thumb.png</thumbURL>
 		<imgURL>https://toremetal.github.io/content/videos/feed/pt/main.png</imgURL>
-		<catogories>Software &amp; Applications</catogories>
+		<categories>Software &amp; Applications</categories>
 		<channel_id>13454</channel_id>
 	</Video>
 	<Video>
@@ -41,7 +41,7 @@
 		<videoURL>https://toremetal.github.io/content/videos/feed/mja/hodp.mp4</videoURL>
 		<thumbURL>https://toremetal.github.io/content/videos/feed/mja/thumb.png</thumbURL>
 		<imgURL>https://toremetal.github.io/content/videos/feed/mja/main.png</imgURL>
-		<catogories>Music</catogories>
+		<categories>Music</categories>
 		<channel_id>13455</channel_id>
 	</Video>
 	<Video>
@@ -52,7 +52,7 @@
 		<videoURL>https://toremetal.github.io/content/videos/feed/mja/hod.mp4</videoURL>
 		<thumbURL>https://toremetal.github.io/content/videos/feed/mja/thumb.png</thumbURL>
 		<imgURL>https://toremetal.github.io/content/videos/feed/mja/main.png</imgURL>
-		<catogories>Music</catogories>
+		<categories>Music</categories>
 		<channel_id>13456</channel_id>
 	</Video>
 	<Video>
@@ -63,7 +63,7 @@
 		<videoURL>https://toremetal.github.io/content/videos/feed/mja/epp.mp4</videoURL>
 		<thumbURL>https://toremetal.github.io/content/videos/feed/mja/thumb.png</thumbURL>
 		<imgURL>https://toremetal.github.io/content/videos/feed/mja/main.png</imgURL>
-		<catogories>Music</catogories>
+		<categories>Music</categories>
 		<channel_id>13457</channel_id>
 	</Video>
 </Videos>
