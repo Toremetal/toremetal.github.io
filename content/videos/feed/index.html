@@ -79,7 +79,7 @@
     <div style="margin: 2px 70px 0 2px; border-radius: 5px; ">
         <div style="margin: 0 auto; color: #00000080;" id="search" class="gcse-searchbox-only"> loading... </div>
     </div> <!-- Navigation Bar -->
-    <div w3-include-html="/content/nav.html"></div>
+    <div w3-include-html="https://toremetal.com/content/nav.html"></div>
     <!-- Pic Zoom -->
     <div id="tv" hidden align="center" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; padding: 0 0 0 0; margin: 2px 4px 2px 4px; font-family: 'IM Fell English SC', serif; font-size: 12px; color: #666; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,.31); border-radius: 5px; border: 1px solid #ccc; background-color: transparent; z-index: 14; text-align: center; object-fit: scale-down; height: 100%; width: 100%; object-position: center;">
         <img name="tvs" id="tvs" onclick='clstv()' style="object-fit: scale-down; height: 100%; width: 100%;" src="" title="&#8482;T&#169;ReMeTaL" />
@@ -132,7 +132,7 @@
                 <br /> kotlin, java, c++, c#, visual basic, html, css, javascript, php, sql
             </p>
             <h3>Github Repositories</h3>
-            <div w3-include-html="/content/gitrepos.html"></div>
+            <div w3-include-html="https://toremetal.com/content/gitrepos.html"></div>
         </div>
         <div class="main">
             <!-- Video Player -->
@@ -157,7 +157,7 @@
                         color: white;
                         text-align: left;
                         list-style-position: inside;
-                        list-style-image: url('play.png');
+                        list-style-image: url('https://toremetal.com/content/videos/feed/play.png');
                     }
 
                         #vids ul {
@@ -382,10 +382,10 @@
     </div>  <!-- ###################### Start Pg footer ###################### -->
     <div id="snackbar"></div> <!-- Footer -->
     <footer class="footer">
-        <div w3-include-html="/content/footer.html"></div>
+        <div w3-include-html="https://toremetal.com/content/footer.html"></div>
         <br /> <!-- Copyright -->
         <script>function yr() { const d = new Date(); return '&#169;' + d.getFullYear() + '&#8482;T&#169;ReMeTaL'; } document.write('<b style="color:#752975;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</b>"); document.write('<small style="color:#752929;text-align: right;position: fixed;z-index:8; bottom: 6px; right: 5px;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</small>");</script> <!-- End Copyright --> <!-- footerb -->
-        <div w3-include-html="/content/footerb.html"></div>
+        <div w3-include-html="/https://toremetal.com/content/footerb.html"></div>
     </footer>
     <script>/** * displays a message to the user. * @param message The Message to display. * function snackbar() { var x = document.getElementById("snackbar"); x.className = "show"; setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000); } */ function snackbar(message) { var x = document.getElementById("snackbar"); x.innerText = message; x.className = "show"; setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000); }</script>
     <script type="text/javascript">function sh(id) { var x = document.getElementById(id); if (x.style.display === "block") { x.style.display = "none"; x.hidden = true; try { var btn = document.getElementById(id + "btn"); if (btn.innerHTML.includes('↧')) { let result = btn.innerHTML.replace('↧', '↥'); btn.innerHTML = result; } else if (btn.innerHTML.includes("-")) { let result = btn.innerHTML.replace("-", "+"); btn.innerHTML = result; } } catch (err) { } if (id.includes("reset")) { document.getElementById(id).reset; } } else { x.style.display = "block"; x.hidden = false; try { var btn = document.getElementById(id + "btn"); if (btn.innerHTML.includes("+")) { let result = btn.innerHTML.replace("+", "-"); btn.innerHTML = result; } else if (btn.innerHTML.includes('↥')) { let result = btn.innerHTML.replace('↥', '↧'); btn.innerHTML = result; } } catch (err) { } } } function clstv() { var x = document.getElementById("tv"); x.hidden = !x.hidden; } function mytv(chlnk) { var x = document.getElementById("tvs"); x.src = chlnk; document.getElementById('tv').hidden = false; } function lour() { window.location = "/"; } function ppol() { window.location = "/privacypolicy"; } function gotoWebapp() { window.location = "/signs/app"; } function gotoMusic() { window.location = "/radio"; } function gotoAndroid() { window.location = "/android"; } function gotoWindows() { window.location = "/windows"; } function tmappsws() { window.location = "/apps/"; } function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); } function gdevMe() { gotopg("https://g.dev/toremetal"); } function vGPCertMe() { gotopg("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449"); } function gotopg(pg) { window.location = pg; }</script>
