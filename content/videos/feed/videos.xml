@@ -19,7 +19,7 @@
 		<videoURL>https://toremetal.github.io/content/videos/feed/pos/pos.mp4</videoURL>
 		<thumbURL>https://toremetal.github.io/content/videos/feed/pos/thumb.png</thumbURL>
 		<imgURL>https://toremetal.github.io/content/videos/feed/pos/main.png</imgURL>
-		<categories>Software &amp; Applications</categories>
+		<categories>Android</categories>
 		<channel_id>13453</channel_id>
 	</Video>
 	<Video>
@@ -30,7 +30,7 @@
 		<videoURL>https://toremetal.github.io/content/videos/feed/pt/pt.mp4</videoURL>
 		<thumbURL>https://toremetal.github.io/content/videos/feed/pt/thumb.png</thumbURL>
 		<imgURL>https://toremetal.github.io/content/videos/feed/pt/main.png</imgURL>
-		<categories>Software &amp; Applications</categories>
+		<categories>Android</categories>
 		<channel_id>13454</channel_id>
 	</Video>
 	<Video>
@@ -68,7 +68,7 @@
 	</Video>
 	<Video>
 		<id>169316</id>
-		<Title>ToReMeTaL Creep (Radiohead Cover)</Title>
+		<Title>™T©ReMeTaL Creep (Radiohead Cover)</Title>
 		<description>The Sounds of ™T©ReMeTaL</description>
 		<duration>238</duration>
 		<videoURL>https://toremetal.github.io/content/videos/feed/tmm/creep.mp4</videoURL>
