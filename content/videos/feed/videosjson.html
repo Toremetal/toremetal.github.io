@@ -6,6 +6,11 @@
 </head>
 <body>
     <script>
+
+
+    </script>
+    <script>
+
         /* <!-- */
         function loadXMLDoc(file) {
             var xmlhttp = new XMLHttpRequest();
@@ -15,10 +20,27 @@
                 }
             };
             xmlhttp.open("GET", file, true);
+            xmlhttp.setRequestHeader("Content-type", "application/json");
             xmlhttp.send();
         }
 
+        function strcheck(str = "") {
+            var testStr = "";
+            var newStr = str;
+            testStr = newStr.replace("/", "\\/");
+            if (testStr.includes("/")) {
+                return strReplace(testStr);
+            }
+            return testStr;
+        }
+        function strChk(str = "") {
+            return str.includes("/");
+        }
+        function strReplace(str = "") {
+            return str.replace("/", "\\/");
+        }
         function myXMLFunction(xml) {
+
             var x, i, xmlDoc, txt;
             xmlDoc = xml.responseXML;
             txt = "[ ";
@@ -32,41 +54,39 @@
             o = xmlDoc.getElementsByTagName("categories");
             j = xmlDoc.getElementsByTagName("channel_id");
             for (i = 0; i < a.length; i++) {
-                if (i > 0) {
-                    txt += ',';
+                var idStr = a[i].childNodes[0].nodeValue;
+                var titleStr = b[i].childNodes[0].nodeValue;
+                var descriptionStr = c[i].childNodes[0].nodeValue;
+                var durationStr = d[i].childNodes[0].nodeValue;
+                var newStrg = e[i].childNodes[0].nodeValue;
+                var thumbURLStr = "";
+                var zz = 0;
+                for (var ii in newStrg) {
+                    thumbURLStr += newStrg.substring(zz, ++zz).replace("/", "\\/");
                 }
-
-                txt += '{ "id": "' + a[i].childNodes[0].nodeValue;
-                txt += '", "title": "' + b[i].childNodes[0].nodeValue;
-                txt += '", "description": "' + c[i].childNodes[0].nodeValue;
-                txt += '", "duration": "' + d[i].childNodes[0].nodeValue;
-                txt += '", "thumbURL": "' + e[i].childNodes[0].nodeValue;
-                txt += '", "imgURL": "' + f[i].childNodes[0].nodeValue;
-                txt += '", "videoURL": "' + g[i].childNodes[0].nodeValue;
-                txt += '", "categories": ["' + o[i].childNodes[0].nodeValue;
-                txt += '"], "channel_id": "' + j[i].childNodes[0].nodeValue + '}';
+                var newStrg1 = f[i].childNodes[0].nodeValue;
+                var imgURLStr = "";
+                var zzz = 0;
+                for (var iii in newStrg1) {
+                    imgURLStr += newStrg1.substring(zzz, ++zzz).replace("/", "\\/");
+                }
+                var newStrg2 = g[i].childNodes[0].nodeValue;
+                var videoURLStr = "";
+                var zzzz = 0;
+                for (var iii in newStrg2) {
+                    videoURLStr += newStrg2.substring(zzzz, ++zzzz).replace("/", "\\/");
+                }
+                var categoriesStr = o[i].childNodes[0].nodeValue;
+                var channelIdStr = j[i].childNodes[0].nodeValue;
+                if (i > 0) {
+                    txt += ', ';
+                }
+                txt += '{ "id": "' + idStr + '", "title": "' + titleStr + '", "description": "' + descriptionStr + '", "duration": "' + durationStr + '", "thumbURL": "' + thumbURLStr + '", "imgURL": "' + imgURLStr + '", "videoURL": "' + videoURLStr + '", "categories": ["' + categoriesStr + '"], "channel_id": "' + channelIdStr + '" }';
             }
             txt += " ]";
             document.getElementById("body").innerHTML = txt;
         }
         loadXMLDoc("videos.xml");
-                                /*
-[
-{
-"id": "169310",
-"title": "™T©ReMeTaL Applications",
-"description": "For Windows Android and more.",
-"duration": "23",
-"thumbURL": "https:\/\/toremetal.github.io\/content\/videos\/feed\/all\/thumb.png",
-"imgURL": "https:\/\/toremetal.github.io\/content\/videos\/feed\/all\/main.png",
-"videoURL": "https:\/\/toremetal.github.io\/content\/videos\/feed\/all\/all.mp4",
-"categories": [
-"Software & Applications"
-],
-"channel_id": "13452"
-},
-
---> */
     </script>
     <div id="body">
     </div>
