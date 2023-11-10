@@ -63,6 +63,7 @@
     <script>function checkMessage() { var message = getCookie("message"); if (message != "") { snackbar(message); } else { snackbar('™T©ReMeTaL Tv'); } }</script>
     <style>
         * {
+            max-width: 100%;
             text-shadow: 0.5px 0.5px 1px ThreeDFace, 0 0 0.1em ThreeDLightShadow, 0 0 0.2em ThreeDDarkShadow;
         }
 
@@ -71,7 +72,7 @@
         }
     </style>
 </head>
-<body style="background-color:#29292990;" onload="snackbar('™T©ReMeTaL Tv')">
+<body style="max-width: 100%; background-color: #29292990;" onload="snackbar('™T©ReMeTaL Tv')">
     <script>
         document.write("<iframe class='visits' scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "&ext='></iframe>");
     </script>
@@ -83,15 +84,11 @@
     <!-- Pic Zoom -->
     <div id="tv" hidden align="center" style="position: fixed; top: 0; left: 0; bottom: 0; right: 0; padding: 0 0 0 0; margin: 2px 4px 2px 4px; font-family: 'IM Fell English SC', serif; font-size: 12px; color: #666; box-sizing: border-box; box-shadow: 1px 2px 5px rgba(0,0,0,.31); border-radius: 5px; border: 1px solid #ccc; background-color: transparent; z-index: 14; text-align: center; object-fit: scale-down; height: 100%; width: 100%; object-position: center;">
         <img name="tvs" id="tvs" onclick='clstv()' style="object-fit: scale-down; height: 100%; width: 100%;" src="" title="&#8482;T&#169;ReMeTaL" />
-    </div> <!-- Header -->
-    <div class="header" style="text-shadow: 0.5px 0.5px 1px ThreeDFace, 0 0 0.1em ThreeDDarkShadow, 0 0 0.2em ThreeDDarkShadow; ">
-        <h1>&#8482;T&#169;ReMeTaL Technology</h1>
-        <p>Software Designed for Performance, Efficiency, and Functionality.</p>
-    </div>  <!-- Main Body -->
+    </div> <!-- Main Body -->
     <div class="row">
-        <div class="side">
-            <h2>&#8482;T&#169;ReMeTaL</h2>
-            <div class="fakeimg" style="height:200px;">
+        <div class="side" style="background-color:transparent;">
+            <h2 align="center">&#8482;T&#169;ReMeTaL<br/>Applications</h2>
+            <div class="fakeimg" style="height:fit-content;max-width:80%;">
                 <div class="flip-card" style="margin: 0 0 0 0; padding: 0 0 0 0;">
                     <div class="flip-card-inner" style="width: 140px; margin: 0 0 0 0; padding: 0 0 0 0; background-color: whitesmoke; ">
                         <div class="flip-card-front" style="width: fit-content; margin: 0 0 0 0; padding: 0 0 0 0;color:ThreeDLightShadow">
@@ -109,30 +106,13 @@
                         </div>
                     </div>
                 </div>
-                <div style="height: 200px; width: 212px; float: left;padding:4px;">
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="https://toremetal.com/img/badges/badgelink.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:PHP Assesment (top 5% of 757.3k)" /> <!-- onclick='window.open("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449")' -->
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" style="max-width: 64px; cursor: pointer;" width="64" src="https://toremetal.com/img/gpbadge.png" title="Click to Verify" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="https://toremetal.com/img/badges/badge7.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Android Studio User" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="https://toremetal.com/img/badges/badge6.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:25+ Codelabs" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="https://toremetal.com/img/badges/badge9.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Architecture Components" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="https://toremetal.com/img/badges/badge10.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Display Internet Data" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="https://toremetal.com/img/badges/badge11.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Architecture Components" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="https://toremetal.com/img/badges/badge12.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Advanced Nav App" />
-                    <img class="zoom2 chrome-border" onclick="mytv(this.src)" src="https://toremetal.com/img/badges/badge8.png" style="max-width: 64px; object-fit: scale-down;" width="64" title="Badge:Advanced Nav App" />
-                </div>
+                <h4>Applications:</h4>
+                <img class="zoom2 chrome-border" onclick="document.getElementById('video').src='/content/videos/feed/pos/pos.mp4'" src="/content/videos/feed/pos/thumb.png" style="max-width: 64px; object-fit: scale-down;" width="64" />
+                <img class="zoom2 chrome-border" onclick="document.getElementById('video').src='/content/videos/feed/pt/pt.mp4'" src="pt/thumb.png" style="max-width: 64px; object-fit: scale-down;" width="64" />
+                <h4>Music:</h4>
+                <img class="zoom2 chrome-border" onclick="document.getElementById('video').src='/content/videos/feed/tmm/creep.mp4'" src="/content/videos/feed/tmm/thumb.png" style="max-width: 64px; object-fit: scale-down;" width="64" />
+                <img class="zoom2 chrome-border" onclick="document.getElementById('video').src='/content/videos/feed/mja/hod.mp4'" src="/content/videos/feed/mja/thumb.png" style="max-width: 64px; object-fit: scale-down;" width="64" />
             </div>
-            <br />
-            <p style="color: #c34e2d;">
-                The &#8482;T&#169;ReMeTaL Github
-                <br /> &nbsp;projects for Android, Windows, Arduino, Web, and More..
-            </p>
-            <p style="color: darkred">
-                Code Languages Including:
-                <small>(Non-Exhaustive)</small>
-                <br /> kotlin, java, c++, c#, visual basic, html, css, javascript, php, sql
-            </p>
-            <h3>Github Repositories</h3>
-            <div w3-include-html="https://toremetal.com/content/gitrepos.html"></div>
         </div>
         <div class="main">
             <!-- Video Player -->
@@ -242,14 +222,20 @@
                         </video>
                         <br />
                         <div id="tm_videoplayer_btns">
+                            <small id="speed"> Play Speed [▶️] </small><br />
+                            <small id="time" style="color:red"></small>
+                            <input id="time2" oninput="setVidTime(this.value)" type="range" step="0.01" min="1" max="100" value="0">
+                            <small id="tduration" style="color:red">0</small>
+                            <br />
                             <button title="Previous" onclick="last()">⏮️</button>
+                            <button title="Next" onclick="next()">⏭️</button>|
+                            <button title="Back 10 seconds" onclick="back()">⏪ </button><small>10s</small>
+                            <button title="Forward 10 seconds" onclick="forward()"> ⏩</button>|
+                            <button id="play-btn" title="Pause" onclick="mPlay()">⏸️</button>|
                             <button title="Restart" onclick="restart()"><div class="restart">⏏️</div></button>
-                            <button title="Back 10 seconds" onclick="back()">[⏪ </button><small>10sec</small>
-                            <button title="Forward 10 seconds" onclick="forward()"> ⏩]</button>
-                            <button id="play-btn" title="Pause" onclick="mPlay()">⏸️</button>
                             <button title="Slow" onclick="halfSpeed()"><div class="slow">⏏️</div></button>
-                            <button title="Fast Forward" onclick="doubleSpeed()">⏩</button>|
-                            <button title="Next" onclick="next()">⏭️</button>
+                            <button title="Fast Forward" onclick="doubleSpeed()">⏩</button><br />
+                            <small style="width:100%;text-align:justify;">Previous | Next | Back 10sec | Forward 10sec | Play/Pause | Restart | slow | fast</small>
                         </div>
                         <br />
                         <div id="vids">
@@ -257,9 +243,233 @@
                         </div>
                     </div>
                 </div>
-                <script w3-include-html="vieoplayer.js"></script>
                 <script>
-                    includeHTML();
+                    /** ** var videoElement w3-include-html="vieoplayer.js"
+ *
+ * Primary [ videoElement ] for Control Functions.
+ * 
+ *  <!--
+    ~   ************************************************************************
+    ~     toremetal properties : Copyright (c) 2023 ™T©ReMeTaL.
+    ~   ************************************************************************
+    ~
+    ~    ™T©ReMeTaL toremetal.com
+    ~    Copyright (C) 2023 ™T©ReMeTaL.
+    ~    Unless required by applicable law or agreed to in writing, software
+    ~    is on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND
+    ~    either express or implied. Created with best intent, Use at your own risk.
+    ~    ™T©ReMeTaL assumes no-liability of any kind.
+    ~
+    ~   ************************************************************************
+    ~    vieoplayer.js : Media controls for #tm_videoplayer
+    ~   ************************************************************************
+    -->
+ */
+                    var videoElement = document.getElementById("video");
+
+                    /**
+                     * Default [Play/Pause] Button function for the video player.
+                     *
+                     * * Converts to Pause on Play, and Play on Pause.
+                     * * Resets Play Speed to default on Play.
+                     */
+                    function mPlay() {
+                        if (document.getElementById("play-btn").innerHTML !== "⏸️") {
+                            document.getElementById("play-btn").innerHTML = "⏸️";
+                            document.getElementById("play-btn").title = "Pause";
+                            document.getElementById("speed").innerHTML = " Play Speed [▶️] ";
+                            var speed = 1.0;
+                            videoElement.playbackRate = speed;
+                            videoElement.play();
+                        } else {
+                            document.getElementById("play-btn").title = "Play";
+                            document.getElementById("play-btn").innerHTML = "▶️";
+                            videoElement.pause();
+                        }
+                    }
+
+                    /**
+                     * Pause Video.
+                     */
+                    function mPause() {
+                        videoElement.pause();
+                    }
+
+                    /**
+                     * Restart Video [currentTime = 0].
+                     */
+                    function restart() {
+                        videoElement.currentTime = 0;
+                    }
+
+                    /**
+                     * Set play speed to half.
+                     */
+                    function halfSpeed() {
+                        document.getElementById("speed").innerHTML = " Play Speed [⏏️] ";
+                        var speed = 0.5;
+                        videoElement.playbackRate = speed;
+                    }
+
+                    /**
+                     *  Set play speed to double.
+                     */
+                    function doubleSpeed() {
+                        document.getElementById("speed").innerHTML = " Play Speed [⏩] ";
+                        var speed = 2.0;
+                        videoElement.playbackRate = speed;
+                    }
+
+                    /**
+                     * Rewind 10 seconds.
+                     */
+                    function back() {
+                        var seekTime = videoElement.currentTime - 10;
+                        if (seekTime >= 0 && seekTime <= videoElement.duration) {
+                            videoElement.currentTime = seekTime;
+                        }
+                    }
+
+                    /**
+                     *  forward 10 seconds.
+                     */
+                    function forward() {
+                        var seekTime = videoElement.currentTime + 10;
+                        if (seekTime >= 0 && seekTime <= videoElement.duration) {
+                            videoElement.currentTime = seekTime;
+                        }
+                    }
+
+                    /**
+                     * Play Next, or if last then first, video.
+                     */
+                    function next() {
+                        var cnt = document.getElementById("cnt").value;
+                        var activeSource = document.getElementById("v" + cnt);
+                        var total =
+                            parseInt(document.getElementById("video").childElementCount) - 1;
+                        if (parseInt(cnt) >= total) {
+                            cnt = 0;
+                        } else {
+                            cnt = ++cnt;
+                        }
+                        document.getElementById("cnt").value = cnt;
+                        var nextSource = document.getElementById("v" + cnt);
+                        activeSource.className = "";
+                        nextSource.className = "active";
+                        videoElement.src = nextSource.src;
+                        videoElement.play();
+                        document.getElementById("play-btn").innerHTML = "⏸️";
+                        document.getElementById("play-btn").title = "Pause";
+                        document.getElementById("speed").innerHTML = " Play Speed [▶️] ";
+                    }
+
+                    /**
+                     * Play Previous, or if first then last, video.
+                     */
+                    function last() {
+                        var cnt = document.getElementById("cnt").value;
+                        var nextSource;
+                        var activeSource = document.getElementById("v" + cnt);
+                        if (parseInt(cnt) > 0) {
+                            cnt = --cnt;
+                            document.getElementById("cnt").value = cnt;
+                            nextSource = document.getElementById("v" + cnt);
+                        } else {
+                            var lc = document.getElementById("video").lastChild;
+                            nextSource = document.getElementById(lc.id);
+                            document.getElementById("cnt").value = lc.id
+                                .toString()
+                                .replace("v", "");
+                        }
+                        activeSource.className = "";
+                        nextSource.className = "active";
+                        videoElement.src = nextSource.src;
+                        videoElement.play();
+                        document.getElementById("play-btn").innerHTML = "⏸️";
+                        document.getElementById("play-btn").title = "Pause";
+                        document.getElementById("speed").innerHTML = " Play Speed [▶️] ";
+                    }
+
+                    /**
+                     * Play User Selected Video.
+                     * where ( id ) is the integer part of the video element id.
+                     *  ex.. id="v(int)"
+                     * @param {any} id The integer part of the video element id.
+                     *  ex.. id="v(int)"
+                     */
+                    function playV(id) {
+                        var cnt = document.getElementById("cnt").value;
+                        var activeSource = document.getElementById("v" + cnt);
+                        document.getElementById("cnt").value = id;
+                        var nextSource = document.getElementById("v" + id);
+                        activeSource.className = "";
+                        nextSource.className = "active";
+                        videoElement.src = nextSource.src;
+                        videoElement.play();
+                        document.getElementById("play-btn").innerHTML = "⏸️";
+                        document.getElementById("play-btn").title = "Pause";
+                    }
+
+                    videoElement.addEventListener("loadeddata", function () {
+                        document.getElementById("time2").max = videoElement.duration.toFixed(2);
+                        document.getElementById("tduration").innerHTML =
+                            videoElement.duration.toFixed();
+                        console.log("Video loaded.");
+                    });
+                    function setVidTime(newTime) {
+                        videoElement.currentTime = newTime;
+                    }
+                    /**
+                     * Update Video Time Displays while playing.
+                     */
+                    videoElement.addEventListener("timeupdate", function () {
+                        document.getElementById("time").innerHTML =
+                            videoElement.currentTime.toFixed();
+                        document.getElementById("time2").value =
+                            videoElement.currentTime.toFixed(2);
+                        console.log("Current time: " + videoElement.currentTime);
+                    });
+
+                    /**
+                     * Update Video Time Displays on Seeked event.
+                     */
+                    videoElement.addEventListener("seeked", function () {
+                        console.log("Seek operation completed.");
+                        document.getElementById("time").innerHTML =
+                            "[ " + videoElement.seekTime.toFixed() + " ]";
+                        document.getElementById("time2").value = videoElement.seekTime.toFixed(2);
+                        videoElement.play();
+                    });
+
+                    videoElement.addEventListener("stalled", function () {
+                        console.log("Video stalled.");
+                    });
+
+                    /**
+                     * Auto-PLay Next on End.
+                     */
+                    videoElement.addEventListener("ended", () => {
+                        console.log("Video ended.");
+                        var cnt = document.getElementById("cnt").value;
+                        var activeSource = document.getElementById("v" + cnt);
+                        var total =
+                            parseInt(document.getElementById("video").childElementCount) - 1;
+                        if (parseInt(cnt) >= total) {
+                            cnt = 0;
+                        } else {
+                            cnt = ++cnt;
+                        }
+                        document.getElementById("cnt").value = cnt;
+                        var nextSource = document.getElementById("v" + cnt);
+                        activeSource.className = "";
+                        nextSource.className = "active";
+                        videoElement.src = nextSource.src;
+                        videoElement.play();
+                        document.getElementById("play-btn").innerHTML = "⏸️";
+                        document.getElementById("play-btn").title = "Pause";
+                    });
+/* --> */
                 </script>
             </div>
             <!-- End Video Player -->
@@ -270,31 +480,10 @@
         <div w3-include-html="https://toremetal.com/content/footer.html"></div>
         <br /> <!-- Copyright -->
         <script>function yr() { const d = new Date(); return '&#169;' + d.getFullYear() + '&#8482;T&#169;ReMeTaL'; } document.write('<b style="color:#752975;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</b>"); document.write('<small style="color:#752929;text-align: right;position: fixed;z-index:8; bottom: 6px; right: 5px;cursor: pointer;line-height: 0;display:block !important;" title="COPYRIGHT ' + yr() + '" >' + yr() + "</small>");</script> <!-- End Copyright --> <!-- footerb -->
-        <div w3-include-html="/https://toremetal.com/content/footerb.html"></div>
+        <div w3-include-html="https://toremetal.com/content/footerb.html"></div>
     </footer>
     <script>/** * displays a message to the user. * @param message The Message to display. * function snackbar() { var x = document.getElementById("snackbar"); x.className = "show"; setTimeout(function () { x.className = x.className.replace("show", ""); }, 15000); } */ function snackbar(message) { var x = document.getElementById("snackbar"); x.innerText = message; x.className = "show"; setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000); }</script>
     <script type="text/javascript">function sh(id) { var x = document.getElementById(id); if (x.style.display === "block") { x.style.display = "none"; x.hidden = true; try { var btn = document.getElementById(id + "btn"); if (btn.innerHTML.includes('↧')) { let result = btn.innerHTML.replace('↧', '↥'); btn.innerHTML = result; } else if (btn.innerHTML.includes("-")) { let result = btn.innerHTML.replace("-", "+"); btn.innerHTML = result; } } catch (err) { } if (id.includes("reset")) { document.getElementById(id).reset; } } else { x.style.display = "block"; x.hidden = false; try { var btn = document.getElementById(id + "btn"); if (btn.innerHTML.includes("+")) { let result = btn.innerHTML.replace("+", "-"); btn.innerHTML = result; } else if (btn.innerHTML.includes('↥')) { let result = btn.innerHTML.replace('↥', '↧'); btn.innerHTML = result; } } catch (err) { } } } function clstv() { var x = document.getElementById("tv"); x.hidden = !x.hidden; } function mytv(chlnk) { var x = document.getElementById("tvs"); x.src = chlnk; document.getElementById('tv').hidden = false; } function lour() { window.location = "/"; } function ppol() { window.location = "/privacypolicy"; } function gotoWebapp() { window.location = "/signs/app"; } function gotoMusic() { window.location = "/radio"; } function gotoAndroid() { window.location = "/android"; } function gotoWindows() { window.location = "/windows"; } function tmappsws() { window.location = "/apps/"; } function playstoredevpg(id) { window.open("https://play.google.com/store/apps/dev?id=" + id); } function gdevMe() { gotopg("https://g.dev/toremetal"); } function vGPCertMe() { gotopg("https://www.credential.net/a7877a63-8841-4d8c-9708-cf2bbd234449"); } function gotopg(pg) { window.location = pg; }</script>
     <script>includeHTML();</script>
-    <script>
-        function countRepo(pg) {
-            document.getElementById('repolog').src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + pg.toString() + '&ext=';
-            switch (pg) {
-                case "repoESP32":
-                    window.open('https://github.com/Toremetal/ESP32_Examples-ESP32-Camera-CameraWebServer');
-                    break;
-                case "repoAdsTxt":
-                    window.open('https://github.com/Toremetal/AdsTxt_Source');
-                    break;
-                case "repoPos":
-                    window.open('https://github.com/Toremetal/Pos');
-                    break;
-                case "repoFileMod":
-                    window.open('https://github.com/Toremetal/filemod');
-                    break;
-                default:
-                // no default.
-            }
-        }
-    </script>
 </body>
 </html>
