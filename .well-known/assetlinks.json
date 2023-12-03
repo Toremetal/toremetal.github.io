@@ -1,12 +1,15 @@
 [{
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.toremetal.signs",
-      "sha256_cert_fingerprints":
-        ["AC:E1:6C:8B:17:3E:D9:0F:A7:E4:28:0B:68:D8:B1:AC:19:3D:30:0E:26:5B:5B:F5:30:31:E8:84:6B:BE:89:6D"]
-  }
-},
+      "sha256_cert_fingerprints": [
+        "AC:E1:6C:8B:17:3E:D9:0F:A7:E4:28:0B:68:D8:B1:AC:19:3D:30:0E:26:5B:5B:F5:30:31:E8:84:6B:BE:89:6D"
+      ]
+    }
+  },
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
