@@ -2,10 +2,10 @@
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website for Apps, Software, and Coding Solutions.<br />
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; visit us at https://toremetal.com<br />
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; # ############ toremetal.com ############ #<br />
-  *  **********/ &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ™T©ReMeTaL Software : Copyright (c) 2023 ™T©ReMeTaL. \**********
+  *  **********/ &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ™T©ReMeTaL Software : Copyright (c) 2024 ™T©ReMeTaL. \**********
      ***************************************************************************************
                                     ™T©ReMeTaL Software.
-            Copyright (C) 2023 : ©2023™T©ReMeTaL(David W. Rick).    Date:10/24/2023
+            Copyright (C) 2024 : ©2024™T©ReMeTaL(David W. Rick).
                              Computer Scientist:  David W. Rick
             Licensed under this License Agreement,  Version 1.0  (this "License").
             You may not use this Software except, in compliance with this License.
@@ -91,6 +91,6 @@
  * * https://toremetal.com
        
  *     ™T©ReMeTaL
-       ©2023™T©ReMeTaL
+       ©2024™T©ReMeTaL
        All Rights Reserved.
      **********************************************************************************************************
