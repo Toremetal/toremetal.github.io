@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--
+    ~   ************************************************************************
+    ~     toremetal properties : Copyright (c) 2024 ™T©ReMeTaL.
+    ~   ************************************************************************
+    ~
+    ~    ™T©ReMeTaL toremetal.com
+    ~    Copyright (C) 2024 ™T©ReMeTaL.
+    ~    Unless required by applicable law or agreed to in writing, software
+    ~    is on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND
+    ~    either express or implied. Created with best intent, Use at your own risk.
+    ~    ™T©ReMeTaL assumes no-liability of any kind.
+    ~
+    ~   ************************************************************************
+    -->
+    <meta http-equiv="language" content="en_US">
+    <meta lang="en_US" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=1, shrink-to-fit=yes" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="copyright" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="author" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="Description" content="Byte Converters">
+    <title>&#8482;T&#169;ReMeTaL - Byte Converters and Checksum Calculator </title>
+    <link rel="icon" href="https://toremetal.com/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link crossorigin rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+<style>
+* {
+    font-family: 'IM Fell English SC', serif;
+    font-size:larger;
+    border-radius:6px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+    border: 1px solid rgb(177, 176, 176);
+    border: inset 10px #D8DBDE;/*BBA53D   D8DBDE*/
+    border-style:groove ridge ridge groove;
+    border-style: outset inset inset outset;
+    height:fit-content;
+    opacity:0.9;
+    margin:0 4px;
+    padding:2px 4px;
+}
+input[type=number] {
+    width:200px;
+    text-align:center;
+    opacity:unset;
+    color:orange;
+}
+input[type=text] {
+    width:200px;
+    text-align:center;
+    color:orange;
+    opacity:unset;
+}
+i {
+    color:red;
+    text-align:center;
+    opacity:unset;
+}
+body {
+    padding:30px 40px;
+    background:lightblue;
+    content-align:center;
+}
+</style>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927593002808864" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<h2>Byte Converters</h2>
+
+
+<fieldset>
+<legend>INT(0-255) to HEX(00-FF) to BINARY(00000000-11111111)</legend>
+  <input id="rgb" min="0" max="255" size="2" type="number" value="1" onchange='let n=document.getElementById("rgb").value;document.getElementById("hex").value=numericToAlpha(n);document.getElementById("binary").value=numToBin(n);' />
+  <!--<i id="decHex"></i>-->
+  <input id="hex" maxlength="2" type="text" value="01" onchange='let n=alphaToNumeric(document.getElementById("hex").value);document.getElementById("rgb").value=n;document.getElementById("binary").value=numToBin(n);'/>
+  <input id="binary" type="text" maxlength="8" minlength="8" value="00000001" onchange='let n=binToDec(document.getElementById("binary").value);document.getElementById("rgb").value=n;document.getElementById("hex").value=numericToAlpha(n);' />
+</fieldset>
+
+<fieldset>
+<legend>CheckSum Calculator<br/>HEX(00-FF)<small style="font-size:xx-small;">SPACES IGNORED</small>  INT(0-255)<small style="font-size:xx-small;">MUST USE COMMAS</small></legend>
+  <input id="csCalc" type="text" minlength="2" value="E4 57 01" onchange='document.getElementById("csRes").innerHTML=checkSumCalc(document.getElementById("csCalc").value)' />
+    <i id="csRes">C4</i>
+  <input id="csCalcInt" type="text" minlength="2" value="228,87,01" onchange='document.getElementById("csInt").innerHTML=checkSumCalcArray(this.value)' />
+<i id="csInt">196</i>
+</fieldset>
+
+<script>
+    
+function checkSumCalcArray(numbs) {
+    let nums=numbs+",";
+    let aa="";
+    const num=[]
+    for (c in nums) {
+        if (nums[c]==",") {
+            num.push(parseInt(aa));
+            aa="";
+        } else {
+            aa+=nums[c];
+        }
+    }
+    let sum=0;
+    for (c in num) {
+        let nVal = (256-parseInt(num[c]));
+        sum=sum+nVal;
+    }
+    return (sum%256);
+}
+
+function checkSumCalc(str) {
+    let sum=0;
+    let ab="0x";
+    for (x in str) {
+        if (str[x].toString()!=" " && str[x].toString()!=",") {
+            if (ab=="0x") {
+                ab+=str[x];
+            } else {
+                ab+=str[x];
+                let abn = parseInt(ab.toString());
+                let iabn = (256-parseInt(abn));
+                sum=sum+iabn;
+                ab="0x";
+            }
+        }
+    }
+    let nSum=(sum%256);
+    let asum=nSum.toString(16).toUpperCase();
+    return asum;
+}
+   
+function alphaToNumeric(l) {
+    let nl="0x" + l;
+    let abn = parseInt(nl);
+    let iabn = abn.toString();
+    return parseInt(iabn);
+}
+
+function numericToAlpha(i) {
+    let n=parseInt(i);
+    let a=n.toString(16).toUpperCase();
+    if (a.length==1) {a="0"+a}
+    return a;
+}
+
+
+function numToBin(i) {
+    let n=parseInt(i).toString(2);
+    while (n.length!=8) {
+        n="0"+n
+    }
+    return n;
+}
+    
+function binToDec(str) {
+    let c=0;
+    for (let c=0;c<256;c++) {
+        if (numToBin(c)==str) {
+            return c;
+        }
+    }
+    return -1;
+}
+
+</script>
+
+</body>
+</html>
