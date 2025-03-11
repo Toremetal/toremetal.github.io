@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--    101018544
+    ~   ************************************************************************
+    ~            ™T©ReMeTaL Properties: Copyright (c) 2024 ™T©ReMeTaL.
+    ~   ************************************************************************
+    ~    MIT License
+    ~    ™T©ReMeTaL toremetal.com
+    ~    Copyright (C) 2024 ™T©ReMeTaL.
+    ~
+    ~    Permission is hereby granted, free of charge, to any person obtaining a copy
+    ~    of this software and associated documentation files (the "Software"), to deal
+    ~    in the Software without restriction, including without limitation the rights
+    ~    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    ~    copies of the Software, and to permit persons to whom the Software is
+    ~    furnished to do so, subject to the following conditions:
+    ~
+    ~    The above copyright notice and this permission notice shall be included in all
+    ~    copies or substantial portions of the Software.
+    ~
+    ~    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    ~    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    ~    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    ~    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    ~    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    ~    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    ~    SOFTWARE.
+    ~    Created with best intent, Use at your own risk.
+    ~    ™T©ReMeTaL Assumes No Liability of any kind.
+    ~
+    ~   ************************************************************************
+    -->
+    <meta http-equiv="language" content="en_US">
+    <meta lang="en_US" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=2.0, user-scalable=1, shrink-to-fit=yes" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="copyright" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="author" content="&#8482;T&#169;ReMeTaL" />
+    <meta name="Description" content="&#8482;T&#169;ReMeTaL - Games">
+    <title>&#8482;T&#169;ReMeTaL - Games</title>
+    <link rel="icon" href="img/favicon.ico" type="image/png" />
+    
+<style>
+    
+    html {
+        background-image: url("img/background-1.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 30px;
+    }
+    .left-control {
+        width: fit-content;
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        display: grid;
+        grid-template: auto / auto auto auto;
+        grid-gap: 1px;
+        background-color: rgba(177, 176, 176, .31);/*#2196F3;*/
+        padding: 1px;
+        box-sizing: border-box;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+        border: 0.5px solid rgb(177, 176, 176);
+        border: inset 10px #57F2FF;
+        border-style: groove ridge ridge groove;
+        border-style: outset inset inset outset;
+        border-radius: 50%;
+    }
+
+    .left-control > div {
+        background-color: transparent;/*rgba(255, 255, 255, 0.8);*/
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        width:50px;
+        height:50px;
+        font-size: 30px;
+        border-radius: 50%;
+    }
+    
+    .right-control {
+        width: fit-content;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        display: grid;
+        grid-template: auto  auto/ auto auto;
+        grid-gap: 1px;
+        background-color: rgba(177, 176, 176, .31);/*#2196F3;*/
+        padding: 1px;
+        box-sizing: border-box;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+        border: 0.5px solid rgb(177, 176, 176);
+        border: inset 10px #57F2FF;
+        border-style: groove ridge ridge groove;
+        border-style: outset inset inset outset;
+        border-radius: 25%;
+    }
+
+    .right-control > div {
+        background-color: transparent;/*rgba(255, 255, 255, 0.8);*/
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        width:50px;
+        height:50px;
+        font-size: 30px;
+        border-radius: 50%;
+    }
+    button {
+        border-radius: 50%;
+        padding: 4px;
+        width:inherit;
+        height:inherit;
+        text-align: center;
+        margin: 0;
+        font-size: inherit;
+    }
+    #avatar-loc {
+        left: 8px; top: 8px; position: absolute; width:100px; height:100px; background-color:transparent;
+    }
+    #game-menu {
+        padding:30px;
+        left: 8px; top: 8px; right: 8px; bottom: 8px; position: absolute; background-color:rgba(177, 176, 176, 0.8); z-index:2;
+        box-sizing: border-box;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+        border: 0.5px solid rgb(177, 176, 176);
+        border: inset 10px #57F2FF;
+        border-style: groove ridge ridge groove;
+        border-style: outset inset inset outset;
+        border-radius: 20px;
+    }
+    #dif > button {
+        border-radius: 20px;
+    }
+    #game-menu > button {
+        border-radius: 20px;
+    }
+</style>
+    <style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -10px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+        <script>
+            
+            
+class Opponent {
+    
+    constructor() {
+        this.defeated = 1;
+        this.health = 100;
+        this.speed = 200;
+        this.attackPwr = 10;
+        this.hideWeapon = true;
+        this.weapon = "weapon-1.gif";
+        this.gRight = false;
+        this.opponentDefeated = [ false,
+            false, false, false, false, false,
+            false, false, false, false, false,
+            false, false, false, false, false,
+            false, false, false ];
+    }
+    
+    attack(player, xPos, yPos, opponent, xPosO, yPosO) {
+        if (
+            (parseInt(xPos) >= parseInt(xPosO-45)) &&
+            (parseInt(xPos) <= parseInt(xPosO)) &&
+            (parseInt(yPos) >= parseInt(yPosO-45)) &&
+            (parseInt(yPos) <= parseInt(yPosO))
+           ) {
+            opponent.hideWeapon = false;
+            player.health = parseInt(player.health-opponent.attackPwr);
+        } else { opponent.hideWeapon = true; }
+    }
+}
+class Player {
+    
+    constructor(name) {
+        this.name = name;
+        this.defeated = 1;
+        this.health = 100;
+        this.speed = 500;
+        this.attackPwr = 10;
+        this.hideWeapon = false;
+        this.weapon = [
+            "Weapons-List",
+            "weapon-1.webp",
+            "weapon-2.webp"
+        ];
+        this.up = "avatar-up.png";
+        this.down = "avatar-down.png";
+        this.left = "avatar-left.png";
+        this.right = "avatar-right.png";
+        this.attackSound='attack-sound.wav';
+        this.attackSound2='attack-sound-2.mp3';
+        
+        this.move = {
+            slow: 4,
+            normal: 8,
+            fast: 12
+        }
+        
+    }
+    
+    attack(player, xPos, yPos, opponent, xPosO, yPosO) {
+        if (
+            (parseInt(xPos) >= parseInt(xPosO-70)) &&
+            (parseInt(xPos) <= parseInt(xPosO+70)) &&
+            (parseInt(yPos) >= parseInt(yPosO-45)) &&
+            (parseInt(yPos) <= parseInt(yPosO))
+        ) {
+            opponent.health = parseInt(opponent.health-player.attackPwr);
+        }
+    }
+}
+            const opponent = new Opponent();
+            const player = new Player("Kingsley");
+        </script>
+</head>
+    <body style=" margin:0;padding:0;">
+<div class="tooltip">    
+    <input style="background:transparent;" type="image" src="img/menu.png" alt="|||" height="56" onclick="showMenu()">
+
+
+  <span class="tooltiptext">Menu</span>
+</div>
+        <audio id="attack-sound"><!-- controls autoplay muted loop-->
+            <source src="avatar/avatar-1/attack-sound.wav" type="audio/wav">
+            <!--<source src="horse.mp3" type="audio/mpeg">-->
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="attack-sound2">
+            <source src="avatar/avatar-1/attack-sound.wav" type="audio/wav">
+        </audio>
+        
+        <audio id="game-music" loop><!-- controls autoplay muted loop-->
+  <source src="bgm/bgm-0.mp3" type="audio/wav">
+  <!--<source src="horse.mp3" type="audio/mpeg">-->
+Your browser does not support the audio element.
+</audio><!--[development] axel positions -->
+        <div hidden style="position:absolute; float:right;">
+            <i style="color:darkgoldenrod;">(O) x:</i><b style="color:red;" id="opplPos"></b>
+            <i style="color:darkgoldenrod;"> y:</i><b style="color:red;" id="opptPos"></b>
+            <br/>
+            <i style="color:goldenrod;">(P) x:</i><b style="color:red;" id="lPos"></b>
+            <i style="color:goldenrod;"> y:</i><b style="color:red;" id="tPos"></b>
+        </div>
+        <!--<canvas id="myCanvas" style="width:90%;height:94%; margin:auto;padding:0;border:1px solid red;background:transparent;position:absolute;"></canvas>-->
+        <div id="game-menu" align="center">
+            <h1 style="font-size:largest;color:green;">🤜🤛 Kingsley's 🤜🤛</h1>
+            <h1 style="font-size:largest;color:red;">Fight-👊-Club</h1><!---->
+            <h1 id="winner"></h1>
+            
+            <div id="dif" style="padding:10px;border-radius: 20px;border: 0.5px solid rgb(233, 222, 199);width:fit-content;">
+                <label for="Easy">Player Name</label>
+                <br />
+                <input type="text" size="10" onchange="player.name=this.value;" value="Kingsley"/>
+                <br />
+               <label hidden for="select-player">Style:</label>
+                <select name="select-player" onchange="sPlayer()" id="select-player" style="margin:10px 0;">
+                    <option value="avatar/avatar-1" selected>Avatar-1</option>
+                    <option value="avatar/avatar-2">Avatar-2</option>
+                    <option value="avatar/avatar-3">Avatar-3</option>
+                </select>
+                <select name="select-weapon" onchange="sPlayer()" id="select-weapon" style="margin:10px 0;">
+                    <option value="1" selected>Weapon-1</option>
+                    <option value="2" >Weapon-2</option>
+                </select>
+                <br />
+                <label for="select-level">Opponent:</label>
+                <select onchange="opponent.defeated=this.value;setOpponent();" id="select-level" name="select-level" style="margin:10px 0 8px;">
+                    <option value=1 selected>Bob</option>
+                    <option value=2>TinyDragon</option>
+                    <option value=3>Leo</option>
+                    <option value=4>BlackDragon</option>
+                    <option value=5>Deadpool</option>
+                    <option value=6>GreenDragon</option>
+                    <option value=7>Shredder</option>
+                    <option value=8>SpiderMan</option>
+                    <option value=9>Venom</option>
+                    <option value=10>MineCraft</option>
+                    <option value=11>Hulk</option>
+                    <option value=12>Anime Girl</option>
+                    <option value=13>Transformer</option>
+                    <option value=14>WhiteDragon</option>
+                    <option value=15>Donny</option>
+                    <option value=16>Skeleton</option>
+                    <option value=17>Raph</option>
+                    <option value=18>Mikey</option>
+                </select>
+                <h4 style="margin:0 0 0 0;">Difficulty:</h4>
+            <input id="Easy" name="difficulty" type="radio" onclick="speed=400;" checked/><label for="Easy">Easy</label>
+            <input id="Normal" name="difficulty" type="radio" onclick="speed=200;"><label for="Normal">Normal</label>
+            <input id="Hard" name="difficulty" type="radio" onclick="speed=100;"><label for="Hard">Hard</label>
+            </div>
+            <h1 style="color:orange;" id="round"></h1>
+            <input type="image" style="clip-path: inset(50% 1% 1% 1%);margin-top:-80px;" src="img/press-start.webp" title="Start Level" alt="START" height="128" onclick="start_Game()">
+            <!--<button onclick="start_Game()">*** Start ***</button> width="40dp"
+            margin-bottom: -90px;-webkit-transform: scaleY(-1); transform: scaleY(-1);
+            -->
+        </div>
+        <div id="avatar-opp">
+            <div id="o-health" style="margin-left: -20px;width:fit-content;padding:1px;border-radius:20px;border:0.5px groove green;background-color:skyblue;color:orangered;">100</div>
+            <image height="160dp" id="opponent-img" src="opponent/opponent-10.webp" style="margin-top:-60px;width:96px;object-fit: fill;"></image>
+            <image height="160dp" id="opp-weapon" hidden src="opponent/weapon-1.gif" style="width:96px;margin-top:-80px;margin-left: 1px;-webkit-transform: scaleY(-1); transform: scaleY(-1);"></image>
+        <br/>
+        </div>
+        <div id="avatar-loc">
+            <b id="p-health" style="padding:1px;border-radius:20px;border:0.5px groove green;background-color:skyblue;color:orangered">100</b>
+            <image hidden id="weapon" src="avatar/avatar-1/weapon-1.webp" style="position:absolute;width:96px;margin:110px 0 -120px -70px;-webkit-transform:scaleY(-1);transform:scaleY(-1);"></image>
+            <image hidden id="weapon2" src="avatar/avatar-1/weapon-2.webp" style="position:absolute;width:96px;margin:110px 0 -120px -70px;-webkit-transform:scaleY(-1);transform:scaleY(-1);"></image>
+            <image height="160dp" id="avatar-img" src="avatar/avatar-1/avatar-down.png" style="margin-bottom:-100px;width:96px;"></image>
+        </div>
+        
+        <script>
+            
+            const attackSound = document.getElementById("attack-sound");
+            const attackSound2 = document.getElementById("attack-sound2");
+            attackSound.preload="auto";//"auto|metadata|none"
+            const lastLevel = 18;
+            const avatar = document.getElementById("avatar-loc");
+            const avatarOpp = document.getElementById("avatar-opp");
+            const avatarImg = document.getElementById("avatar-img");
+            const opponentImg = document.getElementById("opponent-img");
+            const selectPlayer = document.getElementById("select-player");
+            const selectWeapon = document.getElementById("select-weapon");
+            const leftMax = (parseInt(screen.width) - 102);
+            const topMax = (parseInt(screen.height) - 300);
+            
+            var defOppImg="";
+            var leftPos = 300;
+            var speed = 300;
+            var topPos = parseInt(topMax-40);
+            var oppleftPos = leftMax;
+            var opptopPos = (parseInt(topMax) - 80);
+            var upIsPressed = false;
+            var downIsPressed = false;
+            var leftIsPressed = false;
+            var rightIsPressed = false;
+            var timeout = 0;
+            var startGame = false;
+            var moveD = 0;
+            
+            document.getElementById("round").innerText="Level "+opponent.defeated;
+            avatar.style="left: " + leftPos + "px; top: " + topPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+            avatarOpp.style="left: " + oppleftPos + "px; top: " + opptopPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+            
+            function sPlayer() {
+                avatarImg.src = selectPlayer.value + "/" + player.down;
+                document.getElementById("weapon").src= selectPlayer.value + "/" + player.weapon[selectWeapon.value];
+                if (selectWeapon.value == "1") {
+                    document.getElementById("weapon2").src= selectPlayer.value + "/" + player.weapon[2];
+                    attackSound.src=selectPlayer.value + "/" + player.attackSound;
+                    attackSound2.src=selectPlayer.value + "/" + player.attackSound2;
+                } else {
+                    document.getElementById("weapon2").src= selectPlayer.value + "/" + player.weapon[1];
+                    attackSound2.src=selectPlayer.value + "/" + player.attackSound;
+                    attackSound.src=selectPlayer.value + "/" + player.attackSound2;
+                }
+                attackSound.preload="auto";
+                attackSound2.preload="auto";
+            }
+            sPlayer();
+            function start_Game() {
+                startGame = true;
+                document.getElementById('game-menu').hidden = true;
+                document.getElementById("game-music").src="bgm/bgm-"+opponent.defeated+".mp3";
+                document.getElementById("game-music").play();
+                getFScreen();
+            }
+            
+            function moveUp(sp) {
+                moveD = 0;
+                timeout = 0;
+                avatarImg.src = selectPlayer.value + "/" + player.up;
+                if (parseInt(topPos) > (parseInt(topMax) - 120)) { topPos = (parseInt(topPos) - sp); }
+                avatar.style="left: " + leftPos + "px; top: " + topPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                document.getElementById("weapon").style="position:absolute;width:96px;margin:30px 40px -90px 30px;-webkit-transform:scaleX(-1);transform:scaleX(-1);";
+                document.getElementById("weapon2").style="position:absolute;width:96px;margin:30px 40px -90px 30px;-webkit-transform:scaleX(-1);transform:scaleX(-1);";
+            }
+            
+            function moveLeft(sp) {
+                moveD = 1;
+                timeout = 0;
+                avatarImg.src = selectPlayer.value + "/" + player.left;
+                if (parseInt(leftPos) > 2) { leftPos = (parseInt(leftPos) - sp); }
+                avatar.style="left: " + leftPos + "px; top: " + topPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                document.getElementById("weapon").style="position:absolute;width:96px;margin:34px 40px -90px -80px;";
+                document.getElementById("weapon2").style="position:absolute;width:96px;margin:34px 40px -90px -80px;";
+            }
+            
+            function moveRight(sp) {
+                moveD = 2;
+                timeout = 0;
+                avatarImg.src = selectPlayer.value + "/" + player.right;
+                if (parseInt(leftPos) < parseInt(leftMax)) { leftPos = (parseInt(leftPos) + sp); }
+                avatar.style="left: " + leftPos + "px; top: " + topPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                document.getElementById("weapon").style="position:absolute;width:96px;margin:34px 40px -90px 30px;-webkit-transform:scaleX(-1);transform:scaleX(-1);";
+                document.getElementById("weapon2").style="position:absolute;width:96px;margin:34px 40px -90px 30px;-webkit-transform:scaleX(-1);transform:scaleX(-1);";
+            }
+            
+            function moveDown(sp) {
+                moveD = 3;
+                timeout = 0;
+                avatarImg.src = selectPlayer.value + "/" + player.down;
+                if (parseInt(topPos) < parseInt(topMax-40)) { topPos = (parseInt(topPos) + sp); }
+                avatar.style="left: " + leftPos + "px; top: " + topPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                document.getElementById("weapon").style="position:absolute;width:96px;margin:110px 0 -120px -70px;-webkit-transform:scaleY(-1);transform:scaleY(-1);";
+                document.getElementById("weapon2").style="position:absolute;width:96px;margin:110px 0 -120px -70px;-webkit-transform:scaleY(-1);transform:scaleY(-1);";
+            }
+            
+            function hideWeapon(alt) {
+                document.getElementById("weapon").hidden=true;
+                document.getElementById("weapon2").hidden=true;
+                setTimeout(function() {if (!alt) {attackSound.pause();} else {attackSound2.pause();}}, 300);
+            }
+            
+            function attack(alt) {
+                if (!alt) {document.getElementById("weapon").hidden=false;} else {document.getElementById("weapon2").hidden=false;}
+                attackSound.muted=false;
+                attackSound2.muted=false;
+                if (selectWeapon.value == "1") {
+                    if (attackSound.currentTime<2.2) {
+                        attackSound.currentTime=2.2;
+                    }
+                    if (attackSound.currentTime>2.9) {
+                        attackSound.currentTime=2.2;
+                    }
+                } else {
+                    if (attackSound2.currentTime<2.2) {
+                        attackSound2.currentTime=2.2;
+                    }
+                    if (attackSound2.currentTime>2.9) {
+                        attackSound2.currentTime=2.2;
+                    }
+                }
+                try {
+                    if (!alt) {attackSound.play();} else {attackSound2.play();}
+                } catch(e) {
+                }
+                
+                if (startGame) {player.attack(player, leftPos, topPos, opponent, oppleftPos, opptopPos);}
+                setTimeout(function() {hideWeapon(alt);}, 200);
+            }
+            
+                        function checkIfImageExists(url) {
+                            return new Promise((resolve) => {
+                                const img = new Image();
+                                img.src = url;
+                                img.onload = () => {
+                                    document.getElementById("opp-weapon").src=url;//"opponent/weapon-" + opponent.defeated + ".webp";
+                                    if ((opponent.defeated == 5) || opponent.defeated >= 8 && opponent.defeated <= 12) {
+                                        document.getElementById("opp-weapon").style="width:96px;margin-top:-80px;margin-left: 1px;"
+                                    } else {
+                                        document.getElementById("opp-weapon").style="width:96px;margin-top:-80px;margin-left: 1px;-webkit-transform: scaleY(-1); transform: scaleY(-1);"
+                                    }
+                                    resolve(true);
+                                }//resolve(true);
+                                img.onerror = () => {
+                                    document.getElementById("opp-weapon").src ="opponent/" +  opponent.weapon;
+                                    document.getElementById("opp-weapon").style="width:96px;margin-top:-80px;margin-left: 1px;-webkit-transform: scaleY(-1); transform: scaleY(-1);"
+                                    resolve(false);
+                                }//resolve(false);
+                            });
+                        }
+
+            function setOpponent() {
+                document.getElementById("select-level").value=opponent.defeated;
+                document.getElementById("round").innerText="Level " + opponent.defeated;
+                opponent.gRight=false;
+                oppleftPos = leftMax;
+                opptopPos = (parseInt(topMax) - 80);
+                opponent.health=(parseInt(opponent.defeated)*100);
+                document.getElementById("o-health").innerText=opponent.health;
+                var ext = ".webp";
+                var ext2 = ".webp";
+                if (opponent.defeated==1) {ext = ".png";ext2 = ".gif";}
+                opponentImg.src="opponent/opponent-" + opponent.defeated + ext;
+                defOppImg=opponentImg.src;
+                avatarOpp.style="left: " + oppleftPos + "px; top: " + opptopPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                let isWeapon = (window.location.href).replace("game.html","").replace("index.html","") + "opponent/weapon-" + opponent.defeated + ext2;
+                checkIfImageExists(isWeapon);
+                opponent.speed=(200-(opponent.defeated*10));
+            }
+            
+            function startPlayer() {
+                if (startGame) {
+                timeout++;
+                if (timeout>4) {
+                let chimg = document.getElementById("avatar-img").src;
+                let chdir = window.location.href;
+                let cdir = chdir.replace("game.html","").replace("index.html","");
+                let cimg = chimg.replace(cdir,"").replace(selectPlayer.value + "/","");
+                //alert(cimg);
+                if (cimg==player.down) {
+                    document.getElementById("avatar-img").src= selectPlayer.value + "/" + player.left;
+                } else if (cimg==player.up) {
+                    document.getElementById("avatar-img").src= selectPlayer.value + "/" + player.right;
+                } else if (cimg==player.left) {
+                    document.getElementById("avatar-img").src= selectPlayer.value + "/" + player.down;
+                } else if (cimg==player.right) {
+                    document.getElementById("avatar-img").src= selectPlayer.value + "/" + player.up;
+                }
+                }
+                if (player.health<100) {
+                    player.health++;
+                }
+                document.getElementById("p-health").innerText=player.health;
+                }
+                document.getElementById("tPos").innerText=topPos;
+                document.getElementById("lPos").innerText=leftPos;
+                setTimeout(function() {startPlayer();}, player.speed);
+            }
+            
+            function startOpponent() {
+                if (startGame) {
+                document.getElementById("o-health").innerText=opponent.health;
+
+                if (opponent.gRight && (parseInt(oppleftPos) < parseInt(leftMax))) {
+                    oppleftPos = (parseInt(oppleftPos) + 24);//(parseInt(leftPos) + 8);
+                    if ((opponent.defeated > 1) && (opponent.defeated%2 > 0)) {
+                        document.getElementById("o-health").style="margin-left: -20px; width:fit-content;padding:1px;border-radius:20px;border:0.5px groove green;background-color:skyblue;color:orangered;";
+                        avatarOpp.style="left: " + oppleftPos + "px; top: " + opptopPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                    } else {
+                        document.getElementById("o-health").style="-webkit-transform: scaleX(-1);transform: scaleX(-1);margin-left: -20px; width:fit-content;padding:1px;border-radius:20px;border:0.5px groove green;background-color:skyblue;color:orangered;";
+                        avatarOpp.style="-webkit-transform: scaleX(-1); transform: scaleX(-1); left: " + oppleftPos + "px; top: " + opptopPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                    }
+                    if (parseInt(oppleftPos) > parseInt(leftMax-300)) {
+                        opponent.gRight = false;
+                    }
+                } else if (!opponent.gRight && (parseInt(oppleftPos) > 0)) {
+                    oppleftPos = (parseInt(oppleftPos) - 24);//(parseInt(leftPos) - 8);
+                    if ((opponent.defeated > 1) && (opponent.defeated%2 > 0)) {
+                        document.getElementById("o-health").style="-webkit-transform: scaleX(-1);transform: scaleX(-1);margin-left: -20px; width:fit-content;padding:1px;border-radius:20px;border:0.5px groove green;background-color:skyblue;color:orangered;";
+                        avatarOpp.style="-webkit-transform: scaleX(-1); transform: scaleX(-1); left: " + oppleftPos + "px; top: " + opptopPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                    } else {
+                        document.getElementById("o-health").style="margin-left: -20px; width:fit-content;padding:1px;border-radius:20px;border:0.5px groove green;background-color:skyblue;color:orangered;";
+                        avatarOpp.style="left: " + oppleftPos + "px; top: " + opptopPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                    }
+                    if (parseInt(oppleftPos) < 300) {
+                        opponent.gRight = true;
+                    }
+                }
+                document.getElementById("opptPos").innerText=opptopPos;
+                document.getElementById("opplPos").innerText=oppleftPos;
+                opponent.attack(player, leftPos, topPos, opponent, oppleftPos, opptopPos);
+                
+                if (!opponent.hideWeapon) {
+                    if (opponent.gRight) {oppleftPos = parseInt(leftPos-54);} else {oppleftPos = parseInt(leftPos+54);}
+                }
+                if (((opponent.defeated > 14) && (opponent.defeated != 16)) || (opponent.defeated == 3) || (opponent.defeated == 5) || opponent.defeated >= 8 && opponent.defeated <= 12 && opponent.defeated != 10) {
+                    document.getElementById("opp-weapon").hidden=true;
+                    if (opponent.hideWeapon) {
+                        if (opponentImg.src!=defOppImg) {
+                            opponentImg.src="opponent/opponent-" + opponent.defeated + ".webp";
+                        }
+                    } else {
+                        opponentImg.src=document.getElementById("opp-weapon").src;
+                    }
+                } else {
+                    document.getElementById("opp-weapon").hidden=opponent.hideWeapon;
+                }
+                if ((player.health < 1) || (opponent.health < 1)) {
+                    leftPos = 300;
+                    topPos = parseInt(topMax-40);
+                    avatar.style="left: " + leftPos + "px; top: " + topPos + "px; position: absolute; width:50px; height:50px; background-color:transparent;";
+                    player.health=100;
+                    
+                    if (opponent.health<1){
+                        opponent.opponentDefeated[opponent.defeated] = true;
+                        opponent.defeated=(parseInt(opponent.defeated)+1);
+                        player.attackPwr++;
+                        if (opponent.defeated>lastLevel) {
+                            opponent.defeated=1;
+                        }
+                        setOpponent();
+                        let wins=0;
+                        for (let i=1;i<=lastLevel;i++) {
+                            if (opponent.opponentDefeated[i] == true) {wins++;}
+                        }
+                        document.getElementById("winner").innerHTML = "<sup style='font-size:smaller;color:darkgoldenrod;'>[" + wins + "/" + lastLevel + "]</sup><br/><i style='color:blue;'>Winner</i>: <b style='color:orangered;text-shadow: 1px 1px 1px lime;'>" + player.name + "</b><br/><image style='height:128px;margin:-40px 0;' src='" + avatarImg.src + "'></image><image style='margin:-40px 0;padding:30px 0 0 0;height:168px;' src='img/victory.webp'></image>";
+                    } else {
+                        document.getElementById("winner").innerHTML = "Winner: " + "<image style='height:48px;' src='"+opponentImg.src+"'></image><image style='margin:-40px 0;padding:30px 0 0 0;height:168px;' src='img/defeat.webp'></image>";
+                    }
+                    showMenu();
+                }
+                }
+                setTimeout(function() {startOpponent();}, parseInt(speed+opponent.speed));
+            }
+
+            function showMenu() {
+                startGame=false;
+                document.getElementById('game-menu').hidden=false;
+                document.getElementById('game-music').src='bgm/bgm-0.mp3';
+                document.getElementById('game-music').play();
+            }
+            function startTime(d) {
+                if (d == "d") {
+                    moveDown(player.move.normal);
+                } else if (d == "u") {
+                    moveUp(player.move.normal);
+                } else if (d == "l") {
+                    moveLeft(player.move.normal);
+                } else if (d == "r") {
+                    moveRight(player.move.normal);
+                }
+                if (downIsPressed || upIsPressed || leftIsPressed || rightIsPressed) {
+                    setTimeout(function() {startTime(d)}, 100);
+                }
+            }
+            /*
+            event.ctrlKey, event.shiftKey, event.altKey, event.metaKey: 
+            Boolean values indicating whether the modifier keys (Ctrl, Shift, Alt, Meta/Command) were pressed during the event.
+            */
+            document.addEventListener('keydown', function(event) {
+                if ((!document.getElementById('game-menu').hidden) && (event.key === 'Enter')) {
+                    start_Game();
+                } else if (event.key === 'ArrowRight') {
+                    moveRight(player.move.normal);
+                } else if (event.key === 'ArrowLeft') {
+                    moveLeft(player.move.normal);
+                } else if (event.key === 'ArrowUp') {
+                    moveUp(player.move.normal);
+                } else if (event.key === 'ArrowDown') {
+                    moveDown(player.move.normal);
+                } else if (event.key === ' ') {
+                    attack(event.altKey);//} else if (event.altKey && event.code === 'Space') {
+                }
+            });
+        </script>
+        <div class='right-control'>
+            <button style="width:100px;height:100px;font-size:72px;padding:0;" onclick="attack(true);">B</button>
+            <br>
+            <button style="width:100px;height:100px;font-size:72px;padding:0;" onclick="attack(false);">A</button>
+        </div>
+        <div class='left-control'>
+            <div></div> <div>
+                <button 
+                    ontouchstart='upIsPressed=true;startTime("u");'
+                    ontouchend="upIsPressed=false;"
+                    onmousedown='upIsPressed=true;startTime("u");'
+                    onmouseup="upIsPressed=false;"
+                    onclick="moveUp(player.move.slow)"
+                    ondblclick="moveUp(player.move.fast)"
+                    >^</button>
+            </div> <div></div>
+            <div>
+                <button
+                    ontouchstart='leftIsPressed=true;startTime("l");'
+                    ontouchend="leftIsPressed=false;"
+                    onmousedown='leftIsPressed=true;startTime("l");'
+                    onmouseup="leftIsPressed=false;"
+                    onclick="moveLeft(player.move.slow)"
+                    ondblclick="moveLeft(player.move.fast)"
+                    ><</button>
+            </div> <div></div> <div>
+                <button
+                    ontouchstart='rightIsPressed=true;startTime("r");'
+                    ontouchend="rightIsPressed=false;"
+                    onmousedown='rightIsPressed=true;startTime("r");'
+                    onmouseup="rightIsPressed=false;"
+                    onclick="moveRight(player.move.slow)"
+                    ondblclick="moveRight(player.move.fast)"
+                    >></button>
+            </div>
+            <div></div> <div>
+                <button
+                    ontouchstart='downIsPressed=true;startTime("d");'
+                    ontouchend="downIsPressed=false;"
+                    onmousedown='downIsPressed=true;startTime("d");'
+                    onmouseup="downIsPressed=false;"
+                    onclick="moveDown(player.move.slow)"
+                    ondblclick="moveDown(player.move.fast);"
+                    >v</button>
+            </div> <div></div>
+        </div>
+        <script>
+            startPlayer();
+            setOpponent();
+            startOpponent();
+                    /* full screen. */
+            var elem = document.documentElement;
+            function openFullscreen() {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            }
+
+            function closeFullscreen() {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            }
+
+            function getFScreen() {
+                if (document.fullscreenElement) {
+                    //closeFullscreen();
+                } else {
+                    openFullscreen();
+                }
+            }
+        </script>
+            
+    </body>
+</html>
