@@ -653,7 +653,9 @@ Your browser does not support the audio element.
                 } else if (event.key === 'ArrowDown') {
                     moveDown(player.move.normal);
                 } else if (event.key === ' ') {
-                    attack(event.shiftKey);/* attack(event.altKey); } else if (event.altKey && event.code === 'Space') {*/
+                    attack(event.altKey);/* attack(event.shiftKey); } else if (event.altKey && event.code === 'Space') {*/
+                } else if (event.key === event.altKey) {
+                    attack(true);
                 }
             });
         </script>
