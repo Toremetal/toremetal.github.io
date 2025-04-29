@@ -12,8 +12,17 @@
     <meta property="og:image" name="image" content="img/mb-tools700.png">
     <link rel="icon" href="img/enhanced-logo-red.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css">
-    <script src="js/js.js"></script>
+    <!-- google analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M20V5KWRLY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-M20V5KWRLY');
+        gtag('event', 'screen_view', {'app_name': 'MB-Tools', 'screen_name': 'MB-Tools-Main'});
+    </script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927593002808864" crossorigin="anonymous"></script>
+    <script src="js/js.js"></script>
 </head>
 <body id="body" class="home" onload="getMode();">
     <a class="skip-link visuallyhidden" href="#main">Skip to content</a>
