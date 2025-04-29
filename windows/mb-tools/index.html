@@ -10,8 +10,8 @@
     <meta property="og:copyright" name="copyright" content="TOREMETAL">
     <meta property="og:description" name="description" content="TOREMETAL Technology - Utility Apps for Windows, MB-Tools: Create VM's, VHD's, Backup Images, Restore Backup Images and more.">
     <meta property="og:image" name="image" content="img/mb-tools700.png">
-    <link rel="icon" href="img/enhanced-logo-red.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/enhanced-logo-red.png" type="image/png">
     <!-- google analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M20V5KWRLY"></script>
     <script>
@@ -19,9 +19,10 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-M20V5KWRLY');
-        gtag('event', 'screen_view', {'app_name': 'MB-Tools', 'screen_name': 'MB-Tools-Main'});
+        gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_MAIN_PAGE'});
     </script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927593002808864" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8927593002808864" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css">
     <script src="js/js.js"></script>
 </head>
 <body id="body" class="home" onload="getMode();">
@@ -32,7 +33,7 @@
                 <span role="status" aria-live="polite"></span>
                 <div class="banner">
                     <p>
-                       <small><sup>(external link)</sup></small> Give <a title="Questions, Comments, or Concerns. (external link)" href="https://forms.gle/Do8eZDFBsiSued9aA" target="_blank">feedback</a> to help us improve.
+                       <small><sup>(external link)</sup></small> Give <a title="Questions, Comments, or Concerns. (external link)" onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_MAIN_PAGE_FEEDBACK'});" href="https://forms.gle/Do8eZDFBsiSued9aA" target="_blank">feedback</a> to help us improve.
                     </p>
                 </div>
                 <nav id="global-nav" aria-label="Main">
@@ -79,11 +80,11 @@
                         </p>
                         <h3>Report Issues or Suggestions:</h3>
                         <p>
-                            &emsp;Questions, Comments, Suggestions, or Contributions? Contact us through the <a title="Contact Us. (external link)" href="https://forms.gle/Do8eZDFBsiSued9aA" target="_blank">feedback</a> link, <small><sup>(external link)</sup></small>.
+                            &emsp;Questions, Comments, Suggestions, or Contributions? Contact us through the <a title="Contact Us. (external link)"  onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_MAIN_PAGE_SUPPORT_LINK'});" href="https://forms.gle/Do8eZDFBsiSued9aA" target="_blank">feedback</a> link, <small><sup>(external link)</sup></small>.
                         </p>
                     </article>
                     <div class="space-evenly">
-                        <h3 id="Download">Download</h3>
+                        <h3><a onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_MAIN_PAGE_DOWNLOAD'});" id="Download" href="setup.exe" download="setup.exe">Download</a></h3>
                     </div>
                     <!--/* Content */-->
             <style>
