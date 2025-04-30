@@ -3,15 +3,15 @@
 <head>
     <!--
     ~   ************************************************************************
-    ~     toremetal properties : Copyright (c) 2023 ™T©ReMeTaL.
+    ~     toremetal properties : Copyright (c) 2023 â„¢TÂ©ReMeTaL.
     ~   ************************************************************************
     ~
-    ~    ™T©ReMeTaL toremetal.com
-    ~    Copyright (C) 2023 ™T©ReMeTaL.
+    ~    â„¢TÂ©ReMeTaL toremetal.com
+    ~    Copyright (C) 2023 â„¢TÂ©ReMeTaL.
     ~    Unless required by applicable law or agreed to in writing, software
     ~    is on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND
     ~    either express or implied. Created with best intent, Use at your own risk.
-    ~    ™T©ReMeTaL assumes no-liability of any kind.
+    ~    â„¢TÂ©ReMeTaL assumes no-liability of any kind.
     ~
     ~   ************************************************************************
     -->
@@ -199,10 +199,63 @@
                 opacity: 0.8;
             }
     </style>
-
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    };
+</script>
 </head>
 <body style="margin: 4px; padding: 10px;">
 
+        <style>
+            .devapplist {
+                box-sizing: border-box;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+                border-radius: 5px;
+                border: 1px ridge #ccc;
+                background-color: #CCA43D96;
+                width: fit-content;
+                position: absolute;
+                left: -110px;
+                padding: 4px 0;
+                min-width: 140px;
+            }
+                .devapplist:hover {
+                    background-color: #00000094;
+                    width: fit-content;
+                    left: 10px;
+                    z-index: 100;
+                }
+        </style>
+        <!--Pop Out App Menu-->
+        <div class='devapplist'>
+            <div style="display:inline;">
+                <button id="appbtn" class="closeButton s3Dbtn hover-btn" style="color:red;border-radius:5px;padding:0 4px;margin:4px 10px;max-width:100px;max-height:34px;width:fit-content;height:fit-content;" onclick="shiA()">Apps-List</button>
+            </div>
+            <br />
+            <sub style="transform: rotate(90deg); cursor: pointer; font-size: 40px; font-weight: 600; line-height: 0; text-shadow: 1px 1px blue; text-align: right; float: right;">â‡¯</sub>
+            <div id="appslist" w3-include-html="/content/menu.html" style="text-shadow: 1px 1px 2px blue, 0 0 1em red, 0 0 0.2em darkred; margin-top: 10px; width: fit-content; height: fit-content; display: block; text-align: left"></div>
+            <script>includeHTML();</script>
+        </div>
     <div align="center" style="font-family: 'IM Fell English SC', serif;
             text-align:center;
             padding:1px;
