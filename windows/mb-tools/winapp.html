@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=1, shrink-to-fit=yes" />
+    <link rel="canonical" href="https://toremetal.com/windows">
+    <meta name="robots" content="noindex">
+   <title></title>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain attribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        };
+    </script>
+    <STYLE TYPE="text/css">
+
+        .winapps BODY {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            color: #000000;
+            font-family: 'IM Fell English SC', serif;
+            background-color: white;
+        }
+
+        .winapps A {
+            font-weight: normal;
+            color: #FFFFFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+            .winapps A:link {
+                font-weight: normal;
+                color: #FFFFFF;
+                text-decoration: none
+            }
+
+            .winapps A:visited {
+                font-weight: normal;
+                color: #FFFFFF;
+                text-decoration: none
+            }
+
+            .winapps A:active {
+                font-weight: normal;
+                text-decoration: none
+            }
+
+            .winapps A:hover {
+                font-weight: normal;
+                color: #FF6600;
+                text-decoration: none
+            }
+
+        .winapps P {
+            margin-top: 0px;
+            margin-bottom: 12px;
+            color: #000000;
+            font-family: 'IM Fell English SC', serif
+        }
+
+        .winapps PRE {
+            border-right: #f0f0e0 1px solid;
+            padding-right: 5px;
+            border-top: #f0f0e0 1px solid;
+            margin-top: -5px;
+            padding-left: 5px;
+            font-size: x-small;
+            padding-bottom: 5px;
+            border-left: #f0f0e0 1px solid;
+            padding-top: 5px;
+            border-bottom: #f0f0e0 1px solid;
+            font-family: 'IM Fell English SC', serif;
+            background-color: #e5e5cc
+        }
+
+        .winapps TD {
+            font-size: 12px;
+            color: #000000;
+            font-family: 'IM Fell English SC', serif
+        }
+
+        .winapps H2 {
+            border-top: #003366 1px solid;
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            margin-left: -15px;
+            color: #003366
+        }
+
+        .winapps H3 {
+            margin-top: 10px;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            margin-left: -15px;
+            color: #000000
+        }
+
+        .winapps UL {
+            margin-top: 10px;
+            margin-left: 20px
+        }
+
+        .winapps OL {
+            margin-top: 10px;
+            margin-left: 20px
+        }
+
+        .winapps LI {
+            margin-top: 10px;
+            color: #000000
+        }
+
+        .winapps FONT.value {
+            font-weight: bold;
+            color: white
+        }
+
+        .winapps FONT.key {
+            font-weight: bold;
+            color: darkgreen
+        }
+
+        .winapps .divTag {
+            border: 1px;
+            border-style: solid;
+            background-color: #FFFFFF;
+            text-decoration: none;
+            height: auto;
+            width: auto;
+            background-color: #cecece
+        }
+
+        .winapps .BannerColumn {
+            background-color: #000000
+        }
+
+        .winapps .Banner {
+            border: 0;
+            padding-left: 20px;
+            height: 8px;
+            margin-top: 0px;
+            color: #ffffff;
+            filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1,StartColorStr='#1c5280',EndColorStr='#FFFFFF');
+        }
+
+        .winapps .BannerTextCompany {
+            font: bold;
+            font-size: 18pt;
+            color: #cecece;
+            font-family: 'IM Fell English SC', serif;
+            height: 0px;
+            width: 100%;
+            margin: 0;
+            padding: 0px;
+            white-space: nowrap;
+            filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2,OffY=2,Color='black',Positive='true');
+        }
+
+        .winapps .BannerTextApplication {
+            font: bold;
+            font-size: 18pt;
+            font-family: 'IM Fell English SC', serif;
+            height: 0px;
+            margin-top: 0;
+            margin-left: 8px;
+            margin-bottom: 0;
+            padding: 0px;
+            white-space: nowrap;
+            filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2,OffY=2,Color='black',Positive='true');
+        }
+
+        .winapps .BannerText {
+            font: bold;
+            font-size: 18pt;
+            font-family: 'IM Fell English SC', serif;
+            height: 0px;
+            margin-top: 0;
+            margin-left: 8px;
+            margin-bottom: 0;
+            padding: 0px;
+            filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2,OffY=2,Color='black',Positive='true');
+        }
+
+        .winapps .BannerSubhead {
+            border: 0;
+            padding: 0;
+            height: 16px;
+            margin-top: 0px;
+            margin-left: 10px;
+            color: #ffffff;
+            filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1,StartColorStr='#4B3E1A',EndColorStr='#FFFFFF');
+        }
+
+        .winapps .BannerSubheadText {
+            font: bold;
+            height: 11px;
+            font-size: 11px;
+            font-family: 'IM Fell English SC', serif;
+            margin-top: 1px;
+            margin-left: 10px;
+            filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2,OffY=2,Color='black',Positive='true');
+        }
+
+        .winapps .FooterRule {
+            border: 0;
+            padding: 0;
+            height: 1px;
+            margin: 0px;
+            color: #ffffff;
+            filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1,StartColorStr='#4B3E1A',EndColorStr='#FFFFFF');
+        }
+
+        .winapps .FooterText {
+            font-size: 11px;
+            font-weight: normal;
+            text-decoration: none;
+            font-family: 'IM Fell English SC', serif;
+            margin-top: 10px;
+            margin-left: 0;
+            margin-bottom: 2px;
+            padding: 0;
+            color: #999999;
+            white-space: nowrap
+        }
+
+            .winapps .FooterText A:link {
+                font-weight: normal;
+                color: #999999;
+                text-decoration: underline;
+                text-shadow: 0.5px 0.5px 1px blue, 0 0 1em red, 0 0 0.2em darkred;
+            }
+
+            .winapps .FooterText A:visited {
+                font-weight: normal;
+                color: #999999;
+                text-decoration: underline
+            }
+
+            .winapps .FooterText A:active {
+                font-weight: normal;
+                color: #999999;
+                text-decoration: underline
+            }
+
+            .winapps .FooterText A:hover {
+                font-weight: normal;
+                color: #FF6600;
+                text-decoration: underline
+            }
+
+        .winapps .ClickOnceInfoText {
+            font-size: 11px;
+            font-weight: normal;
+            text-decoration: none;
+            font-family: 'IM Fell English SC', serif;
+            margin-top: 0;
+            margin-right: 2px;
+            margin-bottom: 0;
+            padding: 0;
+            color: #000000
+        }
+
+        .winapps .InstallTextStyle {
+            font: bold;
+            font-size: 14pt;
+            font-family: 'IM Fell English SC', serif;
+            color: #FF0000;
+            text-decoration: None
+        }
+
+        .winapps .DetailsStyle {
+            margin-left: 30px
+        }
+
+        .winapps .ItemStyle {
+            margin-left: -15px;
+            font-weight: bold
+        }
+
+        .winapps .StartColorStr {
+            background-color: #4B3E1A
+        }
+
+        .winapps .JustThisApp A:link {
+            font-weight: normal;
+            color: #FFFFFF;
+            text-decoration: underline
+        }
+
+        .winapps .JustThisApp A:visited {
+            font-weight: normal;
+            color: #FFFFFF;
+            text-decoration: underline
+        }
+
+        .winapps .JustThisApp A:active {
+            font-weight: normal;
+            text-decoration: underline
+        }
+
+        .winapps .JustThisApp A:hover {
+            font-weight: normal;
+            color: #FF6600;
+            text-decoration: underline
+        }
+
+        .a7:hover {
+            border-color: #ffffff !important;
+            box-shadow: 0 0 0 .2rem rgba(0, 0, 255, .25);
+            font-family: 'IM Fell English SC', serif;
+        }
+
+        .a7 {
+            background: transparent;
+            font-family: 'IM Fell English SC', serif;
+        }
+
+        .button6 {
+            font-family: 'IM Fell English SC', serif;
+            background: transparent;
+        }
+
+        .winapps .bluhover:hover {
+            color: blue;
+            text-shadow: 1px 1px #0000ff;
+        }
+
+        .winapps .closeButton {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 400;
+            cursor: pointer;
+            background: darkred;
+            color: goldenrod;
+            height: 20px;
+            position: absolute;
+            padding: 2px 4px;
+            margin: 0;
+            border: 2px solid #f1f1f1;
+            box-sizing: border-box;
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            border-radius: 5px;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .winapps .s3Dbtn:hover {
+            opacity: 0.7;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px rgba(0,0,0,.09);
+            font-weight: 100;
+            color: red;
+        }
+
+        .winapps .hover-btn {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            -moz-transform: perspective(1px) translateZ(0);
+            -ms-transform: perspective(1px) translateZ(0);
+            -o-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            position: relative;
+            background: #111111;
+            -webkit-transition-property: color;
+            -moz-transition-property: color;
+            -o-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+
+            .winapps .hover-btn::before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #38c8a8;
+                -webkit-transform: scaleX(0);
+                -moz-transform: scaleX(0);
+                -ms-transform: scaleX(0);
+                -o-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transform-origin: 50%;
+                -moz-transform-origin: 50%;
+                -ms-transform-origin: 50%;
+                -o-transform-origin: 50%;
+                transform-origin: 50%;
+                -webkit-transition-property: transform;
+                -moz-transition-property: transform;
+                -o-transition-property: transform;
+                transition-property: transform;
+                -webkit-transition-duration: 0.3s;
+                -moz-transition-duration: 0.3s;
+                -o-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+                -webkit-transition-timing-function: ease-out;
+                -moz-transition-timing-function: ease-out;
+                -o-transition-timing-function: ease-out;
+                transition-timing-function: ease-out;
+                display: block !important;
+            }
+
+            .winapps .hover-btn:hover::before, .winapps .hover-btn:focus::before, .winapps .hover-btn:active::before {
+                -webkit-transform: scaleX(1);
+                -moz-transform: scaleX(1);
+                -ms-transform: scaleX(1);
+                -o-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+
+            .winapps .hover-btn:hover, .winapps .hover-btn:focus, .winapps .hover-btn:active {
+                color: white;
+                box-shadow: none;
+            }
+
+        .support a {
+            text-shadow: 0.5px 0.5px 1px blue, 0 0 1em red, 0 0 0.2em darkred;
+        }
+    </STYLE>
+    <!-- Google tag (gtag.js) analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M20V5KWRLY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-M20V5KWRLY');
+    </script>
+
+</head>
+<body style="margin: 4px; padding: 10px;">
+
+    <div class="winapps" align="center" style="height:648px;">
+        <script>
+
+            function myFunction(id, lnk) {
+                window.open(id);
+                /*var x = document.getElementById(id).innerHTML;*/
+                /*x = parseInt(x.replace("Thanks for Checking it out! ", "").replace("Downloads: ", "")) + 1;*/
+                document.getElementById(id).innerHTML = 'Thanks for Checking it out!';/* Downloads: ' + x;*/
+                /*document.getElementById("slog").src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=' + lnk + '&ext=';*/
+            };
+            function shiA() {
+                document.getElementById('devlist').style.display = "none"
+                document.getElementById('appslist').style.display = "block"
+                document.getElementById('appbtn').style.color = "red"
+                document.getElementById('devbtn').style.color = "white"
+            }
+            function shiD() {
+                document.getElementById('devlist').style.display = "block"
+                document.getElementById('appslist').style.display = "none"
+                document.getElementById('appbtn').style.color = "white"
+                document.getElementById('devbtn').style.color = "red"
+
+            }
+        </script>
+
+        <iframe id="slog" src="" style="border:none; overflow:hidden;" scrolling="no" frameborder="0" height="0" width="0" hidden></iframe>
+
+        <!-- View Count Script auto Pg Name (window.location.pathname) -->
+        <script>
+            /*document.write("<iframe hidden scrolling='no' frameborder='0' src='https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=" + window.location.pathname.replace('/', '').replace('/', '').replace('/', '').replace('/', '').replace('/', '').toString() + "&ext='></iframe>");*/
+        </script>
+        <style>
+            .devapplist {
+                box-sizing: border-box;
+                box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+                border-radius: 5px;
+                border: 1px ridge #ccc;
+                background-color: #CCA43D96;
+                width: fit-content;
+                position: absolute;
+                left: -110px;
+                padding: 4px 0;
+                min-width: 140px;
+            }
+                .devapplist:hover {
+                    background-color: #00000094;
+                    width: fit-content;
+                    left: 10px;
+                    z-index: 100;
+                }
+        </style>
+        <div class='devapplist'>
+            <div style="display:inline;">
+                <button id="appbtn" class="closeButton s3Dbtn hover-btn" style="color:red;border-radius:5px;padding:0 4px;margin:4px 10px;max-width:100px;max-height:34px;width:fit-content;height:fit-content;" onclick="shiA()">Apps-List</button>
+            </div>
+            <br />
+            <sub style="transform: rotate(90deg); cursor: pointer; font-size: 40px; font-weight: 600; line-height: 0; text-shadow: 1px 1px blue; text-align: right; float: right;">⇯</sub>
+            <div id="appslist" w3-include-html="/content/menu.html" style="text-shadow: 1px 1px 2px blue, 0 0 1em red, 0 0 0.2em darkred; margin-top: 10px; width: fit-content; height: fit-content; display: block; text-align: left"></div>
+        </div>
+        <br />
+
+        <div style="margin:auto;">
+            <div class="container1" style="box-sizing: border-box;
+        box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color:whitesmoke; overflow:auto;width:fit-content;padding:8px;">
+                <TABLE CELLPADDING="2" CELLSPACING="0" BORDER="0" BGCOLOR="#cecece" WIDTH="100%">
+                    <TR>
+                        <TD>
+                            <TABLE BGCOLOR="#1c5280" WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0">
+                                <TR>
+                                    <TD CLASS="Banner"></TD>
+                                </TR>
+                                <TR>
+                                    <TD CLASS="Banner">
+                                        <SPAN CLASS="BannerTextCompany" ALIGN="CENTER">
+                                            <img ALIGN="middle" src="https://toremetal.com/img/logo.webp" width="64" /> <sup>™T©ReMeTaL</sup><br /> &nbsp;<!-- w3-include-html="name.txt"-->
+                                            <sub style="color:goldenrod;font-size:28px;font-weight:600;">™MB-To©lB©x (MB-Tools)</sub>
+                                        </SPAN>
+                                    </TD>
+                                </TR>
+                                <TR>
+                                    <TD CLASS="Banner">
+                                        <SPAN CLASS="BannerTextApplication">for Windows™</SPAN>
+                                    </TD>
+                                </TR>
+                                <TR>
+                                    <TD CLASS="Banner" ALIGN="RIGHT">
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                        </TD>
+                    </TR>
+                </TABLE>
+                <!-- End Banner -->
+                <!-- Begin Dialog -->
+                <TABLE CELLPADDING="2" CELLSPACING="0" BORDER="0">
+                    <TR>
+
+                        <TD ALIGN="CENTER">
+                            <TABLE CELLPADDING="2" CELLSPACING="0" BORDER="0">
+
+                                <TR>
+                                    <TD>
+
+                                        <!-- Begin AppInfo -->
+                                        <TABLE>
+
+                                            <TR><TD COLSPAN="3">&nbsp;</TD></TR>
+
+                                            <TR>
+                                                <TD><B>Name:</B></TD>
+                                                <TD WIDTH="5"><SPACER TYPE="block" WIDTH="10"></SPACER></TD><!-- w3-include-html="name.txt"-->
+                                                <TD>™MB_To©lB©x (MB-Tools)</TD>
+                                            </TR>
+
+                                            <TR><TD COLSPAN="3">&nbsp;</TD></TR>
+                                            
+                                            <TR>
+                                                <TD><B>Publisher:</B></TD>
+                                                <TD WIDTH="5"><SPACER TYPE="block" WIDTH="10" /></TD>
+                                                <TD>™T©ReMeTaL</TD>
+                                            </TR>
+
+                                            <TR><TD COLSPAN="3">&nbsp;</TD></TR>
+
+                                            <TR>
+                                                <TD><B>Version: </B></TD>
+                                                <TD WIDTH="5"><SPACER TYPE="block" WIDTH="10"></SPACER></TD>
+                                                <TD><i w3-include-html="version.txt"></i></TD>
+                                            </TR>
+
+                                            <TR><TD COLSPAN="3">&nbsp;</TD></TR>
+
+                                            <TR>
+                                                <TD><B>Release Date:</B></TD>
+                                                <TD WIDTH="5"><SPACER TYPE="block" WIDTH="10"></SPACER></TD>
+                                                <TD w3-include-html="releasedate.txt"></TD>
+                                            </TR>
+
+                                            <TR><TD COLSPAN="3">&nbsp;</TD></TR>
+
+                                        </TABLE>
+                                        <!-- End AppInfo -->
+
+                                                    <!-- w3-include-html="button.txt"  w3-include-html="button.txt" -->
+<!-- Begin Prerequisites -->
+<TABLE ID="BootstrapperSection" BORDER="0"><TR><TD COLSPAN="2">The following prerequisites are required:</TD></TR><TR><TD WIDTH="10">&nbsp;</TD><TD><UL>
+<LI>.NET Framework 3.5 SP1</LI>
+</UL></TD></TR><TR><TD COLSPAN="2"><p>
+If these components are already installed, you can 
+<A onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_Download'});" target="_blank" href="MB-Tools.application" style="border:1px groove grey;border-radius:5px;" class="hover-btn">Launch</A>
+the application now. Otherwise, click the button below to install the prerequisites and run the application.</p>
+</TD></TR><TR><TD COLSPAN="2">&nbsp;</TD></TR>
+                                            <TR>
+                                                <TD COLSPAN="2" align="center">
+                                                    <p>Or Click the button below to download the installer.
+                                                    <br />(Windows blocking: select; keep, More Info, and run anyway.)</p>
+                                                </TD>
+                                            </TR></TABLE>
+<!-- End Prerequisites -->
+
+
+                                    </TD>
+                                </TR>
+
+                            </TABLE>
+                        </TD>
+                    </TR>
+                </TABLE>
+                <!-- Begin Buttons -->
+                <TABLE CELLPADDING="2" CELLSPACING="0" BORDER="0">
+                    <TR>
+                        <TD ALIGN="CENTER">
+                            <TABLE CELLPADDING="2" CELLSPACING="0" BORDER="0">
+                                <TR>
+                                    <TD ALIGN="center">
+                                        <TABLE CELLPADDING="1" BGCOLOR="transparent" CELLSPACING="0" BORDER="0">
+                                            <TR style="border-radius:5px;background-color:transparent;">
+                                                <TD id="setup.exe" style="border-radius:5px;background-color:darkred;">
+                                                <!-- w3-include-html="buttonb.txt"-->
+                                                <button onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_Download'});window.open('setup.exe')" type="button" class="bluhover closeButton s3Dbtn hover-btn" title="Download"> Installer </button>
+                                                </TD>
+                                            </TR>
+                                        </TABLE>
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                        </TD>
+                    </TR>
+                    <!-- End Buttons -->
+                    <!-- End Dialog -->
+                    <!-- Spacer Row -->
+                    <TR>
+                        <TD>&nbsp;</TD>
+                    </TR>
+
+                    <TR>
+                        <TD>
+                            <!-- Begin Footer -->
+                            <TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0" BGCOLOR="transparent">
+                                <TR>
+                                    <TD HEIGHT="5">
+                                        <SPACER TYPE="block" HEIGHT="5"></SPACER>
+                                    </TD>
+                                </TR>
+                                <TR>
+                                    <TD CLASS="FooterText" ALIGN="center"><!-- w3-include-html="support.txt"-->
+                                    <A HREF="https://forms.gle/Do8eZDFBsiSued9aA">™T©ReMeTaL Support ❔'s</A> &nbsp;&nbsp;&nbsp;::&nbsp;&nbsp;&nbsp;
+                                    <A HREF="https://go.microsoft.com/fwlink/?LinkId=154571">.NET Framework ❔'s</A>
+                                    </TD>
+                                </TR>
+                                <TR>
+                                    <TD HEIGHT="5">
+                                        <SPACER TYPE="block" HEIGHT="5"></SPACER>
+                                    </TD>
+                                </TR>
+                                <TR>
+                                    <TD HEIGHT="1" ALIGN="center">
+                                        <hr />
+                                        <a class="hover-btn" style="cursor:pointer;border:1px groove grey;padding:0 4px;border-radius:5px;width:fit-content;background-color:grey;" onclick="window.open('https://toremetal.com/privacypolicy');">
+                                            Privacy-Policy
+                                        </a>
+
+                                    </TD>
+                                </TR>
+                            </TABLE>
+                            <!-- End Footer -->
+                        </TD>
+                    </TR>
+
+                </TABLE>
+            </div>
+        </div>
+        <script>
+            LANGUAGE = "JavaScript";
+            runtimeVersion = "4.7.2";
+            checkClient = false;
+            directLink = "https://toremetal.com/windows/mb-boot/MB-Tools.application";
+            function Initialize() {
+                if (HasRuntimeVersion(runtimeVersion, false) || (checkClient && HasRuntimeVersion(runtimeVersion, checkClient))) {
+                    InstallButton.href = directLink;
+                    BootstrapperSection.style.display = "none";
+                }
+            }
+            function HasRuntimeVersion(v, c) {
+                var va = GetVersion(v);
+                var i;
+                var a = navigator.userAgent.match(/\.NET CLR [0-9.]+/g);
+                if (va[0] == 4)
+                    a = navigator.userAgent.match(/\.NET[0-9.]+E/g);
+                if (c) {
+                    a = navigator.userAgent.match(/\.NET Client [0-9.]+/g);
+                    if (va[0] == 4)
+                        a = navigator.userAgent.match(/\.NET[0-9.]+C/g);
+                }
+                if (a != null)
+                    for (i = 0; i < a.length; ++i)
+                        if (CompareVersions(va, GetVersion(a[i])) <= 0)
+                            return true;
+                return false;
+            }
+            function GetVersion(v) {
+                var a = v.match(/([0-9]+)\.([0-9]+)\.([0-9]+)/i);
+                if (a == null)
+                    a = v.match(/([0-9]+)\.([0-9]+)/i);
+                return a.slice(1);
+            }
+            function CompareVersions(v1, v2) {
+                if (v1.length > v2.length) {
+                    v2[v2.length] = 0;
+                }
+                else if (v1.length < v2.length) {
+                    v1[v1.length] = 0;
+                }
+
+                for (i = 0; i < v1.length; ++i) {
+                    var n1 = new Number(v1[i]);
+                    var n2 = new Number(v2[i]);
+                    if (n1 < n2)
+                        return -1;
+                    if (n1 > n2)
+                        return 1;
+                }
+                return 0;
+            }
+        </script>
+    </div>
+    <script>
+        includeHTML();
+    </script>
+</body>
+</html>
