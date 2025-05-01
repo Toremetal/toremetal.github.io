@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RSS Feed Example</title>
+</head>
+<body>
+
+<div id="rss-container"></div>
+
+<script>
+const rssUrl = "https://toremetals.blogspot.com/feeds/posts/default?alt=rss"; // https://www.example.com/feed.xml Replace with your RSS feed URL
+
+async function fetchAndDisplayRss() {
+  try {
+    const response = await fetch(rssUrl);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const xmlString = await response.text();
+
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+
+    const items = xmlDoc.querySelectorAll("item"); // Select all <item> elements
+
+    const container = document.getElementById("rss-container");
+
+    items.forEach(item => {
+      const title = item.querySelector("title").textContent;
+      const link = item.querySelector("link").textContent;
+      const description = item.querySelector("description").textContent;
+
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `
+        <a href="${link}">${title}</a>
+        <p>${description}</p>
+      `;
+      container.appendChild(listItem);
+    });
+
+  } catch (error) {
+    console.error("Error fetching or parsing RSS:", error);
+      window.alert("failed")
+  }
+}
+
+fetchAndDisplayRss();
+</script>
+
+</body>
+</html>

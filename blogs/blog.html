@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display RSS Feed</title>
+</head>
+<body>
+
+    <h1>RSS Feed</h1>
+
+    <div id="rssFeed"></div>
+
+    <script>
+    // Replace with your RSS feed URL https://toremetals.blogspot.com/feeds/posts/default?alt=rss
+    const rssFeedUrl = 'http://toremetals.blogspot.com/feeds/posts/default?alt=rss';
+
+    async function fetchAndDisplayFeed() {
+        try {
+            const response = await fetch(rssFeedUrl);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const xml = await response.text();
+
+            // Use DOMParser to parse the XML
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xml, "text/xml");
+
+            // Extract the items from the XML
+            const items = xmlDoc.querySelectorAll('item');
+
+            // Create the HTML to display the feed items
+            let html = '';
+            items.forEach(item => {
+                const title = item.querySelector('title').textContent;
+                const link = item.querySelector('link').textContent;
+                const description = item.querySelector('description').textContent;
+
+                html += `
+                    <div class="rss-item">
+                        <h2><a href="${link}">${title}</a></h2>
+                        <p>${description}</p>
+                    </div>
+                `;
+            });
+
+            // Update the HTML with the feed content
+            document.getElementById('rssFeed').innerHTML = html;
+
+        } catch (error) {
+            console.error('Error fetching and parsing RSS feed:', error);
+            document.getElementById('rssFeed').innerHTML = `<p>Error loading RSS feed: ${error}</p>`;
+        }
+    }
+
+    fetchAndDisplayFeed();
+    </script>
+
+</body>
+</html>
