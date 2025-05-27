@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="MB-Tools.exe" version="2025.4.2.7" publicKeyToken="abe12578c34ae7c5" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icon.ico" asmv2:publisher="™T©ReMeTaL" asmv2:product="MB-Tools" asmv2:supportUrl="https://toremetal.com/windows/mb-tools/" co.v1:errorReportUrl="https://forms.gle/Do8eZDFBsiSued9aA" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="MB-Tools" version="2025.4.2.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="MB-Tools.exe" parameters="" />
+  </entryPoint>
+  <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet class="System.Security.PermissionSet" version="1" ID="Custom" SameSite="site" Unrestricted="true" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Data.Entity" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MB-Tools.exe" size="10019720">
+      <assemblyIdentity name="MB-Tools" version="2025.4.2.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>bG67P+ykbtM3UeN8F+FZ6RE4mHI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="icon.ico" size="891070">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Rm96xOM0H0Ht8kyTMFOb/UuAFTM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MB-Tools.exe.config" size="2246">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XNbMg0DsUVYGblPYJPa3jj0vfKw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <fileAssociation extension=".wim" description="Windows Installation Media" progid="MB-Tools" defaultIcon="icon.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on
+           and is designed to work with. Uncomment the appropriate elements
+           and Windows will automatically select the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />
+      <!-- Windows 8.1 -->
+      <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />
+      <!-- Windows 10 -->
+      <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=SMAY-LT\SMay" issuerKeyHash="134019a82fbc93fa5b1f700afaacfc21b5eb1e92" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>j5AKY3TUzSzzqxdugvxuCowGxjo=</DigestValue></Reference></SignedInfo><SignatureValue>FLSJFwe5OPtVfH8zh0s+Y148maggZMmvWqPbpJdxJLVMs9AZFvSU+LzHeq8+eKmarrJs9MmUOJFILhDpc6ce0Ag4VPfDNTNv5pn8mbOSqr1DFtnNUhCukOfVSeTZaYtTkt8L1/3sgfIKH35mJrzv1Mv995jDkyS2fa58eepCLW8=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wcOhLgAFZ/okxHC2VupR8hEx1Ad7QZOTgOy4AZ5N+8REyMBXNdYeZ5tJtjx+DJ7Vk18ngiHLuOhEcvdxOA5IceFlnRVCuizLzgevgTkUQBEm4Qq/XtgpxmAQeH6Kl6E7URYUAmOehE4oDO5A3CfyhaZ44mvGCwqFz+m55kGPuzE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="3ac6068c0a6efc826e17abf32ccdd474630a908f" Description="" Url=""><as:assemblyIdentity name="MB-Tools.exe" version="2025.4.2.7" publicKeyToken="abe12578c34ae7c5" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SMAY-LT\SMay</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>8FsfOrFTPRkT9/Q7+dO+a+xn4AY=</DigestValue></Reference></SignedInfo><SignatureValue>GUbVe+iu8T5OaYAJ8HpXpD1ugzfCn4MLsLxicRWQtZEZm9Gan1cgx+sl5CIRPlxprNdNZNiqirrGZpYCvZ/SYCCeKa1ewC5kmRZLPdVqGjDMuvc/wuquMAFOROHqdtJ6bxibU+U+2jAEgUCGkBriVxVXXiDHw8I0uxffOYq2Ddg=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wcOhLgAFZ/okxHC2VupR8hEx1Ad7QZOTgOy4AZ5N+8REyMBXNdYeZ5tJtjx+DJ7Vk18ngiHLuOhEcvdxOA5IceFlnRVCuizLzgevgTkUQBEm4Qq/XtgpxmAQeH6Kl6E7URYUAmOehE4oDO5A3CfyhaZ44mvGCwqFz+m55kGPuzE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQc4g3gvUv/qxP3vch/RQHITANBgkqhkiG9w0BAQUFADAjMSEwHwYDVQQDHhgAUwBNAEEAWQAtAEwAVABcAFMATQBhAHkwHhcNMjUwNDI1MDAzNzM4WhcNMjYwNDI1MDYzNzM4WjAjMSEwHwYDVQQDHhgAUwBNAEEAWQAtAEwAVABcAFMATQBhAHkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMHDoS4ABWf6JMRwtlbqUfIRMdQHe0GTk4DsuAGeTfvERMjAVzXWHmebSbY8fgye1ZNfJ4Ihy7joRHL3cTgOSHHhZZ0VQrosy84Hr4E5FEARJuEKv17YKcZgEHh+ipehO1EWFAJjnoROKAzuQNwn8oWmeOJrxgsKhc/pueZBj7sxAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEARk6dPz4nYF243wUPh4oMfsYo7FGjgQpMzLMMsfqdOBIF1rlvhZFvS5mJQRxhOzwV9s8iS8auYCVHi0SaoHaXLVnKiFktyw95D7x2SLuxfOF3BHKzYWK7/503ryyWoxESoHwhbL/hxdsm4XAsP8lur1hoMvsChP9r4y4ySm8xwJU=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
