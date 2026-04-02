@@ -466,6 +466,7 @@
         <script>
 function logDownload() {
     document.getElementById("slog").src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=downloadhash-verification-utility&ext=';
+    gtag('event', 'app_download', {'app_name': 'hash-verification-utility'});
 }
             function myFunction(id, lnk) {
                 window.open(id);
@@ -617,7 +618,7 @@ function logDownload() {
 <LI>Microsoft .NET Framework 4.7.2 (x86 and x64)</LI>
 </UL></TD></TR><TR><TD COLSPAN="2"><p>
     If these components are already installed, you can
-    <A onclick="gtag('event', 'page_view', {'app_name': 'Hash-Verification-Utility', 'page_name': 'Hash-Verification-Utility_Download'});logDownload();" href="Hash_Verification_Utility.application" style="border:1px groove grey;border-radius:5px;" class="hover-btn" target="_blank">Launch</A>
+    <A onclick="logDownload();" href="Hash_Verification_Utility.application" style="border:1px groove grey;border-radius:5px;" class="hover-btn" target="_blank">Launch</A>
     the application now. Otherwise, click the button below to install the prerequisites and run the application.
     <br><i w3-include-html="hash.txt">
     <small><sub><b>Hash_Verification_Utility.application MD5: 128a218a9506fb82e10261ba63357c74</b></sub></small>
@@ -652,7 +653,7 @@ function logDownload() {
                                             <TR style="border-radius:5px;background-color:transparent;">
                                                 <TD id="setup.exe" style="border-radius:5px;background-color:darkred;">
                                                 <!-- w3-include-html="buttonb.txt" onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_Download'});/*window.open('setup.exe')*/"-->
-                                                <a href="setup.exe" onclick="gtag('event', 'page_view', {'app_name': 'Hash-Verification-Utility', 'page_name': 'Hash-Verification-Utility_Download'});logDownload();" download target="_blank">
+                                                <a href="setup.exe" onclick="logDownload();" download target="_blank">
                                                     <input type="button" class="bluhover closeButton s3Dbtn hover-btn" title="Download" value="Hash Verification Utility Installer (setup.exe)"></a>
                                                 </TD>
                                             </TR>
