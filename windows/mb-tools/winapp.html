@@ -464,7 +464,9 @@
 
     <div class="winapps" align="center" style="height:648px;">
         <script>
-
+function logDownload() {
+    document.getElementById("slog").src = 'https://script.google.com/macros/s/AKfycbzoBV6GGLkZcaA41BGz99JN6YbZ86MU_kw1Jxz_grm9KIoMYuE_cC8OewfbV58tvXUP/exec?page=downloadmb-tools&ext=';
+}
             function myFunction(id, lnk) {
                 window.open(id);
                 /*var x = document.getElementById(id).innerHTML;*/
@@ -615,7 +617,7 @@
 <LI>.NET Framework 3.5 SP1</LI>
 </UL></TD></TR><TR><TD COLSPAN="2"><p>
 If these components are already installed, you can 
-<A onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_Download'});" href="MB-Tools.application" style="border:1px groove grey;border-radius:5px;" class="hover-btn" target="_blank">Launch</A>
+<A onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_Download'});logDownload();" href="MB-Tools.application" style="border:1px groove grey;border-radius:5px;" class="hover-btn" target="_blank">Launch</A>
 the application now. Otherwise, click the button below to install the prerequisites and run the application.</p>
 </TD></TR><TR><TD COLSPAN="2">&nbsp;</TD></TR>
                                             <TR>
@@ -645,7 +647,7 @@ the application now. Otherwise, click the button below to install the prerequisi
                                             <TR style="border-radius:5px;background-color:transparent;">
                                                 <TD id="setup.exe" style="border-radius:5px;background-color:darkred;">
                                                 <!-- w3-include-html="buttonb.txt" onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_Download'});/*window.open('setup.exe')*/"-->
-                                                <a href="setup.exe" onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_Download'});" download target="_blank"><button type="button" class="bluhover closeButton s3Dbtn hover-btn" title="Download"> ™MB_To©l-B©x_Installer (setup.exe) </button></a>
+                                                <a href="setup.exe" onclick="gtag('event', 'page_view', {'app_name': 'MB-Tools', 'page_name': 'MB-Tools_Download'});logDownload();" download target="_blank"><button type="button" class="bluhover closeButton s3Dbtn hover-btn" title="Download"> ™MB_To©l-B©x_Installer (setup.exe) </button></a>
                                                 </TD>
                                             </TR>
                                         </TABLE>
