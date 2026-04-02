@@ -110,6 +110,7 @@
             height: 100%;
             object-fit: scale-down;
         }
+
         * {
             object-fit: scale-down;
         }
@@ -293,7 +294,7 @@
         /* End of Snackbar */
     </style>
 </head>
-<body onload="setMinMaxBtn()">
+<body>
     <div class="body">
         <form id="win" action="" hidden style="padding:8px; border:groove 1px grey; position: absolute; top: 20%; left: 47%; background-color: orangered; border-radius: 6px;">
             <label id="winner" style="color: mediumblue; text-shadow: 1px 1px 1px grey, 0 0 1em white, 0 0 0.2em silver;"></label><br /><input type="submit" value="New Game" />
@@ -301,10 +302,10 @@
         <input id="mid" value="" hidden />
         <input id="alt" value="" hidden />
         <div class="board">
-            <!-- hidden elements are used to prevent non existing element errors
-        from occuring during the move and check testing functions. Essentially creating
-        a full 0 to 90 box grid and allow functions to treat all active squares equally
-        without the need for modified code to handle the start and end squares. -->
+            <!-- hidden elements are used to prevent non-existent element errors
+            from occurring during the move and check testing functions. Essentially creating
+            a full 0 to 90 box grid, and allow functions to treat all active squares equally
+            without the need for modified code to handle the start and end squares. -->
             <img id="0" alt="-" hidden />
             <img id="1" alt="-" hidden />
             <img id="2" alt="-" hidden />
@@ -533,9 +534,10 @@
             <img id="97" alt="-" hidden />
             <img id="98" alt="-" hidden />
             <img id="99" alt="-" hidden />
-        </div>    
-        <h6 style="height:12px;position:absolute;left:2%;bottom:5%;"><a hidden style="color:#ef2400;" id="max" target="_top" href="/games/chess">Maximize</a><a hidden style="color:#ee2400;" id="min" target="_top" href="/games">Minimize</a></h6>
-
+        </div>
+        <h6 style="height:12px;position:absolute;left:2%;bottom:5%;">
+            <button id="fullScreenBtn">FullScreen</button>
+        </h6>
         <div style="background-color:lightblue;border: groove 1px black;border-radius:6px;width:fit-content;margin:auto;padding:0 4px;">
             <h3 style="margin:0;padding:0;color:blue;text-shadow:1px 1px 1px grey, 0 0 1em white, 0 0 0.2em silver;">Current Move</h3>
             <input id="player1" value="1" type="radio" checked disabled /><label for="player1">Player 1</label>
@@ -543,17 +545,19 @@
         </div><br /><br />
         <script>
             /* <!-- */
-            function pageInIframe() {
-                return (window.location !== window.parent.location);
-            }
-            function setMinMaxBtn() {
-                if (pageInIframe()) {
-                    document.getElementById("max").hidden = false;
+            function toggleFullScreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen()
+                        .catch((err) => {
+                            console.error(`Error attempting to enable full-screen: ${err.message}`);
+                        });
                 } else {
-                    document.getElementById("min").hidden = false;
+                    document.exitFullscreen();
                 }
             }
-        /* --> */
+            // Trigger via user interaction
+            document.getElementById('fullScreenBtn').addEventListener('click', toggleFullScreen);
+            /* --> */
         </script>
         <script type="text/javascript">
             /* <!-- */
@@ -655,18 +659,18 @@
                         } else if (tNum + 20 == id && ww && midVal == "2" && checkSquare(tNum, 10, "-") || tNum - 20 == id && bb && midVal == "7" && checkSquare(tNum, 10, "-", false)) {
                             m = "true";
                         }
-                      /*  if (tNum + 11 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 11).alt != "-" || tNum - 11 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(tNum - 11).alt != "-") {
-                            m = "true";
-                        } else if (tNum + 9 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 9).alt != "-" || tNum - 9 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(tNum - 9).alt != "-") {
-                            m = "true";
-                        } else if (tNum + 10 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 10).alt == "-" || tNum - 10 == id && document.getElementById('alt').value[0] == "b" && checkSquare(tNum, 10, "-", false)) {
-                            m = "true";
-                        } else if (tNum + 20 == id && document.getElementById('alt').value[0] == "w" && document.getElementById('mid').value[0] == "2" && document.getElementById(tNum + 10).alt == "-" || tNum - 20 == id && document.getElementById('alt').value[0] == "b" && document.getElementById('mid').value[0] == "7" && checkSquare(tNum, 10, "-", false)) {
-                            m = "true";
-                        }*/
+                        /*  if (tNum + 11 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 11).alt != "-" || tNum - 11 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(tNum - 11).alt != "-") {
+                              m = "true";
+                          } else if (tNum + 9 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 9).alt != "-" || tNum - 9 == id && document.getElementById('alt').value[0] == "b" && document.getElementById(tNum - 9).alt != "-") {
+                              m = "true";
+                          } else if (tNum + 10 == id && document.getElementById('alt').value[0] == "w" && document.getElementById(tNum + 10).alt == "-" || tNum - 10 == id && document.getElementById('alt').value[0] == "b" && checkSquare(tNum, 10, "-", false)) {
+                              m = "true";
+                          } else if (tNum + 20 == id && document.getElementById('alt').value[0] == "w" && document.getElementById('mid').value[0] == "2" && document.getElementById(tNum + 10).alt == "-" || tNum - 20 == id && document.getElementById('alt').value[0] == "b" && document.getElementById('mid').value[0] == "7" && checkSquare(tNum, 10, "-", false)) {
+                              m = "true";
+                          }*/
                     } else if (document.getElementById('alt').value[1] == "k") {
                         var pass = false;
-                        
+
                         if (tNum + 1 == id) {
                             pass = true;
                         } else if (tNum - 1 == id) {
@@ -684,14 +688,14 @@
                         } else if (tNum - 11 == id) {
                             pass = true;
                         }
-                       /* if (parseInt(document.getElementById('mid').value) + 1 == id ||
-                            parseInt(document.getElementById('mid').value) - 1 == id ||
-                            parseInt(document.getElementById('mid').value) + 9 == id ||
-                            parseInt(document.getElementById('mid').value) + 10 == id ||
-                            parseInt(document.getElementById('mid').value) + 11 == id ||
-                            parseInt(document.getElementById('mid').value) - 9 == id ||
-                            parseInt(document.getElementById('mid').value) - 10 == id ||
-                            parseInt(document.getElementById('mid').value) - 11 == id ) { */
+                        /* if (parseInt(document.getElementById('mid').value) + 1 == id ||
+                             parseInt(document.getElementById('mid').value) - 1 == id ||
+                             parseInt(document.getElementById('mid').value) + 9 == id ||
+                             parseInt(document.getElementById('mid').value) + 10 == id ||
+                             parseInt(document.getElementById('mid').value) + 11 == id ||
+                             parseInt(document.getElementById('mid').value) - 9 == id ||
+                             parseInt(document.getElementById('mid').value) - 10 == id ||
+                             parseInt(document.getElementById('mid').value) - 11 == id ) { */
                         if (pass) {
                             m = "true";
                             if (document.getElementById('alt').value[0] == "w") {
@@ -742,30 +746,30 @@
                                 } else if (checkSquare(id, 11, "bk", false)) {
                                     m = "false";
                                 }
-                               /* if (document.getElementById(parseInt(id) + 12).alt == "bh" ||
-                                    document.getElementById(parseInt(id) - 12).alt == "bh" ||
-                                    document.getElementById(parseInt(id) + 19).alt == "bh" ||
-                                    document.getElementById(parseInt(id) - 19).alt == "bh" ||
-                                    document.getElementById(parseInt(id) + 8).alt == "bh" ||
-                                    document.getElementById(parseInt(id) - 8).alt == "bh" ||
-                                    document.getElementById(parseInt(id) + 21).alt == "bh" ||
-                                    document.getElementById(parseInt(id) - 21).alt == "bh") {
-                                    m = "false";
-                                }
-                                if (document.getElementById(parseInt(id) + 11).alt == "bp" ||
-                                    document.getElementById(parseInt(id) + 9).alt == "bp") {
-                                    m = "false";
-                                }
-                                if (document.getElementById(parseInt(id) - 11).alt == "bk" ||
-                                    document.getElementById(parseInt(id) - 10).alt == "bk" ||
-                                    document.getElementById(parseInt(id) - 9).alt == "bk" ||
-                                    document.getElementById(parseInt(id) - 1).alt == "bk" ||
-                                    document.getElementById(parseInt(id) + 1).alt == "bk" ||
-                                    document.getElementById(parseInt(id) + 11).alt == "bk" ||
-                                    document.getElementById(parseInt(id) + 10).alt == "bk" ||
-                                    document.getElementById(parseInt(id) + 9).alt == "bk") {
-                                    m = "false";
-                                }*/
+                                /* if (document.getElementById(parseInt(id) + 12).alt == "bh" ||
+                                     document.getElementById(parseInt(id) - 12).alt == "bh" ||
+                                     document.getElementById(parseInt(id) + 19).alt == "bh" ||
+                                     document.getElementById(parseInt(id) - 19).alt == "bh" ||
+                                     document.getElementById(parseInt(id) + 8).alt == "bh" ||
+                                     document.getElementById(parseInt(id) - 8).alt == "bh" ||
+                                     document.getElementById(parseInt(id) + 21).alt == "bh" ||
+                                     document.getElementById(parseInt(id) - 21).alt == "bh") {
+                                     m = "false";
+                                 }
+                                 if (document.getElementById(parseInt(id) + 11).alt == "bp" ||
+                                     document.getElementById(parseInt(id) + 9).alt == "bp") {
+                                     m = "false";
+                                 }
+                                 if (document.getElementById(parseInt(id) - 11).alt == "bk" ||
+                                     document.getElementById(parseInt(id) - 10).alt == "bk" ||
+                                     document.getElementById(parseInt(id) - 9).alt == "bk" ||
+                                     document.getElementById(parseInt(id) - 1).alt == "bk" ||
+                                     document.getElementById(parseInt(id) + 1).alt == "bk" ||
+                                     document.getElementById(parseInt(id) + 11).alt == "bk" ||
+                                     document.getElementById(parseInt(id) + 10).alt == "bk" ||
+                                     document.getElementById(parseInt(id) + 9).alt == "bk") {
+                                     m = "false";
+                                 }*/
                             } else if (document.getElementById('alt').value[0] == "b") {
                                 try {
                                     if (inCheckS(id, "wr") || inCheckS(id, "wq")) {
@@ -1144,7 +1148,7 @@
                   *  Error occurrs with certain peice positions.
                   *  Due to lacking surrounding squares (Non existent ID's).
                   */
-                 /* Down Right.*/
+                /* Down Right.*/
                 function downR(id, ck) {
                     for (i = id; i < 90;) {
                         i = parseInt(i) + 11;
