@@ -1,1 +1,0 @@
-If these components are already installed,<br />you can <A id='Adstxt.application' onclick="myFunction('Adstxt.application', 'downloadAdstxt')" style="border:1px groove grey;border-radius:5px;" class="hover-btn">(launch)</A> the application now.
