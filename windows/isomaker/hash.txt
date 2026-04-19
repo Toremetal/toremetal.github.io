@@ -1,0 +1,7 @@
+<small><sub><b>
+ISO-Maker.application (SHA256): 435f6e29c0aa7ab83ced809144bb0e56ab115f14303414470cd2d5b159f0c631
+</b></sub></small>
+<br>
+<small><sub><b>
+setup.exe (SHA256): e76568e91f3050ebd44d5ac467355a191454ada4a5750ed8ad7af0fb5fff9ad9
+</b></sub></small>
