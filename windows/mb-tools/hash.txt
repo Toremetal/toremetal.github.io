@@ -1,0 +1,7 @@
+<small><sub><b>
+MB-Tools.application (SHA256): 7d8265013afd02bf9a0c65fddadb84b57d680b33474eb0cfef1657afdf307970
+</b></sub></small>
+<br>
+<small><sub><b>
+setup.exe (SHA256): 5dd94907c1c7eed8ed996a425a6a6b65e129ec8fcc65a2fcd6eb5853850a9efe
+</b></sub></small>
