@@ -1,0 +1,7 @@
+<small><sub><b>
+FileMod.application (SHA256): 7d59607de6a2041636a3562f36980b621887f7a4b684a09b571bb12d01926dac
+</b></sub></small>
+<br>
+<small><sub><b>
+setup.exe (SHA256): 75072fa6c6ee8c6733c54ad295afc918b35d110656d4b5f3545a26ded2199c5e
+</b></sub></small>
