@@ -1,4 +1,2 @@
-setup.exe
-4fbc4d1e2c097f63cecbf3fe2cb437d4bbc28a0a39a22cfc4a1b31d2ad683a87
-AdsTxt.application
-185fe01054784c92555ec2c558ff58556c90115e89f60172fbec0633fc69302d
+<b>(setup.exe)</b> 4fbc4d1e2c097f63cecbf3fe2cb437d4bbc28a0a39a22cfc4a1b31d2ad683a87<br>
+<b>(AdsTxt.application)</b> 185fe01054784c92555ec2c558ff58556c90115e89f60172fbec0633fc69302d
