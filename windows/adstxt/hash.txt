@@ -1,2 +1,7 @@
-<b>(setup.exe)</b> fc2b0bc3ae36aca55c0f54327f3cd426fe89110e845b721936a2befb0d87a5a8<br>
-<b>(AdsTxt.application)</b> d927da02a50f7254a3d0e06452ac035105632c0cac38ebf6a9d8e6f41b065848
+<small><sub><b>
+AdsTxt.application (SHA256): d927da02a50f7254a3d0e06452ac035105632c0cac38ebf6a9d8e6f41b065848
+</b></sub></small>
+<br>
+<small><sub><b>
+setup.exe (SHA256): fc2b0bc3ae36aca55c0f54327f3cd426fe89110e845b721936a2befb0d87a5a8
+</b></sub></small>
