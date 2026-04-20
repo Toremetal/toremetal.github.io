@@ -2,18 +2,17 @@
 <html>
 <head>
     <title>Display RSS Feed</title>
+    <meta name="referrer" content="no-referrer-when-downgrade">
 </head>
 <body>
     <h1>RSS Feed</h1>
     <div id="rssFeed"></div>
     <script>
     // Replace with your RSS feed URL https://toremetals.blogspot.com/feeds/posts/default?alt=rss
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const targetUrl = 'https://toremetals.blogspot.com/feeds/posts/default?alt=rss';
-    //const rssFeedUrl = 'https://toremetals.blogspot.com/feeds/posts/default?alt=rss';
+    const rssFeedUrl = 'https://toremetals.blogspot.com/feeds/posts/default?alt=rss';
     async function fetchAndDisplayFeed() {
         try {
-            const response = await fetch(proxyUrl + targetUrl);
+            const response = await fetch(rssFeedUrl);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
