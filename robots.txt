@@ -15,13 +15,18 @@ Allow: /*.mp4
 Allow: /*.m4a
 Allow: /*.wav
 Allow: /
+Allow: /android/
 Allow: /developers/
-Allow: /developers/solutions/
-Allow: /disclaimer/
-Allow: /games/
 Allow: /img/
-Allow: /privacypolicy/
+Allow: /legal/
+Allow: /legal/ad-settings/
+Allow: /legal/cookie-policy/
+Allow: /legal/disclaimer/
+Allow: /legal/privacypolicy/
+Allow: /legal/termsandconditions/
+Allow: /robotics/
 Allow: /signs/
+Allow: /webapps/
 Allow: /windows/
 Allow: /windows/vssnippet/
 
