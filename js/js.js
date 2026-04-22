@@ -112,18 +112,6 @@ function snackbar(message) {
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
 
-async function copyContent(id) {
-  // 1. Get the text from the element
-  const content = document.getElementById(id).innerText;
-  try {
-    // 2. Write to the clipboard
-    await navigator.clipboard.writeText(content);
-    snackbar('Copied to clipboard!');
-  } catch (err) {
-    console.error('Failed to copy: ', err);
-  }
-}
-
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 const mnonce = self.crypto.randomUUID();
