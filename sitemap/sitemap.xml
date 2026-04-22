@@ -16,6 +16,12 @@
 		<lastmod>2026-04-22T00:46:17+00:00</lastmod>
 	</url>
 	<url>
+		<loc>https://toremetal.com/bytes</loc>
+		<changefreq>Monthly</changefreq>
+		<priority>0.50</priority>
+		<lastmod>2026-04-22T00:46:17+00:00</lastmod>
+	</url>
+	<url>
 		<loc>https://toremetal.com/content</loc>
 		<changefreq>Monthly</changefreq>
 		<priority>0.30</priority>
