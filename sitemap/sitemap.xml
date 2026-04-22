@@ -34,12 +34,6 @@
 		<lastmod>2023-10-30T20:03:17+00:00</lastmod>
 	</url>
 	<url>
-		<loc>https://toremetal.com/developers/solutions</loc>
-		<changefreq>Monthly</changefreq>
-		<priority>0.50</priority>
-		<lastmod>2023-10-30T20:03:17+00:00</lastmod>
-	</url>
-	<url>
 		<loc>https://toremetal.com/forms</loc>
 		<changefreq>Monthly</changefreq>
 		<priority>0.50</priority>
@@ -53,6 +47,12 @@
 	</url>
 	<url>
 		<loc>https://toremetal.com/legal</loc>
+		<changefreq>Monthly</changefreq>
+		<priority>0.50</priority>
+		<lastmod>2026-04-22T00:46:17+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://toremetal.com/legal/ad-settings</loc>
 		<changefreq>Monthly</changefreq>
 		<priority>0.50</priority>
 		<lastmod>2026-04-22T00:46:17+00:00</lastmod>
@@ -80,6 +80,12 @@
 		<changefreq>Monthly</changefreq>
 		<priority>0.50</priority>
 		<lastmod>2023-10-30T20:03:17+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://toremetal.com/robotics</loc>
+		<changefreq>Monthly</changefreq>
+		<priority>0.70</priority>
+		<lastmod>2026-04-22T00:46:17+00:00</lastmod>
 	</url>
 	<url>
 		<loc>https://toremetal.com/sitemap</loc>
