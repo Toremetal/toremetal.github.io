@@ -46,7 +46,19 @@
     <link rel="icon" href="https://toremetal.com/pos/favicon.png" type="image/png" />
     <link rel="icon" href="https://toremetal.com/pos/favicon.ico" type="image/ico" />
     <link rel="stylesheet" href="https://toremetal.com/css/app-menu.css" media="screen" type="text/css">
-    <script src="/js/js.js"></script>
+    <script>
+async function copyContent(id) {
+  // 1. Get the text from the element
+  const content = document.getElementById(id).innerText;
+  try {
+    // 2. Write to the clipboard
+    await navigator.clipboard.writeText(content);
+    alert('Copied to clipboard!');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
+    </script>
     <script>
         /* <!-- */
         function includeHTML() {
