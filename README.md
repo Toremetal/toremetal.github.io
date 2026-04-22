@@ -5,10 +5,9 @@
             You may not use this Software except in compliance with this License.
   
  *   **************************************************************************************
-**/                          ** SOFTWARE LICENSE AGREEMENT: \**** <br>
-     *******************************************************************************************************
+   # LICENSE AGREEMENT: #
  *     PLEASE READ THIS AGREEMENT CAREFULLY BEFORE YOU START USING THIS SOFTWARE IN ANY WAY.
-       THE MOMENT THE SOFTWARE IS USEED, THE USER CONCLUDES A LICENSE AGREEMENT WITH THE
+       THE MOMENT THE SOFTWARE IS USED, THE USER CONCLUDES A LICENSE AGREEMENT WITH THE
        PRODUCER. PROVISIONS OF THIS AGREEMENT ARE BINDING FOR BOTH PARTIES.
        
  *     This End-User License Agreement ("Agreement") is a legal contract between you
