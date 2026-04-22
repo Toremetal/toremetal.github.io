@@ -5,21 +5,20 @@
   *  **********/ &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ™T©ReMeTaL Software : Copyright (c) 2024 ™T©ReMeTaL. \**********
      ***************************************************************************************
                                     ™T©ReMeTaL Software.
-            Copyright (C) 2024 : ©2024™T©ReMeTaL(David W. Rick).
-                             Computer Scientist:  David W. Rick
+                       Copyright (C) ©2026™T©ReMeTaL(David W. Rick).
             Licensed under this License Agreement,  Version 1.0  (this "License").
-            You may not use this Software except, in compliance with this License.
+            You may not use this Software except in compliance with this License.
   
  *   **************************************************************************************
 **/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ** SOFTWARE LICENSE AGREEMENT: \**** <br />
      *******************************************************************************************************
  *     PLEASE READ THIS AGREEMENT CAREFULLY BEFORE YOU START USING THIS SOFTWARE IN ANY WAY.
-       THE MOMENT THE SOFTWARE IS INSTALLED THE USER CONCLUDES A LICENSE AGREEMENT WITH THE
+       THE MOMENT THE SOFTWARE IS INSTALLED, THE USER CONCLUDES A LICENSE AGREEMENT WITH THE
        PRODUCER. PROVISIONS OF THIS AGREEMENT ARE BINDING FOR BOTH PARTIES.
        
  *     This End-User License Agreement ("Agreement") is a legal contract between you
        (either (a) an individual user or (b) a business organization) ("User") and the
-       Producer of the Computer Software ("Producer") including any associated media, 
+       Producer of the Computer Software ("Producer"), including any associated media, 
        printed materials and electronic documentation (the "Computer Software"). 
        This License Agreement specifies the User's rights to use the Computer Software.
        
@@ -29,14 +28,14 @@
        Under this License Agreement, the Producer does not sell the Computer Software to the User.
        The Producer only empowers the User to perform the operations defined in the provisions of
        this Agreement. Performing operations not defined in the provisions of this Agreement
-       requires written permission of the Producer.
+       requires the written permission of the Producer.
        
  *     The powers of the User arising from this License Agreement
-       become extinct if the User breaks any of its provisions. In such a case the Producer will
-       assert their rights specified by respective regulations within the largest scope possible.
+       become extinct if the User breaks any of its provisions. In such a case, the Producer will
+       assert their rights as specified by the relevant regulations within the widest possible scope.
        
  *     Users specifically waive and disclaim the applicability of the Uniform Commercial Code, Uniform
-       Electronic Transactions Act, and Uniform Computer Information Transactions Act to this Agreement.
+       Electronic Transactions Act, and the Uniform Computer Information Transactions Act, to this Agreement.
        
  *     The License Agreement consists of a description of the rights and duties of the User of the
        Computer Software.
@@ -46,9 +45,9 @@
        User grants User's Software end users
        a limited, personal, non-exclusive, and non-transferable license:
        To use the Computer Software only to the extent required for the
-       permitted operation of User's Software and not to distribute them further.
+       permitted operation of the User's Software and not to distribute it further.
        You give the Producer, without charge,
-       the right to use your company name and logo on the Producer's customers list.
+       The right to use your company name and logo on the Producer's customers list.
        
  *     The User IS NOT ALLOWED:
        - to transfer their rights arising from this License Agreement to third parties.
@@ -59,8 +58,8 @@
        in the Computer Software and the materials provided together with it.
        
  *     The Producer does not warrant that the Computer Software will meet the expectations of the
-       User or that it will properly cooperate with other Computer Software. The Producer does not
-       warrant either that the Computer Software will function without errors. If the User intends
+       User, or that it will properly cooperate with other Computer Software. The Producer does not
+       warrant that the Computer Software will function without errors. If the User intends
        to use the Computer Software for any particular purpose, they accept the full risk of the
        results they may obtain.
        
@@ -74,23 +73,19 @@
        THIS OR THE USE OF THIS SOFTWARE UNDER THIS AGREEMENT.
   
  *     EVERY ATTEMPT IS MADE TO ENSURE THE COMPLETENESS, FUNCTIONALITY, AND RELIABILITY OF
-       ™T©ReMeTaL SOFTWARE. HOWEVER, IN AN EVER EVOLVING WORLD SOFTWARE CAN BREAK DUE TO
+       ™T©ReMeTaL SOFTWARE. HOWEVER, IN AN EVER-EVOLVING WORLD, SOFTWARE CAN BREAK DUE TO
        ADVANCEMENT OF THE TECHNOLOGY IT OPERATES WITHIN.
        
  *     Software is As-Is Without Warranty of Any Kind, Implied or otherwise.
        
  *     ™T©ReMeTaL
        Privacy Policy Available online at
- * * https://toremetal.com/privacypolicy
+ * * https://toremetal.com/legal/privacypolicy
        
- *     For Questions, comments, and inquiries
-       Email:
- *     toremetal@toremetal.com
- *     Or
        Visit us on the web at
  * * https://toremetal.com
        
  *     ™T©ReMeTaL
-       ©2024™T©ReMeTaL
+       ©2026™T©ReMeTaL
        All Rights Reserved.
      **********************************************************************************************************
