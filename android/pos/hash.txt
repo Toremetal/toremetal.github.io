@@ -1,0 +1,3 @@
+<small><sub><b>
+app-release.apk (SHA256):<pre id="sha1" title="copy to clipboard" onclick="copyContent(this.id)">066e5f59282be20b12901eaf49681eeb4db8bcee230f2a1a16916939b7549881</pre>
+</b></sub></small>
